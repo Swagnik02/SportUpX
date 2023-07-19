@@ -1,0 +1,75 @@
+com.team.fantasy.app-jetified-viewpager2-1.0.0-0 C:\Users\swagn\.gradle\caches\transforms-3\04fa8574c569b30823398671cca68c73\transformed\jetified-viewpager2-1.0.0\res
+com.team.fantasy.app-jetified-facebook-messenger-4.37.0-1 C:\Users\swagn\.gradle\caches\transforms-3\06b8bac75d9f17e425d435e171349970\transformed\jetified-facebook-messenger-4.37.0\res
+com.team.fantasy.app-jetified-emoji2-views-helper-1.2.0-2 C:\Users\swagn\.gradle\caches\transforms-3\0c53ee21ab0ce775ad0078ae8e7e2b77\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.team.fantasy.app-jetified-lifecycle-viewmodel-savedstate-2.5.1-3 C:\Users\swagn\.gradle\caches\transforms-3\0c9bd2793a646548ea3faa81c8718d9e\transformed\jetified-lifecycle-viewmodel-savedstate-2.5.1\res
+com.team.fantasy.app-jetified-asset-download-sdk-0.3.2-4 C:\Users\swagn\.gradle\caches\transforms-3\11ada183cd2fba947ed882b412d7b6d1\transformed\jetified-asset-download-sdk-0.3.2\res
+com.team.fantasy.app-jetified-play-services-cast-12.0.1-5 C:\Users\swagn\.gradle\caches\transforms-3\17669db72b50e039667b4a30bf74f545\transformed\jetified-play-services-cast-12.0.1\res
+com.team.fantasy.app-jetified-ccp-2.7.0-6 C:\Users\swagn\.gradle\caches\transforms-3\1c74349f7372f9426dbd7de7485f9602\transformed\jetified-ccp-2.7.0\res
+com.team.fantasy.app-jetified-selectableroundedimageview-1.0.1-7 C:\Users\swagn\.gradle\caches\transforms-3\1efbdd014b2cd4afbd9f09a7bc524f36\transformed\jetified-selectableroundedimageview-1.0.1\res
+com.team.fantasy.app-jetified-circleimageview-2.1.0-8 C:\Users\swagn\.gradle\caches\transforms-3\20e07da553c57bf780ba02352e568e7f\transformed\jetified-circleimageview-2.1.0\res
+com.team.fantasy.app-jetified-play-services-gcm-12.0.1-9 C:\Users\swagn\.gradle\caches\transforms-3\21ec4047b85de51bc58f4e8ec191b01c\transformed\jetified-play-services-gcm-12.0.1\res
+com.team.fantasy.app-jetified-play-services-cast-framework-12.0.1-10 C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\res
+com.team.fantasy.app-jetified-activity-1.6.0-11 C:\Users\swagn\.gradle\caches\transforms-3\238cb322a94c113d0dc619706b2d687a\transformed\jetified-activity-1.6.0\res
+com.team.fantasy.app-jetified-plug-n-play-1.4.5-12 C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\res
+com.team.fantasy.app-jetified-play-services-wallet-12.0.1-13 C:\Users\swagn\.gradle\caches\transforms-3\27f3babd1c29a8ba6c77c810f6195859\transformed\jetified-play-services-wallet-12.0.1\res
+com.team.fantasy.app-jetified-facebook-login-4.37.0-14 C:\Users\swagn\.gradle\caches\transforms-3\314aaadafdbd10d4b2604ddb9b3a617e\transformed\jetified-facebook-login-4.37.0\res
+com.team.fantasy.app-drawerlayout-1.1.1-15 C:\Users\swagn\.gradle\caches\transforms-3\32b07712b91c13c4b219d6dad6894768\transformed\drawerlayout-1.1.1\res
+com.team.fantasy.app-browser-1.0.0-16 C:\Users\swagn\.gradle\caches\transforms-3\392771e900e4211d8012836c49bfaffe\transformed\browser-1.0.0\res
+com.team.fantasy.app-media-1.0.0-17 C:\Users\swagn\.gradle\caches\transforms-3\41498dffea5f14fc14149dc491a08d37\transformed\media-1.0.0\res
+com.team.fantasy.app-jetified-play-services-ads-lite-12.0.1-18 C:\Users\swagn\.gradle\caches\transforms-3\42645779067567f9a765579da18d39f6\transformed\jetified-play-services-ads-lite-12.0.1\res
+com.team.fantasy.app-databinding-runtime-8.0.1-19 C:\Users\swagn\.gradle\caches\transforms-3\43ba6113dbdcaa5d82c8a4318eb3ce09\transformed\databinding-runtime-8.0.1\res
+com.team.fantasy.app-jetified-play-services-ads-12.0.1-20 C:\Users\swagn\.gradle\caches\transforms-3\44b0bc5e714724256a3b68306d629e38\transformed\jetified-play-services-ads-12.0.1\res
+com.team.fantasy.app-jetified-expandable-layout-1.6.0-21 C:\Users\swagn\.gradle\caches\transforms-3\4716a2da30187f2715f9a926653553b7\transformed\jetified-expandable-layout-1.6.0\res
+com.team.fantasy.app-appcompat-1.6.1-22 C:\Users\swagn\.gradle\caches\transforms-3\4e48aebf79d31628ceb48e8d00fbbd44\transformed\appcompat-1.6.1\res
+com.team.fantasy.app-jetified-firebase-crash-12.0.1-23 C:\Users\swagn\.gradle\caches\transforms-3\53d252f055525f7f14d7febfe76c2dd0\transformed\jetified-firebase-crash-12.0.1\res
+com.team.fantasy.app-lifecycle-livedata-core-2.5.1-24 C:\Users\swagn\.gradle\caches\transforms-3\56b54a66f0122ff59d18b442b170fd64\transformed\lifecycle-livedata-core-2.5.1\res
+com.team.fantasy.app-jetified-facebook-share-4.37.0-25 C:\Users\swagn\.gradle\caches\transforms-3\669f523b6c5c20845de43890536617ba\transformed\jetified-facebook-share-4.37.0\res
+com.team.fantasy.app-jetified-play-services-places-12.0.1-26 C:\Users\swagn\.gradle\caches\transforms-3\69bdad0daa7512f16480af754d0bf1fc\transformed\jetified-play-services-places-12.0.1\res
+com.team.fantasy.app-material-1.8.0-27 C:\Users\swagn\.gradle\caches\transforms-3\6c2dc96b9d5750092bd402e41e4b6f1c\transformed\material-1.8.0\res
+com.team.fantasy.app-jetified-core-ktx-1.9.0-28 C:\Users\swagn\.gradle\caches\transforms-3\71abd4d444231b67a7b1026f6735bc85\transformed\jetified-core-ktx-1.9.0\res
+com.team.fantasy.app-coordinatorlayout-1.1.0-29 C:\Users\swagn\.gradle\caches\transforms-3\72e5e8597d65956f03291aa8c1717771\transformed\coordinatorlayout-1.1.0\res
+com.team.fantasy.app-jetified-customview-poolingcontainer-1.0.0-30 C:\Users\swagn\.gradle\caches\transforms-3\73268fda9bff2ad80893b1af1351c915\transformed\jetified-customview-poolingcontainer-1.0.0\res
+com.team.fantasy.app-jetified-firebase-messaging-12.0.1-31 C:\Users\swagn\.gradle\caches\transforms-3\80efb5d4f80f20f7bfabfed41b2d090c\transformed\jetified-firebase-messaging-12.0.1\res
+com.team.fantasy.app-jetified-payu-custom-browser-7.2.1-32 C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\res
+com.team.fantasy.app-recyclerview-1.3.0-33 C:\Users\swagn\.gradle\caches\transforms-3\8e6f61c41cb26b8ebb0579c61484a04e\transformed\recyclerview-1.3.0\res
+com.team.fantasy.app-jetified-circularimageview-4.3.1-34 C:\Users\swagn\.gradle\caches\transforms-3\93665707d4058ca3c0414e1b1b2b1460\transformed\jetified-circularimageview-4.3.1\res
+com.team.fantasy.app-jetified-play-services-plus-12.0.1-35 C:\Users\swagn\.gradle\caches\transforms-3\994f40169941074a2a071349ba31e792\transformed\jetified-play-services-plus-12.0.1\res
+com.team.fantasy.app-jetified-play-services-base-12.0.1-36 C:\Users\swagn\.gradle\caches\transforms-3\9d1a1d788cf50920e4be26db5527659d\transformed\jetified-play-services-base-12.0.1\res
+com.team.fantasy.app-jetified-appcompat-resources-1.6.1-37 C:\Users\swagn\.gradle\caches\transforms-3\9e3c6fd6f11b49f4104d4cba30b31adb\transformed\jetified-appcompat-resources-1.6.1\res
+com.team.fantasy.app-jetified-magicretry-1.0.6-38 C:\Users\swagn\.gradle\caches\transforms-3\a2ab885adc4294c549471364d081a39f\transformed\jetified-magicretry-1.0.6\res
+com.team.fantasy.app-transition-1.2.0-39 C:\Users\swagn\.gradle\caches\transforms-3\ad10ce05b9a9ca16f28668b6cda9bb2a\transformed\transition-1.2.0\res
+com.team.fantasy.app-jetified-lifecycle-process-2.4.1-40 C:\Users\swagn\.gradle\caches\transforms-3\aed9aab14f1634dae19db29bd6424562\transformed\jetified-lifecycle-process-2.4.1\res
+com.team.fantasy.app-fragment-1.3.6-41 C:\Users\swagn\.gradle\caches\transforms-3\af9c373a9b9bba200360c2abedd9ef68\transformed\fragment-1.3.6\res
+com.team.fantasy.app-jetified-Android-SpinKit-1.4.0-42 C:\Users\swagn\.gradle\caches\transforms-3\b1502af334c6132182f14adc1573f121\transformed\jetified-Android-SpinKit-1.4.0\res
+com.team.fantasy.app-core-1.9.0-43 C:\Users\swagn\.gradle\caches\transforms-3\b45bc1e4b9c186e745531ff228ddc98d\transformed\core-1.9.0\res
+com.team.fantasy.app-jetified-shadowlayout-1.0.1-44 C:\Users\swagn\.gradle\caches\transforms-3\b4838720484a2fcc92a80d9cebec4d43\transformed\jetified-shadowlayout-1.0.1\res
+com.team.fantasy.app-lifecycle-viewmodel-2.5.1-45 C:\Users\swagn\.gradle\caches\transforms-3\ba7d66eb07189fca6ceed0d229e4853d\transformed\lifecycle-viewmodel-2.5.1\res
+com.team.fantasy.app-jetified-play-services-basement-12.0.1-46 C:\Users\swagn\.gradle\caches\transforms-3\bb0aa1157cbb1072ad8b8ab7de240ae3\transformed\jetified-play-services-basement-12.0.1\res
+com.team.fantasy.app-constraintlayout-2.1.4-47 C:\Users\swagn\.gradle\caches\transforms-3\bc5ec1d841b7bc9674d3984e3c0c58e6\transformed\constraintlayout-2.1.4\res
+com.team.fantasy.app-jetified-annotation-experimental-1.3.0-48 C:\Users\swagn\.gradle\caches\transforms-3\bca303130947d64f0749dde180babfe6\transformed\jetified-annotation-experimental-1.3.0\res
+com.team.fantasy.app-jetified-emoji2-1.2.0-49 C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\res
+com.team.fantasy.app-jetified-payumoney-sdk-7.4.4-50 C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\res
+com.team.fantasy.app-jetified-play-services-appinvite-12.0.1-51 C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\res
+com.team.fantasy.app-mediarouter-1.0.0-alpha5-52 C:\Users\swagn\.gradle\caches\transforms-3\c621dc628fdc36a6caa7f804f553552d\transformed\mediarouter-1.0.0-alpha5\res
+com.team.fantasy.app-jetified-shadow-0.0.4-beta3-53 C:\Users\swagn\.gradle\caches\transforms-3\c8ad226f70e3f9b19917ec413bba64f4\transformed\jetified-shadow-0.0.4-beta3\res
+com.team.fantasy.app-jetified-Toasty-1.5.2-54 C:\Users\swagn\.gradle\caches\transforms-3\c9a3b13548041415f1acdbcbacfab679\transformed\jetified-Toasty-1.5.2\res
+com.team.fantasy.app-jetified-firebase-appindexing-12.0.1-55 C:\Users\swagn\.gradle\caches\transforms-3\cea5dcab32aee399467c62dc4d270a45\transformed\jetified-firebase-appindexing-12.0.1\res
+com.team.fantasy.app-jetified-play-services-maps-12.0.1-56 C:\Users\swagn\.gradle\caches\transforms-3\d5b8b83950e769c753367674d8ef541a\transformed\jetified-play-services-maps-12.0.1\res
+com.team.fantasy.app-databinding-adapters-8.0.1-57 C:\Users\swagn\.gradle\caches\transforms-3\d803af244a14e6120e175c21f7aaff67\transformed\databinding-adapters-8.0.1\res
+com.team.fantasy.app-lifecycle-runtime-2.5.1-58 C:\Users\swagn\.gradle\caches\transforms-3\d9efcfc2a189c63cdede4be3fabccdce\transformed\lifecycle-runtime-2.5.1\res
+com.team.fantasy.app-jetified-facebook-common-4.37.0-59 C:\Users\swagn\.gradle\caches\transforms-3\ddb31ae0c999a8f515c9a4d28933ac87\transformed\jetified-facebook-common-4.37.0\res
+com.team.fantasy.app-cardview-1.0.0-60 C:\Users\swagn\.gradle\caches\transforms-3\e96316f6eb0f0244971e1fb675669c04\transformed\cardview-1.0.0\res
+com.team.fantasy.app-jetified-savedstate-1.2.0-61 C:\Users\swagn\.gradle\caches\transforms-3\ea2c2c54569371e79e8b6734b8c6659c\transformed\jetified-savedstate-1.2.0\res
+com.team.fantasy.app-jetified-play-services-tagmanager-12.0.1-62 C:\Users\swagn\.gradle\caches\transforms-3\f84122092b08e49aac17aa2e9924a56b\transformed\jetified-play-services-tagmanager-12.0.1\res
+com.team.fantasy.app-jetified-startup-runtime-1.1.1-63 C:\Users\swagn\.gradle\caches\transforms-3\f96d579d5b1b19e5d8b65fabde6ce449\transformed\jetified-startup-runtime-1.1.1\res
+com.team.fantasy.app-jetified-play-services-auth-12.0.1-64 C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\res
+com.team.fantasy.app-jetified-PGSDKVR4-65 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\PGSDKVR4\build\.transforms\aa370bfbbf19aa884099e54709b1a3a1\transformed\jetified-PGSDKVR4\res
+com.team.fantasy.app-google-services-66 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\generated\res\google-services\debug
+com.team.fantasy.app-pngs-67 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\generated\res\pngs\debug
+com.team.fantasy.app-resValues-68 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\generated\res\resValues\debug
+com.team.fantasy.app-mergeDebugResources-69 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.team.fantasy.app-mergeDebugResources-70 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.team.fantasy.app-merged_res-71 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\intermediates\merged_res\debug
+com.team.fantasy.app-debug-72 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\debug\res
+com.team.fantasy.app-main-73 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\res
+com.team.fantasy.app-jetified-cashfreeSDK-74 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\res

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "303180640660",
+    "project_id": "teamfantasy-37cbd",
+    "storage_bucket": "teamfantasy-37cbd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:303180640660:android:fc5c7a419f85744fb9df81",
+        "android_client_info": {
+          "package_name": "com.team.fantasy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "303180640660-8phqod9qaksppuo2ckf07raft5q8lko1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPXD2DPyaqux2D5vC1sHxW6T9Dp-9snvc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "303180640660-8phqod9qaksppuo2ckf07raft5q8lko1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

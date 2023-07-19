@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dark_rectangle_contest"
+        android:id="@+id/LL_AdaRank"
+        android:layout_margin="5dp"
+        android:padding="5dp"
+        android:weightSum="4">
+        <TextView
+            android:id="@+id/tv_Rank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:gravity="start"
+            android:layout_weight="1"
+            android:textColor="@color/textColor"
+            android:text="Rank: 1" />
+        <TextView
+            android:id="@+id/tv_Percent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:gravity="end"
+            android:layout_weight="1.5"
+            android:textColor="@color/textColor"
+            android:text="100%" />
+        <TextView
+            android:id="@+id/tv_Price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:gravity="end"
+            android:layout_weight="1.5"
+            android:textColor="@color/textColor"
+            android:text="₹ 0" />
+    </LinearLayout>
+</RelativeLayout>
+</layout>

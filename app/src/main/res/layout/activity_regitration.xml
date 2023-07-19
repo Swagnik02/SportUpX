@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:id="@+id/RL_Signup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RegistrationActivity">
+
+    <include
+        android:id="@+id/Head"
+        layout="@layout/activity_mainheader"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Head"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/fb_login_button"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/btn_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="30dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="or"
+                    android:textColor="@color/orange"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_SignInText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/sign_in"
+                    android:textColor="@color/login_sign_up"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_RegRefCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black"
+                android:layout_marginTop="20dp"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/et_ReferralCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:backgroundTint="@color/black"
+                    android:hint="Enter invite code"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_RegMobNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:theme="@style/MyTextInputLayout"
+                android:textColorHint="@color/black">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.hbb20.CountryCodePicker
+                        android:id="@+id/country_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:backgroundTint="@color/black"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp"
+                        app:ccp_showFullName="false"
+                        app:ccp_showPhoneCode="true"
+                        app:ccp_showNameCode="false"
+                        app:ccp_autoDetectCountry="true"
+                        app:ccp_countryAutoDetectionPref="SIM_NETWORK_LOCALE"
+                        app:ccp_rememberLastSelection="true"
+                        app:ccp_autoDetectLanguage="true"
+                        app:ccp_defaultNameCode="IN"/>
+
+                    <EditText
+                        android:id="@+id/et_MobileNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:backgroundTint="@color/black"
+                        android:hint="Mobile no."
+                        android:inputType="number"
+                        android:padding="12dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="2dp"
+                    android:text="You will receive an OTP for verification"
+                    android:textColor="@color/login_sign_up"
+                    android:textSize="11sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_RegEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_RegMobNo"
+                android:layout_marginTop="10dp"
+                android:theme="@style/MyTextInputLayout"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/et_Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:backgroundTint="@color/black"
+                    android:hint="Email"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="2dp"
+                    android:text="No spam. We promise!"
+                    android:textColor="@color/login_sign_up"
+                    android:textSize="11sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_RegPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/input_RegEmail"
+                android:layout_marginTop="10dp"
+                android:theme="@style/MyTextInputLayout"
+                android:textColorHint="@color/black"
+                app:passwordToggleTint="@color/black"
+                app:passwordToggleEnabled="true">
+
+                <EditText
+                    android:id="@+id/et_Password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:backgroundTint="@color/black"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="2dp"
+                    android:text="Minimum 8 characters with 1 number/symbol"
+                    android:textColor="@color/login_sign_up"
+                    android:textSize="11sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/by_registering_i_agree_to_my11team_s"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_TearmsandConditions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/terms_conditions"
+                    android:textColor="@color/login_sign_up"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <net.orandja.shadowlayout.ShadowLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:shadow_radius="3"
+                app:shadow_x_shift="-1dp"
+                app:shadow_y_shift="2dp"
+                app:shadow_downscale="6"
+                app:shadow_color="@color/colorPrimary"
+                app:shadow_with_color="false"
+                app:shadow_with_dpi_scale="true"
+                app:shadow_with_css_scale="true"
+                app:shadow_cast_only_background="false"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="start">
+                <TextView
+                    android:id="@+id/tv_RegNext"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundbutton"
+                    android:gravity="start"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:text="Sign up"
+                    android:textAlignment="center"
+                    android:textColor="@color/sign_in_btn"
+                    android:textSize="16sp" />
+            </net.orandja.shadowlayout.ShadowLayout>
+
+            <LinearLayout
+                android:id="@+id/LL_EnterCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/have_a_referral_code"
+                    android:textColor="@color/login_sign_up" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" " />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enter_a_code"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/LL_FaceGoogle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="start"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/RL_FBLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+                    <net.orandja.shadowlayout.ShadowLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:shadow_radius="5"
+                        app:shadow_x_shift="-1dp"
+                        app:shadow_y_shift="2dp"
+                        app:shadow_downscale="1"
+                        app:shadow_color="#DAF5FF"
+                        app:shadow_with_color="false"
+                        app:shadow_with_dpi_scale="true"
+                        app:shadow_with_css_scale="true"
+                        app:shadow_cast_only_background="false">
+                        <ImageView
+                            android:id="@+id/im_fbicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:scaleType="center"
+                            android:src="@drawable/fb_icon" />
+                    </net.orandja.shadowlayout.ShadowLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/RL_GmailLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+                    <net.orandja.shadowlayout.ShadowLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:shadow_radius="5"
+                        app:shadow_x_shift="-1dp"
+                        app:shadow_y_shift="2dp"
+                        app:shadow_downscale="1"
+                        app:shadow_color="#DAF5FF"
+                        app:shadow_with_color="false"
+                        app:shadow_with_dpi_scale="true"
+                        app:shadow_with_css_scale="true"
+                        app:shadow_cast_only_background="false">
+                        <ImageView
+                            android:id="@+id/im_goggleicon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:scaleType="center"
+                            android:src="@drawable/google_icon" />
+                    </net.orandja.shadowlayout.ShadowLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
+</layout>

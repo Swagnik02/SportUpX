@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:tag="layout/activity_create_contest_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <include
+        layout="@layout/activity_mainheader"
+        android:id="@+id/head"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/head">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:elevation="3dp"
+                android:id="@+id/RL_1">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_ContestName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:theme="@style/MyTextInputLayout"
+                    android:textColorHint="@color/black">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:backgroundTint="@color/black"
+                        android:id="@+id/et_ContestName"
+                        android:hint="Contest Name"
+                        android:padding="12dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Give Your Contest a Cool Name"
+                        android:textColor="@color/hint"
+                        android:textSize="11sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_WinningAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:theme="@style/MyTextInputLayout"
+                    android:textColorHint="@color/black">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:backgroundTint="@color/black"
+                        android:id="@+id/et_WinningAmount"
+                        android:hint="Total Winning Amount(Rs)"
+                        android:singleLine="true"
+                        android:inputType="number"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Min 0"
+                        android:textColor="@color/hint"
+                        android:textSize="11sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_ContestSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:theme="@style/MyTextInputLayout"
+                    android:textColorHint="@color/black">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:backgroundTint="@color/black"
+                        android:id="@+id/et_ContestSize"
+                        android:hint="Contest Size"
+                        android:singleLine="true"
+                        android:inputType="number"
+                        android:padding="12dp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="2dp"
+                        android:text="Min 2"
+                        android:textColor="@color/hint"
+                        android:textSize="11sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:elevation="3dp"
+                android:layout_below="@+id/RL_1"
+                android:id="@+id/RL_2"
+                android:background="@drawable/roundbutton">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calculate Entry Fees"
+                    android:textColor="@color/btn_txt_color"
+                    android:textSize="16sp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/tv_CalculateEntryFees"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="3dp"
+                android:layout_below="@+id/RL_2"
+                android:background="@drawable/dark_rectangle_team">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Entry Per Team - "
+                    android:textColor="@color/white"
+                    android:layout_marginTop="5dp"
+                    android:textSize="16sp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/tv_EntryFees"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Entry is calculated based on total prize\namount &amp; contest size"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textAlignment="center"
+                    android:textSize="11sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tv_EntryFees"
+                    />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/RL_BottomCreateMyContest"
+        android:background="@color/pink_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CREATE CONTEST"
+            android:textColor="@color/txt_color_dark_back"
+            android:id="@+id/tv_CreateMyContest"
+            android:textAlignment="center"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"/>
+
+    </RelativeLayout>
+</RelativeLayout>
+         

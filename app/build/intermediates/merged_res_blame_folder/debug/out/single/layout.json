@@ -1,0 +1,318 @@
+[
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_my_fixture_contest_details.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_my_fixture_contest_details.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/slider_banner.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/slider_banner.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_join_contest.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_join_contest.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_join_my_team.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_join_my_team.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/fragment_live.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/fragment_live.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_payment_option.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_payment_option.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/fragment_my_results.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/fragment_my_results.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/progress_loading.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/progress_loading.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/item_ground_player.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/item_ground_player.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_mainheader.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_mainheader.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_my_joined_result_contest_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_my_joined_result_contest_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_verify_otp.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_verify_otp.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_global_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_global_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_choose_cand_vc.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_choose_cand_vc.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_my_team.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_my_team.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_invite_in_contest.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_invite_in_contest.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_my_result_contest_details.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_my_result_contest_details.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_my_team_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_my_team_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/item_winning_breakup.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/item_winning_breakup.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_webview_acitivity.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_webview_acitivity.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_login.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_create_contest.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_create_contest.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_my_match_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_my_match_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/fragment_profile.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/fragment_profile.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_new_password.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_new_password.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_notification.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_notification.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_pay_umoney_payment.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_pay_umoney_payment.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/item_own_rank.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/item_own_rank.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_cashfree.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_cashfree.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_my_live_contest_details.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_my_live_contest_details.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_final_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_final_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/dialog_dialog.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/dialog_dialog.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_regitration.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_regitration.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_home.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/fragment_fixtures.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/fragment_fixtures.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/dialog_player_info.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/dialog_player_info.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_withdraw_amount.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_withdraw_amount.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/fragment_my_live.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/fragment_my_live.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_live_leaderboard_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_live_leaderboard_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_footer.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_footer.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/fragment_my_fixtures.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/fragment_my_fixtures.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_my_joined_live_contest_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_my_joined_live_contest_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_invite_friends.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_invite_friends.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/layout_vs_back.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/layout_vs_back.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_user_contest.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_user_contest.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_edit_profile.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_edit_profile.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_player_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_player_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_create_team.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_create_team.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_friends_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_friends_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_contest_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_contest_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_payment_confirmation.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_payment_confirmation.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_track_npay.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_track_npay.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/dialog_winning_breakups.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/dialog_winning_breakups.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_main.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_upload_kyc.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_upload_kyc.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_contest_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_contest_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_my_transaction.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_my_transaction.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_select_prize_create.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_select_prize_create.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_add_cash_offer.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_add_cash_offer.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_global_rank.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_global_rank.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_paytm.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_paytm.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/fragment_results.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/fragment_results.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/fragment_more.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/fragment_more.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_enter_invite_code_contest.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_enter_invite_code_contest.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_invited_friend_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_invited_friend_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_my_transaction_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_my_transaction_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_add_cash.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_add_cash.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_my_joined_contest_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_my_joined_contest_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_notification_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_notification_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/fragment_my_contest.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/fragment_my_contest.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_sectioned_item.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_sectioned_item.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_my_account.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_my_account.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_live_contest_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_live_contest_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/dialog_ground_view.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/dialog_ground_view.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_rank_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_rank_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/adapter_leaderboard_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/adapter_leaderboard_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/activity_my_joined_contest_list.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/activity_my_joined_contest_list.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/item_series_player.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/item_series_player.xml"
+    },
+    {
+        "merged": "com.team.fantasy.app-mergeDebugResources-70:/layout/fragment_home.xml",
+        "source": "com.team.fantasy.app-main-73:/layout/fragment_home.xml"
+    }
+]

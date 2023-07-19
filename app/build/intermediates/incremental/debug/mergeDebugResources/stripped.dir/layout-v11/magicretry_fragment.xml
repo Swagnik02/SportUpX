@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dots="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:clickable="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/magic_retry_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/retry_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/ripple_drawable"
+            android:padding="15dp"
+            android:src="@drawable/ic_refresh_black_36dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:drawableRight="@drawable/trusticon"
+                android:drawablePadding="@dimen/four"
+                android:gravity="center_vertical"
+                android:textColor="@color/cb_textColor"
+                android:textSize="@dimen/twelveScaled"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="@dimen/four"
+                android:drawablePadding="@dimen/four"
+                android:gravity="center_vertical"
+                android:text="Powered by"
+                android:textColor="@color/cb_textColor"
+                android:textSize="15sp"
+                android:textStyle="normal"
+
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginLeft="@dimen/four"
+                android:drawableLeft="@drawable/logo_payu"
+                android:drawablePadding="@dimen/four"
+                android:gravity="center"
+                android:textColor="@color/cb_textColor"
+                android:textSize="@dimen/twelveScaled"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/error_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/MR_Error_text"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/error_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/MR_Tap_retry_text"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <!-- Button
+            android:visibility="gone"
+            android:text="@string/b_cancel"
+            android:id="@+id/cancel"
+            android:layout_width="150dp"
+            android:layout_height="36dp"
+            android:background="@drawable/approve_otp_button"
+            style="@style/approve_otp"
+            android:textSize="12sp"
+            android:paddingRight="@dimen/eight"
+            android:paddingLeft="@dimen/eight"
+            android:textStyle="bold"/ -->
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/waiting_dots_parent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
+        <ProgressBar
+            android:id="@+id/magic_reload_progress"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

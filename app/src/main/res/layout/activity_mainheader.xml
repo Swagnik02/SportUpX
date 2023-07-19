@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<RelativeLayout android:layout_width="match_parent"
+    android:id="@+id/mainheader"
+    android:layout_height="55dp"
+   >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:theme="@style/MyDarkToolbarStyle"
+        />
+
+    <ImageView
+        android:id="@+id/im_back"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:src="@drawable/back_icon_fp"
+        app:tint="@color/black"
+        android:padding="10dp"
+        android:visibility="visible"
+        android:layout_centerVertical="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:visibility="visible"
+        android:textSize="18dp"
+        android:id="@+id/tv_HeaderName"
+        android:textColor="@color/black"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/im_back"
+        android:layout_marginLeft="15dp" />
+
+</RelativeLayout>
+</layout>

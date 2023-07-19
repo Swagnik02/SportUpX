@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0CAA7E</color>
+    <color name="colorPrimaryDark">#017D5C</color>
+    <color name="colorAccent">#0CAA7E</color>
+    <color name="background">#ECF2FF</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="orange">#ff5050</color>
+    <color name="green">#03C988</color>
+    <color name="tabtextselected">#0CAA7E</color>
+    <color name="tabtextselected2">#02b9aa</color>
+    <color name="tabtextunselectednew">#FF1784C7</color>
+    <color name="tabtextunselected">#626262</color>
+    <color name="sixtwo">#626262</color>
+    <color name="eightE">#8e8e8e</color>
+    <color name="myteamCaptain">#ff5050</color>
+    <color name="myteamVCaptain">#02bcae</color>
+    <color name="myteamdivider">#dbdbdb</color>
+    <color name="blue">#FF1784C7</color>
+    <color name="deep_blue">#1c3f95</color>
+    <color name="colorPink">#FF1D44</color>
+
+    <color name="team_header">#0CAA7E</color>
+
+
+    <color name="yellow_theme">#ECBD15</color>
+    <color name="textColor">#1d2441</color>
+
+
+    <color name="selected_icon">#1c2e46</color>
+    <color name="unselected_icon">#8e8e8e</color>
+
+    <color name="leaderboard_text">#1e1e1e</color>
+    
+    
+    <!--Sign In COlor-->
+    <color name="login_sign_up">#0CAA7E</color>
+    <!--<color name="btn_txt_color">#b01f40</color>-->
+    <color name="btn_txt_color">@color/colorPrimary</color>
+    <color name="rounded_corner_lgn">#FFF</color>
+    <color name="sign_in_btn">#0CAA7E</color>
+    <color name="lets_play">#000000</color>
+    <color name="tab_bck">#ffff</color>
+    <color name="header_start">#b01f40</color>
+    <color name="header_center">#DB5460</color>
+    <color name="header_end">#CE404D</color>
+    <color name="rouned_transprnt_border">#0CAA7E</color>
+    <color name="vs_back">#a31941</color>
+    <color name="hint">#8e8e8e</color>
+
+    <color name="pink_btn">#AD2E3A</color>
+    <color name="txt_color_dark_back">#fff</color>
+    <color name="bckicon">#fff</color>
+    <color name="header_color">#fff</color>
+    <color name="wallet">#fff</color>
+    <color name="bell_icon">#fff</color>
+    <color name="edit_pr_cl_vc">@color/colorPrimary</color>
+    <color name="select_team_count">#1e1e1e</color>
+    <color name="rank_txt">#1e1e1e</color>
+    <color name="rank_view_line">#dbdbdb</color>
+    <color name="cstm_tb_layout_color">@color/colorPrimary</color>
+    <color name="dark_rectangle">#ee4d5b</color>
+    <color name="dark_rect_stroke">#ee4d5b</color>
+    <color name="gview_item">@color/colorPrimary</color>
+    <color name="gview_item_stroke">@color/colorPrimary</color>
+    <color name="gv_item_2">#0a1020</color>
+    <color name="gv_item_2_stroke">#0a1020</color>
+    <color name="entry_fee">#1d2441</color>
+    <color name="join_clicked">@color/btn_txt_color</color>
+    <color name="join_clicked_stroke">@color/btn_txt_color</color>
+    <color name="wk_bat_ar_bows_create_team">@color/vs_back</color>
+    <color name="wk_ar_bt_bwl_txt">#ffffff</color>
+
+    <!--<color name="dark_rect_color_solid">@color/vs_back</color>-->
+    <color name="dark_rect_color_solid">@color/vs_back</color>
+
+    <color name="dark_rect_color_stroke">@color/vs_back</color>
+    <color name="rounded_grad_start">#ec6325</color>
+    <color name="rounded_grad_end">#a31941</color>
+    <color name="live_cont_detail_team_rank_back">#1d2441</color>
+    <!--<color name="leaberboard_dark_rect_solid">#1d2441</color>-->
+    <color name="leaberboard_dark_rect_solid">#1d2441</color>
+    <color name="leaderboard_dark_rect_stroke">#1d2441</color>
+
+    <color name="create_team_selected_color">@color/black</color>
+    <color name="create_team_unselected_color">@color/white</color>
+
+
+</resources>
+    <!--#021C1E-->
