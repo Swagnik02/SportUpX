@@ -75,6 +75,11 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
                 DatePickerDialog dialog = new DatePickerDialog(activity,
                         android.R.style.Theme_Holo_Light_Dialog_NoActionBar,
                         new mdateListner(), year, month, day);
+
+                // Set the maximum date to today's date minus 18 years
+                calendar.add(Calendar.YEAR, -18);
+                dialog.getDatePicker().setMaxDate(calendar.getTimeInMillis());
+
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(android.R.color.transparent)));
                 dialog.show();
             }

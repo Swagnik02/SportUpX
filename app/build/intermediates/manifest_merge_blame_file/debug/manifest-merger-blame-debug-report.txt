@@ -121,821 +121,820 @@
 60-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:32:9-48
 61        android:supportsRtl="true"
 61-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:33:9-35
-62        android:testOnly="true"
-63        android:theme="@style/AppTheme"
-63-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:34:9-40
-64        android:usesCleartextTraffic="true"
-64-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:35:9-44
-65        android:windowSoftInputMode="adjustPan" >
-65-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:27:9-48
-66        <uses-library
-66-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:39:9-41:40
-67            android:name="org.apache.http.legacy"
-67-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:40:13-50
-68            android:required="false" />
-68-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:41:13-37
-69
-70        <provider
-71            android:name="androidx.core.content.FileProvider"
-71-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:44:13-62
-72            android:authorities="com.team.fantasy.provider"
-72-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:45:13-60
-73            android:exported="false"
-73-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:46:13-37
-74            android:grantUriPermissions="true" >
-74-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:47:13-47
-75            <meta-data
-75-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:48:13-50:58
-76                android:name="android.support.FILE_PROVIDER_PATHS"
-76-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:49:17-67
-77                android:resource="@xml/provider_paths" />
-77-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:50:17-55
-78        </provider>
-79
-80        <activity
-80-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:53:9-62:20
-81            android:name="com.team.fantasy.activity.SplashScreen"
-81-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:54:13-50
-82            android:exported="true"
-82-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:55:13-36
-83            android:screenOrientation="portrait" >
-83-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:56:13-49
-84            <intent-filter>
-84-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:57:13-61:29
-85                <action android:name="android.intent.action.MAIN" />
-85-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:58:17-69
-85-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:58:25-66
-86
-87                <category android:name="android.intent.category.LAUNCHER" />
-87-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:60:17-77
-87-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:60:27-74
-88            </intent-filter>
-89        </activity>
-90        <activity
-90-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:63:9-65:52
-91            android:name="com.team.fantasy.activity.MainActivity"
-91-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:64:13-50
-92            android:screenOrientation="portrait" />
-92-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:65:13-49
-93        <activity
-93-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:66:9-68:52
-94            android:name="com.team.fantasy.activity.RegistrationActivity"
-94-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:67:13-58
-95            android:screenOrientation="portrait" />
-95-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:68:13-49
-96        <activity
-96-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:69:9-71:52
-97            android:name="com.team.fantasy.activity.HomeActivity"
-97-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:70:13-50
-98            android:screenOrientation="portrait" />
-98-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:71:13-49
-99        <activity
-99-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:72:9-74:52
-100            android:name="com.team.fantasy.activity.LoginActivity"
-100-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:73:13-51
-101            android:screenOrientation="portrait" />
-101-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:74:13-49
-102        <activity
-102-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:75:9-77:52
-103            android:name="com.team.fantasy.activity.VerifyOTPActivity"
-103-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:76:13-55
-104            android:screenOrientation="portrait" />
-104-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:77:13-49
-105
-106        <receiver
-106-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:79:9-85:20
-107            android:name="com.team.fantasy.utils.IncomingSms"
-107-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:80:13-46
-108            android:exported="true" >
-108-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:81:13-36
-109            <intent-filter>
-109-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:82:13-84:29
-110                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
-110-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:83:17-82
-110-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:83:25-79
-111            </intent-filter>
-112        </receiver>
-113
-114        <meta-data
-114-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:87:9-89:55
-115            android:name="com.facebook.sdk.ApplicationId"
-115-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:88:13-58
-116            android:value="@string/facebook_app_id" />
-116-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:89:13-52
-117
-118        <activity
-118-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:91:9-94:48
-119            android:name="com.facebook.FacebookActivity"
-119-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:92:13-57
-120            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-120-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:93:13-96
-121            android:label="@string/app_name"
-121-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:94:13-45
-122            android:theme="@style/com_facebook_activity_theme" />
-122-->[com.facebook.android:facebook-common:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ddb31ae0c999a8f515c9a4d28933ac87\transformed\jetified-facebook-common-4.37.0\AndroidManifest.xml:32:13-63
-123        <activity
-123-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:95:9-106:20
-124            android:name="com.facebook.CustomTabActivity"
-124-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:96:13-58
-125            android:exported="true" >
-125-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:97:13-36
-126            <intent-filter>
-126-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:98:13-105:29
-127                <action android:name="android.intent.action.VIEW" />
-127-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:17-69
-127-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:25-66
-128
-129                <category android:name="android.intent.category.DEFAULT" />
-129-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:17-76
-129-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:27-73
-130                <category android:name="android.intent.category.BROWSABLE" />
-130-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:17-78
-130-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:27-75
-131
-132                <data android:scheme="@string/fb_login_protocol_scheme" />
-132-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:17-75
-132-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:23-72
-133            </intent-filter>
-134        </activity>
-135        <activity
-135-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:107:9-109:52
-136            android:name="com.team.fantasy.activity.ForgotVerifyOTPActivity"
-136-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:108:13-61
-137            android:screenOrientation="portrait" />
-137-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:109:13-49
-138        <activity
-138-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:110:9-112:52
-139            android:name="com.team.fantasy.activity.NewPasswordActivity"
-139-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:111:13-57
-140            android:screenOrientation="portrait" />
-140-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:112:13-49
-141        <activity
-141-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:113:9-115:52
-142            android:name="com.team.fantasy.activity.ContestListActivity"
-142-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:114:13-57
-143            android:screenOrientation="portrait" />
-143-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:115:13-49
-144        <activity
-144-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:116:9-118:52
-145            android:name="com.team.fantasy.activity.CreateTeamActivity"
-145-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:117:13-56
-146            android:screenOrientation="portrait" />
-146-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:118:13-49
-147        <activity
-147-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:119:9-121:52
-148            android:name="com.team.fantasy.activity.ChooseCandVCActivity"
-148-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:120:13-58
-149            android:screenOrientation="portrait" />
-149-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:121:13-49
-150        <activity
-150-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:122:9-124:52
-151            android:name="com.team.fantasy.activity.MyTeamListActivity"
-151-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:123:13-56
-152            android:screenOrientation="portrait" />
-152-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:124:13-49
-153        <activity
-153-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:125:9-127:52
-154            android:name="com.team.fantasy.activity.JoinContestActivity"
-154-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:126:13-57
-155            android:screenOrientation="portrait" />
-155-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:127:13-49
-156        <activity
-156-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:128:9-130:52
-157            android:name="com.team.fantasy.activity.MyJoinedFixtureContestListActivity"
-157-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:129:13-72
-158            android:screenOrientation="portrait" />
-158-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:130:13-49
-159        <activity
-159-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:131:9-133:52
-160            android:name="com.team.fantasy.activity.MyFixtureContestDetailsActivity"
-160-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:132:13-69
-161            android:screenOrientation="portrait" />
-161-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:133:13-49
-162        <activity
-162-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:134:9-136:52
-163            android:name="com.team.fantasy.activity.MyJoinedLiveContestListActivity"
-163-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:135:13-69
-164            android:screenOrientation="portrait" />
-164-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:136:13-49
-165        <activity
-165-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:137:9-139:52
-166            android:name="com.team.fantasy.activity.MyJoinedResultContestListActivity"
-166-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:138:13-71
-167            android:screenOrientation="portrait" />
-167-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:139:13-49
-168        <activity android:name="com.team.fantasy.activity.MyResultContestDetailsActivity" />
-168-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:140:9-77
-168-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:140:19-74
-169        <activity android:name="com.team.fantasy.activity.MyLiveContestDetailsActivity" />
-169-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:141:9-75
-169-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:141:19-72
-170        <activity android:name="com.team.fantasy.activity.PaymentOptionActivity" />
-170-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:142:9-68
-170-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:142:19-65
-171        <activity android:name="com.team.fantasy.activity.MyAccountActivity" />
-171-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:143:9-64
-171-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:143:19-61
-172        <activity android:name="com.team.fantasy.activity.PaytmActivity" />
-172-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:144:9-60
-172-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:144:19-57
-173        <activity
-173-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:145:9-148:52
-174            android:name="com.paytm.pgsdk.PaytmPGActivity"
-174-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:146:13-59
-175            android:configChanges="keyboardHidden|orientation|keyboard"
-175-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:147:13-72
-176            android:screenOrientation="portrait" />
-176-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:148:13-49
-177        <activity
-177-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:149:9-151:52
-178            android:name="com.team.fantasy.activity.EditProfileActivity"
-178-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:150:13-57
-179            android:screenOrientation="portrait" />
-179-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:151:13-49
-180        <activity
-180-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:152:9-154:52
-181            android:name="com.team.fantasy.activity.AddCashActivity"
-181-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:153:13-53
-182            android:screenOrientation="portrait" />
-182-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:154:13-49
-183        <activity
-183-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:155:9-157:52
-184            android:name="com.team.fantasy.activity.MyTransactionActivity"
-184-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:156:13-59
-185            android:screenOrientation="portrait" />
-185-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:157:13-49
-186        <activity
-186-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:158:9-160:52
-187            android:name="com.team.fantasy.activity.NotificationActivity"
-187-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:159:13-58
-188            android:screenOrientation="portrait" />
-188-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:160:13-49
-189        <activity
-189-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:161:9-163:52
-190            android:name="com.team.fantasy.activity.InviteFriendsActivity"
-190-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:162:13-59
-191            android:screenOrientation="portrait" />
-191-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:163:13-49
-192        <activity android:name="com.team.fantasy.activity.InvitedFriendListActivity" />
-192-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:164:9-72
-192-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:164:19-69
-193        <activity
-193-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:165:9-167:52
-194            android:name="com.team.fantasy.activity.PaymentConfirmationActivity"
-194-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:166:13-65
-195            android:screenOrientation="portrait" />
-195-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:167:13-49
-196        <activity android:name="com.team.fantasy.activity.WebviewAcitivity" />
-196-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:168:9-63
-196-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:168:19-60
-197        <activity android:name="com.team.fantasy.activity.WithdrawAmountActivity" />
-197-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:169:9-69
-197-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:169:19-66
-198        <activity android:name="com.team.fantasy.activity.PayUMoneyPaymentActivity" />
-198-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:170:9-71
-198-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:170:19-68
-199        <activity
-199-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:171:9-173:52
-200            android:name="com.team.fantasy.activity.GlobalRankActivity"
-200-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:172:13-56
-201            android:screenOrientation="portrait" />
-201-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:173:13-49
-202        <activity
-202-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:174:9-176:39
-203            android:name="com.payu.custombrowser.PreLollipopPaymentsActivity"
-203-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:175:13-78
-204            android:exported="true" >
-204-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:176:13-36
-205            <intent-filter>
-205-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:28:13-35:29
-206                <data android:scheme="com.team.fantasy.success" />
-206-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:17-75
-206-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:23-72
-207
-208                <action android:name="android.intent.action.VIEW" />
-208-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:17-69
-208-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:25-66
-209
-210                <category android:name="android.intent.category.DEFAULT" />
-210-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:17-76
-210-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:27-73
-211                <category android:name="android.intent.category.BROWSABLE" />
-211-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:17-78
-211-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:27-75
-212            </intent-filter>
-213            <intent-filter>
-213-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:36:13-43:29
-214                <data android:scheme="com.team.fantasy.failure" />
-214-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:17-75
-214-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:23-72
-215
-216                <action android:name="android.intent.action.VIEW" />
-216-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:17-69
-216-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:25-66
-217
-218                <category android:name="android.intent.category.DEFAULT" />
-218-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:17-76
-218-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:27-73
-219                <category android:name="android.intent.category.BROWSABLE" />
-219-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:17-78
-219-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:27-75
-220            </intent-filter>
-221        </activity>
-222
-223        <service
-223-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:178:9-185:19
-224            android:name="com.team.fantasy.FirebaseMessagingService"
-224-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:179:13-53
-225            android:enabled="true"
-225-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:180:13-35
-226            android:exported="true" >
-226-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:181:13-36
-227            <intent-filter>
-227-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:182:13-184:29
-228                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-228-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:183:17-78
-228-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:183:25-75
-229            </intent-filter>
-230        </service>
-231        <service
-231-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:186:9-193:19
-232            android:name="com.team.fantasy.FirebaseInstanceIDService"
-232-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:187:13-54
-233            android:enabled="true"
-233-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:188:13-35
-234            android:exported="true" >
-234-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:189:13-36
-235            <intent-filter>
-235-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:190:13-192:29
-236                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-236-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:191:17-80
-236-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:191:25-77
-237            </intent-filter>
-238        </service>
-239
-240        <activity
-240-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:195:9-197:52
-241            android:name="com.team.fantasy.activity.UploadKYCActivity"
-241-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:196:13-55
-242            android:screenOrientation="portrait" />
-242-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:197:13-49
-243        <activity
-243-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:198:9-200:52
-244            android:name="com.team.fantasy.activity.CreateContestActivity"
-244-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:199:13-59
-245            android:screenOrientation="portrait" />
-245-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:200:13-49
-246        <activity
-246-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:201:9-203:52
-247            android:name="com.team.fantasy.activity.SelectPrizeCreateActivity"
-247-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:202:13-63
-248            android:screenOrientation="portrait" />
-248-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:203:13-49
-249        <activity
-249-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:204:9-206:52
-250            android:name="com.team.fantasy.activity.EnterInviteCodeContestActivity"
-250-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:205:13-68
-251            android:screenOrientation="portrait" />
-251-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:206:13-49
-252        <activity
-252-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:207:9-209:52
-253            android:name="com.team.fantasy.activity.InviteInContestActivity"
-253-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:208:13-61
-254            android:screenOrientation="portrait" />
-254-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:209:13-49
-255        <activity
-255-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:210:9-212:52
-256            android:name="com.team.fantasy.activity.TrakNPayActivity"
-256-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:211:13-54
-257            android:screenOrientation="portrait" />
-257-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:212:13-49
-258        <activity
-258-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:213:9-215:52
-259            android:name="com.team.fantasy.activity.CashfreeActivity"
-259-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:214:13-54
-260            android:screenOrientation="portrait" />
-260-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:215:13-49
-261        <activity
-261-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:19:9-24:55
-262            android:name="com.payumoney.sdkui.ui.activities.PayUmoneyActivity"
-262-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:20:13-79
-263            android:label="@string/title_activity_citrus"
-263-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:21:13-58
-264            android:screenOrientation="portrait"
-264-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:22:13-49
-265            android:theme="@style/PayumoneyAppTheme"
-265-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:23:13-53
-266            android:windowSoftInputMode="adjustPan" />
-266-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:24:13-52
-267        <activity
-267-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:25:9-28:56
-268            android:name="com.payumoney.sdkui.ui.activities.ReviewOrderActivity"
-268-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:26:13-81
-269            android:screenOrientation="portrait"
-269-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:27:13-49
-270            android:theme="@style/PayumoneyAppTheme" />
-270-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:28:13-53
-271        <activity
-271-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:28:9-31:72
-272            android:name="com.payumoney.core.SdkWebViewActivityNew"
-272-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:29:13-68
-273            android:screenOrientation="portrait"
-273-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:30:13-49
-274            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-274-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:31:13-69
-275        <activity
-275-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:32:9-37:59
-276            android:name="com.payu.custombrowser.CBActivity"
-276-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:33:13-61
-277            android:screenOrientation="portrait"
-277-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:34:13-49
-278            android:theme="@style/Theme.AppCompat"
-278-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:35:13-51
-279            android:windowSoftInputMode="stateAlwaysHidden" />
-279-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:36:13-60
-280        <activity android:name="com.facebook.CustomTabMainActivity" />
-280-->[com.facebook.android:facebook-common:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ddb31ae0c999a8f515c9a4d28933ac87\transformed\jetified-facebook-common-4.37.0\AndroidManifest.xml:33:9-71
-280-->[com.facebook.android:facebook-common:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ddb31ae0c999a8f515c9a4d28933ac87\transformed\jetified-facebook-common-4.37.0\AndroidManifest.xml:33:19-68
-281
-282        <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" />
-282-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:8:9-100
-282-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:8:19-97
-283
-284        <service android:name="com.google.android.gms.cast.framework.media.MediaNotificationService" />
-284-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:10:9-104
-284-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:10:18-101
-285        <service android:name="com.google.android.gms.cast.framework.ReconnectionService" />
-285-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:11:9-93
-285-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:11:18-90
-286        <service android:name="com.payu.custombrowser.services.SnoozeService" />
-286-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:22:9-81
-286-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:22:18-78
-287
-288        <activity
-288-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:24:9-26:56
-289            android:name="com.payu.custombrowser.upiintent.PaymentResponseActivity"
-289-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:25:13-84
-290            android:theme="@style/Theme.Transparent" />
-290-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:26:13-53
-291        <activity android:name="com.payu.custombrowser.PrePaymentsActivity" />
-291-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:45:9-79
-291-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:45:19-76
-292        <activity android:name="com.payu.magicretry.MainActivity" >
-292-->[com.payu.magicretry:magicretry:1.0.6] C:\Users\swagn\.gradle\caches\transforms-3\a2ab885adc4294c549471364d081a39f\transformed\jetified-magicretry-1.0.6\AndroidManifest.xml:12:9-21:20
-292-->[com.payu.magicretry:magicretry:1.0.6] C:\Users\swagn\.gradle\caches\transforms-3\a2ab885adc4294c549471364d081a39f\transformed\jetified-magicretry-1.0.6\AndroidManifest.xml:12:19-66
-293
-294            <!--
-295            intent-filter>
-296                <action android:name="android.intent.action.MAIN" />
-297
-298                <category android:name="android.intent.category.LAUNCHER" />
-299            </intent-filter
-300            -->
-301        </activity>
-302        <activity
-302-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:23:9-27:75
-303            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-303-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:24:13-93
-304            android:excludeFromRecents="true"
-304-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:25:13-46
-305            android:exported="false"
-305-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:26:13-37
-306            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-306-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:27:13-72
-307        <!--
-308            Service handling Google Sign-In user revocation. For apps that do not integrate with
-309            Google Sign-In, this service will never be started.
-310        -->
-311        <service
-311-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:33:9-36:110
-312            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-312-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:34:13-89
-313            android:exported="true"
-313-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:35:13-36
-314            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-314-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:36:13-107
-315        <service
-315-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:27:9-30:40
-316            android:name="com.google.android.gms.tagmanager.TagManagerService"
-316-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:28:13-79
-317            android:enabled="true"
-317-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:29:13-35
-318            android:exported="false" />
-318-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:30:13-37
-319
-320        <activity
-320-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:32:9-44:20
-321            android:name="com.google.android.gms.tagmanager.TagManagerPreviewActivity"
-321-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:33:13-87
-322            android:exported="true"
-322-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:34:13-36
-323            android:noHistory="true" > <!-- optional, removes the previewActivity from the activity stack. -->
-323-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:35:13-37
-324            <intent-filter>
-324-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:36:13-43:29
-325                <data android:scheme="tagmanager.c.com.team.fantasy" />
-325-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:17-75
-325-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:23-72
-326
-327                <action android:name="android.intent.action.VIEW" />
-327-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:17-69
-327-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:25-66
-328
-329                <category android:name="android.intent.category.DEFAULT" />
-329-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:17-76
-329-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:27-73
-330                <category android:name="android.intent.category.BROWSABLE" />
-330-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:17-78
-330-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:27-75
-331            </intent-filter>
-332        </activity>
-333
-334        <receiver
-334-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:28:9-32:20
-335            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-335-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:29:13-85
-336            android:enabled="true"
-336-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:30:13-35
-337            android:exported="false" >
-337-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:31:13-37
-338        </receiver>
-339        <receiver
-339-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:33:9-41:20
-340            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-340-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:34:13-100
-341            android:enabled="true"
-341-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:35:13-35
-342            android:exported="true"
-342-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:36:13-36
-343            android:permission="android.permission.INSTALL_PACKAGES" >
-343-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:37:13-69
-344            <intent-filter>
-344-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:38:13-40:29
-345                <action android:name="com.android.vending.INSTALL_REFERRER" />
-345-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:39:17-79
-345-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:39:25-76
-346            </intent-filter>
-347        </receiver>
-348
-349        <service
-349-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:43:9-46:40
-350            android:name="com.google.android.gms.measurement.AppMeasurementService"
-350-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:44:13-84
-351            android:enabled="true"
-351-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:45:13-35
-352            android:exported="false" />
-352-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:46:13-37
-353        <service
-353-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:47:9-51:72
-354            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-354-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:48:13-87
-355            android:enabled="true"
-355-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:49:13-35
-356            android:exported="false"
-356-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:50:13-37
-357            android:permission="android.permission.BIND_JOB_SERVICE" />
-357-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:51:13-69
-358
-359        <receiver
-359-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:30:9-34:20
-360            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
-360-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:31:13-78
-361            android:enabled="true"
-361-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:32:13-35
-362            android:exported="false" >
-362-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:33:13-37
-363        </receiver>
-364
-365        <service
-365-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:36:9-39:40
-366            android:name="com.google.android.gms.analytics.AnalyticsService"
-366-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:37:13-77
-367            android:enabled="true"
-367-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:38:13-35
-368            android:exported="false" />
-368-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:39:13-37
-369        <service
-369-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:40:9-44:72
-370            android:name="com.google.android.gms.analytics.AnalyticsJobService"
-370-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:41:13-80
-371            android:enabled="true"
-371-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:42:13-35
-372            android:exported="false"
-372-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:43:13-37
-373            android:permission="android.permission.BIND_JOB_SERVICE" />
-373-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:44:13-69
-374
-375        <activity
-375-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:25:9-34:20
-376            android:name="com.google.android.gms.appinvite.PreviewActivity"
-376-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:26:13-76
-377            android:exported="true"
-377-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:27:13-36
-378            android:theme="@style/Theme.AppInvite.Preview" >
-378-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:28:13-59
-379            <intent-filter>
-379-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:29:13-33:29
-380                <action android:name="com.google.android.gms.appinvite.ACTION_PREVIEW" />
-380-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:30:17-90
-380-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:30:25-87
-381
-382                <category android:name="android.intent.category.DEFAULT" />
-382-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:17-76
-382-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:27-73
-383            </intent-filter>
-384        </activity>
-385        <activity
-385-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:23:9-29:75
-386            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-386-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:24:13-85
-387            android:excludeFromRecents="true"
-387-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:25:13-46
-388            android:exported="true"
-388-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:26:13-36
-389            android:launchMode="singleInstance"
-389-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:27:13-48
-390            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-390-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:28:13-102
-391            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-391-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:29:13-72
-392        <activity
-392-->[com.google.android.gms:play-services-base:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\9d1a1d788cf50920e4be26db5527659d\transformed\jetified-play-services-base-12.0.1\AndroidManifest.xml:23:9-26:75
-393            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-393-->[com.google.android.gms:play-services-base:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\9d1a1d788cf50920e4be26db5527659d\transformed\jetified-play-services-base-12.0.1\AndroidManifest.xml:24:13-79
-394            android:exported="false"
-394-->[com.google.android.gms:play-services-base:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\9d1a1d788cf50920e4be26db5527659d\transformed\jetified-play-services-base-12.0.1\AndroidManifest.xml:25:13-37
-395            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-395-->[com.google.android.gms:play-services-base:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\9d1a1d788cf50920e4be26db5527659d\transformed\jetified-play-services-base-12.0.1\AndroidManifest.xml:26:13-72
-396        <!--
-397             FirebaseMessagingService performs security checks at runtime,
-398             no need for explicit permissions despite exported="true"
-399        -->
-400        <service
-400-->[com.google.firebase:firebase-messaging:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\80efb5d4f80f20f7bfabfed41b2d090c\transformed\jetified-firebase-messaging-12.0.1\AndroidManifest.xml:28:9-34:19
-401            android:name="com.google.firebase.messaging.FirebaseMessagingService"
-401-->[com.google.firebase:firebase-messaging:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\80efb5d4f80f20f7bfabfed41b2d090c\transformed\jetified-firebase-messaging-12.0.1\AndroidManifest.xml:29:13-82
-402            android:exported="true" >
-402-->[com.google.firebase:firebase-messaging:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\80efb5d4f80f20f7bfabfed41b2d090c\transformed\jetified-firebase-messaging-12.0.1\AndroidManifest.xml:30:13-36
-403            <intent-filter android:priority="-500" >
-403-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:182:13-184:29
-404                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-404-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:183:17-78
-404-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:183:25-75
-405            </intent-filter>
-406        </service>
-407
-408        <receiver
-408-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:35:9-44:20
-409            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-409-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:36:13-78
-410            android:exported="true"
-410-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:37:13-36
-411            android:permission="com.google.android.c2dm.permission.SEND" >
-411-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:38:13-73
-412            <intent-filter>
-412-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:39:13-43:29
-413                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-413-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:40:17-81
-413-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:40:25-78
-414
-415                <category android:name="com.team.fantasy" />
-415-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:42:17-61
-415-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:42:27-58
-416            </intent-filter>
-417        </receiver>
-418        <!--
-419             FirebaseInstanceIdService performs security checks at runtime,
-420             no need for explicit permissions despite exported="true"
-421        -->
-422        <service
-422-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:50:9-56:19
-423            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
-423-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:51:13-77
-424            android:exported="true" >
-424-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:52:13-36
-425            <intent-filter android:priority="-500" >
-425-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:190:13-192:29
-426                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-426-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:191:17-80
-426-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:191:25-77
-427            </intent-filter>
-428        </service>
-429
-430        <provider
-430-->[com.google.firebase:firebase-common:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\8ab56be1786e0258306880a34b12c4aa\transformed\jetified-firebase-common-12.0.1\AndroidManifest.xml:8:9-12:39
-431            android:name="com.google.firebase.provider.FirebaseInitProvider"
-431-->[com.google.firebase:firebase-common:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\8ab56be1786e0258306880a34b12c4aa\transformed\jetified-firebase-common-12.0.1\AndroidManifest.xml:9:13-77
-432            android:authorities="com.team.fantasy.firebaseinitprovider"
-432-->[com.google.firebase:firebase-common:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\8ab56be1786e0258306880a34b12c4aa\transformed\jetified-firebase-common-12.0.1\AndroidManifest.xml:10:13-72
-433            android:exported="false"
-433-->[com.google.firebase:firebase-common:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\8ab56be1786e0258306880a34b12c4aa\transformed\jetified-firebase-common-12.0.1\AndroidManifest.xml:11:13-37
-434            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
-434-->[com.google.firebase:firebase-common:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\8ab56be1786e0258306880a34b12c4aa\transformed\jetified-firebase-common-12.0.1\AndroidManifest.xml:12:13-36
-435        <activity
-435-->[com.google.android.gms:play-services-ads-lite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\42645779067567f9a765579da18d39f6\transformed\jetified-play-services-ads-lite-12.0.1\AndroidManifest.xml:29:9-33:64
-436            android:name="com.google.android.gms.ads.AdActivity"
-436-->[com.google.android.gms:play-services-ads-lite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\42645779067567f9a765579da18d39f6\transformed\jetified-play-services-ads-lite-12.0.1\AndroidManifest.xml:30:13-65
-437            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-437-->[com.google.android.gms:play-services-ads-lite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\42645779067567f9a765579da18d39f6\transformed\jetified-play-services-ads-lite-12.0.1\AndroidManifest.xml:31:13-122
-438            android:exported="false"
-438-->[com.google.android.gms:play-services-ads-lite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\42645779067567f9a765579da18d39f6\transformed\jetified-play-services-ads-lite-12.0.1\AndroidManifest.xml:32:13-37
-439            android:theme="@android:style/Theme.Translucent" />
-439-->[com.google.android.gms:play-services-ads-lite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\42645779067567f9a765579da18d39f6\transformed\jetified-play-services-ads-lite-12.0.1\AndroidManifest.xml:33:13-61
-440
-441        <meta-data
-441-->[com.google.android.gms:play-services-basement:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\bb0aa1157cbb1072ad8b8ab7de240ae3\transformed\jetified-play-services-basement-12.0.1\AndroidManifest.xml:23:9-25:69
-442            android:name="com.google.android.gms.version"
-442-->[com.google.android.gms:play-services-basement:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\bb0aa1157cbb1072ad8b8ab7de240ae3\transformed\jetified-play-services-basement-12.0.1\AndroidManifest.xml:24:13-58
-443            android:value="@integer/google_play_services_version" />
-443-->[com.google.android.gms:play-services-basement:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\bb0aa1157cbb1072ad8b8ab7de240ae3\transformed\jetified-play-services-basement-12.0.1\AndroidManifest.xml:25:13-66
-444
-445        <activity android:name="com.test.pg.secure.pgsdkv4.PaymentActivity" />
-445-->[:PGSDKVR4] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\PGSDKVR4\build\.transforms\aa370bfbbf19aa884099e54709b1a3a1\transformed\jetified-PGSDKVR4\AndroidManifest.xml:18:9-79
-445-->[:PGSDKVR4] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\PGSDKVR4\build\.transforms\aa370bfbbf19aa884099e54709b1a3a1\transformed\jetified-PGSDKVR4\AndroidManifest.xml:18:19-76
-446
-447        <service
-447-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:14:9-16:40
-448            android:name="com.paytm.pgsdk.IntentServicePostNotification"
-448-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:15:13-73
-449            android:exported="false" />
-449-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:16:13-37
-450        <service
-450-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:17:9-19:40
-451            android:name="com.paytm.pgsdk.IntentServicePreNotification"
-451-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:18:13-72
-452            android:exported="false" />
-452-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:19:13-37
-453
-454        <activity
-454-->[:cashfreeSDK] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\AndroidManifest.xml:18:9-20:72
-455            android:name="com.gocashfree.cashfreesdk.CFPaymentActivity"
-455-->[:cashfreeSDK] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\AndroidManifest.xml:19:13-72
-456            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-456-->[:cashfreeSDK] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\AndroidManifest.xml:20:13-69
-457        <activity android:name="com.gocashfree.cashfreesdk.CFUPIPaymentActivity" />
-457-->[:cashfreeSDK] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\AndroidManifest.xml:21:9-84
-457-->[:cashfreeSDK] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\AndroidManifest.xml:21:19-81
-458
-459        <provider
-459-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-460            android:name="androidx.startup.InitializationProvider"
-460-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-461            android:authorities="com.team.fantasy.androidx-startup"
-461-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-462            android:exported="false" >
-462-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-463            <meta-data
-463-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-464                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-464-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-465                android:value="androidx.startup" />
-465-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-466            <meta-data
-466-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\swagn\.gradle\caches\transforms-3\aed9aab14f1634dae19db29bd6424562\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-467                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-467-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\swagn\.gradle\caches\transforms-3\aed9aab14f1634dae19db29bd6424562\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-468                android:value="androidx.startup" />
-468-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\swagn\.gradle\caches\transforms-3\aed9aab14f1634dae19db29bd6424562\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-469        </provider>
-470        <provider
-470-->[com.facebook.android:facebook-marketing:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\a11c187a086b19afb54c24ed2445a391\transformed\jetified-facebook-marketing-4.37.0\AndroidManifest.xml:29:9-32:40
-471            android:name="com.facebook.marketing.internal.MarketingInitProvider"
-471-->[com.facebook.android:facebook-marketing:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\a11c187a086b19afb54c24ed2445a391\transformed\jetified-facebook-marketing-4.37.0\AndroidManifest.xml:30:13-81
-472            android:authorities="com.team.fantasy.MarketingInitProvider"
-472-->[com.facebook.android:facebook-marketing:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\a11c187a086b19afb54c24ed2445a391\transformed\jetified-facebook-marketing-4.37.0\AndroidManifest.xml:31:13-73
-473            android:exported="false" />
-473-->[com.facebook.android:facebook-marketing:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\a11c187a086b19afb54c24ed2445a391\transformed\jetified-facebook-marketing-4.37.0\AndroidManifest.xml:32:13-37
-474        <!--
-475         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
-476         with the application context. This config is merged in with the host app's manifest,
-477         but there can only be one provider with the same authority activated at any given
-478         point; so if the end user has two or more different apps that use Facebook SDK, only the
-479         first one will be able to use the provider. To work around this problem, we use the
-480         following placeholder in the authority to identify each host application as if it was
-481         a completely different provider.
-482        -->
-483        <provider
-483-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:39:9-42:40
-484            android:name="com.facebook.internal.FacebookInitProvider"
-484-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:40:13-70
-485            android:authorities="com.team.fantasy.FacebookInitProvider"
-485-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:41:13-72
-486            android:exported="false" />
-486-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:42:13-37
-487
-488        <receiver
-488-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:44:9-50:20
-489            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
-489-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:45:13-86
-490            android:exported="false" >
-490-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:46:13-37
-491            <intent-filter>
-491-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:47:13-49:29
-492                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
-492-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:48:17-95
-492-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:48:25-92
-493            </intent-filter>
-494        </receiver>
-495    </application>
-496
-497</manifest>
+62        android:theme="@style/AppTheme"
+62-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:34:9-40
+63        android:usesCleartextTraffic="true"
+63-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:35:9-44
+64        android:windowSoftInputMode="adjustPan" >
+64-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:27:9-48
+65        <uses-library
+65-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:39:9-41:40
+66            android:name="org.apache.http.legacy"
+66-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:40:13-50
+67            android:required="false" />
+67-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:41:13-37
+68
+69        <provider
+70            android:name="androidx.core.content.FileProvider"
+70-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:44:13-62
+71            android:authorities="com.team.fantasy.provider"
+71-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:45:13-60
+72            android:exported="false"
+72-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:46:13-37
+73            android:grantUriPermissions="true" >
+73-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:47:13-47
+74            <meta-data
+74-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:48:13-50:58
+75                android:name="android.support.FILE_PROVIDER_PATHS"
+75-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:49:17-67
+76                android:resource="@xml/provider_paths" />
+76-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:50:17-55
+77        </provider>
+78
+79        <activity
+79-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:53:9-62:20
+80            android:name="com.team.fantasy.activity.SplashScreen"
+80-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:54:13-50
+81            android:exported="true"
+81-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:55:13-36
+82            android:screenOrientation="portrait" >
+82-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:56:13-49
+83            <intent-filter>
+83-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:57:13-61:29
+84                <action android:name="android.intent.action.MAIN" />
+84-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:58:17-69
+84-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:58:25-66
+85
+86                <category android:name="android.intent.category.LAUNCHER" />
+86-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:60:17-77
+86-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:60:27-74
+87            </intent-filter>
+88        </activity>
+89        <activity
+89-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:63:9-65:52
+90            android:name="com.team.fantasy.activity.MainActivity"
+90-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:64:13-50
+91            android:screenOrientation="portrait" />
+91-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:65:13-49
+92        <activity
+92-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:66:9-68:52
+93            android:name="com.team.fantasy.activity.RegistrationActivity"
+93-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:67:13-58
+94            android:screenOrientation="portrait" />
+94-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:68:13-49
+95        <activity
+95-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:69:9-71:52
+96            android:name="com.team.fantasy.activity.HomeActivity"
+96-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:70:13-50
+97            android:screenOrientation="portrait" />
+97-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:71:13-49
+98        <activity
+98-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:72:9-74:52
+99            android:name="com.team.fantasy.activity.LoginActivity"
+99-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:73:13-51
+100            android:screenOrientation="portrait" />
+100-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:74:13-49
+101        <activity
+101-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:75:9-77:52
+102            android:name="com.team.fantasy.activity.VerifyOTPActivity"
+102-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:76:13-55
+103            android:screenOrientation="portrait" />
+103-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:77:13-49
+104
+105        <receiver
+105-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:79:9-85:20
+106            android:name="com.team.fantasy.utils.IncomingSms"
+106-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:80:13-46
+107            android:exported="true" >
+107-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:81:13-36
+108            <intent-filter>
+108-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:82:13-84:29
+109                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+109-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:83:17-82
+109-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:83:25-79
+110            </intent-filter>
+111        </receiver>
+112
+113        <meta-data
+113-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:87:9-89:55
+114            android:name="com.facebook.sdk.ApplicationId"
+114-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:88:13-58
+115            android:value="@string/facebook_app_id" />
+115-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:89:13-52
+116
+117        <activity
+117-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:91:9-94:48
+118            android:name="com.facebook.FacebookActivity"
+118-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:92:13-57
+119            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+119-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:93:13-96
+120            android:label="@string/app_name"
+120-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:94:13-45
+121            android:theme="@style/com_facebook_activity_theme" />
+121-->[com.facebook.android:facebook-common:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ddb31ae0c999a8f515c9a4d28933ac87\transformed\jetified-facebook-common-4.37.0\AndroidManifest.xml:32:13-63
+122        <activity
+122-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:95:9-106:20
+123            android:name="com.facebook.CustomTabActivity"
+123-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:96:13-58
+124            android:exported="true" >
+124-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:97:13-36
+125            <intent-filter>
+125-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:98:13-105:29
+126                <action android:name="android.intent.action.VIEW" />
+126-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:17-69
+126-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:25-66
+127
+128                <category android:name="android.intent.category.DEFAULT" />
+128-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:17-76
+128-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:27-73
+129                <category android:name="android.intent.category.BROWSABLE" />
+129-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:17-78
+129-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:27-75
+130
+131                <data android:scheme="@string/fb_login_protocol_scheme" />
+131-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:17-75
+131-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:23-72
+132            </intent-filter>
+133        </activity>
+134        <activity
+134-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:107:9-109:52
+135            android:name="com.team.fantasy.activity.ForgotVerifyOTPActivity"
+135-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:108:13-61
+136            android:screenOrientation="portrait" />
+136-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:109:13-49
+137        <activity
+137-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:110:9-112:52
+138            android:name="com.team.fantasy.activity.NewPasswordActivity"
+138-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:111:13-57
+139            android:screenOrientation="portrait" />
+139-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:112:13-49
+140        <activity
+140-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:113:9-115:52
+141            android:name="com.team.fantasy.activity.ContestListActivity"
+141-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:114:13-57
+142            android:screenOrientation="portrait" />
+142-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:115:13-49
+143        <activity
+143-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:116:9-118:52
+144            android:name="com.team.fantasy.activity.CreateTeamActivity"
+144-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:117:13-56
+145            android:screenOrientation="portrait" />
+145-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:118:13-49
+146        <activity
+146-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:119:9-121:52
+147            android:name="com.team.fantasy.activity.ChooseCandVCActivity"
+147-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:120:13-58
+148            android:screenOrientation="portrait" />
+148-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:121:13-49
+149        <activity
+149-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:122:9-124:52
+150            android:name="com.team.fantasy.activity.MyTeamListActivity"
+150-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:123:13-56
+151            android:screenOrientation="portrait" />
+151-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:124:13-49
+152        <activity
+152-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:125:9-127:52
+153            android:name="com.team.fantasy.activity.JoinContestActivity"
+153-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:126:13-57
+154            android:screenOrientation="portrait" />
+154-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:127:13-49
+155        <activity
+155-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:128:9-130:52
+156            android:name="com.team.fantasy.activity.MyJoinedFixtureContestListActivity"
+156-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:129:13-72
+157            android:screenOrientation="portrait" />
+157-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:130:13-49
+158        <activity
+158-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:131:9-133:52
+159            android:name="com.team.fantasy.activity.MyFixtureContestDetailsActivity"
+159-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:132:13-69
+160            android:screenOrientation="portrait" />
+160-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:133:13-49
+161        <activity
+161-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:134:9-136:52
+162            android:name="com.team.fantasy.activity.MyJoinedLiveContestListActivity"
+162-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:135:13-69
+163            android:screenOrientation="portrait" />
+163-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:136:13-49
+164        <activity
+164-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:137:9-139:52
+165            android:name="com.team.fantasy.activity.MyJoinedResultContestListActivity"
+165-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:138:13-71
+166            android:screenOrientation="portrait" />
+166-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:139:13-49
+167        <activity android:name="com.team.fantasy.activity.MyResultContestDetailsActivity" />
+167-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:140:9-77
+167-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:140:19-74
+168        <activity android:name="com.team.fantasy.activity.MyLiveContestDetailsActivity" />
+168-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:141:9-75
+168-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:141:19-72
+169        <activity android:name="com.team.fantasy.activity.PaymentOptionActivity" />
+169-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:142:9-68
+169-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:142:19-65
+170        <activity android:name="com.team.fantasy.activity.MyAccountActivity" />
+170-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:143:9-64
+170-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:143:19-61
+171        <activity android:name="com.team.fantasy.activity.PaytmActivity" />
+171-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:144:9-60
+171-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:144:19-57
+172        <activity
+172-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:145:9-148:52
+173            android:name="com.paytm.pgsdk.PaytmPGActivity"
+173-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:146:13-59
+174            android:configChanges="keyboardHidden|orientation|keyboard"
+174-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:147:13-72
+175            android:screenOrientation="portrait" />
+175-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:148:13-49
+176        <activity
+176-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:149:9-151:52
+177            android:name="com.team.fantasy.activity.EditProfileActivity"
+177-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:150:13-57
+178            android:screenOrientation="portrait" />
+178-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:151:13-49
+179        <activity
+179-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:152:9-154:52
+180            android:name="com.team.fantasy.activity.AddCashActivity"
+180-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:153:13-53
+181            android:screenOrientation="portrait" />
+181-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:154:13-49
+182        <activity
+182-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:155:9-157:52
+183            android:name="com.team.fantasy.activity.MyTransactionActivity"
+183-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:156:13-59
+184            android:screenOrientation="portrait" />
+184-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:157:13-49
+185        <activity
+185-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:158:9-160:52
+186            android:name="com.team.fantasy.activity.NotificationActivity"
+186-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:159:13-58
+187            android:screenOrientation="portrait" />
+187-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:160:13-49
+188        <activity
+188-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:161:9-163:52
+189            android:name="com.team.fantasy.activity.InviteFriendsActivity"
+189-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:162:13-59
+190            android:screenOrientation="portrait" />
+190-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:163:13-49
+191        <activity android:name="com.team.fantasy.activity.InvitedFriendListActivity" />
+191-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:164:9-72
+191-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:164:19-69
+192        <activity
+192-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:165:9-167:52
+193            android:name="com.team.fantasy.activity.PaymentConfirmationActivity"
+193-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:166:13-65
+194            android:screenOrientation="portrait" />
+194-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:167:13-49
+195        <activity android:name="com.team.fantasy.activity.WebviewAcitivity" />
+195-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:168:9-63
+195-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:168:19-60
+196        <activity android:name="com.team.fantasy.activity.WithdrawAmountActivity" />
+196-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:169:9-69
+196-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:169:19-66
+197        <activity android:name="com.team.fantasy.activity.PayUMoneyPaymentActivity" />
+197-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:170:9-71
+197-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:170:19-68
+198        <activity
+198-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:171:9-173:52
+199            android:name="com.team.fantasy.activity.GlobalRankActivity"
+199-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:172:13-56
+200            android:screenOrientation="portrait" />
+200-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:173:13-49
+201        <activity
+201-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:174:9-176:39
+202            android:name="com.payu.custombrowser.PreLollipopPaymentsActivity"
+202-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:175:13-78
+203            android:exported="true" >
+203-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:176:13-36
+204            <intent-filter>
+204-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:28:13-35:29
+205                <data android:scheme="com.team.fantasy.success" />
+205-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:17-75
+205-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:23-72
+206
+207                <action android:name="android.intent.action.VIEW" />
+207-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:17-69
+207-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:25-66
+208
+209                <category android:name="android.intent.category.DEFAULT" />
+209-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:17-76
+209-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:27-73
+210                <category android:name="android.intent.category.BROWSABLE" />
+210-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:17-78
+210-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:27-75
+211            </intent-filter>
+212            <intent-filter>
+212-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:36:13-43:29
+213                <data android:scheme="com.team.fantasy.failure" />
+213-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:17-75
+213-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:23-72
+214
+215                <action android:name="android.intent.action.VIEW" />
+215-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:17-69
+215-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:25-66
+216
+217                <category android:name="android.intent.category.DEFAULT" />
+217-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:17-76
+217-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:27-73
+218                <category android:name="android.intent.category.BROWSABLE" />
+218-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:17-78
+218-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:27-75
+219            </intent-filter>
+220        </activity>
+221
+222        <service
+222-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:178:9-185:19
+223            android:name="com.team.fantasy.FirebaseMessagingService"
+223-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:179:13-53
+224            android:enabled="true"
+224-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:180:13-35
+225            android:exported="true" >
+225-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:181:13-36
+226            <intent-filter>
+226-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:182:13-184:29
+227                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+227-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:183:17-78
+227-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:183:25-75
+228            </intent-filter>
+229        </service>
+230        <service
+230-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:186:9-193:19
+231            android:name="com.team.fantasy.FirebaseInstanceIDService"
+231-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:187:13-54
+232            android:enabled="true"
+232-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:188:13-35
+233            android:exported="true" >
+233-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:189:13-36
+234            <intent-filter>
+234-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:190:13-192:29
+235                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+235-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:191:17-80
+235-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:191:25-77
+236            </intent-filter>
+237        </service>
+238
+239        <activity
+239-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:195:9-197:52
+240            android:name="com.team.fantasy.activity.UploadKYCActivity"
+240-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:196:13-55
+241            android:screenOrientation="portrait" />
+241-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:197:13-49
+242        <activity
+242-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:198:9-200:52
+243            android:name="com.team.fantasy.activity.CreateContestActivity"
+243-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:199:13-59
+244            android:screenOrientation="portrait" />
+244-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:200:13-49
+245        <activity
+245-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:201:9-203:52
+246            android:name="com.team.fantasy.activity.SelectPrizeCreateActivity"
+246-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:202:13-63
+247            android:screenOrientation="portrait" />
+247-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:203:13-49
+248        <activity
+248-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:204:9-206:52
+249            android:name="com.team.fantasy.activity.EnterInviteCodeContestActivity"
+249-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:205:13-68
+250            android:screenOrientation="portrait" />
+250-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:206:13-49
+251        <activity
+251-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:207:9-209:52
+252            android:name="com.team.fantasy.activity.InviteInContestActivity"
+252-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:208:13-61
+253            android:screenOrientation="portrait" />
+253-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:209:13-49
+254        <activity
+254-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:210:9-212:52
+255            android:name="com.team.fantasy.activity.TrakNPayActivity"
+255-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:211:13-54
+256            android:screenOrientation="portrait" />
+256-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:212:13-49
+257        <activity
+257-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:213:9-215:52
+258            android:name="com.team.fantasy.activity.CashfreeActivity"
+258-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:214:13-54
+259            android:screenOrientation="portrait" />
+259-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:215:13-49
+260        <activity
+260-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:19:9-24:55
+261            android:name="com.payumoney.sdkui.ui.activities.PayUmoneyActivity"
+261-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:20:13-79
+262            android:label="@string/title_activity_citrus"
+262-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:21:13-58
+263            android:screenOrientation="portrait"
+263-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:22:13-49
+264            android:theme="@style/PayumoneyAppTheme"
+264-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:23:13-53
+265            android:windowSoftInputMode="adjustPan" />
+265-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:24:13-52
+266        <activity
+266-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:25:9-28:56
+267            android:name="com.payumoney.sdkui.ui.activities.ReviewOrderActivity"
+267-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:26:13-81
+268            android:screenOrientation="portrait"
+268-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:27:13-49
+269            android:theme="@style/PayumoneyAppTheme" />
+269-->[com.payumoney.sdkui:plug-n-play:1.4.5] C:\Users\swagn\.gradle\caches\transforms-3\265365f425a9dd1ab3f174f3dddc3841\transformed\jetified-plug-n-play-1.4.5\AndroidManifest.xml:28:13-53
+270        <activity
+270-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:28:9-31:72
+271            android:name="com.payumoney.core.SdkWebViewActivityNew"
+271-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:29:13-68
+272            android:screenOrientation="portrait"
+272-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:30:13-49
+273            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+273-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:31:13-69
+274        <activity
+274-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:32:9-37:59
+275            android:name="com.payu.custombrowser.CBActivity"
+275-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:33:13-61
+276            android:screenOrientation="portrait"
+276-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:34:13-49
+277            android:theme="@style/Theme.AppCompat"
+277-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:35:13-51
+278            android:windowSoftInputMode="stateAlwaysHidden" />
+278-->[com.payumoney.core:payumoney-sdk:7.4.4] C:\Users\swagn\.gradle\caches\transforms-3\bf344594b44a0c498254c295ff11b0af\transformed\jetified-payumoney-sdk-7.4.4\AndroidManifest.xml:36:13-60
+279        <activity android:name="com.facebook.CustomTabMainActivity" />
+279-->[com.facebook.android:facebook-common:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ddb31ae0c999a8f515c9a4d28933ac87\transformed\jetified-facebook-common-4.37.0\AndroidManifest.xml:33:9-71
+279-->[com.facebook.android:facebook-common:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ddb31ae0c999a8f515c9a4d28933ac87\transformed\jetified-facebook-common-4.37.0\AndroidManifest.xml:33:19-68
+280
+281        <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" />
+281-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:8:9-100
+281-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:8:19-97
+282
+283        <service android:name="com.google.android.gms.cast.framework.media.MediaNotificationService" />
+283-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:10:9-104
+283-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:10:18-101
+284        <service android:name="com.google.android.gms.cast.framework.ReconnectionService" />
+284-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:11:9-93
+284-->[com.google.android.gms:play-services-cast-framework:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\22fee79bfcc6b58a6da7a99072f0a00e\transformed\jetified-play-services-cast-framework-12.0.1\AndroidManifest.xml:11:18-90
+285        <service android:name="com.payu.custombrowser.services.SnoozeService" />
+285-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:22:9-81
+285-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:22:18-78
+286
+287        <activity
+287-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:24:9-26:56
+288            android:name="com.payu.custombrowser.upiintent.PaymentResponseActivity"
+288-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:25:13-84
+289            android:theme="@style/Theme.Transparent" />
+289-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:26:13-53
+290        <activity android:name="com.payu.custombrowser.PrePaymentsActivity" />
+290-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:45:9-79
+290-->[com.payu.custombrowser:payu-custom-browser:7.2.1] C:\Users\swagn\.gradle\caches\transforms-3\87abf135f6f7d724c09dd937a449c382\transformed\jetified-payu-custom-browser-7.2.1\AndroidManifest.xml:45:19-76
+291        <activity android:name="com.payu.magicretry.MainActivity" >
+291-->[com.payu.magicretry:magicretry:1.0.6] C:\Users\swagn\.gradle\caches\transforms-3\a2ab885adc4294c549471364d081a39f\transformed\jetified-magicretry-1.0.6\AndroidManifest.xml:12:9-21:20
+291-->[com.payu.magicretry:magicretry:1.0.6] C:\Users\swagn\.gradle\caches\transforms-3\a2ab885adc4294c549471364d081a39f\transformed\jetified-magicretry-1.0.6\AndroidManifest.xml:12:19-66
+292
+293            <!--
+294            intent-filter>
+295                <action android:name="android.intent.action.MAIN" />
+296
+297                <category android:name="android.intent.category.LAUNCHER" />
+298            </intent-filter
+299            -->
+300        </activity>
+301        <activity
+301-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:23:9-27:75
+302            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+302-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:24:13-93
+303            android:excludeFromRecents="true"
+303-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:25:13-46
+304            android:exported="false"
+304-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:26:13-37
+305            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+305-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:27:13-72
+306        <!--
+307            Service handling Google Sign-In user revocation. For apps that do not integrate with
+308            Google Sign-In, this service will never be started.
+309        -->
+310        <service
+310-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:33:9-36:110
+311            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+311-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:34:13-89
+312            android:exported="true"
+312-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:35:13-36
+313            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+313-->[com.google.android.gms:play-services-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\AndroidManifest.xml:36:13-107
+314        <service
+314-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:27:9-30:40
+315            android:name="com.google.android.gms.tagmanager.TagManagerService"
+315-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:28:13-79
+316            android:enabled="true"
+316-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:29:13-35
+317            android:exported="false" />
+317-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:30:13-37
+318
+319        <activity
+319-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:32:9-44:20
+320            android:name="com.google.android.gms.tagmanager.TagManagerPreviewActivity"
+320-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:33:13-87
+321            android:exported="true"
+321-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:34:13-36
+322            android:noHistory="true" > <!-- optional, removes the previewActivity from the activity stack. -->
+322-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:35:13-37
+323            <intent-filter>
+323-->[com.google.android.gms:play-services-tagmanager-api:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\28206eac2bb2c1675224a05e00d2fcd0\transformed\jetified-play-services-tagmanager-api-12.0.1\AndroidManifest.xml:36:13-43:29
+324                <data android:scheme="tagmanager.c.com.team.fantasy" />
+324-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:17-75
+324-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:104:23-72
+325
+326                <action android:name="android.intent.action.VIEW" />
+326-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:17-69
+326-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:99:25-66
+327
+328                <category android:name="android.intent.category.DEFAULT" />
+328-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:17-76
+328-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:27-73
+329                <category android:name="android.intent.category.BROWSABLE" />
+329-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:17-78
+329-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:102:27-75
+330            </intent-filter>
+331        </activity>
+332
+333        <receiver
+333-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:28:9-32:20
+334            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+334-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:29:13-85
+335            android:enabled="true"
+335-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:30:13-35
+336            android:exported="false" >
+336-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:31:13-37
+337        </receiver>
+338        <receiver
+338-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:33:9-41:20
+339            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+339-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:34:13-100
+340            android:enabled="true"
+340-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:35:13-35
+341            android:exported="true"
+341-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:36:13-36
+342            android:permission="android.permission.INSTALL_PACKAGES" >
+342-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:37:13-69
+343            <intent-filter>
+343-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:38:13-40:29
+344                <action android:name="com.android.vending.INSTALL_REFERRER" />
+344-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:39:17-79
+344-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:39:25-76
+345            </intent-filter>
+346        </receiver>
+347
+348        <service
+348-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:43:9-46:40
+349            android:name="com.google.android.gms.measurement.AppMeasurementService"
+349-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:44:13-84
+350            android:enabled="true"
+350-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:45:13-35
+351            android:exported="false" />
+351-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:46:13-37
+352        <service
+352-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:47:9-51:72
+353            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+353-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:48:13-87
+354            android:enabled="true"
+354-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:49:13-35
+355            android:exported="false"
+355-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:50:13-37
+356            android:permission="android.permission.BIND_JOB_SERVICE" />
+356-->[com.google.firebase:firebase-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\a96bad47d6f988cdbb14026f74da6659\transformed\jetified-firebase-analytics-12.0.1\AndroidManifest.xml:51:13-69
+357
+358        <receiver
+358-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:30:9-34:20
+359            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+359-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:31:13-78
+360            android:enabled="true"
+360-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:32:13-35
+361            android:exported="false" >
+361-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:33:13-37
+362        </receiver>
+363
+364        <service
+364-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:36:9-39:40
+365            android:name="com.google.android.gms.analytics.AnalyticsService"
+365-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:37:13-77
+366            android:enabled="true"
+366-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:38:13-35
+367            android:exported="false" />
+367-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:39:13-37
+368        <service
+368-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:40:9-44:72
+369            android:name="com.google.android.gms.analytics.AnalyticsJobService"
+369-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:41:13-80
+370            android:enabled="true"
+370-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:42:13-35
+371            android:exported="false"
+371-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:43:13-37
+372            android:permission="android.permission.BIND_JOB_SERVICE" />
+372-->[com.google.android.gms:play-services-analytics:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\112aabd8a5cd6e14db3080127297f20d\transformed\jetified-play-services-analytics-12.0.1\AndroidManifest.xml:44:13-69
+373
+374        <activity
+374-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:25:9-34:20
+375            android:name="com.google.android.gms.appinvite.PreviewActivity"
+375-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:26:13-76
+376            android:exported="true"
+376-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:27:13-36
+377            android:theme="@style/Theme.AppInvite.Preview" >
+377-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:28:13-59
+378            <intent-filter>
+378-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:29:13-33:29
+379                <action android:name="com.google.android.gms.appinvite.ACTION_PREVIEW" />
+379-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:30:17-90
+379-->[com.google.android.gms:play-services-appinvite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\c0abfebfdb1d09af4bd085a5fa79c728\transformed\jetified-play-services-appinvite-12.0.1\AndroidManifest.xml:30:25-87
+380
+381                <category android:name="android.intent.category.DEFAULT" />
+381-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:17-76
+381-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:101:27-73
+382            </intent-filter>
+383        </activity>
+384        <activity
+384-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:23:9-29:75
+385            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+385-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:24:13-85
+386            android:excludeFromRecents="true"
+386-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:25:13-46
+387            android:exported="true"
+387-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:26:13-36
+388            android:launchMode="singleInstance"
+388-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:27:13-48
+389            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+389-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:28:13-102
+390            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+390-->[com.google.firebase:firebase-auth:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\03ba9e632fd94f85d3afc0224d815645\transformed\jetified-firebase-auth-12.0.1\AndroidManifest.xml:29:13-72
+391        <activity
+391-->[com.google.android.gms:play-services-base:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\9d1a1d788cf50920e4be26db5527659d\transformed\jetified-play-services-base-12.0.1\AndroidManifest.xml:23:9-26:75
+392            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+392-->[com.google.android.gms:play-services-base:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\9d1a1d788cf50920e4be26db5527659d\transformed\jetified-play-services-base-12.0.1\AndroidManifest.xml:24:13-79
+393            android:exported="false"
+393-->[com.google.android.gms:play-services-base:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\9d1a1d788cf50920e4be26db5527659d\transformed\jetified-play-services-base-12.0.1\AndroidManifest.xml:25:13-37
+394            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+394-->[com.google.android.gms:play-services-base:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\9d1a1d788cf50920e4be26db5527659d\transformed\jetified-play-services-base-12.0.1\AndroidManifest.xml:26:13-72
+395        <!--
+396             FirebaseMessagingService performs security checks at runtime,
+397             no need for explicit permissions despite exported="true"
+398        -->
+399        <service
+399-->[com.google.firebase:firebase-messaging:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\80efb5d4f80f20f7bfabfed41b2d090c\transformed\jetified-firebase-messaging-12.0.1\AndroidManifest.xml:28:9-34:19
+400            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+400-->[com.google.firebase:firebase-messaging:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\80efb5d4f80f20f7bfabfed41b2d090c\transformed\jetified-firebase-messaging-12.0.1\AndroidManifest.xml:29:13-82
+401            android:exported="true" >
+401-->[com.google.firebase:firebase-messaging:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\80efb5d4f80f20f7bfabfed41b2d090c\transformed\jetified-firebase-messaging-12.0.1\AndroidManifest.xml:30:13-36
+402            <intent-filter android:priority="-500" >
+402-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:182:13-184:29
+403                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+403-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:183:17-78
+403-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:183:25-75
+404            </intent-filter>
+405        </service>
+406
+407        <receiver
+407-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:35:9-44:20
+408            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+408-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:36:13-78
+409            android:exported="true"
+409-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:37:13-36
+410            android:permission="com.google.android.c2dm.permission.SEND" >
+410-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:38:13-73
+411            <intent-filter>
+411-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:39:13-43:29
+412                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+412-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:40:17-81
+412-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:40:25-78
+413
+414                <category android:name="com.team.fantasy" />
+414-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:42:17-61
+414-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:42:27-58
+415            </intent-filter>
+416        </receiver>
+417        <!--
+418             FirebaseInstanceIdService performs security checks at runtime,
+419             no need for explicit permissions despite exported="true"
+420        -->
+421        <service
+421-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:50:9-56:19
+422            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+422-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:51:13-77
+423            android:exported="true" >
+423-->[com.google.firebase:firebase-iid:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\231520213014fb56c08b60740a593be5\transformed\jetified-firebase-iid-12.0.1\AndroidManifest.xml:52:13-36
+424            <intent-filter android:priority="-500" >
+424-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:190:13-192:29
+425                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+425-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:191:17-80
+425-->D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\AndroidManifest.xml:191:25-77
+426            </intent-filter>
+427        </service>
+428
+429        <provider
+429-->[com.google.firebase:firebase-common:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\8ab56be1786e0258306880a34b12c4aa\transformed\jetified-firebase-common-12.0.1\AndroidManifest.xml:8:9-12:39
+430            android:name="com.google.firebase.provider.FirebaseInitProvider"
+430-->[com.google.firebase:firebase-common:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\8ab56be1786e0258306880a34b12c4aa\transformed\jetified-firebase-common-12.0.1\AndroidManifest.xml:9:13-77
+431            android:authorities="com.team.fantasy.firebaseinitprovider"
+431-->[com.google.firebase:firebase-common:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\8ab56be1786e0258306880a34b12c4aa\transformed\jetified-firebase-common-12.0.1\AndroidManifest.xml:10:13-72
+432            android:exported="false"
+432-->[com.google.firebase:firebase-common:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\8ab56be1786e0258306880a34b12c4aa\transformed\jetified-firebase-common-12.0.1\AndroidManifest.xml:11:13-37
+433            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+433-->[com.google.firebase:firebase-common:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\8ab56be1786e0258306880a34b12c4aa\transformed\jetified-firebase-common-12.0.1\AndroidManifest.xml:12:13-36
+434        <activity
+434-->[com.google.android.gms:play-services-ads-lite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\42645779067567f9a765579da18d39f6\transformed\jetified-play-services-ads-lite-12.0.1\AndroidManifest.xml:29:9-33:64
+435            android:name="com.google.android.gms.ads.AdActivity"
+435-->[com.google.android.gms:play-services-ads-lite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\42645779067567f9a765579da18d39f6\transformed\jetified-play-services-ads-lite-12.0.1\AndroidManifest.xml:30:13-65
+436            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+436-->[com.google.android.gms:play-services-ads-lite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\42645779067567f9a765579da18d39f6\transformed\jetified-play-services-ads-lite-12.0.1\AndroidManifest.xml:31:13-122
+437            android:exported="false"
+437-->[com.google.android.gms:play-services-ads-lite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\42645779067567f9a765579da18d39f6\transformed\jetified-play-services-ads-lite-12.0.1\AndroidManifest.xml:32:13-37
+438            android:theme="@android:style/Theme.Translucent" />
+438-->[com.google.android.gms:play-services-ads-lite:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\42645779067567f9a765579da18d39f6\transformed\jetified-play-services-ads-lite-12.0.1\AndroidManifest.xml:33:13-61
+439
+440        <meta-data
+440-->[com.google.android.gms:play-services-basement:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\bb0aa1157cbb1072ad8b8ab7de240ae3\transformed\jetified-play-services-basement-12.0.1\AndroidManifest.xml:23:9-25:69
+441            android:name="com.google.android.gms.version"
+441-->[com.google.android.gms:play-services-basement:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\bb0aa1157cbb1072ad8b8ab7de240ae3\transformed\jetified-play-services-basement-12.0.1\AndroidManifest.xml:24:13-58
+442            android:value="@integer/google_play_services_version" />
+442-->[com.google.android.gms:play-services-basement:12.0.1] C:\Users\swagn\.gradle\caches\transforms-3\bb0aa1157cbb1072ad8b8ab7de240ae3\transformed\jetified-play-services-basement-12.0.1\AndroidManifest.xml:25:13-66
+443
+444        <activity android:name="com.test.pg.secure.pgsdkv4.PaymentActivity" />
+444-->[:PGSDKVR4] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\PGSDKVR4\build\.transforms\aa370bfbbf19aa884099e54709b1a3a1\transformed\jetified-PGSDKVR4\AndroidManifest.xml:18:9-79
+444-->[:PGSDKVR4] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\PGSDKVR4\build\.transforms\aa370bfbbf19aa884099e54709b1a3a1\transformed\jetified-PGSDKVR4\AndroidManifest.xml:18:19-76
+445
+446        <service
+446-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:14:9-16:40
+447            android:name="com.paytm.pgsdk.IntentServicePostNotification"
+447-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:15:13-73
+448            android:exported="false" />
+448-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:16:13-37
+449        <service
+449-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:17:9-19:40
+450            android:name="com.paytm.pgsdk.IntentServicePreNotification"
+450-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:18:13-72
+451            android:exported="false" />
+451-->[com.paytm:pgplussdk:1.1.3] C:\Users\swagn\.gradle\caches\transforms-3\ed76f7609f45a8740cd836a054606ae9\transformed\jetified-pgplussdk-1.1.3\AndroidManifest.xml:19:13-37
+452
+453        <activity
+453-->[:cashfreeSDK] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\AndroidManifest.xml:18:9-20:72
+454            android:name="com.gocashfree.cashfreesdk.CFPaymentActivity"
+454-->[:cashfreeSDK] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\AndroidManifest.xml:19:13-72
+455            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+455-->[:cashfreeSDK] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\AndroidManifest.xml:20:13-69
+456        <activity android:name="com.gocashfree.cashfreesdk.CFUPIPaymentActivity" />
+456-->[:cashfreeSDK] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\AndroidManifest.xml:21:9-84
+456-->[:cashfreeSDK] D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\AndroidManifest.xml:21:19-81
+457
+458        <provider
+458-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+459            android:name="androidx.startup.InitializationProvider"
+459-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+460            android:authorities="com.team.fantasy.androidx-startup"
+460-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+461            android:exported="false" >
+461-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+462            <meta-data
+462-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+463                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+463-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+464                android:value="androidx.startup" />
+464-->[androidx.emoji2:emoji2:1.2.0] C:\Users\swagn\.gradle\caches\transforms-3\be0b970f86b6f720138e043b1f5fe6e1\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+465            <meta-data
+465-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\swagn\.gradle\caches\transforms-3\aed9aab14f1634dae19db29bd6424562\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+466                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+466-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\swagn\.gradle\caches\transforms-3\aed9aab14f1634dae19db29bd6424562\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+467                android:value="androidx.startup" />
+467-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\swagn\.gradle\caches\transforms-3\aed9aab14f1634dae19db29bd6424562\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+468        </provider>
+469        <provider
+469-->[com.facebook.android:facebook-marketing:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\a11c187a086b19afb54c24ed2445a391\transformed\jetified-facebook-marketing-4.37.0\AndroidManifest.xml:29:9-32:40
+470            android:name="com.facebook.marketing.internal.MarketingInitProvider"
+470-->[com.facebook.android:facebook-marketing:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\a11c187a086b19afb54c24ed2445a391\transformed\jetified-facebook-marketing-4.37.0\AndroidManifest.xml:30:13-81
+471            android:authorities="com.team.fantasy.MarketingInitProvider"
+471-->[com.facebook.android:facebook-marketing:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\a11c187a086b19afb54c24ed2445a391\transformed\jetified-facebook-marketing-4.37.0\AndroidManifest.xml:31:13-73
+472            android:exported="false" />
+472-->[com.facebook.android:facebook-marketing:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\a11c187a086b19afb54c24ed2445a391\transformed\jetified-facebook-marketing-4.37.0\AndroidManifest.xml:32:13-37
+473        <!--
+474         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+475         with the application context. This config is merged in with the host app's manifest,
+476         but there can only be one provider with the same authority activated at any given
+477         point; so if the end user has two or more different apps that use Facebook SDK, only the
+478         first one will be able to use the provider. To work around this problem, we use the
+479         following placeholder in the authority to identify each host application as if it was
+480         a completely different provider.
+481        -->
+482        <provider
+482-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:39:9-42:40
+483            android:name="com.facebook.internal.FacebookInitProvider"
+483-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:40:13-70
+484            android:authorities="com.team.fantasy.FacebookInitProvider"
+484-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:41:13-72
+485            android:exported="false" />
+485-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:42:13-37
+486
+487        <receiver
+487-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:44:9-50:20
+488            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+488-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:45:13-86
+489            android:exported="false" >
+489-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:46:13-37
+490            <intent-filter>
+490-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:47:13-49:29
+491                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+491-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:48:17-95
+491-->[com.facebook.android:facebook-core:4.37.0] C:\Users\swagn\.gradle\caches\transforms-3\ffbdbd9f2b059157a1ab7c8ab2d46883\transformed\jetified-facebook-core-4.37.0\AndroidManifest.xml:48:25-92
+492            </intent-filter>
+493        </receiver>
+494    </application>
+495
+496</manifest>
