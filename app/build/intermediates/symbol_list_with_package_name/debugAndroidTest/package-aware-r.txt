@@ -1,0 +1,3 @@
+com.team.fantasy.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

@@ -37,14 +37,13 @@
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <TextView
+        android:id="@+id/tv_NoDataAvailable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:text="@string/no_live_contest_joined"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:visibility="gone"
-        android:textColor="@color/white"
-        android:id="@+id/tv_NoDataAvailable"/>
+        android:textColor="@color/team_header"
+        android:visibility="gone" />
 
 </RelativeLayout>
          
