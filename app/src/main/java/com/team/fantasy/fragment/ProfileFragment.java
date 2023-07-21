@@ -2,6 +2,7 @@ package com.team.fantasy.fragment;
 
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -95,6 +96,7 @@ public class ProfileFragment extends Fragment implements ResponseManager {
 
     FragmentProfileBinding binding;
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
@@ -129,17 +131,21 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         binding.tvProfileYourMail.setText(HomeActivity.sessionManager.getUser(getContext()).getEmail() + "");
         String UserEmail = HomeActivity.sessionManager.getUser(getContext()).getEmail();
         String Imageurl = HomeActivity.sessionManager.getUser(getContext()).getImage();
+        String UserName = HomeActivity.sessionManager.getUser(getContext()).getName();
         Log.e("Imageurl", Config.ProfileIMAGEBASEURL + Imageurl);
         if (TextUtils.isEmpty(Imageurl) || Imageurl.equals("")) {
 
         } else {
-
             Glide.with(getActivity()).load(Config.ProfileIMAGEBASEURL + Imageurl)
                     .into(binding.imProfilepic);
         }
         if (UserEmail.equals("")) {
             binding.tvProfileUserName.setText("Username");
-        } else {
+        }
+        else if (UserName != ""){
+            binding.tvProfileUserName.setText(UserName);
+        }
+        else {
             binding.tvProfileUserName.setText(UserEmail);
         }
 
