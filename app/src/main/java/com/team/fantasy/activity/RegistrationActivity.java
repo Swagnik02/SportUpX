@@ -163,7 +163,7 @@ public class RegistrationActivity extends AppCompatActivity implements ResponseM
                     binding.etPassword.requestFocus();
                     ShowToast(context,"Enter Password");
                 }
-                else if (Password.length()<8&& !Validations.isValidPassword(Password)){
+                else if (Password.length()<8 && !Validations.isValidPassword(Password)){
 
                     ShowToast(context,"Password Pattern Not Macthed");
                 }
@@ -282,6 +282,7 @@ public class RegistrationActivity extends AppCompatActivity implements ResponseM
 
     private void callSignupApi(boolean isShowLoader) {
         try {
+            ShowToast(context,"User Created !!");
 
             apiRequestManager.callAPI(SIGNUP,
                     createRequestJson(), context, activity, SIGNUPTYPE,
@@ -563,12 +564,12 @@ public class RegistrationActivity extends AppCompatActivity implements ResponseM
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 100) {
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 callSignupApi(true);
-            }
-            else {
+            } else {
                 callSignupApi(true);
             }
             return;
