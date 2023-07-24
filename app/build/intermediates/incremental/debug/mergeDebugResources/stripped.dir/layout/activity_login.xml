@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+
+    <RelativeLayout
+        android:id="@+id/RL_Login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false" android:tag="layout/activity_login_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="30dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_in"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="or"
+                    android:textColor="@color/orange"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_SignUpText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Sign up"
+                    android:textColor="@color/login_sign_up"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/fb_login_button"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/btn_sign_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_loginEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColorHint="@color/black"
+                    android:theme="@style/MyTextInputLayout">
+
+                    <EditText
+                        android:id="@+id/et_EmailMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:backgroundTint="@color/black"
+                        android:hint="Email or mobile no."
+                        android:padding="12dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/input_loginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColorHint="@color/black"
+                    android:theme="@style/MyTextInputLayout"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleTint="@color/black">
+
+                    <EditText
+                        android:id="@+id/et_Password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:backgroundTint="@color/black"
+                        android:hint="Enter Password"
+                        android:inputType="textPassword"
+                        android:padding="12dp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="16sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+                    <net.orandja.shadowlayout.ShadowLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:shadow_radius="3"
+                        app:shadow_x_shift="-1dp"
+                        app:shadow_y_shift="2dp"
+                        app:shadow_downscale="6"
+                        app:shadow_color="@color/colorPrimary"
+                        app:shadow_with_color="false"
+                        app:shadow_with_dpi_scale="true"
+                        app:shadow_with_css_scale="true"
+                        app:shadow_cast_only_background="false"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="start">
+                        <TextView
+                            android:id="@+id/tv_Login"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/roundbutton"
+                            android:elevation="3dp"
+                            android:gravity="center_vertical"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:text="Sign in"
+                            android:textAlignment="center"
+                            android:textColor="@color/sign_in_btn"
+                            android:textSize="18sp" />
+                    </net.orandja.shadowlayout.ShadowLayout>
+
+                    <TextView
+                        android:id="@+id/tv_ForgotPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center"
+                        android:text="@string/forgot_password"
+                        android:textColor="@color/login_sign_up" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LL_FaceGoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/RL_FBLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+                <net.orandja.shadowlayout.ShadowLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:shadow_radius="5"
+                    app:shadow_x_shift="-1dp"
+                    app:shadow_y_shift="2dp"
+                    app:shadow_downscale="1"
+                    app:shadow_color="#DAF5FF"
+                    app:shadow_with_color="false"
+                    app:shadow_with_dpi_scale="true"
+                    app:shadow_with_css_scale="true"
+                    app:shadow_cast_only_background="false">
+                    <ImageView
+                        android:id="@+id/im_fbicon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:scaleType="center"
+                        android:src="@drawable/fb_icon"/>
+                </net.orandja.shadowlayout.ShadowLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/RL_GmailLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+                <net.orandja.shadowlayout.ShadowLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:shadow_radius="5"
+                    app:shadow_x_shift="-1dp"
+                    app:shadow_y_shift="2dp"
+                    app:shadow_downscale="1"
+                    app:shadow_color="#DAF5FF"
+                    app:shadow_with_color="false"
+                    app:shadow_with_dpi_scale="true"
+                    app:shadow_with_css_scale="true"
+                    app:shadow_cast_only_background="false">
+                    <ImageView
+                        android:id="@+id/im_goggleicon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:scaleType="center"
+                        android:src="@drawable/google_icon" />
+                </net.orandja.shadowlayout.ShadowLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+         

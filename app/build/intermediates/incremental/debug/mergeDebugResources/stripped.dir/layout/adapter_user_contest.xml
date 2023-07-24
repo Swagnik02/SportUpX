@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+                                                                    
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" android:tag="layout/adapter_user_contest_0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dark_rectangle"
+        android:elevation="3dp"
+        android:id="@+id/LL_Item"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Winners Count"
+            android:textColor="@color/white"
+            android:id="@+id/tv_AdaWinnersCount"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="16sp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/LL_AdawinnersList"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+         

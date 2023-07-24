@@ -142,7 +142,7 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         if (UserEmail.equals("")) {
             binding.tvProfileUserName.setText("Username");
         }
-        else if (UserName != ""){
+        else if (UserName.length() > 1){
             binding.tvProfileUserName.setText(UserName);
         }
         else {

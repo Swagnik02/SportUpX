@@ -63,13 +63,13 @@ com.team.fantasy.app-jetified-savedstate-1.2.0-61 C:\Users\swagn\.gradle\caches\
 com.team.fantasy.app-jetified-play-services-tagmanager-12.0.1-62 C:\Users\swagn\.gradle\caches\transforms-3\f84122092b08e49aac17aa2e9924a56b\transformed\jetified-play-services-tagmanager-12.0.1\res
 com.team.fantasy.app-jetified-startup-runtime-1.1.1-63 C:\Users\swagn\.gradle\caches\transforms-3\f96d579d5b1b19e5d8b65fabde6ce449\transformed\jetified-startup-runtime-1.1.1\res
 com.team.fantasy.app-jetified-play-services-auth-12.0.1-64 C:\Users\swagn\.gradle\caches\transforms-3\f97fada40a174000bad22bef991c2e84\transformed\jetified-play-services-auth-12.0.1\res
-com.team.fantasy.app-jetified-PGSDKVR4-65 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\PGSDKVR4\build\.transforms\aa370bfbbf19aa884099e54709b1a3a1\transformed\jetified-PGSDKVR4\res
-com.team.fantasy.app-google-services-66 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\generated\res\google-services\debug
-com.team.fantasy.app-pngs-67 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\generated\res\pngs\debug
-com.team.fantasy.app-resValues-68 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\generated\res\resValues\debug
-com.team.fantasy.app-mergeDebugResources-69 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
-com.team.fantasy.app-mergeDebugResources-70 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
-com.team.fantasy.app-merged_res-71 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\build\intermediates\merged_res\debug
-com.team.fantasy.app-debug-72 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\debug\res
-com.team.fantasy.app-main-73 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\app\src\main\res
-com.team.fantasy.app-jetified-cashfreeSDK-74 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11\cashfreeSDK\build\.transforms\7e1b445a5177e7e3300a41be29c8b77f\transformed\jetified-cashfreeSDK\res
+com.team.fantasy.app-jetified-PGSDKVR4-65 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11_git\PGSDKVR4\build\.transforms\a29c25e8c3a688a29579a6f8f11fe369\transformed\jetified-PGSDKVR4\res
+com.team.fantasy.app-google-services-66 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11_git\app\build\generated\res\google-services\debug
+com.team.fantasy.app-pngs-67 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11_git\app\build\generated\res\pngs\debug
+com.team.fantasy.app-resValues-68 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11_git\app\build\generated\res\resValues\debug
+com.team.fantasy.app-mergeDebugResources-69 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11_git\app\build\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.team.fantasy.app-mergeDebugResources-70 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11_git\app\build\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.team.fantasy.app-merged_res-71 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11_git\app\build\intermediates\merged_res\debug
+com.team.fantasy.app-debug-72 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11_git\app\src\debug\res
+com.team.fantasy.app-main-73 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11_git\app\src\main\res
+com.team.fantasy.app-jetified-cashfreeSDK-74 D:\INTERNSHIP\DECRYPTON\TASK 1\Team11_git\cashfreeSDK\build\.transforms\b93332f1b01325196ec4fca715c74aec\transformed\jetified-cashfreeSDK\res
