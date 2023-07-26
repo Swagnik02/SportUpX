@@ -191,6 +191,7 @@
                         android:layout_centerHorizontal="true"
                         android:backgroundTint="@color/black"
                         android:id="@+id/et_EditCity"
+                        android:focusable="false"
                         android:hint="City"
                         android:padding="12dp"
                         android:singleLine="true"

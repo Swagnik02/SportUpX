@@ -31,6 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
@@ -55,6 +56,8 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
 
     ActivityEditProfileBinding binding;
 
+    // Initialize the city list HashMap
+    HashMap<String, List<String>> cityMap;
     List<String> stateList;
 
     @Override
@@ -94,26 +97,49 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
                 dialog.show();
             }
         });
-        
-        //States
 
-        // Initialize the state list
+        // Initialize the state list with hardcoded states
         stateList = new ArrayList<>();
         stateList.add("State 1");
         stateList.add("State 2");
-        stateList.add("State 3");
         // Add more states as needed
 
+        // Initialize the city list HashMap
+        cityMap = new HashMap<>();
+        // Add city lists for each state (replace "State 1" and "State 2" with actual state names)
+        List<String> cityListState1 = new ArrayList<>();
+        cityListState1.add("City 1");
+        cityListState1.add("City 2");
+        cityMap.put("State 1", cityListState1);
 
-        // Add a click listener to the "States" button
+        List<String> cityListState2 = new ArrayList<>();
+        cityListState2.add("City 3");
+        cityListState2.add("City 4");
+        cityMap.put("State 2", cityListState2);
+
+        // Add more city lists for other states as needed
         binding.etEditState.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showStateListDialog();
             }
         });
-        
-        
+
+        binding.etEditCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Check if a state is selected before showing the city dialog
+                if (!binding.etEditState.getText().toString().isEmpty()) {
+                    showCityListDialog(binding.etEditState.getText().toString());
+                } else {
+                    // Show a message to the user to select a state first
+                    ShowToast(context, "Please select a state first.");
+                }
+            }
+        });
+
+
+
         binding.tvEditMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -148,12 +174,33 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
             public void onClick(DialogInterface dialog, int which) {
                 // Set the selected state in the EditText
                 binding.etEditState.setText(stateList.get(which));
+
             }
         });
 
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+    // Method to show the city list dialog based on the selected state
+    private void showCityListDialog(String selectedState) {
+        List<String> cityList = cityMap.get(selectedState);
+        if (cityList != null) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Select City");
+            builder.setItems(cityList.toArray(new String[0]), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // Set the selected city in the EditText
+                    binding.etEditCity.setText(cityList.get(which));
+                }
+            });
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+    }
+
 
     public void initViews() {
         binding.head.tvHeaderName.setText(getResources().getString(R.string.personal_details));

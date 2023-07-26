@@ -36,12 +36,12 @@
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-hdpi\\about_us.png"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-hdpi_baseline_highlight_off_black_36.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-hdpi\\baseline_highlight_off_black_36.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable_selected_tab.xml.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable\\selected_tab.xml"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-hdpi_baseline_highlight_off_black_36.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-hdpi\\baseline_highlight_off_black_36.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xhdpi_ruppee_icon_2.png.flat",
@@ -332,24 +332,24 @@
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xhdpi\\more_icon_active.png"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xhdpi_rupee_icon.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xhdpi\\rupee_icon.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xhdpi_back_team.png.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xhdpi\\back_team.png"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xhdpi_rupee_icon.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xhdpi\\rupee_icon.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xxxhdpi_wins.png.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xxxhdpi\\wins.png"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xhdpi_outline_cancel_white_48.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xhdpi\\outline_cancel_white_48.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xhdpi_outline_cancel_white_48.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xhdpi\\outline_cancel_white_48.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-mdpi_watch_icon_team.png.flat",
@@ -440,12 +440,12 @@
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\layout\\item_winning_breakup.xml"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xxxhdpi_group_2.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xxxhdpi\\group_2.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-mdpi_refresh_score.png.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-mdpi\\refresh_score.png"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xxxhdpi_group_2.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xxxhdpi\\group_2.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xxxhdpi_outline_cancel_white_48.png.flat",
@@ -556,12 +556,12 @@
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-hdpi\\outline_cancel_white_36.png"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable_wallet.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable\\wallet.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable_circle_vc_hover.xml.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable\\circle_vc_hover.xml"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable_wallet.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable\\wallet.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-hdpi_verify_icon.png.flat",
@@ -644,12 +644,12 @@
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable\\rectangle_gradient_round_two_side_left.xml"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xxhdpi_plus_icon.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xxhdpi\\plus_icon.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\layout_activity_my_joined_result_contest_list.xml.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\layout\\activity_my_joined_result_contest_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xxhdpi_plus_icon.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xxhdpi\\plus_icon.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-hdpi_baseline_notifications_white_24.png.flat",
@@ -828,12 +828,12 @@
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable\\contestprogressbar.xml"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xhdpi_bats_icon.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xhdpi\\bats_icon.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xxxhdpi_google_icon.png.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xxxhdpi\\google_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xhdpi_bats_icon.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xhdpi\\bats_icon.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xxxhdpi_saq_icon.png.flat",
@@ -876,12 +876,12 @@
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xxxhdpi\\rupee_icon_pay.png"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-mdpi_baseline_highlight_off_black_48.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-mdpi\\baseline_highlight_off_black_48.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xxxhdpi_all_r_icon_hvr.png.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xxxhdpi\\all_r_icon_hvr.png"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-mdpi_baseline_highlight_off_black_48.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-mdpi\\baseline_highlight_off_black_48.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xxxhdpi_helpdesk.png.flat",
@@ -1020,12 +1020,12 @@
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xhdpi\\refresh_score.png"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-mdpi_outline_cancel_white_18.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-mdpi\\outline_cancel_white_18.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-hdpi_round_keyboard_arrow_down_black_36.png.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-hdpi\\round_keyboard_arrow_down_black_36.png"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-mdpi_outline_cancel_white_18.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-mdpi\\outline_cancel_white_18.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-hdpi_divider_vert.png.flat",
@@ -1076,12 +1076,12 @@
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-mdpi\\female_2.png"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-mdpi_google_icon.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-mdpi\\google_icon.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xhdpi_divider_vert.png.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xhdpi\\divider_vert.png"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-mdpi_google_icon.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-mdpi\\google_icon.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\layout_activity_notification.xml.flat",
@@ -1280,12 +1280,12 @@
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xxxhdpi\\contest_invite.png"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable_ground_img.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable\\ground_img.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-xxhdpi_more_icon_active.png.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xxhdpi\\more_icon_active.png"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable_ground_img.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable\\ground_img.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable_radio_selector.xml.flat",
@@ -1352,12 +1352,12 @@
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-xhdpi\\view.png"
     },
     {
-        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-mdpi_series.png.flat",
-        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-mdpi\\series.png"
-    },
-    {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-hdpi_reward.png.flat",
         "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-hdpi\\reward.png"
+    },
+    {
+        "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-mdpi_series.png.flat",
+        "source": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-main-73:\\drawable-mdpi\\series.png"
     },
     {
         "merged": "C:\\Users\\swagn\\.gradle\\daemon\\8.0\\com.team.fantasy.app-merged_res-71:\\drawable-mdpi_wins.png.flat",
