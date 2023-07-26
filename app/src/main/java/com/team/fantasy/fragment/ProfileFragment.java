@@ -213,8 +213,6 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         return binding.getRoot();
     }
 
-    //checking git
-    
     public void ChooseImageDialog() {
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(activity);
         builderSingle.setTitle("Choose Image");

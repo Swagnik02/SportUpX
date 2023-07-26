@@ -2,6 +2,7 @@ package com.team.fantasy.activity;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -11,6 +12,10 @@ import androidx.databinding.DataBindingUtil;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.DatePicker;
+
+import androidx.appcompat.app.AlertDialog;
+
+
 
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
@@ -23,8 +28,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 import static com.team.fantasy.APICallingPackage.Config.EDITPROFILE;
@@ -48,10 +55,13 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
 
     ActivityEditProfileBinding binding;
 
+    List<String> stateList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+
         binding=DataBindingUtil.setContentView(this, R.layout.activity_edit_profile);
         context = activity = this;
         initViews();
@@ -84,7 +94,26 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
                 dialog.show();
             }
         });
+        
+        //States
 
+        // Initialize the state list
+        stateList = new ArrayList<>();
+        stateList.add("State 1");
+        stateList.add("State 2");
+        stateList.add("State 3");
+        // Add more states as needed
+
+
+        // Add a click listener to the "States" button
+        binding.etEditState.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showStateListDialog();
+            }
+        });
+        
+        
         binding.tvEditMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,6 +138,23 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
             }
         });
     }
+
+    // Method to show the state list dialog
+    private void showStateListDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select State");
+        builder.setItems(stateList.toArray(new String[0]), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Set the selected state in the EditText
+                binding.etEditState.setText(stateList.get(which));
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
     public void initViews() {
         binding.head.tvHeaderName.setText(getResources().getString(R.string.personal_details));
         binding.head.imBack.setOnClickListener(new View.OnClickListener() {

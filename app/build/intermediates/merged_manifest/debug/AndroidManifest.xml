@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.team.fantasy"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="33" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission
+        android:name="android.permission.RECEIVE_SMS"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Required by older versions of Google Play services to create GCM registration tokens -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <permission
+        android:name="com.team.fantasy.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.team.fantasy.permission.C2D_MESSAGE" />
+
+    <permission
+        android:name="com.team.fantasy.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.team.fantasy.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
+    <application
+        android:name="com.team.fantasy.application.BaseApplication"
+        android:allowBackup="false"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:windowSoftInputMode="adjustPan" >
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.team.fantasy.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name="com.team.fantasy.activity.SplashScreen"
+            android:exported="true"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.team.fantasy.activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.RegistrationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.VerifyOTPActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name="com.team.fantasy.utils.IncomingSms"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name"
+            android:theme="@style/com_facebook_activity_theme" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.team.fantasy.activity.ForgotVerifyOTPActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.NewPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.ContestListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.CreateTeamActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.ChooseCandVCActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.MyTeamListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.JoinContestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.MyJoinedFixtureContestListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.MyFixtureContestDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.MyJoinedLiveContestListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.MyJoinedResultContestListActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.team.fantasy.activity.MyResultContestDetailsActivity" />
+        <activity android:name="com.team.fantasy.activity.MyLiveContestDetailsActivity" />
+        <activity android:name="com.team.fantasy.activity.PaymentOptionActivity" />
+        <activity android:name="com.team.fantasy.activity.MyAccountActivity" />
+        <activity android:name="com.team.fantasy.activity.PaytmActivity" />
+        <activity
+            android:name="com.paytm.pgsdk.PaytmPGActivity"
+            android:configChanges="keyboardHidden|orientation|keyboard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.EditProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.AddCashActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.MyTransactionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.NotificationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.InviteFriendsActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.team.fantasy.activity.InvitedFriendListActivity" />
+        <activity
+            android:name="com.team.fantasy.activity.PaymentConfirmationActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.team.fantasy.activity.WebviewAcitivity" />
+        <activity android:name="com.team.fantasy.activity.WithdrawAmountActivity" />
+        <activity android:name="com.team.fantasy.activity.PayUMoneyPaymentActivity" />
+        <activity
+            android:name="com.team.fantasy.activity.GlobalRankActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.payu.custombrowser.PreLollipopPaymentsActivity"
+            android:exported="true" >
+            <intent-filter>
+                <data android:scheme="com.team.fantasy.success" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="com.team.fantasy.failure" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.team.fantasy.FirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.team.fantasy.FirebaseInstanceIDService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.team.fantasy.activity.UploadKYCActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.CreateContestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.SelectPrizeCreateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.EnterInviteCodeContestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.InviteInContestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.TrakNPayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.team.fantasy.activity.CashfreeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.payumoney.sdkui.ui.activities.PayUmoneyActivity"
+            android:label="@string/title_activity_citrus"
+            android:screenOrientation="portrait"
+            android:theme="@style/PayumoneyAppTheme"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.payumoney.sdkui.ui.activities.ReviewOrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/PayumoneyAppTheme" />
+        <activity
+            android:name="com.payumoney.core.SdkWebViewActivityNew"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name="com.payu.custombrowser.CBActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name="com.facebook.CustomTabMainActivity" />
+
+        <receiver android:name="com.google.android.gms.cast.framework.media.MediaIntentReceiver" />
+
+        <service android:name="com.google.android.gms.cast.framework.media.MediaNotificationService" />
+        <service android:name="com.google.android.gms.cast.framework.ReconnectionService" />
+        <service android:name="com.payu.custombrowser.services.SnoozeService" />
+
+        <activity
+            android:name="com.payu.custombrowser.upiintent.PaymentResponseActivity"
+            android:theme="@style/Theme.Transparent" />
+        <activity android:name="com.payu.custombrowser.PrePaymentsActivity" />
+        <activity android:name="com.payu.magicretry.MainActivity" >
+
+            <!--
+            intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter
+            -->
+        </activity>
+        <activity
+            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+            Service handling Google Sign-In user revocation. For apps that do not integrate with
+            Google Sign-In, this service will never be started.
+        -->
+        <service
+            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+            android:exported="true"
+            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+        <service
+            android:name="com.google.android.gms.tagmanager.TagManagerService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name="com.google.android.gms.tagmanager.TagManagerPreviewActivity"
+            android:exported="true"
+            android:noHistory="true" > <!-- optional, removes the previewActivity from the activity stack. -->
+            <intent-filter>
+                <data android:scheme="tagmanager.c.com.team.fantasy" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.INSTALL_PACKAGES" >
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver
+            android:name="com.google.android.gms.analytics.AnalyticsReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.analytics.AnalyticsService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.gms.analytics.AnalyticsJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:name="com.google.android.gms.appinvite.PreviewActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppInvite.Preview" >
+            <intent-filter>
+                <action android:name="com.google.android.gms.appinvite.ACTION_PREVIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--
+             FirebaseMessagingService performs security checks at runtime,
+             no need for explicit permissions despite exported="true"
+        -->
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="true" >
+            <intent-filter android:priority="-500" >
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.team.fantasy" />
+            </intent-filter>
+        </receiver>
+        <!--
+             FirebaseInstanceIdService performs security checks at runtime,
+             no need for explicit permissions despite exported="true"
+        -->
+        <service
+            android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+            android:exported="true" >
+            <intent-filter android:priority="-500" >
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.team.fantasy.firebaseinitprovider"
+            android:exported="false"
+            android:initOrder="100" /> <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name="com.test.pg.secure.pgsdkv4.PaymentActivity" />
+
+        <service
+            android:name="com.paytm.pgsdk.IntentServicePostNotification"
+            android:exported="false" />
+        <service
+            android:name="com.paytm.pgsdk.IntentServicePreNotification"
+            android:exported="false" />
+
+        <activity
+            android:name="com.gocashfree.cashfreesdk.CFPaymentActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name="com.gocashfree.cashfreesdk.CFUPIPaymentActivity" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.team.fantasy.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+        <provider
+            android:name="com.facebook.marketing.internal.MarketingInitProvider"
+            android:authorities="com.team.fantasy.MarketingInitProvider"
+            android:exported="false" />
+        <!--
+         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+         with the application context. This config is merged in with the host app's manifest,
+         but there can only be one provider with the same authority activated at any given
+         point; so if the end user has two or more different apps that use Facebook SDK, only the
+         first one will be able to use the provider. To work around this problem, we use the
+         following placeholder in the authority to identify each host application as if it was
+         a completely different provider.
+        -->
+        <provider
+            android:name="com.facebook.internal.FacebookInitProvider"
+            android:authorities="com.team.fantasy.FacebookInitProvider"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

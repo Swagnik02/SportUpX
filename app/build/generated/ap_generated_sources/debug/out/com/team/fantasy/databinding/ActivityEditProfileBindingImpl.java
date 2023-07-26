@@ -24,22 +24,22 @@ public class ActivityEditProfileBindingImpl extends ActivityEditProfileBinding  
         sViewsWithIds.put(R.id.et_EditEmail, 5);
         sViewsWithIds.put(R.id.input_editMobile, 6);
         sViewsWithIds.put(R.id.et_EditMobile, 7);
-        sViewsWithIds.put(R.id.input_editDob, 8);
-        sViewsWithIds.put(R.id.et_EditDob, 9);
-        sViewsWithIds.put(R.id.input_editAddress, 10);
-        sViewsWithIds.put(R.id.et_EditAddress, 11);
-        sViewsWithIds.put(R.id.input_editCity, 12);
-        sViewsWithIds.put(R.id.et_EditCity, 13);
-        sViewsWithIds.put(R.id.input_editPincode, 14);
-        sViewsWithIds.put(R.id.et_EditPincode, 15);
-        sViewsWithIds.put(R.id.input_editState, 16);
-        sViewsWithIds.put(R.id.et_EditState, 17);
-        sViewsWithIds.put(R.id.input_editCountry, 18);
-        sViewsWithIds.put(R.id.et_EditCountry, 19);
-        sViewsWithIds.put(R.id.tv_EditMale, 20);
-        sViewsWithIds.put(R.id.tv_EditFeMale, 21);
-        sViewsWithIds.put(R.id.input_editFavouriteTeam, 22);
-        sViewsWithIds.put(R.id.et_EditFavouriteTeam, 23);
+        sViewsWithIds.put(R.id.input_editFavouriteTeam, 8);
+        sViewsWithIds.put(R.id.et_EditFavouriteTeam, 9);
+        sViewsWithIds.put(R.id.input_editDob, 10);
+        sViewsWithIds.put(R.id.et_EditDob, 11);
+        sViewsWithIds.put(R.id.input_editAddress, 12);
+        sViewsWithIds.put(R.id.et_EditAddress, 13);
+        sViewsWithIds.put(R.id.input_editState, 14);
+        sViewsWithIds.put(R.id.et_EditState, 15);
+        sViewsWithIds.put(R.id.input_editCity, 16);
+        sViewsWithIds.put(R.id.et_EditCity, 17);
+        sViewsWithIds.put(R.id.input_editPincode, 18);
+        sViewsWithIds.put(R.id.et_EditPincode, 19);
+        sViewsWithIds.put(R.id.input_editCountry, 20);
+        sViewsWithIds.put(R.id.et_EditCountry, 21);
+        sViewsWithIds.put(R.id.tv_EditMale, 22);
+        sViewsWithIds.put(R.id.tv_EditFeMale, 23);
         sViewsWithIds.put(R.id.tv_EditUpdateProfile, 24);
     }
     // views
@@ -55,29 +55,29 @@ public class ActivityEditProfileBindingImpl extends ActivityEditProfileBinding  
     }
     private ActivityEditProfileBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 1
-            , (android.widget.EditText) bindings[11]
             , (android.widget.EditText) bindings[13]
-            , (android.widget.EditText) bindings[19]
-            , (android.widget.EditText) bindings[9]
+            , (android.widget.EditText) bindings[17]
+            , (android.widget.EditText) bindings[21]
+            , (android.widget.EditText) bindings[11]
             , (android.widget.EditText) bindings[5]
-            , (android.widget.EditText) bindings[23]
+            , (android.widget.EditText) bindings[9]
             , (android.widget.EditText) bindings[7]
             , (android.widget.EditText) bindings[3]
+            , (android.widget.EditText) bindings[19]
             , (android.widget.EditText) bindings[15]
-            , (android.widget.EditText) bindings[17]
             , (com.team.fantasy.databinding.ActivityMainheaderBinding) bindings[1]
-            , (com.google.android.material.textfield.TextInputLayout) bindings[10]
             , (com.google.android.material.textfield.TextInputLayout) bindings[12]
-            , (com.google.android.material.textfield.TextInputLayout) bindings[18]
-            , (com.google.android.material.textfield.TextInputLayout) bindings[8]
+            , (com.google.android.material.textfield.TextInputLayout) bindings[16]
+            , (com.google.android.material.textfield.TextInputLayout) bindings[20]
+            , (com.google.android.material.textfield.TextInputLayout) bindings[10]
             , (com.google.android.material.textfield.TextInputLayout) bindings[4]
-            , (com.google.android.material.textfield.TextInputLayout) bindings[22]
+            , (com.google.android.material.textfield.TextInputLayout) bindings[8]
             , (com.google.android.material.textfield.TextInputLayout) bindings[6]
             , (com.google.android.material.textfield.TextInputLayout) bindings[2]
+            , (com.google.android.material.textfield.TextInputLayout) bindings[18]
             , (com.google.android.material.textfield.TextInputLayout) bindings[14]
-            , (com.google.android.material.textfield.TextInputLayout) bindings[16]
-            , (android.widget.TextView) bindings[21]
-            , (android.widget.TextView) bindings[20]
+            , (android.widget.TextView) bindings[23]
+            , (android.widget.TextView) bindings[22]
             , (android.widget.TextView) bindings[24]
             );
         setContainedBinding(this.head);
