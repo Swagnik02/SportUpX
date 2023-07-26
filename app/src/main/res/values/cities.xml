@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- City List for Andaman and Nicobar Islands -->
+    <string-array name="city_list_andaman_and_nicobar">
+        <item>Port Blair</item>
+        <!-- Add more cities for Andaman and Nicobar Islands as needed -->
+    </string-array>
+
+    <!-- City List for Andhra Pradesh -->
+    <string-array name="city_list_andhra_pradesh">
+        <item>Visakhapatnam</item>
+        <item>Vijayawada</item>
+        <item>Guntur</item>
+        <!-- Add more cities for Andhra Pradesh as needed -->
+    </string-array>
+
+    <!-- City List for Arunachal Pradesh -->
+    <string-array name="city_list_arunachal_pradesh">
+        <item>Itanagar</item>
+        <item>Tawang</item>
+        <!-- Add more cities for Arunachal Pradesh as needed -->
+    </string-array>
+
+    <!-- City List for Assam -->
+    <string-array name="city_list_assam">
+        <item>Guwahati</item>
+        <item>Dibrugarh</item>
+        <item>Tezpur</item>
+        <!-- Add more cities for Assam as needed -->
+    </string-array>
+
+    <!-- City List for Bihar -->
+    <string-array name="city_list_bihar">
+        <item>Patna</item>
+        <item>Gaya</item>
+        <item>Muzaffarpur</item>
+        <!-- Add more cities for Bihar as needed -->
+    </string-array>
+
+    <!-- City List for Chandigarh -->
+    <string-array name="city_list_chandigarh">
+        <item>Chandigarh</item>
+        <!-- Add more cities for Chandigarh as needed -->
+    </string-array>
+
+    <!-- City List for Chhattisgarh -->
+    <string-array name="city_list_chhattisgarh">
+        <item>Raipur</item>
+        <item>Bilaspur</item>
+        <item>Durg</item>
+        <!-- Add more cities for Chhattisgarh as needed -->
+    </string-array>
+
+    <!-- City List for Dadra and Nagar Haveli -->
+    <string-array name="city_list_dadra_and_nagar_haveli">
+        <item>Silvassa</item>
+        <!-- Add more cities for Dadra and Nagar Haveli as needed -->
+    </string-array>
+
+    <!-- City List for Daman and Diu -->
+    <string-array name="city_list_daman_and_diu">
+        <item>Daman</item>
+        <item>Diu</item>
+        <!-- Add more cities for Daman and Diu as needed -->
+    </string-array>
+
+    <!-- City List for Delhi -->
+    <string-array name="city_list_delhi">
+        <item>New Delhi</item>
+        <!-- Add more cities for Delhi as needed -->
+    </string-array>
+
+    <!-- City List for Goa -->
+    <string-array name="city_list_goa">
+        <item>Panaji</item>
+        <item>Margao</item>
+        <!-- Add more cities for Goa as needed -->
+    </string-array>
+
+    <!-- City List for Gujarat -->
+    <string-array name="city_list_gujarat">
+        <item>Ahmedabad</item>
+        <item>Surat</item>
+        <item>Vadodara</item>
+        <!-- Add more cities for Gujarat as needed -->
+    </string-array>
+
+    <!-- City List for Haryana -->
+    <string-array name="city_list_haryana">
+        <item>Chandigarh</item>
+        <item>Gurugram</item>
+        <item>Faridabad</item>
+        <!-- Add more cities for Haryana as needed -->
+    </string-array>
+
+    <!-- City List for Himachal Pradesh -->
+    <string-array name="city_list_himachal_pradesh">
+        <item>Shimla</item>
+        <item>Manali</item>
+        <!-- Add more cities for Himachal Pradesh as needed -->
+    </string-array>
+
+    <!-- City List for Jammu and Kashmir -->
+    <string-array name="city_list_jammu_and_kashmir">
+        <item>Srinagar</item>
+        <item>Jammu</item>
+        <!-- Add more cities for Jammu and Kashmir as needed -->
+    </string-array>
+
+    <!-- City List for Jharkhand -->
+    <string-array name="city_list_jharkhand">
+        <item>Ranchi</item>
+        <item>Jamshedpur</item>
+        <!-- Add more cities for Jharkhand as needed -->
+    </string-array>
+
+    <!-- City List for Karnataka -->
+    <string-array name="city_list_karnataka">
+        <item>Bengaluru</item>
+        <item>Mysuru</item>
+        <item>Hubballi</item>
+        <!-- Add more cities for Karnataka as needed -->
+    </string-array>
+
+    <!-- City List for Kerala -->
+    <string-array name="city_list_kerala">
+        <item>Thiruvananthapuram</item>
+        <item>Kochi</item>
+        <item>Kozhikode</item>
+        <!-- Add more cities for Kerala as needed -->
+    </string-array>
+
+    <!-- City List for Lakshadweep -->
+    <string-array name="city_list_lakshadweep">
+        <item>Kavaratti</item>
+        <!-- Add more cities for Lakshadweep as needed -->
+    </string-array>
+
+    <!-- City List for Madhya Pradesh -->
+    <string-array name="city_list_madhya_pradesh">
+        <item>Bhopal</item>
+        <item>Indore</item>
+        <item>Gwalior</item>
+        <!-- Add more cities for Madhya Pradesh as needed -->
+    </string-array>
+
+    <!-- City List for Maharashtra -->
+    <string-array name="city_list_maharashtra">
+        <item>Mumbai</item>
+        <item>Pune</item>
+        <item>Nagpur</item>
+        <!-- Add more cities for Maharashtra as needed -->
+    </string-array>
+
+    <!-- City List for Manipur -->
+    <string-array name="city_list_manipur">
+        <item>Imphal</item>
+        <!-- Add more cities for Manipur as needed -->
+    </string-array>
+
+    <!-- City List for Meghalaya -->
+    <string-array name="city_list_meghalaya">
+        <item>Shillong</item>
+        <!-- Add more cities for Meghalaya as needed -->
+    </string-array>
+
+    <!-- City List for Mizoram -->
+    <string-array name="city_list_mizoram">
+        <item>Aizawl</item>
+        <!-- Add more cities for Mizoram as needed -->
+    </string-array>
+
+    <!-- City List for Nagaland -->
+    <string-array name="city_list_nagaland">
+        <item>City</item>
+        <!-- Add more cities for Mizoram as needed -->
+    </string-array>
+
+    <!-- City List for Odisha -->
+    <string-array name="city_list_odisha">
+        <item>Bhubaneswar</item>
+        <item>Cuttack</item>
+        <item>Rourkela</item>
+        <!-- Add more cities for Odisha as needed -->
+    </string-array>
+
+    <!-- City List for Puducherry -->
+    <string-array name="city_list_puducherry">
+        <item>Pondicherry</item>
+        <!-- Add more cities for Puducherry as needed -->
+    </string-array>
+
+    <!-- City List for Punjab -->
+    <string-array name="city_list_punjab">
+        <item>Chandigarh</item>
+        <item>Ludhiana</item>
+        <item>Amritsar</item>
+        <!-- Add more cities for Punjab as needed -->
+    </string-array>
+
+    <!-- City List for Rajasthan -->
+    <string-array name="city_list_rajasthan">
+        <item>Jaipur</item>
+        <item>Jodhpur</item>
+        <item>Udaipur</item>
+        <!-- Add more cities for Rajasthan as needed -->
+    </string-array>
+
+    <!-- City List for Sikkim -->
+    <string-array name="city_list_sikkim">
+        <item>Gangtok</item>
+        <!-- Add more cities for Sikkim as needed -->
+    </string-array>
+
+    <!-- City List for Tamil Nadu -->
+    <string-array name="city_list_tamil_nadu">
+        <item>Chennai</item>
+        <item>Coimbatore</item>
+        <item>Madurai</item>
+        <!-- Add more cities for Tamil Nadu as needed -->
+    </string-array>
+
+    <!-- City List for Telangana -->
+    <string-array name="city_list_telangana">
+        <item>Hyderabad</item>
+        <item>Warangal</item>
+        <!-- Add more cities for Telangana as needed -->
+    </string-array>
+
+    <!-- City List for Tripura -->
+    <string-array name="city_list_tripura">
+        <item>Agartala</item>
+        <!-- Add more cities for Tripura as needed -->
+    </string-array>
+
+    <!-- City List for Uttar Pradesh -->
+    <string-array name="city_list_uttar_pradesh">
+        <item>Lucknow</item>
+        <item>Kanpur</item>
+        <item>Agra</item>
+        <!-- Add more cities for Uttar Pradesh as needed -->
+    </string-array>
+
+    <!-- City List for Uttarakhand -->
+    <string-array name="city_list_uttarakhand">
+        <item>Dehradun</item>
+        <item>Haridwar</item>
+        <item>Rishikesh</item>
+        <!-- Add more cities for Uttarakhand as needed -->
+    </string-array>
+
+    <!-- City List for West Bengal -->
+    <string-array name="city_list_west_bengal">
+        <item>Kolkata</item>
+        <item>Asansol</item>
+        <item>Durgapur</item>
+        <!-- Add more cities for West Bengal as needed -->
+    </string-array>
+
+</resources>

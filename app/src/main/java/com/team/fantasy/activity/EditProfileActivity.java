@@ -29,10 +29,12 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 import static com.team.fantasy.APICallingPackage.Config.EDITPROFILE;
@@ -98,26 +100,51 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
             }
         });
 
-        // Initialize the state list with hardcoded states
-        stateList = new ArrayList<>();
-        stateList.add("State 1");
-        stateList.add("State 2");
-        // Add more states as needed
 
-        // Initialize the city list HashMap
+        // Initialize the state list with data from the resource file
+        stateList = Arrays.asList(getResources().getStringArray(R.array.state_list));
+
+        // Initialize the city list HashMap with data from the resource files
         cityMap = new HashMap<>();
-        // Add city lists for each state (replace "State 1" and "State 2" with actual state names)
-        List<String> cityListState1 = new ArrayList<>();
-        cityListState1.add("City 1");
-        cityListState1.add("City 2");
-        cityMap.put("State 1", cityListState1);
+        cityMap.put(stateList.get(0), Arrays.asList(getResources().getStringArray(R.array.city_list_andaman_and_nicobar)));
+        cityMap.put(stateList.get(1), Arrays.asList(getResources().getStringArray(R.array.city_list_andhra_pradesh)));
+        cityMap.put(stateList.get(2), Arrays.asList(getResources().getStringArray(R.array.city_list_arunachal_pradesh)));
+        cityMap.put(stateList.get(3), Arrays.asList(getResources().getStringArray(R.array.city_list_assam)));
+        cityMap.put(stateList.get(4), Arrays.asList(getResources().getStringArray(R.array.city_list_bihar)));
+        cityMap.put(stateList.get(5), Arrays.asList(getResources().getStringArray(R.array.city_list_chandigarh)));
+        cityMap.put(stateList.get(6), Arrays.asList(getResources().getStringArray(R.array.city_list_chhattisgarh)));
+        cityMap.put(stateList.get(7), Arrays.asList(getResources().getStringArray(R.array.city_list_dadra_and_nagar_haveli)));
+        cityMap.put(stateList.get(8), Arrays.asList(getResources().getStringArray(R.array.city_list_daman_and_diu)));
+        cityMap.put(stateList.get(9), Arrays.asList(getResources().getStringArray(R.array.city_list_delhi)));
+        cityMap.put(stateList.get(10), Arrays.asList(getResources().getStringArray(R.array.city_list_goa)));
+        cityMap.put(stateList.get(11), Arrays.asList(getResources().getStringArray(R.array.city_list_gujarat)));
+        cityMap.put(stateList.get(12), Arrays.asList(getResources().getStringArray(R.array.city_list_haryana)));
+        cityMap.put(stateList.get(13), Arrays.asList(getResources().getStringArray(R.array.city_list_himachal_pradesh)));
+        cityMap.put(stateList.get(14), Arrays.asList(getResources().getStringArray(R.array.city_list_jammu_and_kashmir)));
+        cityMap.put(stateList.get(15), Arrays.asList(getResources().getStringArray(R.array.city_list_jharkhand)));
+        cityMap.put(stateList.get(16), Arrays.asList(getResources().getStringArray(R.array.city_list_karnataka)));
+        cityMap.put(stateList.get(17), Arrays.asList(getResources().getStringArray(R.array.city_list_kerala)));
+        cityMap.put(stateList.get(18), Arrays.asList(getResources().getStringArray(R.array.city_list_lakshadweep)));
+        cityMap.put(stateList.get(19), Arrays.asList(getResources().getStringArray(R.array.city_list_madhya_pradesh)));
+        cityMap.put(stateList.get(20), Arrays.asList(getResources().getStringArray(R.array.city_list_maharashtra)));
+        cityMap.put(stateList.get(21), Arrays.asList(getResources().getStringArray(R.array.city_list_manipur)));
+        cityMap.put(stateList.get(22), Arrays.asList(getResources().getStringArray(R.array.city_list_meghalaya)));
+        cityMap.put(stateList.get(23), Arrays.asList(getResources().getStringArray(R.array.city_list_mizoram)));
+        cityMap.put(stateList.get(24), Arrays.asList(getResources().getStringArray(R.array.city_list_nagaland)));
+        cityMap.put(stateList.get(25), Arrays.asList(getResources().getStringArray(R.array.city_list_odisha)));
+        cityMap.put(stateList.get(26), Arrays.asList(getResources().getStringArray(R.array.city_list_puducherry)));
+        cityMap.put(stateList.get(27), Arrays.asList(getResources().getStringArray(R.array.city_list_punjab)));
+        cityMap.put(stateList.get(28), Arrays.asList(getResources().getStringArray(R.array.city_list_rajasthan)));
+        cityMap.put(stateList.get(29), Arrays.asList(getResources().getStringArray(R.array.city_list_sikkim)));
+        cityMap.put(stateList.get(30), Arrays.asList(getResources().getStringArray(R.array.city_list_tamil_nadu)));
+        cityMap.put(stateList.get(31), Arrays.asList(getResources().getStringArray(R.array.city_list_telangana)));
+        cityMap.put(stateList.get(32), Arrays.asList(getResources().getStringArray(R.array.city_list_tripura)));
+        cityMap.put(stateList.get(33), Arrays.asList(getResources().getStringArray(R.array.city_list_uttar_pradesh)));
+        cityMap.put(stateList.get(34), Arrays.asList(getResources().getStringArray(R.array.city_list_uttarakhand)));
+        cityMap.put(stateList.get(35), Arrays.asList(getResources().getStringArray(R.array.city_list_west_bengal)));
 
-        List<String> cityListState2 = new ArrayList<>();
-        cityListState2.add("City 3");
-        cityListState2.add("City 4");
-        cityMap.put("State 2", cityListState2);
 
-        // Add more city lists for other states as needed
+
         binding.etEditState.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,6 +201,8 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
             public void onClick(DialogInterface dialog, int which) {
                 // Set the selected state in the EditText
                 binding.etEditState.setText(stateList.get(which));
+                // Show the city list dialog based on the selected state
+                showCityListDialog(stateList.get(which));
 
             }
         });
@@ -216,15 +245,16 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
     }
 
     private void callViewProfile(boolean isShowLoader) {
-        try {
-
-            apiRequestManager.callAPI(VIEWPROFILE,
-                    createRequestJson(), context, activity, VIEWPROFILETYPE,
-                    isShowLoader,responseManager);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        ShowToast(context, "ViewAPi");
+//        try {
+//
+//            apiRequestManager.callAPI(VIEWPROFILE,
+//                    createRequestJson(), context, activity, VIEWPROFILETYPE,
+//                    isShowLoader,responseManager);
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
     }
 
     JSONObject createRequestJson() {
@@ -239,15 +269,16 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
     }
 
     private void callEditProfile(boolean isShowLoader) {
-        try {
-
-            apiRequestManager.callAPI(EDITPROFILE,
-                    createEditProfileJson(), context, activity, EDITPROFILETYPE,
-                    isShowLoader,responseManager);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        ShowToast(context, "EditAPi");
+//        try {
+//
+//            apiRequestManager.callAPI(EDITPROFILE,
+//                    createEditProfileJson(), context, activity, EDITPROFILETYPE,
+//                    isShowLoader,responseManager);
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
     }
 
     JSONObject createEditProfileJson() {
