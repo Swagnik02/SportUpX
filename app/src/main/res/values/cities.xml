@@ -172,7 +172,10 @@
 
     <!-- City List for Nagaland -->
     <string-array name="city_list_nagaland">
-        <item>City</item>
+        <item>Dimapur</item>
+        <item>Kohima</item>
+        <item>Soma</item>
+        <item>Tuensang</item>
         <!-- Add more cities for Mizoram as needed -->
     </string-array>
 

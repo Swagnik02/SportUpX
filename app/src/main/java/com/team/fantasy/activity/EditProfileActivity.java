@@ -21,6 +21,7 @@ import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.Bean.UserDetails;
 import com.team.fantasy.R;
+import com.team.fantasy.resources.StateCityInitializer;
 import com.team.fantasy.utils.SessionManager;
 import com.team.fantasy.databinding.ActivityEditProfileBinding;
 
@@ -100,50 +101,12 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
             }
         });
 
-
+        // <!-- State-city selector -->
         // Initialize the state list with data from the resource file
-        stateList = Arrays.asList(getResources().getStringArray(R.array.state_list));
+        stateList = StateCityInitializer.getStateList(getResources());
 
-        // Initialize the city list HashMap with data from the resource files
-        cityMap = new HashMap<>();
-        cityMap.put(stateList.get(0), Arrays.asList(getResources().getStringArray(R.array.city_list_andaman_and_nicobar)));
-        cityMap.put(stateList.get(1), Arrays.asList(getResources().getStringArray(R.array.city_list_andhra_pradesh)));
-        cityMap.put(stateList.get(2), Arrays.asList(getResources().getStringArray(R.array.city_list_arunachal_pradesh)));
-        cityMap.put(stateList.get(3), Arrays.asList(getResources().getStringArray(R.array.city_list_assam)));
-        cityMap.put(stateList.get(4), Arrays.asList(getResources().getStringArray(R.array.city_list_bihar)));
-        cityMap.put(stateList.get(5), Arrays.asList(getResources().getStringArray(R.array.city_list_chandigarh)));
-        cityMap.put(stateList.get(6), Arrays.asList(getResources().getStringArray(R.array.city_list_chhattisgarh)));
-        cityMap.put(stateList.get(7), Arrays.asList(getResources().getStringArray(R.array.city_list_dadra_and_nagar_haveli)));
-        cityMap.put(stateList.get(8), Arrays.asList(getResources().getStringArray(R.array.city_list_daman_and_diu)));
-        cityMap.put(stateList.get(9), Arrays.asList(getResources().getStringArray(R.array.city_list_delhi)));
-        cityMap.put(stateList.get(10), Arrays.asList(getResources().getStringArray(R.array.city_list_goa)));
-        cityMap.put(stateList.get(11), Arrays.asList(getResources().getStringArray(R.array.city_list_gujarat)));
-        cityMap.put(stateList.get(12), Arrays.asList(getResources().getStringArray(R.array.city_list_haryana)));
-        cityMap.put(stateList.get(13), Arrays.asList(getResources().getStringArray(R.array.city_list_himachal_pradesh)));
-        cityMap.put(stateList.get(14), Arrays.asList(getResources().getStringArray(R.array.city_list_jammu_and_kashmir)));
-        cityMap.put(stateList.get(15), Arrays.asList(getResources().getStringArray(R.array.city_list_jharkhand)));
-        cityMap.put(stateList.get(16), Arrays.asList(getResources().getStringArray(R.array.city_list_karnataka)));
-        cityMap.put(stateList.get(17), Arrays.asList(getResources().getStringArray(R.array.city_list_kerala)));
-        cityMap.put(stateList.get(18), Arrays.asList(getResources().getStringArray(R.array.city_list_lakshadweep)));
-        cityMap.put(stateList.get(19), Arrays.asList(getResources().getStringArray(R.array.city_list_madhya_pradesh)));
-        cityMap.put(stateList.get(20), Arrays.asList(getResources().getStringArray(R.array.city_list_maharashtra)));
-        cityMap.put(stateList.get(21), Arrays.asList(getResources().getStringArray(R.array.city_list_manipur)));
-        cityMap.put(stateList.get(22), Arrays.asList(getResources().getStringArray(R.array.city_list_meghalaya)));
-        cityMap.put(stateList.get(23), Arrays.asList(getResources().getStringArray(R.array.city_list_mizoram)));
-        cityMap.put(stateList.get(24), Arrays.asList(getResources().getStringArray(R.array.city_list_nagaland)));
-        cityMap.put(stateList.get(25), Arrays.asList(getResources().getStringArray(R.array.city_list_odisha)));
-        cityMap.put(stateList.get(26), Arrays.asList(getResources().getStringArray(R.array.city_list_puducherry)));
-        cityMap.put(stateList.get(27), Arrays.asList(getResources().getStringArray(R.array.city_list_punjab)));
-        cityMap.put(stateList.get(28), Arrays.asList(getResources().getStringArray(R.array.city_list_rajasthan)));
-        cityMap.put(stateList.get(29), Arrays.asList(getResources().getStringArray(R.array.city_list_sikkim)));
-        cityMap.put(stateList.get(30), Arrays.asList(getResources().getStringArray(R.array.city_list_tamil_nadu)));
-        cityMap.put(stateList.get(31), Arrays.asList(getResources().getStringArray(R.array.city_list_telangana)));
-        cityMap.put(stateList.get(32), Arrays.asList(getResources().getStringArray(R.array.city_list_tripura)));
-        cityMap.put(stateList.get(33), Arrays.asList(getResources().getStringArray(R.array.city_list_uttar_pradesh)));
-        cityMap.put(stateList.get(34), Arrays.asList(getResources().getStringArray(R.array.city_list_uttarakhand)));
-        cityMap.put(stateList.get(35), Arrays.asList(getResources().getStringArray(R.array.city_list_west_bengal)));
-
-
+        // Initialize the city list HashMap using the StateCityInitializer class
+        cityMap = (HashMap<String, List<String>>) StateCityInitializer.getCityMap(getResources(), stateList);
 
         binding.etEditState.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,6 +127,8 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
                 }
             }
         });
+
+        // <!-- State-city selector end-->
 
 
 
@@ -245,16 +210,16 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
     }
 
     private void callViewProfile(boolean isShowLoader) {
-        ShowToast(context, "ViewAPi");
-//        try {
-//
-//            apiRequestManager.callAPI(VIEWPROFILE,
-//                    createRequestJson(), context, activity, VIEWPROFILETYPE,
-//                    isShowLoader,responseManager);
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
+//        ShowToast(context, "apiCalled: callViewProfile");
+        try {
+
+            apiRequestManager.callAPI(VIEWPROFILE,
+                    createRequestJson(), context, activity, VIEWPROFILETYPE,
+                    isShowLoader,responseManager);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     JSONObject createRequestJson() {
@@ -269,16 +234,16 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
     }
 
     private void callEditProfile(boolean isShowLoader) {
-        ShowToast(context, "EditAPi");
-//        try {
-//
-//            apiRequestManager.callAPI(EDITPROFILE,
-//                    createEditProfileJson(), context, activity, EDITPROFILETYPE,
-//                    isShowLoader,responseManager);
-//
-//        } catch (JSONException e) {
-//            e.printStackTrace();
-//        }
+//        ShowToast(context, "apiCalled: callEditProfile");
+        try {
+
+            apiRequestManager.callAPI(EDITPROFILE,
+                    createEditProfileJson(), context, activity, EDITPROFILETYPE,
+                    isShowLoader,responseManager);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     JSONObject createEditProfileJson() {
