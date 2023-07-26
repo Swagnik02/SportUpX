@@ -61,6 +61,9 @@ public abstract class FragmentProfileBinding extends ViewDataBinding {
   public final CircleImageView imProfilepic;
 
   @NonNull
+  public final TextView tvDeleteUser;
+
+  @NonNull
   public final TextView tvFriendInviteText;
 
   @NonNull
@@ -143,15 +146,15 @@ public abstract class FragmentProfileBinding extends ViewDataBinding {
       LinearLayout LLReward, RelativeLayout RLContest, RelativeLayout RLMatch,
       RelativeLayout RLProfileAccount, RelativeLayout RLProfilePersonalDetail,
       RelativeLayout RLSeries, RelativeLayout RLWin, ImageView RankingIcon1, ImageView RewardIcon1,
-      ActivityMainheaderBinding head, CircleImageView imProfilepic, TextView tvFriendInviteText,
-      TextView tvFriendInviteText2, TextView tvInviteFriends, TextView tvJoinedContest,
-      TextView tvJoinedMatches, TextView tvJoinedSeries, TextView tvLine, TextView tvMyFriendsList,
-      TextView tvProfileAccount, TextView tvProfileAddBalance, TextView tvProfileBonus,
-      TextView tvProfileChangePassword, TextView tvProfileDeposited, TextView tvProfileLogout,
-      TextView tvProfileUserName, TextView tvProfileView, TextView tvProfileWinning,
-      TextView tvProfileYourMail, TextView tvRankingText, TextView tvRewardRank,
-      TextView tvRewardText, TextView tvSeeRank, TextView tvUserLocation, TextView tvViewRankText,
-      TextView tvViewRewardText, TextView tvWins) {
+      ActivityMainheaderBinding head, CircleImageView imProfilepic, TextView tvDeleteUser,
+      TextView tvFriendInviteText, TextView tvFriendInviteText2, TextView tvInviteFriends,
+      TextView tvJoinedContest, TextView tvJoinedMatches, TextView tvJoinedSeries, TextView tvLine,
+      TextView tvMyFriendsList, TextView tvProfileAccount, TextView tvProfileAddBalance,
+      TextView tvProfileBonus, TextView tvProfileChangePassword, TextView tvProfileDeposited,
+      TextView tvProfileLogout, TextView tvProfileUserName, TextView tvProfileView,
+      TextView tvProfileWinning, TextView tvProfileYourMail, TextView tvRankingText,
+      TextView tvRewardRank, TextView tvRewardText, TextView tvSeeRank, TextView tvUserLocation,
+      TextView tvViewRankText, TextView tvViewRewardText, TextView tvWins) {
     super(_bindingComponent, _root, _localFieldCount);
     this.FriendIcon1 = FriendIcon1;
     this.LLGlobalRanking = LLGlobalRanking;
@@ -167,6 +170,7 @@ public abstract class FragmentProfileBinding extends ViewDataBinding {
     this.RewardIcon1 = RewardIcon1;
     this.head = head;
     this.imProfilepic = imProfilepic;
+    this.tvDeleteUser = tvDeleteUser;
     this.tvFriendInviteText = tvFriendInviteText;
     this.tvFriendInviteText2 = tvFriendInviteText2;
     this.tvInviteFriends = tvInviteFriends;

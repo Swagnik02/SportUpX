@@ -25,17 +25,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:orientation="vertical"
-                tools:ignore="ExtraText">
-
-                <ImageButton
-                    android:id="@+id/profile_image_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/profile"
-                    android:onClick="onProfileImageButtonClick" />
-
-
+                android:orientation="vertical">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_editName"
@@ -271,7 +261,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:theme="@style/MyTextInputLayout"
-                    android:visibility="gone"
                     app:hintEnabled="false">
 
                     <EditText

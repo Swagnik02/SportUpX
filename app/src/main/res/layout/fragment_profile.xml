@@ -872,6 +872,22 @@
                         android:textColor="@color/btn_txt_color"
                         android:textSize="13sp" />
 
+                    <TextView
+                        android:id="@+id/tv_DeleteUser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/roundbutton_my_team"
+                        android:drawableLeft="@drawable/logout_icon"
+                        android:drawablePadding="10dp"
+                        android:drawableTint="@color/btn_txt_color"
+                        android:padding="10dp"
+                        android:text="Delete User"
+
+                        android:textColor="@color/btn_txt_color"
+                        android:textSize="13sp" />
+
 
                 </LinearLayout>
 

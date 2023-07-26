@@ -9,6 +9,7 @@
         android:name="android.hardware.camera"
         android:required="false" />
 
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -41,6 +42,8 @@
         tools:ignore="HardcodedDebugMode"
         tools:replace="android:allowBackup,android:icon,android:roundIcon"
         android:dataExtractionRules="@xml/data_extraction_rules">
+
+
 
         <uses-library
             android:name="org.apache.http.legacy"

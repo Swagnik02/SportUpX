@@ -29,6 +29,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.bumptech.glide.Glide;
+import com.team.fantasy.AppConfig;
 import com.team.fantasy.databinding.FragmentProfileBinding;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.Auth;
@@ -275,7 +276,6 @@ public class ProfileFragment extends Fragment implements ResponseManager {
                 e.printStackTrace();
             }
         }
-
     }
 
     public String getStringImage(Bitmap bmp) {
@@ -331,6 +331,16 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         }
     }
 
+    private void DeleteUser(boolean isShowLoader) {
+        try {
+            apiRequestManager.callAPI("AppConfig.https://cloudmint.tk/myrest/user/delete_user",
+                    createRequestJsonWin(), context, activity, MYACCOUNTTYPE,
+                    isShowLoader, responseManager);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
     JSONObject createRequestJsonWin() {
         JSONObject jsonObject = new JSONObject();
         try {

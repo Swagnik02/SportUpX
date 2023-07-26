@@ -5525,7 +5525,6 @@ id postLayout
 id preferenceDivider
 id pressed
 id production
-id profile_image_button
 id progress
 id progressBar
 id progressBar2
@@ -5838,6 +5837,7 @@ id tv_DStatus
 id tv_DTotalWinning
 id tv_DTransactionId
 id tv_DTxAmount
+id tv_DeleteUser
 id tv_DepositeHead
 id tv_DepositedAmount
 id tv_EditFeMale

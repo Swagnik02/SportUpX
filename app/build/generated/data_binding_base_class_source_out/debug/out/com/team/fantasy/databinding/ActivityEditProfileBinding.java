@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -81,9 +80,6 @@ public abstract class ActivityEditProfileBinding extends ViewDataBinding {
   public final TextInputLayout inputEditState;
 
   @NonNull
-  public final ImageButton profileImageButton;
-
-  @NonNull
   public final TextView tvEditFeMale;
 
   @NonNull
@@ -100,9 +96,8 @@ public abstract class ActivityEditProfileBinding extends ViewDataBinding {
       TextInputLayout inputEditCity, TextInputLayout inputEditCountry, TextInputLayout inputEditDob,
       TextInputLayout inputEditEmail, TextInputLayout inputEditFavouriteTeam,
       TextInputLayout inputEditMobile, TextInputLayout inputEditName,
-      TextInputLayout inputEditPincode, TextInputLayout inputEditState,
-      ImageButton profileImageButton, TextView tvEditFeMale, TextView tvEditMale,
-      TextView tvEditUpdateProfile) {
+      TextInputLayout inputEditPincode, TextInputLayout inputEditState, TextView tvEditFeMale,
+      TextView tvEditMale, TextView tvEditUpdateProfile) {
     super(_bindingComponent, _root, _localFieldCount);
     this.etEditAddress = etEditAddress;
     this.etEditCity = etEditCity;
@@ -125,7 +120,6 @@ public abstract class ActivityEditProfileBinding extends ViewDataBinding {
     this.inputEditName = inputEditName;
     this.inputEditPincode = inputEditPincode;
     this.inputEditState = inputEditState;
-    this.profileImageButton = profileImageButton;
     this.tvEditFeMale = tvEditFeMale;
     this.tvEditMale = tvEditMale;
     this.tvEditUpdateProfile = tvEditUpdateProfile;
