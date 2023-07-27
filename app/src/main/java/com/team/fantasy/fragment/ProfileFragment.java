@@ -59,9 +59,11 @@ import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
+import static com.team.fantasy.APICallingPackage.Config.DELETEUSER;
 import static com.team.fantasy.APICallingPackage.Config.MYACCOUNT;
 import static com.team.fantasy.APICallingPackage.Config.MYPLAYINGHISTORY;
 import static com.team.fantasy.APICallingPackage.Config.UpdateUserProfileImage;
+import static com.team.fantasy.APICallingPackage.Constants.DELETEUSERTYPE;
 import static com.team.fantasy.APICallingPackage.Constants.MYACCOUNTTYPE;
 import static com.team.fantasy.APICallingPackage.Constants.MYPLAYINGHISTORYTYPE;
 import static com.team.fantasy.APICallingPackage.Constants.UpdateProfileImage;
@@ -129,6 +131,16 @@ public class ProfileFragment extends Fragment implements ResponseManager {
                 Logout();
             }
         });
+
+
+        binding.tvDeleteUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDeleteUserConfirmationDialog();
+            }
+        });
+
+
         binding.tvProfileYourMail.setText(HomeActivity.sessionManager.getUser(getContext()).getEmail() + "");
         String UserEmail = HomeActivity.sessionManager.getUser(getContext()).getEmail();
         String Imageurl = HomeActivity.sessionManager.getUser(getContext()).getImage();
@@ -211,7 +223,24 @@ public class ProfileFragment extends Fragment implements ResponseManager {
 
 
         return binding.getRoot();
+
+    }           //end of onCreate
+
+
+    private void showDeleteUserConfirmationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("Delete User");
+        builder.setMessage("Are you sure you want to delete your account?");
+        builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                callDeleteUserApi();
+            }
+        });
+        builder.setNegativeButton("Cancel", null);
+        builder.show();
     }
+
 
     public void ChooseImageDialog() {
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(activity);
@@ -436,7 +465,13 @@ public class ProfileFragment extends Fragment implements ResponseManager {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        } else {
+        } else  if (type.equals(DELETEUSERTYPE)) {
+            // Handle the success response here
+            // You can display a toast or a dialog to inform the user about successful deletion.
+            // After successful deletion, call the Logout() method to log the user out.
+            Logout();
+        }
+        else {
             try {
                 Deposited = result.getString("credit_amount");
                 Winnings = result.getString("winning_amount");
@@ -453,6 +488,24 @@ public class ProfileFragment extends Fragment implements ResponseManager {
 
     }
 
+    // User Delete
+    private void callDeleteUserApi() {
+        try {
+            apiRequestManager.callAPI(DELETEUSER, createDeleteUserRequestJson(), context, activity, DELETEUSERTYPE, true, this);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private JSONObject createDeleteUserRequestJson() {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("user_id", HomeActivity.sessionManager.getUser(context).getUser_id());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonObject;
+    }
 
     @Override
     public void onError(Context mContext, String type, String message) {
@@ -476,4 +529,7 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         startActivity(i);
 
     }
+
 }
+
+

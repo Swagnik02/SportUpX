@@ -45,6 +45,10 @@ public class Config {
     public static String VERIFYOTP = BASEURL + "user_number_verify";
     public static String RESENDOTP = BASEURL + "resend_otp";
 
+    // Delete User
+    public static String DELETEUSER = BASEURL + "delete_user";
+
+
     public static String FORGOTPASSWORD = BASEURL + "forget_password";
     public static String VERIFYFORGOTPASSWORD = BASEURL + "varify_forgot_password";
 

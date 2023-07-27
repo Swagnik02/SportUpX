@@ -55,6 +55,8 @@ public class Constants {
     //My Account Type
     public static String MYACCOUNTTYPE = "MyAccountType";
 
+    public static String DELETEUSERTYPE = "DeleteUserType";
+
     //My Playing History Type
     public static String MYPLAYINGHISTORYTYPE = "MyPlayingHistoryType";
 
