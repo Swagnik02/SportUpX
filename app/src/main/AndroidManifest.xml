@@ -39,6 +39,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
+        android:enableOnBackInvokedCallback="true"
         tools:ignore="HardcodedDebugMode"
         tools:replace="android:allowBackup,android:icon,android:roundIcon"
         android:dataExtractionRules="@xml/data_extraction_rules">
