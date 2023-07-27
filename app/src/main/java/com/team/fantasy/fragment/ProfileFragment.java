@@ -259,7 +259,7 @@ public class ProfileFragment extends Fragment implements ResponseManager {
             binding.tvProfileUserName.setText(UserEmail);
             ShowToast(context, "Update Username in EditProfile !!");
         }
-        
+
     }
 
 

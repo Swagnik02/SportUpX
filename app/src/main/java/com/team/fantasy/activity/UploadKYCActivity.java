@@ -28,6 +28,7 @@ import android.widget.DatePicker;
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.R;
+import com.team.fantasy.resources.StateCityInitializer;
 import com.team.fantasy.utils.SessionManager;
 import com.team.fantasy.databinding.ActivityUploadKycBinding;
 
@@ -39,6 +40,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
@@ -68,6 +70,7 @@ public class UploadKYCActivity extends AppCompatActivity implements ResponseMana
     String UserName, DocNumber, DateofBirth, State;
     String PanOrAadhaar;
 
+    List<String> stateList;
     ActivityUploadKycBinding binding;
 
     @Override
@@ -133,10 +136,6 @@ public class UploadKYCActivity extends AppCompatActivity implements ResponseMana
         });
 
 
-
-
-
-
         binding.tvSubmitForVerification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -166,8 +165,47 @@ public class UploadKYCActivity extends AppCompatActivity implements ResponseMana
             }
         });
 
+
+
+        // <!-- State selector -->
+        // Initialize the state list with data from the resource file
+        stateList = StateCityInitializer.getStateList(getResources());
+
+        binding.etDocState.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showStateListDialog();
+            }
+        });
+
+        // <!-- State selector -->
+
+
     }
 
+
+    // <!-- State selector -->
+    // Method to show the state list dialog
+    private void showStateListDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select State");
+        builder.setItems(stateList.toArray(new String[0]), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Set the selected state in the EditText
+                binding.etDocState.setText(stateList.get(which));
+//                // Show the city list dialog based on the selected state
+//                showCityListDialog(stateList.get(which));
+
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
+    // <!-- State selector -->
     public void initViews() {
 
 

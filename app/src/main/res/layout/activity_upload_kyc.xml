@@ -182,6 +182,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:backgroundTint="@color/black"
+                        android:focusable="false"
                         android:hint="Enter State"
                         android:padding="12dp"
                         android:singleLine="true"
