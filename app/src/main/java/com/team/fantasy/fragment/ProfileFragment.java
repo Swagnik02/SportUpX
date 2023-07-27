@@ -59,14 +59,17 @@ import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
+import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 import static com.team.fantasy.APICallingPackage.Config.DELETEUSER;
 import static com.team.fantasy.APICallingPackage.Config.MYACCOUNT;
 import static com.team.fantasy.APICallingPackage.Config.MYPLAYINGHISTORY;
 import static com.team.fantasy.APICallingPackage.Config.UpdateUserProfileImage;
+import static com.team.fantasy.APICallingPackage.Config.VIEWPROFILE;
 import static com.team.fantasy.APICallingPackage.Constants.DELETEUSERTYPE;
 import static com.team.fantasy.APICallingPackage.Constants.MYACCOUNTTYPE;
 import static com.team.fantasy.APICallingPackage.Constants.MYPLAYINGHISTORYTYPE;
 import static com.team.fantasy.APICallingPackage.Constants.UpdateProfileImage;
+import static com.team.fantasy.APICallingPackage.Constants.VIEWPROFILETYPE;
 
 
 public class ProfileFragment extends Fragment implements ResponseManager {
@@ -106,6 +109,8 @@ public class ProfileFragment extends Fragment implements ResponseManager {
 
         context = activity = (HomeActivity) getActivity();
 
+        // Initialize the session manager
+        sessionManager = new SessionManager();
 
         loginPreferences = getActivity().getSharedPreferences("loginPrefs", MODE_PRIVATE);
         loginPrefsEditor = loginPreferences.edit();
@@ -114,6 +119,7 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         responseManager = this;
         apiRequestManager = new APIRequestManager(getActivity());
 
+//        callViewProfile(true);
 
         binding.tvProfileChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,7 +138,6 @@ public class ProfileFragment extends Fragment implements ResponseManager {
             }
         });
 
-
         binding.tvDeleteUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,28 +145,34 @@ public class ProfileFragment extends Fragment implements ResponseManager {
             }
         });
 
-
         binding.tvProfileYourMail.setText(HomeActivity.sessionManager.getUser(getContext()).getEmail() + "");
-        String UserEmail = HomeActivity.sessionManager.getUser(getContext()).getEmail();
+//        String UserEmail = HomeActivity.sessionManager.getUser(getContext()).getEmail();
         String Imageurl = HomeActivity.sessionManager.getUser(getContext()).getImage();
-        String UserName = HomeActivity.sessionManager.getUser(getContext()).getName();
+//        String UserName = sessionManager.getUser(getContext()).getName();
+
+
+
         Log.e("Imageurl", Config.ProfileIMAGEBASEURL + Imageurl);
+
         if (TextUtils.isEmpty(Imageurl) || Imageurl.equals("")) {
 
         } else {
             Glide.with(getActivity()).load(Config.ProfileIMAGEBASEURL + Imageurl)
                     .into(binding.imProfilepic);
         }
-        if (UserEmail.equals("")) {
-            binding.tvProfileUserName.setText("Username");
-        }
-        else if (UserName.length() > 1){
-            binding.tvProfileUserName.setText(UserName);
-        }
-        else {
-            binding.tvProfileUserName.setText(UserEmail);
-        }
 
+//        if (UserEmail.equals("")) {
+//            binding.tvProfileUserName.setText("Username");
+//            ShowToast(context, "1 UserName: "+ UserName);
+//        }
+//        else if (UserName.length() > 1){
+//            binding.tvProfileUserName.setText(UserName);
+//            ShowToast(context, "2 UserName: "+ UserName);
+//        }
+//        else {
+//            binding.tvProfileUserName.setText(UserEmail);
+//            ShowToast(context, "3 UserName: "+ UserName);
+//        }
 
         binding.tvProfileAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -171,7 +182,6 @@ public class ProfileFragment extends Fragment implements ResponseManager {
                 startActivity(i);
             }
         });
-
         binding.tvProfileAddBalance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -221,11 +231,54 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         callMyAccountDetails(false);
         callMyHistory(false);
 
-
         return binding.getRoot();
 
-    }           //end of onCreate
+    }           // end of onCreate
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        callViewProfile(true);
+
+        String UserEmail = HomeActivity.sessionManager.getUser(getContext()).getEmail();
+        String UserName = sessionManager.getUser(getContext()).getName();
+        if (UserEmail.equals("")) {
+            binding.tvProfileUserName.setText("Username");
+            ShowToast(context, "1 UserName: "+ UserName);
+        }
+        else if (UserName.length() > 1){
+            binding.tvProfileUserName.setText(UserName);
+            ShowToast(context, "2 UserName: "+ UserName);
+        }
+        else {
+            binding.tvProfileUserName.setText(UserEmail);
+            ShowToast(context, "3 UserName: "+ UserName);
+        }
+
+
+    }
+
+
+    public void callViewProfile(boolean isShowLoader) {
+        try {
+            apiRequestManager.callAPI(VIEWPROFILE,
+                    ViewProfRequestJson(), context, activity, VIEWPROFILETYPE,
+                    isShowLoader, responseManager);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    JSONObject ViewProfRequestJson() {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("user_id", sessionManager.getUser(context).getUser_id());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonObject;
+    }
 
     private void showDeleteUserConfirmationDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -240,7 +293,6 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         builder.setNegativeButton("Cancel", null);
         builder.show();
     }
-
 
     public void ChooseImageDialog() {
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(activity);
@@ -359,16 +411,6 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         }
     }
 
-    private void DeleteUser(boolean isShowLoader) {
-        try {
-            apiRequestManager.callAPI("AppConfig.https://cloudmint.tk/myrest/user/delete_user",
-                    createRequestJsonWin(), context, activity, MYACCOUNTTYPE,
-                    isShowLoader, responseManager);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
     JSONObject createRequestJsonWin() {
         JSONObject jsonObject = new JSONObject();
         try {
