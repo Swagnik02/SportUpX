@@ -222,7 +222,11 @@ public class ProfileFragment extends Fragment implements ResponseManager {
             public void onClick(View view) {
                 if (Build.VERSION.SDK_INT >= 23) {
                     checkPermissions();
-                } else {
+                    ChooseImageDialog();
+                    ShowToast(context, "Build.VERSION.SDK_INT >= 23");
+                }
+                else {
+                    ShowToast(context, "Choose");
                     ChooseImageDialog();
                 }
             }
@@ -245,18 +249,17 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         String UserName = sessionManager.getUser(getContext()).getName();
         if (UserEmail.equals("")) {
             binding.tvProfileUserName.setText("Username");
-            ShowToast(context, "1 UserName: "+ UserName);
+            ShowToast(context, "Update Username in EditProfile !");
         }
         else if (UserName.length() > 1){
             binding.tvProfileUserName.setText(UserName);
-            ShowToast(context, "2 UserName: "+ UserName);
+//            ShowToast(context, "2 UserName: "+ UserName);
         }
         else {
             binding.tvProfileUserName.setText(UserEmail);
-            ShowToast(context, "3 UserName: "+ UserName);
+            ShowToast(context, "Update Username in EditProfile !!");
         }
-
-
+        
     }
 
 

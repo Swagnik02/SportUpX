@@ -105,8 +105,11 @@ public class UploadKYCActivity extends AppCompatActivity implements ResponseMana
             public void onClick(View view) {
                 if (Build.VERSION.SDK_INT >= 23) {
                     checkPermissions();
+                    ChooseImageDialog();
+                    ShowToast(context, "Build.VERSION.SDK_INT >= 23");
                 }
                 else {
+                    ShowToast(context, "Choose");
                     ChooseImageDialog();
                 }
             }
@@ -255,8 +258,8 @@ public class UploadKYCActivity extends AppCompatActivity implements ResponseMana
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == PICK_IMAGE_GALLERY &&
                 resultCode == RESULT_OK && data != null && data.getData() != null) {
             Uri filePath = data.getData();
@@ -266,19 +269,19 @@ public class UploadKYCActivity extends AppCompatActivity implements ResponseMana
                 binding.imImagePreview.setVisibility(View.VISIBLE);
                 binding.imImagePreview.setImageBitmap(bitmap);
 
-                Log.e("Image Path", "onActivityResult: "+filePath );
+                Log.e("Image Path", "onActivityResult: " + filePath);
             } catch (Exception e) {
                 bitmap = null;
                 e.printStackTrace();
             }
         }
-        if (requestCode == PICK_IMAGE_CAMERA&&resultCode == RESULT_OK ) {
+        if (requestCode == PICK_IMAGE_CAMERA && resultCode == RESULT_OK) {
             try {
                 bitmap = (Bitmap) data.getExtras().get("data");
                 binding.imImagePreview.setVisibility(View.VISIBLE);
                 binding.imImagePreview.setImageBitmap(bitmap);
 
-                Log.e("Image Path", "onActivityResult: " );
+                Log.e("Image Path", "onActivityResult: ");
             } catch (Exception e) {
                 bitmap = null;
                 e.printStackTrace();
@@ -318,12 +321,12 @@ public class UploadKYCActivity extends AppCompatActivity implements ResponseMana
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 100) {
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 ChooseImageDialog();
-            }
-            else {
+            } else {
 
             }
             return;
