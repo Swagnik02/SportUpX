@@ -110,4 +110,7 @@ public class Constants {
     //MyMatchRecordType
     public static String MYMATCHRECORDTYPE = "MyMatchRecordType";
 
+    //paytm
+    public static String FETCH_PAYTM_CREDENTIALS_TYPE = "FetchPaytmCredentialsType";
+
 }

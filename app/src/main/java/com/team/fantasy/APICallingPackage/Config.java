@@ -5,6 +5,7 @@ import com.team.fantasy.AppConfig;
 
 public class Config {
 
+
     public static String SERVERURL = AppConfig.ApiUrl;
 
     //APK NAME
@@ -104,7 +105,7 @@ public class Config {
     //Withdraw Amount User Data If Saved
     public static String WITHDRAWAMOUNTUSERDATA = BASEURL + "user_withdrow_information";
 
-    //Submit Withdrawl Request
+    //Submit Withdrawal Request
     public static String WITHDRAWLREQUEST = BASEURL + "withdrow_amount";
 
     //Global Ranking Request
@@ -141,6 +142,8 @@ public class Config {
     //Home Match Api
     public static String MYMATCHRECORD = BASEURL + "my_match_record";
 
+    //paytm
+    public static String FETCH_PAYTM_CREDENTIALS = BASEURL + "fetch_paytm_credentials";
 
 
 }

@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.team.fantasy.APICallingPackage.Config;
+import com.team.fantasy.APICallingPackage.Constants;
 import com.team.fantasy.utils.CheckSumServiceHelper;
 import com.team.fantasy.utils.PaytmConstants;
 import com.paytm.pgsdk.PaytmOrder;
@@ -63,6 +65,9 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
         context = activity = this;
         sessionManager = new SessionManager();
 
+        // Fetch Paytm credentials before generating the checksum and initializing payment
+        fetchPaytmCredentials(false);
+
         tv_TxDetails = findViewById(R.id.tv_TxDetails);
         tv_Proceed = findViewById(R.id.tv_Proceed);
 
@@ -96,6 +101,33 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
 
 
     }
+
+    private void fetchPaytmCredentials(boolean isShowLoader) {
+        try {
+            apiRequestManager.callAPI(Config.FETCH_PAYTM_CREDENTIALS,
+                    createFetchPaytmCredentialsJson(), context, activity, Constants.FETCH_PAYTM_CREDENTIALS_TYPE,
+                    isShowLoader, responseManager);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    JSONObject createFetchPaytmCredentialsJson() {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            // Add any relevant parameters required by the API to fetch Paytm credentials.
+            // For example, if you need to pass the user ID, you can do it like this:
+             jsonObject.put("user_id", sessionManager.getUser(context).getUser_id());
+
+            // Add any other required parameters for the API call.
+            // ...
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonObject;
+    }
+
 
     private void generateCheckSum() {
         String checkSum = "";
@@ -270,20 +302,54 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
     }
 
 
+//    @Override
+//    public void getResult(Context mContext, String type, String message, JSONObject result) {
+//
+//        ShowToast(context,message);
+//        Dialog(AfterPaymentStatus,AfterPaymentTxId,AfterPaymentOrderId,AfterPaymentAmount);
+//        try {
+//            String Status = result.getString("transaction_status");
+//        }
+//        catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
+
     @Override
     public void getResult(Context mContext, String type, String message, JSONObject result) {
+        if (type.equals(Constants.FETCH_PAYTM_CREDENTIALS_TYPE)) {
+            // Handle the response for fetching Paytm credentials here.
+            // Extract the Paytm credentials from the JSON result and use them as needed.
+            // For example, you can retrieve values from the PaytmConstants class like this:
+            if (result != null) {
+                PaytmConstants.MerchantKEY = result.optString("merchant_key", "");
+                PaytmConstants.M_ID = result.optString("merchant_id", "");
+                PaytmConstants.INDUSTRY_TYPE_ID = result.optString("industry_type_id", "");
+                PaytmConstants.CHANNEL_ID = result.optString("channel_id", "");
+                PaytmConstants.WEBSITE = result.optString("website", "");
+            }
 
-        ShowToast(context,message);
-        Dialog(AfterPaymentStatus,AfterPaymentTxId,AfterPaymentOrderId,AfterPaymentAmount);
-        try {
-            String Status = result.getString("transaction_status");
-        }
-        catch (Exception e){
-            e.printStackTrace();
+            // After fetching the credentials, generate the checksum and initialize the payment.
+            generateCheckSum();
+
+            // Show a toast message based on the API response.
+            ShowToast(context, message);
+
+            // Show the dialog with payment details (if required).
+            Dialog(AfterPaymentStatus, AfterPaymentTxId, AfterPaymentOrderId, AfterPaymentAmount);
+        } else {
+            // Handle other API responses as usual.
+            // Show a toast message based on the API response.
+            ShowToast(context, message);
+
+            // Perform any other necessary actions based on the response type.
+            try {
+                String Status = result.getString("transaction_status");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
-
-
 
     @Override
     public void onError(Context mContext, String type, String message) {
