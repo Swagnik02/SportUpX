@@ -52,6 +52,7 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.material.tabs.TabLayout;
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
+import com.team.fantasy.APICallingPackage.Config;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.BuildConfig;
 import com.team.fantasy.R;
@@ -140,6 +141,7 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
                 startActivity(i);
             }
         });
+
 
         Ravenscroft = Typeface.createFromAsset(this.getAssets(), "Ravenscroft.ttf");
         String Name = sessionManager.getUser(context).getName();

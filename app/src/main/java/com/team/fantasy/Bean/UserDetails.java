@@ -24,7 +24,6 @@ public class UserDetails {
         this.image = image;
     }
 
-
     public String getUser_id() {
         return user_id;
     }

@@ -65,8 +65,7 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
         context = activity = this;
         sessionManager = new SessionManager();
 
-        // Fetch Paytm credentials before generating the checksum and initializing payment
-        fetchPaytmCredentials(false);
+
 
         tv_TxDetails = findViewById(R.id.tv_TxDetails);
         tv_Proceed = findViewById(R.id.tv_Proceed);
@@ -100,6 +99,8 @@ public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTran
         });
 
 
+        // Fetch Paytm credentials before generating the checksum and initializing payment
+        fetchPaytmCredentials(false);
     }
 
     private void fetchPaytmCredentials(boolean isShowLoader) {

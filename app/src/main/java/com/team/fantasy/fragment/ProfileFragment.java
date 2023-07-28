@@ -146,33 +146,7 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         });
 
         binding.tvProfileYourMail.setText(HomeActivity.sessionManager.getUser(getContext()).getEmail() + "");
-//        String UserEmail = HomeActivity.sessionManager.getUser(getContext()).getEmail();
-        String Imageurl = HomeActivity.sessionManager.getUser(getContext()).getImage();
-//        String UserName = sessionManager.getUser(getContext()).getName();
 
-
-
-        Log.e("Imageurl", Config.ProfileIMAGEBASEURL + Imageurl);
-
-        if (TextUtils.isEmpty(Imageurl) || Imageurl.equals("")) {
-
-        } else {
-            Glide.with(getActivity()).load(Config.ProfileIMAGEBASEURL + Imageurl)
-                    .into(binding.imProfilepic);
-        }
-
-//        if (UserEmail.equals("")) {
-//            binding.tvProfileUserName.setText("Username");
-//            ShowToast(context, "1 UserName: "+ UserName);
-//        }
-//        else if (UserName.length() > 1){
-//            binding.tvProfileUserName.setText(UserName);
-//            ShowToast(context, "2 UserName: "+ UserName);
-//        }
-//        else {
-//            binding.tvProfileUserName.setText(UserEmail);
-//            ShowToast(context, "3 UserName: "+ UserName);
-//        }
 
         binding.tvProfileAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -245,6 +219,23 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         super.onResume();
         callViewProfile(true);
 
+        // Display profile image
+        String Imageurl = sessionManager.getUser(getContext()).getImage();
+//        String Imageurl = "UserImage20230728190516.jpg";
+
+        Log.e("Imageurl : ", Config.ProfileIMAGEBASEURL + Imageurl);
+
+        if (TextUtils.isEmpty(Imageurl) || Imageurl.equals("")) {
+            ShowToast(context, "empty image url");
+            Log.e("Imageurl : ", Config.ProfileIMAGEBASEURL + Imageurl);
+        } else {
+            Glide.with(getActivity()).load(Config.ProfileIMAGEBASEURL + Imageurl)
+                    .into(binding.imProfilepic);
+            ShowToast(context, "image url: "+Config.ProfileIMAGEBASEURL + Imageurl);
+            Log.e("Imageurl : ", Config.ProfileIMAGEBASEURL + Imageurl);
+        }
+
+        // Display UserName
         String UserEmail = HomeActivity.sessionManager.getUser(getContext()).getEmail();
         String UserName = sessionManager.getUser(getContext()).getName();
         if (UserEmail.equals("")) {
