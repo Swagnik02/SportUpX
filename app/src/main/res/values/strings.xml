@@ -89,9 +89,9 @@
     <string name="preview">Preview</string>
     <string name="player_role">Player Role</string>
     <string name="transaction_status">Transaction Status</string>
-    <string name="c_gets_2x_points_amp_vc_gets_1_5x_points"><![CDATA[(C) Gets 2X Points & (VC) Gets 1.5X Points]]></string>
+    <string name="c_gets_2x_points_amp_vc_gets_1_5x_points"><![CDATA[© Gets 2X Points & (VC) Gets 1.5X Points]]></string>
     <string name="choose_captain">Choose Captain</string>
-    <string name="c">(C)</string>
+    <string name="c">©</string>
     <string name="vc">(VC)</string>
     <string name="amp_vice_captain"><![CDATA[& Vice Captain]]></string>
     <string name="by_registering_i_agree_to_my11team_s">By registering, I agree to 11Dreamer\'s</string>
