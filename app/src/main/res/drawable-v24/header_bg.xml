@@ -10,7 +10,7 @@
             <gradient
                 android:startColor="@color/background"
                 android:endColor="@color/white"
-                android:angle="120"
+                android:angle="0"
                 />
             <stroke
                 android:width="1dp"
