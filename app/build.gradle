@@ -21,9 +21,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    dexOptions{
-        javaMaxHeapSize "4g"
-    }
+//    dexOptions{
+//        javaMaxHeapSize "4g"
+//    }
     namespace 'com.team.fantasy'
 }
 
