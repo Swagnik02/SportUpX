@@ -186,13 +186,13 @@
                     android:layout_marginTop="10dp"
                     android:theme="@style/MyTextInputLayout"
                     android:textColorHint="@color/black">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/et_EditCity"
+                    <EditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:backgroundTint="@color/black"
+                        android:id="@+id/et_EditCity"
+                        android:focusable="false"
                         android:hint="City"
                         android:padding="12dp"
                         android:singleLine="true"
@@ -200,7 +200,6 @@
                         android:textColorHint="@color/black"
                         android:textSize="14sp" />
                 </com.google.android.material.textfield.TextInputLayout>
-
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/input_editPincode"
                     android:layout_width="match_parent"
