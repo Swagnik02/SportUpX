@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil;
 
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 
 
@@ -20,17 +21,21 @@ import com.team.fantasy.R;
 import com.team.fantasy.utils.SessionManager;
 import com.team.fantasy.databinding.ActivityEditProfileBinding;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 import static com.team.fantasy.APICallingPackage.Config.EDITPROFILE;
 import static com.team.fantasy.APICallingPackage.Config.VIEWPROFILE;
 import static com.team.fantasy.APICallingPackage.Constants.EDITPROFILETYPE;
+import static com.team.fantasy.APICallingPackage.Constants.GETCITYTYPE;
 import static com.team.fantasy.APICallingPackage.Constants.VIEWPROFILETYPE;
 
 public class EditProfileActivity extends AppCompatActivity implements ResponseManager {
@@ -49,6 +54,7 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
 
     ActivityEditProfileBinding binding;
 
+    FetchCity fetchCity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,6 +118,9 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
                 callEditProfile(true);
             }
         });
+        fetchCity = new FetchCity();
+        String stateId = "41";
+        fetchCity.callFetchCities(this, stateId, true, this);
     }
 
 
@@ -190,9 +199,9 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
     @Override
     public void getResult(Context mContext, String type, String message, JSONObject result) {
 
-        if (type.equals(EDITPROFILETYPE)){
+        if (type.equals(EDITPROFILETYPE)) {
 
-            ShowToast(context,message);
+            ShowToast(context, message);
             loginPrefsEditor.putBoolean("saveLogin", true);
             loginPrefsEditor.commit();
             UserDetails userDetails = new UserDetails();
@@ -212,63 +221,60 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
             onBackPressed();
             finish();
         }
-        else {
-            try {
-                name = result.getString("name");
-                mobile = result.getString("mobile");
-                email = result.getString("email");
-                image = result.getString("image");
-                teamName = result.getString("teamName");
-                favriteTeam = result.getString("favriteTeam");
-                dob = result.getString("dob");
-                gender = result.getString("gender");
-                address = result.getString("address");
-                city = result.getString("city");
-                pincode = result.getString("pincode");
-                state = result.getString("state");
-                country = result.getString("country");
+             else {
+                try {
+                    name = result.getString("name");
+                    mobile = result.getString("mobile");
+                    email = result.getString("email");
+                    image = result.getString("image");
+                    teamName = result.getString("teamName");
+                    favriteTeam = result.getString("favriteTeam");
+                    dob = result.getString("dob");
+                    gender = result.getString("gender");
+                    address = result.getString("address");
+                    city = result.getString("city");
+                    pincode = result.getString("pincode");
+                    state = result.getString("state");
+                    country = result.getString("country");
 
 
+                    if (name.equals("")) {
+
+                    } else {
+                        binding.etEditName.setText(name);
+                    }
+                    binding.etEditEmail.setText(email);
+                    binding.etEditMobile.setText(mobile);
+                    binding.etEditFavouriteTeam.setText(favriteTeam);
+                    binding.etEditDob.setText(dob);
+                    binding.etEditAddress.setText(address);
+                    binding.etEditCity.setText(city);
+                    binding.etEditState.setText(state);
+                    binding.etEditPincode.setText(pincode);
+
+                    if (gender.equals("male")) {
+                        binding.tvEditMale.setBackgroundResource(R.drawable.roundbutton);
+                        binding.tvEditFeMale.setBackgroundResource(R.drawable.roundbutton_hover_back);
+                    } else if (gender.equals("female")) {
+                        binding.tvEditFeMale.setBackgroundResource(R.drawable.roundbutton);
+                        binding.tvEditMale.setBackgroundResource(R.drawable.roundbutton_hover_back);
+                    }
+
+                    if (!email.equals("")) {
+                        binding.etEditEmail.setEnabled(false);
+                        binding.etEditEmail.setFocusable(false);
+                    }
+                    if (!mobile.equals("")) {
+                        binding.etEditMobile.setEnabled(false);
+                        binding.etEditMobile.setFocusable(false);
+                    }
 
 
-                if (name.equals("")) {
+                } catch (Exception e) {
 
-                } else {
-                    binding.etEditName.setText(name);
+                    e.printStackTrace();
                 }
-                binding.etEditEmail.setText(email);
-                binding.etEditMobile.setText(mobile);
-                binding.etEditFavouriteTeam.setText(favriteTeam);
-                binding.etEditDob.setText(dob);
-                binding.etEditAddress.setText(address);
-                binding.etEditCity.setText(city);
-                binding.etEditState.setText(state);
-                binding.etEditPincode.setText(pincode);
-
-                if (gender.equals("male")) {
-                    binding.tvEditMale.setBackgroundResource(R.drawable.roundbutton);
-                    binding.tvEditFeMale.setBackgroundResource(R.drawable.roundbutton_hover_back);
-                } else if (gender.equals("female")) {
-                    binding.tvEditFeMale.setBackgroundResource(R.drawable.roundbutton);
-                    binding.tvEditMale.setBackgroundResource(R.drawable.roundbutton_hover_back);
-                }
-
-                if (!email.equals("")) {
-                    binding.etEditEmail.setEnabled(false);
-                    binding.etEditEmail.setFocusable(false);
-                }
-                if (!mobile.equals("")) {
-                    binding.etEditMobile.setEnabled(false);
-                    binding.etEditMobile.setFocusable(false);
-                }
-
-
-            } catch (Exception e) {
-
-                e.printStackTrace();
             }
-        }
-
         }
 
 

@@ -149,5 +149,8 @@ public class Config {
     //paytm
     public static String FETCH_PAYTM_CREDENTIALS = BASEURL + "fetch_paytm_credentials";
 
+    //state city
+    public static final String GETCITY = BASEURL + "get_city";
+
 
 }
