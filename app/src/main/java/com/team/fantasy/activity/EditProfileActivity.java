@@ -2,7 +2,6 @@ package com.team.fantasy.activity;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -13,15 +12,11 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.DatePicker;
 
-import androidx.appcompat.app.AlertDialog;
-
-
 
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.Bean.UserDetails;
 import com.team.fantasy.R;
-import com.team.fantasy.resources.StateCityInitializer;
 import com.team.fantasy.utils.SessionManager;
 import com.team.fantasy.databinding.ActivityEditProfileBinding;
 
@@ -29,13 +24,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 import static com.team.fantasy.APICallingPackage.Config.EDITPROFILE;
@@ -59,9 +49,6 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
 
     ActivityEditProfileBinding binding;
 
-    // Initialize the city list HashMap
-    HashMap<String, List<String>> cityMap;
-    List<String> stateList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,36 +88,6 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
             }
         });
 
-        // <!-- State-city selector -->
-        // Initialize the state list with data from the resource file
-        stateList = StateCityInitializer.getStateList(getResources());
-
-        // Initialize the city list HashMap using the StateCityInitializer class
-        cityMap = (HashMap<String, List<String>>) StateCityInitializer.getCityMap(getResources(), stateList);
-
-        binding.etEditState.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showStateListDialog();
-            }
-        });
-
-        binding.etEditCity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Check if a state is selected before showing the city dialog
-                if (!binding.etEditState.getText().toString().isEmpty()) {
-                    showCityListDialog(binding.etEditState.getText().toString());
-                } else {
-                    // Show a message to the user to select a state first
-                    ShowToast(context, "Please select a state first.");
-                }
-            }
-        });
-
-        // <!-- State-city selector end-->
-
-
 
         binding.tvEditMale.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,44 +112,6 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
                 callEditProfile(true);
             }
         });
-    }
-
-    // Method to show the state list dialog
-    private void showStateListDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Select State");
-        builder.setItems(stateList.toArray(new String[0]), new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // Set the selected state in the EditText
-                binding.etEditState.setText(stateList.get(which));
-                // Show the city list dialog based on the selected state
-                showCityListDialog(stateList.get(which));
-
-            }
-        });
-
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-    // Method to show the city list dialog based on the selected state
-    private void showCityListDialog(String selectedState) {
-        List<String> cityList = cityMap.get(selectedState);
-        if (cityList != null) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Select City");
-            builder.setItems(cityList.toArray(new String[0]), new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // Set the selected city in the EditText
-                    binding.etEditCity.setText(cityList.get(which));
-                }
-            });
-
-            AlertDialog dialog = builder.create();
-            dialog.show();
-        }
     }
 
 
