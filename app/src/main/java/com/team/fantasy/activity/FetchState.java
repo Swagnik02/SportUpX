@@ -33,7 +33,7 @@ public class FetchState implements ResponseManager {
     public void callFetchStates(String countryId, boolean isShowLoader) {
         APIRequestManager apiRequestManager = new APIRequestManager(mContext);
         try {
-            apiRequestManager.callAPI(Config.GETSTATE, createRequestJson(countryId), mContext, (Activity) mContext, GETSTATETYPE,
+            apiRequestManager.callAPI(GETSTATE, createRequestJson(countryId), mContext, (Activity) mContext, GETSTATETYPE,
                     isShowLoader, this);
         } catch (JSONException e) {
             e.printStackTrace();

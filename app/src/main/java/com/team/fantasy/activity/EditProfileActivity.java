@@ -1,5 +1,7 @@
 package com.team.fantasy.activity;
 
+
+
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -7,6 +9,8 @@ import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
@@ -59,6 +63,7 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
 
     FetchCity fetchCity;
     FetchState fetchState;
+    private StateSelector stateSelector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,9 +128,14 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
             }
         });
 
+        // Create an instance of StateSelector and load the state data
+        stateSelector = new StateSelector();
+        stateSelector.loadStateData(this);
+
+
         //state-city
-        fetchState = new FetchState(this);
-        fetchState.callFetchStates("101", true);
+//        fetchState = new FetchState(this);
+//        fetchState.callFetchStates("101", true);
 
         fetchCity = new FetchCity(this);
         fetchCity.callFetchCities("41", true);
@@ -144,14 +154,12 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
         });
 
     } //end of onCreate
-
-    // Method to show the state dialog pop-up
     private void showStateDialog() {
-        // Get the list of states from SharedPreferences using FetchState
-        List<String> stateList = fetchState.getStateListFromSharedPreferences();
+        // Get the list of states with country_id 101 from StateSelector
+        List<String> stateListWithCountryId101 = stateSelector.getStatesWithCountryId101();
 
-        // Convert the list to an array to display in the dialog
-        String[] statesArray = stateList.toArray(new String[0]);
+        // Convert the filtered list to an array to display in the dialog
+        String[] statesArray = stateListWithCountryId101.toArray(new String[0]);
 
         // Create the dialog pop-up
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -160,7 +168,7 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // Set the selected state in the etEditState field
-                String selectedState = stateList.get(which);
+                String selectedState = stateListWithCountryId101.get(which);
                 binding.etEditState.setText(selectedState);
             }
         });
@@ -169,6 +177,16 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
+    // Helper method to check if the state contains the given country_id
+    private boolean stateContainsCountryId(String state, String countryId) {
+        // Assuming your state data is in XML format as shown in the example
+        // You can parse the state XML here and check if the country_id matches
+        // I'll leave this part for you to implement based on the actual XML parsing library you use.
+        // For demonstration purposes, I'll use a simple string contains check.
+        return state.contains("country_id>" + countryId + "</country_id");
+    }
+
 
     // Method to show the city dialog pop-up
     private void showCityDialog() {
