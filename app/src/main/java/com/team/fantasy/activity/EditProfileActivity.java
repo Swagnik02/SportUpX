@@ -1,13 +1,16 @@
 package com.team.fantasy.activity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -59,9 +62,9 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
 
-        binding=DataBindingUtil.setContentView(this, R.layout.activity_edit_profile);
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_edit_profile);
         context = activity = this;
         initViews();
         sessionManager = new SessionManager();
@@ -118,10 +121,47 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
                 callEditProfile(true);
             }
         });
-        fetchCity = new FetchCity();
+
+        //state-city
+
         String stateId = "41";
-        fetchCity.callFetchCities(this, stateId, true, this);
+        fetchCity = new FetchCity(this);
+        fetchCity.callFetchCities(stateId, true);
+
+        binding.etEditCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showCityDialog();
+            }
+        });
+
+    } //end of onCreate
+
+    // Method to show the city dialog pop-up
+    private void showCityDialog() {
+        // Get the list of cities from SharedPreferences
+        List<String> cityList = fetchCity.getCityListFromSharedPreferences();
+
+        // Convert the list to an array to display in the dialog
+        String[] citiesArray = cityList.toArray(new String[0]);
+
+        // Create the dialog pop-up
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select a City");
+        builder.setItems(citiesArray, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Set the selected city in the etEditCity field
+                String selectedCity = cityList.get(which);
+                binding.etEditCity.setText(selectedCity);
+            }
+        });
+
+        // Show the dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
+
 
 
     public void initViews() {

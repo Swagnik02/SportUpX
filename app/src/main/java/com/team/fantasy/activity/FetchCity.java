@@ -4,6 +4,9 @@ import static com.team.fantasy.APICallingPackage.Constants.GETCITYTYPE;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
@@ -17,10 +20,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FetchCity implements ResponseManager {
-    private ResponseManager responseManager;
 
-    public void callFetchCities(Context mContext, String stateId, boolean isShowLoader, ResponseManager responseManager) {
-        this.responseManager = responseManager;
+    private Context mContext;
+    private List<String> cityList;
+
+    public FetchCity(Context context) {
+        this.mContext = context;
+        this.cityList = new ArrayList<>();
+    }
+
+    public void callFetchCities(String stateId, boolean isShowLoader) {
         APIRequestManager apiRequestManager = new APIRequestManager(mContext);
         try {
             apiRequestManager.callAPI(Config.GETCITY, createRequestJson(stateId), mContext, (Activity) mContext, GETCITYTYPE,
@@ -39,32 +48,67 @@ public class FetchCity implements ResponseManager {
     @Override
     public void getResult(Context mContext, String type, String message, JSONObject result) {
         if (type.equals(GETCITYTYPE)) {
-                try {
-                    // Parse the JSON response and get the list of cities
-                    JSONArray cityArray = result.getJSONArray("data");
+            try {
+                // Parse the JSON response and get the list of cities
+                JSONArray cityArray = result.getJSONArray("data");
 
-                    // Process the cityArray to get the city names and update your UI accordingly
-                    List<String> cityNames = new ArrayList<>();
-                    for (int i = 0; i < cityArray.length(); i++) {
-                        JSONObject cityObject = cityArray.getJSONObject(i);
-                        String cityName = cityObject.getString("name");
-                        cityNames.add(cityName);
-                    }
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                // Process the cityArray to get the city names and update the list
+                cityList.clear();
+                for (int i = 0; i < cityArray.length(); i++) {
+                    JSONObject cityObject = cityArray.getJSONObject(i);
+                    String cityName = cityObject.getString("name");
+                    cityList.add(cityName);
                 }
-            } else {
-                // Handle the error message when cities are not found
-                // You can show an error message or take appropriate actions
-            }
-        }
 
+
+
+                // Save the city list to SharedPreferences
+                saveCityListToSharedPreferences(cityList);
+
+// Add log to check if city list is being stored
+                Log.d("FetchCity", "City list stored: " + cityList);
+
+                // You can do further processing or notify the activity if needed
+                // For example:
+                // ((EditProfileActivity) mContext).onCityListFetched(cityList);
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        } else {
+            // Handle the error message when cities are not found
+            // You can show an error message or take appropriate actions
+        }
+    }
 
     @Override
     public void onError(Context mContext, String type, String message) {
-        // Handle the error response and pass it back to the calling class
-        responseManager.onError(mContext, type, message);
+        // Handle the error response
+        Toast.makeText(mContext, "Error: " + message, Toast.LENGTH_SHORT).show();
     }
+
+    private void saveCityListToSharedPreferences(List<String> cityList) {
+        SharedPreferences sharedPreferences = mContext.getSharedPreferences("CityListPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        JSONArray jsonArray = new JSONArray(cityList);
+        editor.putString("cityList", jsonArray.toString());
+        editor.apply();
+    }
+
+    public List<String> getCityListFromSharedPreferences() {
+        List<String> cityList = new ArrayList<>();
+        SharedPreferences sharedPreferences = mContext.getSharedPreferences("CityListPrefs", Context.MODE_PRIVATE);
+        String cityListJson = sharedPreferences.getString("cityList", "[]");
+        try {
+            JSONArray jsonArray = new JSONArray(cityListJson);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                cityList.add(jsonArray.getString(i));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return cityList;
+    }
+
+
 }
