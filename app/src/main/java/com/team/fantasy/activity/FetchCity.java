@@ -60,17 +60,14 @@ public class FetchCity implements ResponseManager {
                     cityList.add(cityName);
                 }
 
-
-
                 // Save the city list to SharedPreferences
                 saveCityListToSharedPreferences(cityList);
 
-// Add log to check if city list is being stored
+                // Add log to check if city list is being stored
                 Log.d("FetchCity", "City list stored: " + cityList);
 
-                // You can do further processing or notify the activity if needed
-                // For example:
-                // ((EditProfileActivity) mContext).onCityListFetched(cityList);
+//                Log.d("APIResponse", "Type: " + type + ", Message: " + message + ", Result: " + result);
+
 
             } catch (JSONException e) {
                 e.printStackTrace();
