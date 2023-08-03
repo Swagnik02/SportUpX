@@ -116,8 +116,8 @@ public class Constants {
     public static String FETCH_PAYTM_CREDENTIALS_TYPE = "FetchPaytmCredentialsType";
 
     //state city
-
     public static final String GETCITYTYPE = "getCitiesType";
+    public static final String GETSTATETYPE = "getStatesType";
 
 }
 

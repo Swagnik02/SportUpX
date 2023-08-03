@@ -151,7 +151,8 @@ public class Config {
 
     //state city
     public static final String GETCITY = BASEURL + "get_city";
-    
+    public static final String GETSTATE = BASEURL + "get_state";
+
 
 
 }

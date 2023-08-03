@@ -58,6 +58,7 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
     ActivityEditProfileBinding binding;
 
     FetchCity fetchCity;
+    FetchState fetchState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,10 +124,17 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
         });
 
         //state-city
+        fetchState = new FetchState(this);
+        fetchState.callFetchStates("101", true);
 
-        String stateId = "41";
         fetchCity = new FetchCity(this);
-        fetchCity.callFetchCities(stateId, true);
+        fetchCity.callFetchCities("41", true);
+        binding.etEditState.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showStateDialog();
+            }
+        });
 
         binding.etEditCity.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +144,31 @@ public class EditProfileActivity extends AppCompatActivity implements ResponseMa
         });
 
     } //end of onCreate
+
+    // Method to show the state dialog pop-up
+    private void showStateDialog() {
+        // Get the list of states from SharedPreferences using FetchState
+        List<String> stateList = fetchState.getStateListFromSharedPreferences();
+
+        // Convert the list to an array to display in the dialog
+        String[] statesArray = stateList.toArray(new String[0]);
+
+        // Create the dialog pop-up
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Select a State");
+        builder.setItems(statesArray, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Set the selected state in the etEditState field
+                String selectedState = stateList.get(which);
+                binding.etEditState.setText(selectedState);
+            }
+        });
+
+        // Show the dialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
     // Method to show the city dialog pop-up
     private void showCityDialog() {
