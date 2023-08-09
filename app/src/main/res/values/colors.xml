@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0CAA7E</color>
-    <color name="colorPrimaryDark">#017D5C</color>
-    <color name="colorAccent">#0CAA7E</color>
+    <color name="colorPrimary">#456c2d</color>
+    <color name="colorPrimaryDark">#246537</color>
+    <color name="colorAccent">#456c2d</color>
     <color name="background">#ECF2FF</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="orange">#ff5050</color>
-    <color name="green">#03C988</color>
-    <color name="tabtextselected">#0CAA7E</color>
+    <color name="green">#5b863f</color>
+    <color name="tabtextselected">#456c2d</color>
     <color name="tabtextselected2">#02b9aa</color>
     <color name="tabtextunselectednew">#FF1784C7</color>
     <color name="tabtextunselected">#626262</color>
@@ -21,7 +21,7 @@
     <color name="deep_blue">#1c3f95</color>
     <color name="colorPink">#FF1D44</color>
 
-    <color name="team_header">#0CAA7E</color>
+    <color name="team_header">#456c2d</color>
 
 
     <color name="yellow_theme">#ECBD15</color>
@@ -35,17 +35,17 @@
     
     
     <!--Sign In COlor-->
-    <color name="login_sign_up">#0CAA7E</color>
+    <color name="login_sign_up">#456c2d</color>
     <!--<color name="btn_txt_color">#b01f40</color>-->
     <color name="btn_txt_color">@color/colorPrimary</color>
     <color name="rounded_corner_lgn">#FFF</color>
-    <color name="sign_in_btn">#0CAA7E</color>
+    <color name="sign_in_btn">#456c2d</color>
     <color name="lets_play">#000000</color>
     <color name="tab_bck">#ffff</color>
     <color name="header_start">#b01f40</color>
     <color name="header_center">#DB5460</color>
     <color name="header_end">#CE404D</color>
-    <color name="rouned_transprnt_border">#0CAA7E</color>
+    <color name="rouned_transprnt_border">#456c2d</color>
     <color name="vs_back">#a31941</color>
     <color name="hint">#8e8e8e</color>
 
