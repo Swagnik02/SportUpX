@@ -234,8 +234,8 @@ public class UploadKYCActivity extends AppCompatActivity implements ResponseMana
             jsonObject.put("user_id", sessionManager.getUser(context).getUser_id());
             jsonObject.put("name", UserName);
             jsonObject.put("document_number", DocNumber);
-            jsonObject.put("state", DateofBirth);
-            jsonObject.put("dob", State);
+            jsonObject.put("state", State);
+            jsonObject.put("dob", DateofBirth);
             jsonObject.put("type", PanOrAadhaar);
             jsonObject.put("document", getStringImage(bitmap));
         } catch (JSONException e) {
