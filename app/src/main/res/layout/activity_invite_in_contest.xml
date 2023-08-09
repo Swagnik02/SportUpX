@@ -17,50 +17,50 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <LinearLayout
+                android:id="@+id/LL_InviteFriendsCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/dark_rectangle_team"
                 android:elevation="3dp"
-                android:id="@+id/LL_InviteFriendsCode"
-                android:orientation="vertical"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="SHARE YOUR CONTEST INVITE CODE"
-                    android:layout_gravity="center"
-                    android:textColor="@color/white"
-                    android:layout_marginTop="10dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=""
-                    android:id="@+id/tv_UniqueCode"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="INVITE YOUR FRIEND"
-                    android:padding="10dp"
-                    android:id="@+id/tv_InviteFriend"
-                    android:background="@drawable/roundbutton"
-                    android:textColor="@color/btn_txt_color"
+                android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="SHARE YOUR CONTEST INVITE CODE"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/tv_UniqueCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_InviteFriend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    />
+                    android:background="@drawable/roundbutton"
+
+                    android:padding="10dp"
+                    android:text="INVITE YOUR FRIEND"
+                    android:textColor="@color/btn_txt_color" />
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>
