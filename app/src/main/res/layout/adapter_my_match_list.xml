@@ -67,7 +67,7 @@
                             android:layout_height="wrap_content"
                             android:text="Upcomming"
                             android:textSize="10sp"
-                            android:visibility="gone"/>
+                            android:visibility="gone" />
 
                     </LinearLayout>
 

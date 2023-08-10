@@ -472,13 +472,13 @@ public class FragmentFixtures extends Fragment implements ResponseManager {
                             if(Days == 00) {
                                 String format = "%02dh %02dm %02ds";
                                 holder.tv_TimeRemained.setText(String.format(format, Hours, Minutes, Seconds));
-                            } else if(Hours == 00) {
+                            } else if(Hours == 00 && Days == 00) {
                                 String format = "%02dm %02ds";
                                 holder.tv_TimeRemained.setText(String.format(format, Minutes, Seconds));
-                            } else if(Minutes == 00) {
+                            } else if(Minutes == 00 && Hours == 00 && Days == 00) {
                                 String format = "%02ds";
                                 holder.tv_TimeRemained.setText(String.format(format, Seconds));
-                            } else if(Seconds == 00) {
+                            } else if(Seconds == 00 && Minutes == 00 && Hours == 00 && Days == 00) {
                                 String format = "%02ds";
                                 holder.tv_TimeRemained.setText("LIVE");
                             } else {

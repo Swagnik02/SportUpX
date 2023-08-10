@@ -8,6 +8,7 @@ import static com.team.fantasy.APICallingPackage.Constants.MYLIVELEADERBORADTEAM
 import static com.team.fantasy.APICallingPackage.Constants.MYLIVELEADERBORADTYPE;
 import static com.team.fantasy.APICallingPackage.Constants.WINNINGINFOLISTTYPE;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -357,7 +358,7 @@ public class MyResultContestDetailsActivity extends AppCompatActivity implements
         }
 
         @Override
-        public void onBindViewHolder(final MyViewHolder holder, final int position) {
+        public void onBindViewHolder(final MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
 
             ApiUserId = mListenerList.get(position).getUser_id();
             String name= mListenerList.get(position).getName();

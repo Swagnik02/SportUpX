@@ -140,6 +140,7 @@ public class AdapterMyMatches extends PagerAdapter {
         }else
         if (match_status.equals("Result")){
             tv_TimeRemained.setText("Completed");
+            tv_MatchTime.setText("Date");
         }
 
         RLMyMatchListItem.setOnClickListener(new View.OnClickListener() {
