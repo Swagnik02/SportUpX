@@ -38,6 +38,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.BreakIterator;
 import java.util.List;
 
 
@@ -157,7 +158,7 @@ public class FragmentMyResults extends Fragment implements ResponseManager {
         }
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView tv_TeamOneName,tv_TeamsName,tv_TimeRemained,tv_TeamTwoName,tv_JoinedContestCount,tv_TeamOneScore,tv_TeamTwoScore,
+            TextView tv_MatchTime,tv_TeamOneName,tv_TeamsName,tv_TimeRemained,tv_TeamTwoName,tv_JoinedContestCount,tv_TeamOneScore,tv_TeamTwoScore,
                     tv_TeamOneOver,tv_TeamTwoOver,tv_MatchResult;
             LinearLayout linearLayout;
             ImageView im_Team1,im_Team2;
@@ -181,7 +182,7 @@ public class FragmentMyResults extends Fragment implements ResponseManager {
                 linearLayout=view.findViewById(R.id.linearlayout2);
                 linearLayout.setVisibility(View.GONE);
                 tv_MatchResult.setVisibility(View.GONE);
-
+                tv_MatchTime = view.findViewById(R.id.tv_MatchTime);
             }
         }
         @Override
@@ -220,6 +221,7 @@ public class FragmentMyResults extends Fragment implements ResponseManager {
             final String team_one_over=mListenerList.get(position).getTeam1Over();
             final  String team_two_over=mListenerList.get(position).getTeam2Over();
             final String match_status_note=mListenerList.get(position).getMatch_status_note();
+            final String match_date_time = mListenerList.get(position).getMatch_date_time();
 
             holder.tv_JoinedContestCount.setText(contest_count+" Contest Joined");
 
@@ -237,7 +239,8 @@ public class FragmentMyResults extends Fragment implements ResponseManager {
 
             if (match_status.equals("Result")){
                 holder.tv_TimeRemained.setText("Completed");
-
+                holder.tv_MatchTime.setVisibility(View.VISIBLE);
+                holder.tv_MatchTime.setText(match_date_time);
             }
 
             holder.tv_TeamOneScore.setText("Score:-"+team_one_score);

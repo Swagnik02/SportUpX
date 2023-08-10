@@ -12,6 +12,7 @@ public class BeanMyResult implements Serializable {
             team_short_name1,team_name2,team_image2,team_short_name2,contest_count,
             team1Score, team2Score,team1Over,team2Over,match_status_note;
     private int time;
+    private String match_date_time;
 
     public String getMatch_id() {
         return match_id;
@@ -154,4 +155,9 @@ public class BeanMyResult implements Serializable {
     public void setMatch_status_note(String match_status_note) {
         this.match_status_note = match_status_note;
     }
+
+    public String getMatch_date_time() {
+        return match_date_time;
+    }
+    
 }
