@@ -156,8 +156,12 @@ public class BeanMyResult implements Serializable {
         this.match_status_note = match_status_note;
     }
 
+
     public String getMatch_date_time() {
         return match_date_time;
     }
-    
+
+    public void setMatch_date_time(String matchDateTime) {
+        this.match_date_time = matchDateTime;
+    }
 }

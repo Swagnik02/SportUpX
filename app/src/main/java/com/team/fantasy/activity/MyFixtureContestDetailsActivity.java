@@ -6,6 +6,7 @@ import static com.team.fantasy.APICallingPackage.Config.MYFIXTURELEADERBOARDTEAM
 import static com.team.fantasy.APICallingPackage.Constants.MYFIXTURELEADERBORADTEAMTYPE;
 import static com.team.fantasy.APICallingPackage.Constants.MYFIXTURELEADERBORADTYPE;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
@@ -237,7 +238,7 @@ public class MyFixtureContestDetailsActivity extends AppCompatActivity implement
         }
 
         @Override
-        public void onBindViewHolder(final MyViewHolder holder, final int position) {
+        public void onBindViewHolder(final MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
 
             ApiUserId = mListenerList.get(position).getUser_id();
             String name= mListenerList.get(position).getName();
