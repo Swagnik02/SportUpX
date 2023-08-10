@@ -11,7 +11,9 @@ public class BeanMyFixtures implements Serializable {
     private String match_id,teamid1,match_status,type,teamid2,team_name1,team_image1,
             team_short_name1,team_name2,team_image2,team_short_name2,contest_count,team_count,eleven_out;
 
+
     private int time;
+
 
 
     public String getEleven_out() {

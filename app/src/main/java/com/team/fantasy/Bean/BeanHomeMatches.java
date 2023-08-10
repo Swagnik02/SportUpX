@@ -7,10 +7,14 @@ import java.io.Serializable;
 
 public class BeanHomeMatches implements Serializable {
 
+
     private String match_id,my_match_id,user_id,my_team_id,contest_id,teamid1,match_status,type,teamid2,team_name1,team_image1,
             team_short_name1,team_name2,team_image2,team_short_name2,contest_count,team_count,eleven_out,matchStarted;
 
+
+
     private int time;
+    private String match_date_time;
 
     public String getMatch_id() {
         return match_id;
@@ -171,4 +175,9 @@ public class BeanHomeMatches implements Serializable {
     public void setTime(int time) {
         this.time = time;
     }
+
+    public String getMatch_date_time() {
+        return match_date_time;
+    }
+
 }

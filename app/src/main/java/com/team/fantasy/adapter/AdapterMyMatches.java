@@ -78,6 +78,7 @@ public class AdapterMyMatches extends PagerAdapter {
         final String team_short_name2 = mListenerList.get(position).getTeam_short_name2();
         String contest_count = mListenerList.get(position).getContest_count();
         final String eleven_out = mListenerList.get(position).getEleven_out();
+        final String match_date_time = mListenerList.get(position).getMatch_date_time();
 
 
 
@@ -140,7 +141,8 @@ public class AdapterMyMatches extends PagerAdapter {
         }else
         if (match_status.equals("Result")){
             tv_TimeRemained.setText("Completed");
-            tv_MatchTime.setText("Date");
+            tv_MatchTime.setVisibility(View.VISIBLE);
+            tv_MatchTime.setText(match_date_time);
         }
 
         RLMyMatchListItem.setOnClickListener(new View.OnClickListener() {
