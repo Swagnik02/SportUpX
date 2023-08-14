@@ -226,12 +226,12 @@ public class ProfileFragment extends Fragment implements ResponseManager {
         Log.e("Imageurl : ", Config.ProfileIMAGEBASEURL + Imageurl);
 
         if (TextUtils.isEmpty(Imageurl) || Imageurl.equals("")) {
-            ShowToast(context, "empty image url");
+//            ShowToast(context, "empty image url");
             Log.e("Imageurl : ", Config.ProfileIMAGEBASEURL + Imageurl);
         } else {
             Glide.with(getActivity()).load(Config.ProfileIMAGEBASEURL + Imageurl)
                     .into(binding.imProfilepic);
-            ShowToast(context, "image url: "+Config.ProfileIMAGEBASEURL + Imageurl);
+//            ShowToast(context, "image url: "+Config.ProfileIMAGEBASEURL + Imageurl);
             Log.e("Imageurl : ", Config.ProfileIMAGEBASEURL + Imageurl);
         }
 

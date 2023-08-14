@@ -524,6 +524,14 @@ public class MyLiveContestDetailsActivity extends AppCompatActivity implements R
                             tv_CorVC.setText("VC");
                         }
                         if (Add_View) {
+                            // Add padding to the player view
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                            layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                            to_add.setLayoutParams(layoutParams);
                             LL_GroundWK.addView(to_add);
                         }
                     } else if (Role.equals("BAT")) {
@@ -548,6 +556,15 @@ public class MyLiveContestDetailsActivity extends AppCompatActivity implements R
                             tv_CorVC.setText("VC");
                         }
                         if (Add_View) {
+
+                            // Add padding to the player view
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                            layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                            to_add.setLayoutParams(layoutParams);
                             LL_GroundBAT.addView(to_add);
                         }
                     } else if (Role.equals("AR")) {
@@ -572,6 +589,16 @@ public class MyLiveContestDetailsActivity extends AppCompatActivity implements R
                             tv_CorVC.setText("VC");
                         }
                        if (Add_View) {
+
+                           // Add padding to the player view
+                           LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                   LinearLayout.LayoutParams.WRAP_CONTENT,
+                                   LinearLayout.LayoutParams.WRAP_CONTENT
+                           );
+                           int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                           layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                           to_add.setLayoutParams(layoutParams);
+
                         LL_GroundAR.addView(to_add);
                     }
                     } else if (Role.equals("BOWL")) {
@@ -597,6 +624,14 @@ public class MyLiveContestDetailsActivity extends AppCompatActivity implements R
                             tv_CorVC.setText("VC");
                         }
                         if (Add_View) {
+                            // Add padding to the player view
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                            layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                            to_add.setLayoutParams(layoutParams);
                             LL_GroundBOWL.addView(to_add);
                         }
                     }

@@ -306,6 +306,16 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                                             .into(im_GroundPlayerImage);
                                     tv_GroundPlayerName.setText(player_shortname);
                                     tv_GroundPlayerCredit.setText(PlayerCredit + " Cr");
+
+                                    // Add padding to the player view
+                                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                                            LinearLayout.LayoutParams.WRAP_CONTENT
+                                    );
+                                    int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                                    layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                                    to_add.setLayoutParams(layoutParams);
+
                                     LL_GroundBAT.addView(to_add);
                                 } else if (Role.equals("AR")) {
                                     View to_add = LayoutInflater.from(context).inflate(R.layout.item_ground_player,
@@ -319,6 +329,15 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                                             .into(im_GroundPlayerImage);
                                     tv_GroundPlayerName.setText(player_shortname);
                                     tv_GroundPlayerCredit.setText(PlayerCredit + " Cr");
+
+                                    // Add padding to the player view
+                                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                                            LinearLayout.LayoutParams.WRAP_CONTENT
+                                    );
+                                    int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                                    layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                                    to_add.setLayoutParams(layoutParams);
                                     LL_GroundAR.addView(to_add);
                                 } else if (Role.equals("BOWL")) {
                                     View to_add = LayoutInflater.from(context).inflate(R.layout.item_ground_player,
@@ -332,6 +351,15 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                                             .into(im_GroundPlayerImage);
                                     tv_GroundPlayerName.setText(player_shortname);
                                     tv_GroundPlayerCredit.setText(PlayerCredit + " Cr");
+
+                                    // Add padding to the player view
+                                    LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                                            LinearLayout.LayoutParams.WRAP_CONTENT
+                                    );
+                                    int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                                    layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                                    to_add.setLayoutParams(layoutParams);
                                     LL_GroundBOWL.addView(to_add);
                                 }
 

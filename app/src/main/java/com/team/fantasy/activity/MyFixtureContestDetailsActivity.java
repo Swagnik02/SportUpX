@@ -377,6 +377,15 @@ public class MyFixtureContestDetailsActivity extends AppCompatActivity implement
                         }
                         // LL_GroundWK.addView(to_add);
                         if (Add_View) {
+                            // Add padding to the player view
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                            layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                            to_add.setLayoutParams(layoutParams);
+
                             LL_GroundWK.addView(to_add);
                         }
 
@@ -396,6 +405,8 @@ public class MyFixtureContestDetailsActivity extends AppCompatActivity implement
                         tv_GroundPlayerName.setText(player_shortname);
                         tv_GroundPlayerCredit.setText(PlayerCredit + " Cr");
 
+
+
                         if (is_captain.equals("1")) {
                             tv_CorVC.setVisibility(View.VISIBLE);
                             tv_CorVC.setText(" C ");
@@ -406,8 +417,27 @@ public class MyFixtureContestDetailsActivity extends AppCompatActivity implement
                         }
                         //LL_GroundBAT.addView(to_add);
                         if (Add_View) {
+                            // Add padding to the player view
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                            layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                            to_add.setLayoutParams(layoutParams);
+
                             LL_GroundBAT.addView(to_add);
                         }
+
+                        // Add padding to the player view
+                        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                LinearLayout.LayoutParams.WRAP_CONTENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT
+                        );
+                        int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                        layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                        to_add.setLayoutParams(layoutParams);
+
                     } else if (Role.equals("AR")) {
                         View to_add = LayoutInflater.from(context).inflate(R.layout.item_ground_player,
                                 LL_GroundAR, false);
@@ -433,6 +463,16 @@ public class MyFixtureContestDetailsActivity extends AppCompatActivity implement
                         }
                         // LL_GroundAR.addView(to_add);
                         if (Add_View) {
+
+                            // Add padding to the player view
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                            layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                            to_add.setLayoutParams(layoutParams);
+
                             LL_GroundAR.addView(to_add);
                         }
                     } else if (Role.equals("BOWL")) {
@@ -459,6 +499,15 @@ public class MyFixtureContestDetailsActivity extends AppCompatActivity implement
                             tv_CorVC.setText("VC");
                         }
                         if (Add_View) {
+                            // Add padding to the player view
+                            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
+                                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                                    LinearLayout.LayoutParams.WRAP_CONTENT
+                            );
+                            int marginInPixels = getResources().getDimensionPixelSize(R.dimen.player_view_margin);
+                            layoutParams.setMargins(marginInPixels, marginInPixels, marginInPixels, marginInPixels);
+                            to_add.setLayoutParams(layoutParams);
+
                             LL_GroundBOWL.addView(to_add);
 
                         }
