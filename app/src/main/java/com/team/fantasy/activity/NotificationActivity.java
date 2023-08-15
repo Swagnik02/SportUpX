@@ -160,16 +160,15 @@ public class NotificationActivity extends AppCompatActivity implements ResponseM
         }
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView tv_NotificationTitle,tv_NotificationContest ;
-
-
-
+            TextView tv_NotificationTitle,tv_NotificationContest,tv_NotificationMessage, tv_NotificationDescription  ;
 
             public MyViewHolder(View view) {
                 super(view);
 
                 tv_NotificationTitle = view.findViewById(R.id.tv_NotificationTitle);
                 tv_NotificationContest = view.findViewById(R.id.tv_NotificationContest);
+                tv_NotificationMessage = view.findViewById(R.id.tv_NotificationMessage);
+                tv_NotificationDescription = view.findViewById(R.id.tv_NotificationDescription);
 
             }
 
@@ -193,11 +192,13 @@ public class NotificationActivity extends AppCompatActivity implements ResponseM
 
             final String ContestName = mListenerList.get(position).getContest_name();
             String Title= mListenerList.get(position).getTitle();
-
+            String Message= mListenerList.get(position).getMessage();
+            String Description= mListenerList.get(position).getDescription();
 
             holder.tv_NotificationTitle.setText(Title);
             holder.tv_NotificationContest.setText(ContestName);
-
+            holder.tv_NotificationMessage.setText(Message);
+            holder.tv_NotificationDescription.setText(Description);
 
 
 

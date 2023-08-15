@@ -9,6 +9,8 @@ import java.io.Serializable;
 public class BeanNotification implements Serializable {
 
     private String id,match_id,contest_id,title,contest_name,contest_description;
+    private String message,description;;
+
 
     public String getId() {
         return id;
@@ -57,5 +59,21 @@ public class BeanNotification implements Serializable {
 
     public void setContest_description(String contest_description) {
         this.contest_description = contest_description;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

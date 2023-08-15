@@ -39,7 +39,7 @@
 
             <!-- New TextView below tv_NotificationContest -->
             <TextView
-                android:id="@+id/NotificationMessage"
+                android:id="@+id/tv_NotificationMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@id/tv_NotificationContest"
@@ -52,11 +52,11 @@
 
             <!-- New TextView below NotificationMessage -->
             <TextView
-                android:id="@+id/NotificationDescription"
+                android:id="@+id/tv_NotificationDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@id/NotificationMessage"
-                android:layout_below="@id/NotificationMessage"
+                android:layout_alignStart="@id/tv_NotificationMessage"
+                android:layout_below="@id/tv_NotificationMessage"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
                 android:text="Notification Description"
