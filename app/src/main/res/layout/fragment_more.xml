@@ -505,6 +505,18 @@
                     android:layout_marginTop="10dp"
                     android:background="#b3b3b3"
                     />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="version: 15-08-2023" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="v2.0.39" />
             </LinearLayout>
         </ScrollView>
 
