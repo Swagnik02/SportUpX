@@ -45,7 +45,7 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
         apiRequestManager = new APIRequestManager(activity);
 
         IntentPaymentUrl = getIntent().getStringExtra("FinalUrl");
-        System.out.println("Final Url: "+ IntentPaymentUrl);
+//        System.out.println("Final Url: "+ IntentPaymentUrl);
         IntentFinalAmount = getIntent().getStringExtra("FinalAmount");
 
         binding.tvPaymentFinalAmount.setText("₹ " + IntentFinalAmount);
