@@ -92,6 +92,7 @@ public class LoginActivity extends AppCompatActivity implements ResponseManager,
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         callbackManager = CallbackManager.Factory.create();
+        FacebookSdk.fullyInitialize();
         binding=DataBindingUtil.setContentView(this, R.layout.activity_login);
         this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         context = activity = this;
@@ -513,7 +514,7 @@ public class LoginActivity extends AppCompatActivity implements ResponseManager,
 
     private void initFbObject(final Context mContext) {
         //initilaize facebbok sdk
-        FacebookSdk.sdkInitialize(mContext);
+        FacebookSdk.fullyInitialize();
         FacebookSdk.setApplicationId(mContext.getResources().getString(R.string.facebook_app_id));
 
         callbackManager = CallbackManager.Factory.create();
@@ -537,7 +538,7 @@ public class LoginActivity extends AppCompatActivity implements ResponseManager,
 
                             getFacebookData(object);
 
-                            LoginManager.getInstance().logOut();
+//                            LoginManager.getInstance().logOut();
 
                         }
                     });

@@ -8,8 +8,10 @@
     <string name="log_in">Log in</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="facebook_app_id">5886101568170267</string>
-    <string name="fb_login_protocol_scheme">fb5886101568170267</string>
+    <string name="facebook_app_id">323897300020781</string>
+    <string name="fb_login_protocol_scheme">fb323897300020781</string>
+    <string name="facebook_client_token">e2ef0cf1c1923c3b230efe65ec7fde4e</string>
+
     <string name="by_joining_this">By Joining this contest, you accept SportUpX\'s T&amp;C and confirm that you are not a resident of Assam, Odisha, Telangana, Nagaland or Sikkim.</string>
     <string name="MinimumWithdrawAmountLimit">500</string>
     <string name="sign_in">SignIn</string>

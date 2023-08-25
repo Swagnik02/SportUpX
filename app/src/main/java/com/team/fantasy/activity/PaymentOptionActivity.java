@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil;
 import android.view.View;
 
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
+import com.team.fantasy.APICallingPackage.Config;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 //import com.elevenbaazigars.CashfreePackage.CashfreeActivity;
 import com.team.fantasy.R;
@@ -20,7 +21,11 @@ import org.json.JSONObject;
 
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 
+import java.sql.SQLOutput;
+
+
 public class PaymentOptionActivity extends AppCompatActivity implements ResponseManager {
+    private String IntentPaymentUrl;
     PaymentOptionActivity activity;
     Context context;
     ResponseManager responseManager;
@@ -39,8 +44,12 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
         responseManager = this;
         apiRequestManager = new APIRequestManager(activity);
 
+        IntentPaymentUrl = getIntent().getStringExtra("FinalUrl");
+        System.out.println("Final Url: "+ IntentPaymentUrl);
         IntentFinalAmount = getIntent().getStringExtra("FinalAmount");
+
         binding.tvPaymentFinalAmount.setText("₹ " + IntentFinalAmount);
+
 
         binding.RLPaytmPayment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,8 +106,20 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
             }
         });
 
+        binding.RLPhonePePayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (IntentFinalAmount.equals("")) {
+                    ShowToast(context, "Please Select Correct Amount");
+                } else {
+                    Intent i = new Intent(activity, WebviewAcitivity.class);
+                    i.putExtra("Heading","PhonePe");
+                    i.putExtra("URL", IntentPaymentUrl);
+                    startActivity(i);
+                }
 
-
+            }
+        });
     }
 
     public void initViews() {

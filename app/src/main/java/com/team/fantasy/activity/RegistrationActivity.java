@@ -220,10 +220,10 @@ public class RegistrationActivity extends AppCompatActivity implements ResponseM
 
 
 
-        binding.fbLoginButton.setReadPermissions("email");
-        binding.fbLoginButton.setReadPermissions("public_profile");
-        binding.fbLoginButton.setReadPermissions("user_birthday");
-        binding.fbLoginButton.setReadPermissions("user_friends");
+        binding.fbLoginButton.setPermissions("email");
+        binding.fbLoginButton.setPermissions("public_profile");
+        binding.fbLoginButton.setPermissions("user_birthday");
+        binding.fbLoginButton.setPermissions("user_friends");
 
         //G+
 
@@ -529,17 +529,7 @@ public class RegistrationActivity extends AppCompatActivity implements ResponseM
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
             handleSignInResult(result);
         }
-        else {
-            callbackManager.onActivityResult(requestCode, resultCode, data);
-            Validations.showProgress(context);
-            final Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    Validations.hideProgress();
-                }
-            }, 5000);
-        }
+
 
     }
 
@@ -578,7 +568,7 @@ public class RegistrationActivity extends AppCompatActivity implements ResponseM
 
     private void initFbObject(final Context mContext) {
         //initilaize facebbok sdk
-        FacebookSdk.sdkInitialize(mContext);
+        FacebookSdk.fullyInitialize();
         FacebookSdk.setApplicationId(mContext.getResources().getString(R.string.facebook_app_id));
 
         callbackManager = CallbackManager.Factory.create();
@@ -602,7 +592,7 @@ public class RegistrationActivity extends AppCompatActivity implements ResponseM
 
                             getFacebookData(object);
 
-                            LoginManager.getInstance().logOut();
+//                            LoginManager.getInstance().logOut();
 
                         }
                     });

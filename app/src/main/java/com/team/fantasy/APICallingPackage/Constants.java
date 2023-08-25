@@ -115,4 +115,7 @@ public class Constants {
     //paytm
     public static String FETCH_PAYTM_CREDENTIALS_TYPE = "FetchPaytmCredentialsType";
 
+    public static String SEND_PAYMENT_DATA_PHONEPE_TYPE = "your_send_payment_data_type_here";
+
+
 }

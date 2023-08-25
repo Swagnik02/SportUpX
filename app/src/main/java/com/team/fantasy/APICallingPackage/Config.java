@@ -149,5 +149,6 @@ public class Config {
     //paytm
     public static String FETCH_PAYTM_CREDENTIALS = BASEURL + "fetch_paytm_credentials";
 
+    public static String SEND_PAYMENT_DATA_PHONEPE = BASEURL + "add_amount_phonepe";
 
 }

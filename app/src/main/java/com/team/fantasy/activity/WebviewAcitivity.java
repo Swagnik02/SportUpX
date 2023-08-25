@@ -64,7 +64,6 @@ public class WebviewAcitivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
     }
 
     public void LoadPage(String Url){

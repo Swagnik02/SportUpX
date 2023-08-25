@@ -222,10 +222,6 @@
                     android:layout_marginRight="20dp"
                     android:src="@drawable/arrow_icon_pay"
                     android:tint="@color/black" />
-
-
-
-
             </RelativeLayout>
 
             <View
@@ -235,6 +231,50 @@
                 android:background="@color/eightE"
                 android:visibility="visible" />
 
+
+            <RelativeLayout
+                android:id="@+id/RL_PhonePePayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/im_PhonePe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/wallet1_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toLeftOf="@+id/im_arrow5"
+                    android:layout_toRightOf="@+id/im_PhonePe"
+                    android:padding="10dp"
+                    android:text="PhonePe"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/im_arrow5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:src="@drawable/arrow_icon_pay"
+                    app:tint="@color/black" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/eightE" />
 
 
         </LinearLayout>

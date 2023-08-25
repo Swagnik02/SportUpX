@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,10 @@ import java.util.List;
 
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 import static com.team.fantasy.APICallingPackage.Config.ADDAMOUNTOFFER;
+import static com.team.fantasy.APICallingPackage.Config.SEND_PAYMENT_DATA_PHONEPE;
 import static com.team.fantasy.APICallingPackage.Constants.ADDAMOUNTOFFERTYPE;
+import static com.team.fantasy.APICallingPackage.Constants.SEND_PAYMENT_DATA_PHONEPE_TYPE;
+
 
 public class AddCashActivity extends AppCompatActivity implements ResponseManager {
 
@@ -39,16 +43,14 @@ public class AddCashActivity extends AppCompatActivity implements ResponseManage
     Context context;
     ResponseManager responseManager;
     APIRequestManager apiRequestManager;
-
     SessionManager sessionManager;
-
-
-    String FinalAmountToAdd;
+   String FinalAmountToAdd;
     String EntryFee;
     AdapterAddCashOffertList adapterAddCashOfferList;
-
+    JSONObject paymentData;
 
     public static String Activity = "";
+    private String paymentResponseUrl;
 
     ActivityAddCashBinding binding;
 
@@ -112,12 +114,22 @@ public class AddCashActivity extends AppCompatActivity implements ResponseManage
                     FinalAmountToAdd = "0";
                 } else if (Integer.parseInt(FinalAmountToAdd) < 10) {
                     ShowToast(context, getResources().getString(R.string.enter_min_amt));
-
                 } else {
-                    Intent i = new Intent(activity, PaymentOptionActivity.class);
-                    i.putExtra("FinalAmount", FinalAmountToAdd);
+                    JSONObject paymentData = new JSONObject();
+                    try {
+                        paymentData.put("user_id", sessionManager.getUser(context).getUser_id());
+                        paymentData.put("amount", FinalAmountToAdd);
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
 
-                    startActivity(i);
+                    // Call the method to send payment data to the server
+                    callSendPaymentDataApi(paymentData);
+
+//                    // Start the PaymentOptionActivity with the provided amount
+//                    Intent i = new Intent(activity, PaymentOptionActivity.class);
+//                    i.putExtra("FinalAmount", FinalAmountToAdd);
+//                    startActivity(i);
                 }
             }
         });
@@ -145,6 +157,56 @@ public class AddCashActivity extends AppCompatActivity implements ResponseManage
 
     }
 
+
+    private void callSendPaymentDataApi(JSONObject paymentData) {
+        try {
+            apiRequestManager.callAPI(SEND_PAYMENT_DATA_PHONEPE,
+                    createSendPaymentDataJson(paymentData), context, activity,
+                    SEND_PAYMENT_DATA_PHONEPE_TYPE, true, new ResponseManager() {
+
+                        @Override
+                        public void getResult(Context mContext, String type, String message, JSONObject result) {
+                            try {
+                                String url = result.getString("url");
+
+                                if (url != null && !url.isEmpty()) {
+                                    paymentResponseUrl = url;
+
+                                    Intent i = new Intent(activity, PaymentOptionActivity.class);
+                                    i.putExtra("FinalUrl", paymentResponseUrl);
+                                    i.putExtra("FinalAmount", FinalAmountToAdd);
+
+                                    startActivity(i);
+                                } else {
+                                    System.out.println("Empty or missing 'url' key in response");
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        @Override
+                        public void onError(Context mContext, String type, String message) {
+                            // Handle error if needed
+                        }
+                    });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private JSONObject createSendPaymentDataJson(JSONObject paymentData) {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("user_id", paymentData.getString("user_id"));
+            jsonObject.put("amount", paymentData.getString("amount"));
+            // You can add other parameters specific to the payment API
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonObject;
+    }
     private void CallAddAmountOffer(boolean isShowLoader) {
         try {
 
