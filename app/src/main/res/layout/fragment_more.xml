@@ -510,7 +510,7 @@
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="version: 24-08-2023" />
+                    android:text="version: 25-08-2023" />
 
                 <View
                     android:id="@+id/divider"
@@ -522,7 +522,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="v2.0.42" />
+                    android:text="v2.0.43" />
             </LinearLayout>
         </ScrollView>
 
