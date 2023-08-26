@@ -10,6 +10,8 @@ import android.os.Bundle;
 import androidx.core.content.ContextCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Handler;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -28,9 +30,9 @@ public class PaymentWebviewAcitivity extends AppCompatActivity {
     ImageView im_back;
     TextView tv_HeaderName;
     SwipeRefreshLayout swipeRefreshLayout;
-    String IntentHeading,IntentURL;
-    int headerColor;
-    int headerTextColor;
+    String IntentHeading,IntentURL,SuccessURL;
+    int headerColor,headerTextColor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +40,9 @@ public class PaymentWebviewAcitivity extends AppCompatActivity {
         context = activity = this;
         IntentHeading = getIntent().getStringExtra("Heading");
         IntentURL = getIntent().getStringExtra("URL");
+        SuccessURL = getIntent().getStringExtra("SuccessURL");
         headerColor = getIntent().getIntExtra("headerColor", R.color.colorPrimary);
         headerTextColor = getIntent().getIntExtra("headerTextColor", R.color.colorPrimary);
-
 
         initViews();
 
@@ -105,6 +107,24 @@ public class PaymentWebviewAcitivity extends AppCompatActivity {
     }
 
     private class MyBrowser extends WebViewClient {
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+
+            if (url.contains(SuccessURL)) {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        // Start an intent to navigate to MyAccountActivity
+                        Intent intent = new Intent(PaymentWebviewAcitivity.this, MyAccountActivity.class);
+                        startActivity(intent);
+
+                        finish();
+                    }
+                }, 7000);
+            }
+        }
+
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             view.loadUrl(url);

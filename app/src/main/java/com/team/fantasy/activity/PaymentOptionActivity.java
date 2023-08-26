@@ -115,6 +115,7 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
                     Intent i = new Intent(activity, PaymentWebviewAcitivity.class);
                     i.putExtra("Heading","PhonePe");
                     i.putExtra("URL", IntentPaymentUrl);
+                    i.putExtra("SuccessURL", "https://sportupx.com/paymentsuccess");
                     i.putExtra("headerColor", R.color.colorPhonePe);
                     i.putExtra("headerTextColor", R.color.white);
                     startActivity(i);
