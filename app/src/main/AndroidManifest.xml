@@ -182,8 +182,10 @@
             android:name=".activity.PaymentConfirmationActivity"
             android:screenOrientation="portrait" />
         <activity android:name=".activity.WebviewAcitivity" />
+        <activity android:name=".activity.PaymentWebviewAcitivity" />
         <activity android:name=".activity.WithdrawAmountActivity" />
         <activity android:name=".activity.PayUMoneyPaymentActivity" />
+
         <activity
             android:name=".activity.GlobalRankActivity"
             android:screenOrientation="portrait" />

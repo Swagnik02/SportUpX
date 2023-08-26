@@ -2,6 +2,8 @@ package com.team.fantasy.activity;
 
 import android.content.Context;
 import android.os.Bundle;
+
+import androidx.core.content.ContextCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
@@ -9,26 +11,33 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.team.fantasy.R;
 
-public class PhonePeWebviewAcitivity extends AppCompatActivity {
+public class PaymentWebviewAcitivity extends AppCompatActivity {
 
     private WebView wv1;
-    PhonePeWebviewAcitivity activity;
+    PaymentWebviewAcitivity activity;
     Context context;
     ImageView im_back;
     TextView tv_HeaderName;
     SwipeRefreshLayout swipeRefreshLayout;
     String IntentHeading,IntentURL;
+    int headerColor;
+    int headerTextColor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_phonepe_webview_acitivity);
+        setContentView(R.layout.activity_payment_webview_acitivity);
         context = activity = this;
         IntentHeading = getIntent().getStringExtra("Heading");
         IntentURL = getIntent().getStringExtra("URL");
+        headerColor = getIntent().getIntExtra("headerColor", R.color.colorPrimary);
+        headerTextColor = getIntent().getIntExtra("headerTextColor", R.color.colorPrimary);
+
+
         initViews();
 
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
@@ -57,6 +66,14 @@ public class PhonePeWebviewAcitivity extends AppCompatActivity {
         wv1= findViewById(R.id.webView1);
 
         tv_HeaderName.setText(IntentHeading);
+
+        RelativeLayout rlHead = findViewById(R.id.rlhead);
+        int backgroundColor = ContextCompat.getColor(this, headerColor);
+        int textColor = ContextCompat.getColor(this, headerTextColor);
+        rlHead.setBackgroundColor(backgroundColor);
+        tv_HeaderName.setTextColor(textColor);
+        im_back.setColorFilter(textColor);
+
         im_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

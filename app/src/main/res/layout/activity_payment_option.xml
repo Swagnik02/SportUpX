@@ -82,8 +82,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/arrow_icon_pay"
-                    android:tint="@color/black" />
+                    android:src="@drawable/arrow_icon_pay" />
 
 
             </RelativeLayout>
@@ -127,7 +126,6 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="20dp"
-                    android:tint="@color/eightE"
                     android:src="@drawable/arrow_icon_pay" />
 
             </RelativeLayout>
@@ -173,8 +171,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="20dp"
-                    android:src="@drawable/arrow_icon_pay"
-                    android:tint="@color/black" />
+                    android:src="@drawable/arrow_icon_pay" />
 
             </RelativeLayout>
             <View
@@ -221,7 +218,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="20dp"
                     android:src="@drawable/arrow_icon_pay"
-                    android:tint="@color/black" />
+                    />
             </RelativeLayout>
 
             <View
@@ -244,7 +241,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/wallet1_icon" />
+                    android:src="@drawable/phonepe_logo" />
 
                 <TextView
                     android:layout_width="wrap_content"
