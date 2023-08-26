@@ -48,12 +48,12 @@ public class PaymentWebviewAcitivity extends AppCompatActivity {
 
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.post(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        swipeRefreshLayout.setRefreshing(true);
-                                        LoadPage(IntentURL);
-                                    }
-                                }
+        @Override
+        public void run() {
+        swipeRefreshLayout.setRefreshing(true);
+        LoadPage(IntentURL);
+                }
+            }
         );
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
