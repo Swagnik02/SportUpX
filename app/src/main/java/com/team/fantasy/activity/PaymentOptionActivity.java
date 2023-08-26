@@ -112,7 +112,7 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
                 if (IntentFinalAmount.equals("")) {
                     ShowToast(context, "Please Select Correct Amount");
                 } else {
-                    Intent i = new Intent(activity, WebviewAcitivity.class);
+                    Intent i = new Intent(activity, PhonePeWebviewAcitivity.class);
                     i.putExtra("Heading","PhonePe");
                     i.putExtra("URL", IntentPaymentUrl);
                     startActivity(i);
