@@ -1,6 +1,10 @@
 package com.team.fantasy.activity;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.core.content.ContextCompat;
@@ -82,6 +86,7 @@ public class PaymentWebviewAcitivity extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     public void LoadPage(String Url){
         wv1.setWebViewClient(new MyBrowser());
         wv1.setWebChromeClient(new WebChromeClient() {
@@ -105,6 +110,32 @@ public class PaymentWebviewAcitivity extends AppCompatActivity {
             view.loadUrl(url);
             return true;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Show a confirmation dialog before leaving the activity
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to leave the payment portal?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Finish the activity if the user confirms
+                dialogInterface.dismiss();  // Dismiss the dialog first
+                Intent redirect = new Intent(PaymentWebviewAcitivity.this, MyAccountActivity.class);
+                startActivity(redirect);
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // Dismiss the dialog if the user cancels
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 }
