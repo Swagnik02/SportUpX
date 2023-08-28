@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.team.fantasy.APICallingPackage.Config;
+import com.team.fantasy.BuildConfig;
 import com.team.fantasy.activity.HomeActivity;
 import com.team.fantasy.activity.InviteFriendsActivity;
 import com.team.fantasy.activity.WebviewAcitivity;
@@ -27,7 +28,11 @@ public class MoreFragment extends Fragment {
         binding = FragmentMoreBinding.inflate(inflater, container, false);
 
         context = activity = (HomeActivity)getActivity();
+        String versionName = BuildConfig.VERSION_NAME;
+        binding.textBuildVersion.setText("Version: " + versionName);
 
+        String buildDate = BuildConfig.BUILD_DATE;
+        binding.textBuildDate.setText("BuildDate: " + buildDate);
 
         binding.RLMoreInviteFriend.setOnClickListener(new View.OnClickListener() {
             @Override

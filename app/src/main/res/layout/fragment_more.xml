@@ -507,10 +507,10 @@
                     />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textBuildVersion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="version: 26-08-2023" />
+                    android:text="Version"/>
 
                 <View
                     android:id="@+id/divider"
@@ -519,10 +519,10 @@
                     android:background="?android:attr/listDivider" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textBuildDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="v2.0.50" />
+                    android:text="BuildDate:"  />
             </LinearLayout>
         </ScrollView>
 
