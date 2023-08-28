@@ -203,7 +203,7 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         );
 
         //Uncomment Below Line for In-App-Update
-        callCheckUpdateVersion(false);
+//        callCheckUpdateVersion(false);
     }
 
     private void callCheckUpdateVersion(boolean isShowLoader) {
