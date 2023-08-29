@@ -7,7 +7,7 @@ public class BeanHomeFixtures implements Serializable {
     private String match_id,teamid1,match_status,type,teamid2,team_name1,team_image1,
             team_short_name1,team_name2,team_image2,team_short_name2,eleven_out;
 
-    private int time;
+    private int time, contestCount;
 
     public String getEleven_out() {
         return eleven_out;
@@ -112,4 +112,11 @@ public class BeanHomeFixtures implements Serializable {
     public void setTeam_short_name2(String team_short_name2) {
         this.team_short_name2 = team_short_name2;
     }
+    public int getContestCount() { return contestCount; }
+
+    public void setContestCount(int contestCount) {
+        this.contestCount = contestCount;
+    }
+
+
 }

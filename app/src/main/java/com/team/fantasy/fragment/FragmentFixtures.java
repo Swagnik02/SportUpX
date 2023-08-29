@@ -392,34 +392,7 @@ public class FragmentFixtures extends Fragment implements ResponseManager {
             final String team_image2 = mListenerList.get(position).getTeam_image2();
             final String team_short_name2 = mListenerList.get(position).getTeam_short_name2();
             final String eleven_out = mListenerList.get(position).getEleven_out();
-
-
-            try {
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("match_id", match_id);
-                jsonObject.put("type", "All");
-                apiRequestManager.callAPI(CONTESTLIST,
-                        jsonObject, context, activity, CONTESTLISTTYPE,
-                        false, new ResponseManager() {
-                            @Override
-                            public void getResult(Context mContext, String type, String message, JSONObject result) {
-                                try {
-                                    JSONArray jsonArray = result.getJSONArray("data");
-                                    holder.totalContest.setText(String.valueOf(jsonArray.length()));
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                            }
-
-                            @Override
-                            public void onError(Context mContext, String type, String message) {
-
-                            }
-                        });
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+            final int contest_count = mListenerList.get(position).getContestCount();
 
             if (eleven_out.equals("1")) {
                 holder.megaphone.setVisibility(View.VISIBLE);
@@ -432,6 +405,7 @@ public class FragmentFixtures extends Fragment implements ResponseManager {
 
             holder.teamOneFullName.setText(team_name1.trim());
             holder.teamTwoFullName.setText(team_name2.trim());
+            holder.totalContest.setText(String.valueOf( contest_count));
 
             holder.tv_TeamOneName.setText(team_short_name1.trim());
             holder.tv_TeamTwoName.setText(team_short_name2.trim());
