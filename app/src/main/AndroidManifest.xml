@@ -177,7 +177,11 @@
         <activity
             android:name=".activity.InviteFriendsActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".activity.InvitedFriendListActivity" />
+        <activity
+            android:name=".activity.SupportTicketActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.InvitedFriendListActivity" />
         <activity
             android:name=".activity.PaymentConfirmationActivity"
             android:screenOrientation="portrait" />

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="select_support_category">Select a category</string>
+    <string-array name="support_categories">
+        <item>Account Issues</item>
+        <item>Billing and Payments</item>
+        <item>Technical Problems</item>
+        <item>Feature Requests</item>
+        <item>General Feedback</item>
+        <item>Other</item>
+    </string-array>
+</resources>

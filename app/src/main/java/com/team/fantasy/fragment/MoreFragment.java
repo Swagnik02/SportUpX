@@ -12,6 +12,7 @@ import com.team.fantasy.APICallingPackage.Config;
 import com.team.fantasy.BuildConfig;
 import com.team.fantasy.activity.HomeActivity;
 import com.team.fantasy.activity.InviteFriendsActivity;
+import com.team.fantasy.activity.SupportTicketActivity;
 import com.team.fantasy.activity.WebviewAcitivity;
 import com.team.fantasy.databinding.FragmentMoreBinding;
 
@@ -75,6 +76,13 @@ public class MoreFragment extends Fragment {
                 Intent i = new Intent(activity, WebviewAcitivity.class);
                 i.putExtra("Heading","HELP DESK");
                 i.putExtra("URL",Config.HELPDESKURL);
+                startActivity(i);
+            }
+        });
+        binding.RLSupportTicket.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(activity, SupportTicketActivity.class);
                 startActivity(i);
             }
         });
