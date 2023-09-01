@@ -27,7 +27,7 @@
                 android:id="@+id/welcomeNote"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="20dp"
                 android:text="Welcome to Support"
                 android:textSize="24sp"
                 android:textStyle="bold"
