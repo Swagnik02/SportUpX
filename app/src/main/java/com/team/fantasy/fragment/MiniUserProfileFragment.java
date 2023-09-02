@@ -38,9 +38,8 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
         View view = inflater.inflate(R.layout.fragment_mini_user_profile, container, false);
 
         Context context = getActivity();
-        imageUrl = Config.ProfileIMAGEBASEURL + HomeActivity.sessionManager.getUser(context).getImage();
+
         username = HomeActivity.sessionManager.getUser(context).getName();
-        Log.d("tag", "CHECKKKKK HERE imageUrl: " + imageUrl);
 
         // Initialize UI components and set data
         ImageView profileImageView = view.findViewById(R.id.profileImageView);
@@ -62,13 +61,13 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
         walletBalanceTextView.setText(walletBalance);
 
         // Close Button Click Listener
-        Button closeButton = view.findViewById(R.id.closeButton);
-        closeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss(); // Close the bottom sheet on button click
-            }
-        });
+//        Button closeButton = view.findViewById(R.id.closeButton);
+//        closeButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dismiss(); // Close the bottom sheet on button click
+//            }
+//        });
 
         if (context != null) {
             // Access resources or perform other operations using 'context' here
