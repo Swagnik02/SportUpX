@@ -152,7 +152,7 @@ public class Config {
     public static String SEND_PAYMENT_DATA_PHONEPE = BASEURL + "add_amount_phonepe";
 
     //support
-    public static String SEND_SUPPORT_TICKET = BASEURL + "send_support_ticket";
+    public static String SEND_SUPPORT_TICKET = BASEURL + "support_ticket";
 
 
 }
