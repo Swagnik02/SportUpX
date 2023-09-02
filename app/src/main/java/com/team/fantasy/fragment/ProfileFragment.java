@@ -217,22 +217,13 @@ public class ProfileFragment extends Fragment implements ResponseManager {
     @Override
     public void onResume() {
         super.onResume();
-        callViewProfile(true);
-
         // Display profile image
-        String Imageurl = sessionManager.getUser(getContext()).getImage();
-//        String Imageurl = "UserImage20230728190516.jpg";
-
-        Log.e("Imageurl : ", Config.ProfileIMAGEBASEURL + Imageurl);
+        String Imageurl = Config.ProfileIMAGEBASEURL + sessionManager.getUser(getContext()).getImage();
 
         if (TextUtils.isEmpty(Imageurl) || Imageurl.equals("")) {
-//            ShowToast(context, "empty image url");
-            Log.e("Imageurl : ", Config.ProfileIMAGEBASEURL + Imageurl);
+
         } else {
-            Glide.with(getActivity()).load(Config.ProfileIMAGEBASEURL + Imageurl)
-                    .into(binding.imProfilepic);
-//            ShowToast(context, "image url: "+Config.ProfileIMAGEBASEURL + Imageurl);
-            Log.e("Imageurl : ", Config.ProfileIMAGEBASEURL + Imageurl);
+            Glide.with(getActivity()).load(Imageurl).into(binding.imProfilepic);
         }
 
         // Display UserName
@@ -254,25 +245,6 @@ public class ProfileFragment extends Fragment implements ResponseManager {
     }
 
 
-    public void callViewProfile(boolean isShowLoader) {
-        try {
-            apiRequestManager.callAPI(VIEWPROFILE,
-                    ViewProfRequestJson(), context, activity, VIEWPROFILETYPE,
-                    isShowLoader, responseManager);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    JSONObject ViewProfRequestJson() {
-        JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put("user_id", sessionManager.getUser(context).getUser_id());
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return jsonObject;
-    }
 
     private void showDeleteUserConfirmationDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
