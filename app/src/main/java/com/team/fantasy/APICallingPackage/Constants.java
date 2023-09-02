@@ -117,7 +117,7 @@ public class Constants {
 
     public static String SEND_PAYMENT_DATA_PHONEPE_TYPE = "SendPhonePePaymentDataType";
 
-    public static String SUPPORT_TICKET_TYPE = "SupportTicket";
+    public static String SUPPORT_TICKET_TYPE = "SupportTicketType";
 
 
 }

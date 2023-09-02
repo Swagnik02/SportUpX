@@ -6,10 +6,13 @@ import static com.team.fantasy.APICallingPackage.Constants.SUPPORT_TICKET_TYPE;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,7 +45,7 @@ public class SupportTicketActivity extends AppCompatActivity implements Response
     Spinner spinner;
     Button submitButton;
 
-    String mail;
+    int isSuccess = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,8 +72,10 @@ public class SupportTicketActivity extends AppCompatActivity implements Response
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Call the API when the submit button is clicked
-                callSendSupportTicket(true); // Pass true to show a loader if needed
+                callSendSupportTicket(true);
+
+
+
             }
         });
     }
@@ -95,7 +100,11 @@ public class SupportTicketActivity extends AppCompatActivity implements Response
         try {
             apiRequestManager.callAPI(SEND_SUPPORT_TICKET,
                     createSupportTicketJson(), context, activity, SUPPORT_TICKET_TYPE,
-                    isShowLoader, responseManager);
+                    isShowLoader, this );
+
+            // In your onClick method or any test scenario
+            responseManager.getResult(context, SUPPORT_TICKET_TYPE, "Status", new JSONObject());
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -113,7 +122,10 @@ public class SupportTicketActivity extends AppCompatActivity implements Response
             jsonObject.put("topic", spinner.getSelectedItem().toString());
             jsonObject.put("query", messageEditText.getText().toString());
 
+            isSuccess=1;
+
         } catch (JSONException e) {
+            isSuccess=0;
             e.printStackTrace();
         }
         return jsonObject;
@@ -121,25 +133,84 @@ public class SupportTicketActivity extends AppCompatActivity implements Response
 
     @Override
     public void getResult(Context mContext, String type, String message, JSONObject result) {
-        if (type.equals(SEND_SUPPORT_TICKET)) {
-            // Check the 'status' field in the JSON response to determine success
-            try {
-                String status = result.getString("status");
-                if (status.equals("success")) {
-                    String successMessage = result.getString("message");
-                    ShowToast(context, successMessage);
-                } else {
 
-                }
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+        LayoutInflater li = getLayoutInflater();
+        // Getting the View object as defined in the customtoast.xml file
+        View layout = li.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_layout));
+
+        // Debugging: Check if layout inflation is successful
+        Log.d("CustomToast", "Layout Inflation Success: " + (layout != null));
+        TextView textView = (TextView) layout.findViewById(R.id.custom_toast_message);
+
+        if (isSuccess==1) {
+            message = "Ticket Generated";
+
+            // Creating the Toast object
+            textView.setText(message);
+            Toast toast = new Toast(getApplicationContext());
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(layout); // setting the view of custom toast layout
+            toast.show();
+            Intent i = new Intent(activity, HomeActivity.class);
+            startActivity(i);
+            finish();
+
+        }
+        else {
+            message = "Error";
+
+            // Creating the Toast object
+            textView.setText(message);
+            Toast toast = new Toast(getApplicationContext());
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(layout); // setting the view of custom toast layout
+            toast.show();
         }
     }
 
+//
+//    @Override
+//    public void getResult(Context mContext, String type, String message, JSONObject result) {
+//
+//
+//
+//        if (type.equals(SUPPORT_TICKET_TYPE)) {
+//
+//            try {
+//                String status = result.getString("status");
+//                if (status.equals("success")) {
+//
+//                    ShowToast(context,"DONE");
+//                    LayoutInflater li = getLayoutInflater();
+//                    // Getting the View object as defined in the customtoast.xml file
+//                    View layout = li.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_layout));
+//
+//                    // Debugging: Check if layout inflation is successful
+//                    Log.d("CustomToast", "Layout Inflation Success: " + (layout != null));
+//
+//                    TextView textView = (TextView) layout.findViewById(R.id.custom_toast_message);
+//                    // Creating the Toast object
+//                    textView.setText(message);
+//                    Toast toast = new Toast(getApplicationContext());
+//                    toast.setDuration(Toast.LENGTH_SHORT);
+//                    toast.setView(layout); // setting the view of custom toast layout
+//                    toast.show();
+//                    Intent i = new Intent(activity, HomeActivity.class);
+//                    startActivity(i);
+//                    finish();
+//                } else {
+//                    // Handle failure case if needed
+//                }
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
+
+
     @Override
     public void onError(Context mContext, String type, String message) {
-        if (type.equals(SEND_SUPPORT_TICKET)) {
+        if (type.equals(SUPPORT_TICKET_TYPE)) {
             if (message.equals("Unable to make support ticket at this time")) {
                 Toast.makeText(mContext, "Unable to create a support ticket at this time.", Toast.LENGTH_SHORT).show();
             } else {
