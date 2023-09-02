@@ -38,7 +38,7 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
         View view = inflater.inflate(R.layout.fragment_mini_user_profile, container, false);
 
         Context context = getActivity();
-
+        imageUrl = Config.ProfileIMAGEBASEURL + HomeActivity.sessionManager.getUser(context).getImage();
         username = HomeActivity.sessionManager.getUser(context).getName();
 
         // Initialize UI components and set data
