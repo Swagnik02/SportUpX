@@ -7,7 +7,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 1
-        versionName 'v2.22.41'
+        versionName 'v2.23.42'
         buildConfigField "String", "BUILD_DATE", "\"" + getBuildDate() + "\""
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
