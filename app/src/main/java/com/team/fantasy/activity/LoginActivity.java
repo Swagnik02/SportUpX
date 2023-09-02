@@ -342,6 +342,7 @@ public class LoginActivity extends AppCompatActivity implements ResponseManager,
                     UserDetails userDetails = new UserDetails();
                     userDetails.setUser_id(UserId);
                     userDetails.setName(result.getString("name"));
+                    userDetails.setImage(result.getString("image"));
                     userDetails.setMobile(result.getString("mobile"));
                     userDetails.setEmail(result.getString("email"));
                     userDetails.setType(result.getString("type"));
