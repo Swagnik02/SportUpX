@@ -57,6 +57,7 @@ import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.BuildConfig;
 import com.team.fantasy.R;
 import com.team.fantasy.databinding.ActivityHomeBinding;
+import com.team.fantasy.fragment.BottomSheetFragment;
 import com.team.fantasy.fragment.FragmentFixtures;
 import com.team.fantasy.fragment.MoreFragment;
 import com.team.fantasy.fragment.MyContestFragment;
@@ -126,6 +127,13 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         Animation shake = AnimationUtils.loadAnimation(activity, R.anim.shake);
         binding.imNotification.startAnimation(shake);
 
+        binding.imUserMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                BottomSheetFragment bottomSheetFragment = new BottomSheetFragment();
+                bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
+            }
+        });
 
         binding.imNotification.setOnClickListener(new View.OnClickListener() {
             @Override
