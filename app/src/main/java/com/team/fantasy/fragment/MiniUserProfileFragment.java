@@ -23,9 +23,7 @@ import com.team.fantasy.utils.SessionManager;
 public class MiniUserProfileFragment extends BottomSheetDialogFragment {
     MiniUserProfileFragment activity;
     MiniUserProfileFragment context;
-    String imageUrl;
-    String username = "John Doe"; // Set the default username here
-    String walletBalance = "$100"; // Set the default wallet balance here
+    String imageUrl,username,walletBalance ; // Set the default username here
     int profilePhotoResId = R.drawable.user_icon1;
 
     public MiniUserProfileFragment() {
