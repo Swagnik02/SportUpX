@@ -52,13 +52,12 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.material.tabs.TabLayout;
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
-import com.team.fantasy.APICallingPackage.Config;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.BuildConfig;
 import com.team.fantasy.R;
 import com.team.fantasy.databinding.ActivityHomeBinding;
-import com.team.fantasy.fragment.BottomSheetFragment;
 import com.team.fantasy.fragment.FragmentFixtures;
+import com.team.fantasy.fragment.MiniUserProfileFragment;
 import com.team.fantasy.fragment.MoreFragment;
 import com.team.fantasy.fragment.MyContestFragment;
 import com.team.fantasy.fragment.ProfileFragment;
@@ -130,8 +129,8 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         binding.imUserMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BottomSheetFragment bottomSheetFragment = new BottomSheetFragment();
-                bottomSheetFragment.show(getSupportFragmentManager(), bottomSheetFragment.getTag());
+                MiniUserProfileFragment fragment = new MiniUserProfileFragment();
+                fragment.show(getSupportFragmentManager(), fragment.getTag());
             }
         });
 
