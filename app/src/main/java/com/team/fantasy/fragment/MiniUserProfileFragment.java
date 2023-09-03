@@ -62,7 +62,7 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
 
         // Set data to UI components
         usernameTextView.setText(username);
-        walletBalanceTextView.setText("Wallet = ₹ "+walletBalance);
+        walletBalanceTextView.setText("₹ "+walletBalance);
 
         // Close Button Click Listener
 //        Button closeButton = view.findViewById(R.id.closeButton);
