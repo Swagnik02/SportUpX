@@ -129,10 +129,11 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         Animation shake = AnimationUtils.loadAnimation(activity, R.anim.shake);
         binding.imNotification.startAnimation(shake);
 
-        ImageView HomeImageView = findViewById(R.id.im_userMenu);
 
-        imageUrl = Config.ProfileIMAGEBASEURL + HomeActivity.sessionManager.getUser(context).getImage();
-        ShowToast(context,imageUrl);
+
+//        ImageView HomeImageView = findViewById(R.id.im_userMenu);
+//        imageUrl = Config.ProfileIMAGEBASEURL + HomeActivity.sessionManager.getUser(context).getImage();
+//        ShowToast(context,imageUrl);
 //
 //        Glide.with(context)
 //                .load(imageUrl)
