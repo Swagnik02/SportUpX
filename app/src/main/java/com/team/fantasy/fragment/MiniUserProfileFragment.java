@@ -1,5 +1,7 @@
 package com.team.fantasy.fragment;
 
+import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -30,10 +32,10 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
     ImageView profileImageView;
     TextView usernameTextView,walletBalanceTextView;
 
-    public MiniUserProfileFragment() {
+    public MiniUserProfileFragment(String amnt) {
         // Required empty public constructor
+        this.walletBalance = amnt;
     }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -60,7 +62,7 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
 
         // Set data to UI components
         usernameTextView.setText(username);
-        walletBalanceTextView.setText(walletBalance);
+        walletBalanceTextView.setText("Wallet = ₹ "+walletBalance);
 
         // Close Button Click Listener
 //        Button closeButton = view.findViewById(R.id.closeButton);

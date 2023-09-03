@@ -3,7 +3,9 @@ package com.team.fantasy.activity;
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 import static com.team.fantasy.APICallingPackage.Config.APKNAME;
 import static com.team.fantasy.APICallingPackage.Config.APKURL;
+import static com.team.fantasy.APICallingPackage.Config.MYACCOUNT;
 import static com.team.fantasy.APICallingPackage.Config.UPDATEAPP;
+import static com.team.fantasy.APICallingPackage.Constants.MYACCOUNTTYPE;
 import static com.team.fantasy.APICallingPackage.Constants.UPDATEAPPTYPE;
 
 import android.Manifest;
@@ -104,6 +106,7 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
 
     ActivityHomeBinding binding;
     String imageUrl;
+    String walletBalance;
 
     public static HomeActivity getInstance() {
         return homeActivity;
@@ -144,7 +147,7 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         binding.imUserMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MiniUserProfileFragment fragment = new MiniUserProfileFragment();
+                MiniUserProfileFragment fragment = new MiniUserProfileFragment(walletBalance);
                 fragment.show(getSupportFragmentManager(), fragment.getTag());
             }
         });
@@ -198,6 +201,7 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
                         if (tab.getPosition() == 0) {
                             replaceFragment(new FragmentFixtures());
                             binding.head.setVisibility(View.VISIBLE);
+                            callMyAccount(true);
                         } else if (tab.getPosition() == 1) {
                             replaceFragment(new MyContestFragment());
                             binding.head.setVisibility(View.VISIBLE);
@@ -224,6 +228,7 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
                 }
         );
 
+        callMyAccount(true);
         //Uncomment Below Line for In-App-Update
 //        callCheckUpdateVersion(false);
     }
@@ -249,8 +254,39 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         return jsonObject;
     }
 
+    public void callMyAccount(boolean isShowLoader) {
+        try {
+            apiRequestManager.callAPI(MYACCOUNT,
+                    myaccountjson(), context, activity, MYACCOUNTTYPE,
+                    isShowLoader, responseManager);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+    JSONObject myaccountjson() {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("user_id", sessionManager.getUser(context).getUser_id());
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonObject;
+    }
+
+
+
+
     @Override
     public void getResult(Context mContext, String type, String message, JSONObject result) {
+        try {
+            walletBalance = result.getString("total_amount");
+            System.out.println("walletBalance: "+ walletBalance);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
         if (type.equals(UPDATEAPPTYPE)) {
             try {
                 APKNAME = result.getString("apk_name");

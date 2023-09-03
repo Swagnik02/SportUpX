@@ -101,6 +101,7 @@ public class FragmentFixtures extends Fragment implements ResponseManager {
         binding.swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
+                HomeActivity.getInstance().callMyAccount(true);
                 callMyMatchRecord(false);
             }
         });
