@@ -23,8 +23,12 @@ import com.team.fantasy.utils.SessionManager;
 public class MiniUserProfileFragment extends BottomSheetDialogFragment {
     MiniUserProfileFragment activity;
     MiniUserProfileFragment context;
-    String imageUrl,username,walletBalance ; // Set the default username here
+    String imageUrl;
+    String username = "Username";
+    String walletBalance = "Balance";
     int profilePhotoResId = R.drawable.user_icon1;
+    ImageView profileImageView;
+    TextView usernameTextView,walletBalanceTextView;
 
     public MiniUserProfileFragment() {
         // Required empty public constructor
@@ -40,9 +44,9 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
         username = HomeActivity.sessionManager.getUser(context).getName();
 
         // Initialize UI components and set data
-        ImageView profileImageView = view.findViewById(R.id.profileImageView);
-        TextView usernameTextView = view.findViewById(R.id.usernameTextView);
-        TextView walletBalanceTextView = view.findViewById(R.id.walletBalanceTextView);
+        profileImageView = view.findViewById(R.id.profileImageView);
+        usernameTextView = view.findViewById(R.id.usernameTextView);
+        walletBalanceTextView = view.findViewById(R.id.walletBalanceTextView);
 
         if (!TextUtils.isEmpty(imageUrl)) {
             Glide.with(context)
