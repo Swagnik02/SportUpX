@@ -43,6 +43,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.bumptech.glide.Glide;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -52,6 +53,7 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.material.tabs.TabLayout;
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
+import com.team.fantasy.APICallingPackage.Config;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.BuildConfig;
 import com.team.fantasy.R;
@@ -101,6 +103,7 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
     Dialog dialog;
 
     ActivityHomeBinding binding;
+    String imageUrl;
 
     public static HomeActivity getInstance() {
         return homeActivity;
@@ -111,6 +114,7 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_home);
 
+
         context = activity = this;
         homeActivity = this;
         sessionManager = new SessionManager();
@@ -118,13 +122,23 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         responseManager = this;
         apiRequestManager = new APIRequestManager(activity);
 
-
         StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
         StrictMode.setVmPolicy(builder.build());
 
 
         Animation shake = AnimationUtils.loadAnimation(activity, R.anim.shake);
         binding.imNotification.startAnimation(shake);
+
+        ImageView HomeImageView = findViewById(R.id.im_userMenu);
+
+        imageUrl = Config.ProfileIMAGEBASEURL + HomeActivity.sessionManager.getUser(context).getImage();
+        ShowToast(context,imageUrl);
+//
+//        Glide.with(context)
+//                .load(imageUrl)
+//                .placeholder(R.drawable.user_menu) // Placeholder image
+//                .error(R.drawable.user_menu) // Error image if the URL is invalid
+//                .into(HomeImageView);
 
         binding.imUserMenu.setOnClickListener(new View.OnClickListener() {
             @Override
