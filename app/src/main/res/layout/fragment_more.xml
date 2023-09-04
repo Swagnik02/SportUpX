@@ -248,41 +248,41 @@
                     />
 
                 <RelativeLayout
+                    android:id="@+id/RL_MoreHelpDesk"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/RL_MoreHelpDesk"
-                    android:layout_marginTop="20dp">
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone">
 
                     <ImageView
+                        android:id="@+id/im_HelpDesk"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/im_HelpDesk"
-                        android:tint="@color/black"
                         android:layout_centerVertical="true"
-                        android:src="@drawable/helpdesk" />
+                        android:src="@drawable/helpdesk"
+                        android:tint="@color/black" />
 
                     <TextView
+                        android:id="@+id/tv_HelpDesk"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tv_HelpDesk"
-                        android:layout_marginLeft="20dp"
-                        android:padding="10dp"
                         android:layout_centerVertical="true"
-                        android:text="Helpdesk"
-                        android:layout_toRightOf="@+id/im_HelpDesk"
+                        android:layout_marginLeft="20dp"
                         android:layout_toLeftOf="@+id/im_arrow5"
-                        android:textColor="@color/black"  />
+                        android:layout_toRightOf="@+id/im_HelpDesk"
+                        android:padding="10dp"
+                        android:text="Helpdesk"
+                        android:textColor="@color/black" />
 
                     <ImageView
+                        android:id="@+id/im_arrow5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
                         android:layout_marginRight="20dp"
-                        android:id="@+id/im_arrow5"
-                        android:tint="@color/black"
-                        android:src="@drawable/arrow_moreopt" />
-
+                        android:src="@drawable/arrow_moreopt"
+                        android:tint="@color/black" />
 
 
                 </RelativeLayout>
@@ -292,7 +292,7 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="10dp"
                     android:background="#b3b3b3"
-                    />
+                    android:visibility="gone" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
