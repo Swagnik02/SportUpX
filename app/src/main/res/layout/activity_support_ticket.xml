@@ -96,6 +96,41 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="4dp"
+                        android:text="Suggestions"
+                        android:textColor="#000000"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Account Deletion"
+                        android:textSize="11sp"
+                        android:id="@+id/im_suggestionDeleteAccnt"
+                        android:textColor="@color/btn_txt_color"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/roundbutton_my_team"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        />
+
+                </LinearLayout>
+
+                    <!-- Message Label (Darker and Bolder) -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
                         android:text="Issue"
                         android:textColor="#000000"
                         android:textSize="16sp"
@@ -105,7 +140,7 @@
                     <EditText
                         android:id="@+id/messageEditText"
                         android:layout_width="match_parent"
-                        android:layout_height="203dp"
+                        android:layout_height="156dp"
                         android:layout_marginBottom="24dp"
                         android:background="#F2F2F2"
                         android:hint="Describe your issue..."

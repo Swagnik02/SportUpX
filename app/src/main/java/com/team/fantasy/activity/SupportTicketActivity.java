@@ -39,7 +39,7 @@ public class SupportTicketActivity extends AppCompatActivity implements Response
     SessionManager sessionManager;
     Context context;
     ImageView im_back;
-    TextView tv_HeaderName;
+    TextView tv_HeaderName,suggestion_account_delete;
     EditText emailEditText;
     EditText messageEditText;
     Spinner spinner;
@@ -57,8 +57,13 @@ public class SupportTicketActivity extends AppCompatActivity implements Response
         apiRequestManager = new APIRequestManager(activity);
         initViews();
 
-        // Initialize the spinner and populate it with support categories
+        // Initialize views
         Spinner spinner = findViewById(R.id.spinner);
+        emailEditText = findViewById(R.id.emailEditText);
+        suggestion_account_delete = findViewById(R.id.im_suggestionDeleteAccnt);
+        messageEditText = findViewById(R.id.messageEditText);
+        submitButton = findViewById(R.id.submitButton);
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.support_categories,
@@ -67,17 +72,20 @@ public class SupportTicketActivity extends AppCompatActivity implements Response
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        // Assign the OnClickListener to the submit button
-        submitButton = findViewById(R.id.submitButton);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 callSendSupportTicket(true);
-
-
-
             }
         });
+        suggestion_account_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                messageEditText.setText("ACCOUNT DELETION REQUEST");
+                callSendSupportTicket(true);
+            }
+        });
+
     }
 
 
@@ -111,8 +119,7 @@ public class SupportTicketActivity extends AppCompatActivity implements Response
     }
 
     private JSONObject createSupportTicketJson() {
-        emailEditText = findViewById(R.id.emailEditText);
-        messageEditText = findViewById(R.id.messageEditText);
+
         spinner = findViewById(R.id.spinner);
 
         JSONObject jsonObject = new JSONObject();
