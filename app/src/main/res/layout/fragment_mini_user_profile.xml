@@ -30,13 +30,13 @@
         android:gravity="center"
         android:layout_marginTop="10dp"/>
     <!-- Wallet Balance Container -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginTop="4dp">
 
         <!-- Wallet Icon -->
         <ImageView
@@ -57,4 +57,37 @@
             android:gravity="center"
             android:layout_marginStart="8dp"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="KYC Status"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/tv_KYCstatus"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify"
+            android:textSize="11sp"
+            android:id="@+id/im_KYCverified"
+            android:textColor="@color/btn_txt_color"
+            android:layout_toLeftOf="@+id/tv_KYCstatus"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/roundbutton_my_team"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            />
+    </LinearLayout>
+
 </LinearLayout>

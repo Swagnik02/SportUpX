@@ -30,12 +30,14 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
     String walletBalance = "Balance";
     int profilePhotoResId = R.drawable.user_icon1;
     ImageView profileImageView;
-    TextView usernameTextView,walletBalanceTextView;
-
-    public MiniUserProfileFragment(String amnt) {
+    TextView usernameTextView,walletBalanceTextView,KYCstatus;
+    int verifiedKYC;
+    public MiniUserProfileFragment(String amnt, int KYCStatus) {
         // Required empty public constructor
         this.walletBalance = amnt;
+        this.verifiedKYC = KYCStatus;
     }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
         profileImageView = view.findViewById(R.id.profileImageView);
         usernameTextView = view.findViewById(R.id.usernameTextView);
         walletBalanceTextView = view.findViewById(R.id.walletBalanceTextView);
+        KYCstatus = view.findViewById(R.id.im_KYCverified);
 
         if (!TextUtils.isEmpty(imageUrl)) {
             Glide.with(context)
@@ -61,6 +64,10 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
         }
 
         // Set data to UI components
+        if (verifiedKYC==1){
+            KYCstatus.setText("Verified");
+            KYCstatus.setEnabled(false);
+        }
         usernameTextView.setText(username);
         walletBalanceTextView.setText("₹ "+walletBalance);
 

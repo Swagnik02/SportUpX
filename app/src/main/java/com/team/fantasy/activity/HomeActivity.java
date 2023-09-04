@@ -107,6 +107,7 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
     ActivityHomeBinding binding;
     String imageUrl;
     String walletBalance;
+    int verifiedKYC = 0;
 
     public static HomeActivity getInstance() {
         return homeActivity;
@@ -147,7 +148,7 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         binding.imUserMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MiniUserProfileFragment fragment = new MiniUserProfileFragment(walletBalance);
+                MiniUserProfileFragment fragment = new MiniUserProfileFragment(walletBalance,verifiedKYC);
                 fragment.show(getSupportFragmentManager(), fragment.getTag());
             }
         });
@@ -281,7 +282,14 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
     public void getResult(Context mContext, String type, String message, JSONObject result) {
         try {
             walletBalance = result.getString("total_amount");
-            System.out.println("walletBalance: "+ walletBalance);
+//            String aadhar_status = result.getString("aadhar_status");
+//            String pan_status = result.getString("pan_status");
+
+            if (result.getString("aadhar_status").equals("2") && result.getString("pan_status").equals("2"))
+                verifiedKYC = 1;
+
+//            System.out.println("walletBalance: "+ walletBalance);
+//            System.out.println("verifiedKYC: "+ verifiedKYC);
         } catch (JSONException e) {
             e.printStackTrace();
         }
