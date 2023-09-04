@@ -3,6 +3,7 @@ package com.team.fantasy.fragment;
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -20,6 +21,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.team.fantasy.APICallingPackage.Config;
 import com.team.fantasy.R;
 import com.team.fantasy.activity.HomeActivity;
+import com.team.fantasy.activity.MyAccountActivity;
 import com.team.fantasy.utils.SessionManager;
 
 public class MiniUserProfileFragment extends BottomSheetDialogFragment {
@@ -29,7 +31,7 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
     String username = "Username";
     String walletBalance = "Balance";
     int profilePhotoResId = R.drawable.user_icon1;
-    ImageView profileImageView;
+    ImageView profileImageView,walletIcon;
     TextView usernameTextView,walletBalanceTextView,KYCstatus;
     int verifiedKYC;
     public MiniUserProfileFragment(String amnt, int KYCStatus) {
@@ -51,6 +53,7 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
         profileImageView = view.findViewById(R.id.profileImageView);
         usernameTextView = view.findViewById(R.id.usernameTextView);
         walletBalanceTextView = view.findViewById(R.id.walletBalanceTextView);
+        walletIcon = view.findViewById(R.id.walletIcon);
         KYCstatus = view.findViewById(R.id.im_KYCverified);
 
         if (!TextUtils.isEmpty(imageUrl)) {
@@ -68,8 +71,39 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
             KYCstatus.setText("Verified");
             KYCstatus.setEnabled(false);
         }
+        else {
+            KYCstatus.setEnabled(true);
+        }
         usernameTextView.setText(username);
         walletBalanceTextView.setText("₹ "+walletBalance);
+
+        walletIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, MyAccountActivity.class);
+                dismiss();
+                startActivity(i);
+            }
+        });
+        walletBalanceTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, MyAccountActivity.class);
+                dismiss();
+                startActivity(i);
+            }
+        });
+
+        KYCstatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(context, MyAccountActivity.class);
+                dismiss();
+                startActivity(i);
+            }
+        });
+
+
 
         // Close Button Click Listener
 //        Button closeButton = view.findViewById(R.id.closeButton);
@@ -80,10 +114,7 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
 //            }
 //        });
 
-        if (context != null) {
-            // Access resources or perform other operations using 'context' here
-        }
-
         return view;
     }
+
 }
