@@ -886,7 +886,8 @@
                         android:text="Delete User"
 
                         android:textColor="@color/btn_txt_color"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:visibility="gone" />
 
 
                 </LinearLayout>
