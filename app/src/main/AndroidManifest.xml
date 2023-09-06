@@ -153,6 +153,9 @@
         <activity
             android:name=".activity.MyJoinedResultContestListActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.Scoreboard"
+            android:screenOrientation="portrait" />
         <activity android:name=".activity.MyResultContestDetailsActivity" />
         <activity android:name=".activity.MyLiveContestDetailsActivity" />
         <activity android:name=".activity.PaymentOptionActivity" />

@@ -18,6 +18,7 @@ import com.team.fantasy.BuildConfig;
 import com.team.fantasy.R;
 import com.team.fantasy.activity.HomeActivity;
 import com.team.fantasy.activity.InviteFriendsActivity;
+import com.team.fantasy.activity.Scoreboard;
 import com.team.fantasy.activity.SupportTicketActivity;
 import com.team.fantasy.activity.WebviewAcitivity;
 import com.team.fantasy.databinding.FragmentMoreBinding;
@@ -30,7 +31,6 @@ public class MoreFragment extends Fragment {
     Context context;
 
     FragmentMoreBinding binding;
-    BottomSheetDialog scoreboardView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentMoreBinding.inflate(inflater, container, false);
@@ -132,13 +132,10 @@ public class MoreFragment extends Fragment {
         binding.tvScoreCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                scoreboardView = new BottomSheetDialog(activity);
-                scoreboardView.setContentView(R.layout.fragment_scorecard);
-
-                scoreboardView.show();
+                Intent i = new Intent(activity, Scoreboard.class);
+                startActivity(i);
             }
         });
-
         return binding.getRoot();
     }
 

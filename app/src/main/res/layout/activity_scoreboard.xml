@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/im_CloseIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="15dp"
+            android:src="@drawable/cross_icon"
+            app:tint="@color/colorPrimary" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/im_CloseIcon">
+
+            <!-- Your scoreboard content here -->
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,7 +29,8 @@
     android:id="@+id/scorecard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context="activity.FragmentScoreboard">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/Team1_Maincontainer"
@@ -477,7 +501,7 @@
                     android:textSize="12dp" />
 
                 <View
-                    android:id="@+id/divider1"
+                    android:id="@+id/divider6"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/im_t2_batsman_name"
@@ -487,7 +511,7 @@
                     android:id="@+id/im_t2_batsman_runs"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider1"
+                    android:layout_toRightOf="@id/divider6"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:text="R"
@@ -496,7 +520,7 @@
                     android:textSize="12dp" />
 
                 <View
-                    android:id="@+id/divider2"
+                    android:id="@+id/divider7"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/im_t2_batsman_runs"
@@ -508,7 +532,7 @@
                     android:id="@+id/im_t2_batsman_balls_played"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider2"
+                    android:layout_toRightOf="@id/divider7"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:text="B"
@@ -517,7 +541,7 @@
                     android:textSize="12dp" />
 
                 <View
-                    android:id="@+id/divider3"
+                    android:id="@+id/divider8"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/im_t2_batsman_balls_played"
@@ -529,7 +553,7 @@
                     android:id="@+id/im_t2_batsman_fours"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider3"
+                    android:layout_toRightOf="@id/divider8"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:text="4s"
@@ -538,7 +562,7 @@
                     android:textSize="12dp" />
 
                 <View
-                    android:id="@+id/divider4"
+                    android:id="@+id/divider9"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/im_t2_batsman_fours"
@@ -550,7 +574,7 @@
                     android:id="@+id/im_t2_batsman_sixes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider4"
+                    android:layout_toRightOf="@id/divider9"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:text="6s"
@@ -559,7 +583,7 @@
                     android:textSize="12dp" />
 
                 <View
-                    android:id="@+id/divider5"
+                    android:id="@+id/divider10"
                     android:layout_width="1dp"
                     android:layout_height="match_parent"
                     android:layout_toRightOf="@id/im_t2_batsman_sixes"
@@ -571,7 +595,7 @@
                     android:id="@+id/im_t2_batsman_StrikeRate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider5"
+                    android:layout_toRightOf="@id/divider10"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:text="S/R"
@@ -588,3 +612,12 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>
+
+
