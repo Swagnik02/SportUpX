@@ -3,6 +3,7 @@ package com.team.fantasy.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import com.team.fantasy.databinding.ActivityScoreboardBinding;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,14 +46,13 @@ public class Scoreboard extends AppCompatActivity {
             Player player = team2Players.get(i);
             bindPlayerData(binding, i, "im_t2_batsman_", player);
         }
-
     }
 
     private List<Player> generateRandomPlayers() {
         // Generate or retrieve player data here
         // This method should return a list of players
         // You can use random data generation as shown in your code
-    return null;
+        return null;
     }
 
     private void bindPlayerData(ActivityScoreboardBinding binding, int index, String prefix, Player player) {
