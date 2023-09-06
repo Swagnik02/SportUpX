@@ -1,87 +1,74 @@
 package com.team.fantasy.activity;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
-import com.team.fantasy.databinding.ActivityScoreboardBinding;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
-
+import androidx.recyclerview.widget.RecyclerView; // Import RecyclerView
 import com.team.fantasy.R;
 import com.team.fantasy.databinding.ActivityScoreboardBinding;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Scoreboard extends AppCompatActivity {
 
     private ActivityScoreboardBinding binding;
-    private List<Player> playerList;
-
-    private List<Player> team1Players;
-    private List<Player> team2Players;
+    private List<BatsmanItem> playerList; // List of BatsmanItem objects
+    private BatsmanAdapter adapter; // Declare BatsmanAdapter
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // Initialize DataBinding
         binding = DataBindingUtil.setContentView(this, R.layout.activity_scoreboard);
 
-        // Retrieve or generate player data for Team 1 and Team 2
-        team1Players = generateRandomPlayers();
-        team2Players = generateRandomPlayers();
+        // Initialize the playerList (now using BatsmanItem)
+        playerList = new ArrayList<>();
 
-        // Bind player data to TextViews for Team 1
-        for (int i = 0; i < 5; i++) {
-            Player player = team1Players.get(i);
-            bindPlayerData(binding, i, "im_t1_batsman_", player);
-        }
+        // Create 5 BatsmanItem objects and add them to the playerList
+        playerList.add(new BatsmanItem("Player 1", "50", "30", "5", "2", "166.67"));
+        playerList.add(new BatsmanItem("Player 2", "30", "25", "2", "1", "120.0"));
+        playerList.add(new BatsmanItem("Player 3", "20", "15", "1", "0", "133.33"));
+        playerList.add(new BatsmanItem("Player 4", "40", "35", "3", "1", "114.29"));
+        playerList.add(new BatsmanItem("Player 5", "60", "40", "7", "3", "150.0"));
 
-        // Bind player data to TextViews for Team 2
-        for (int i = 0; i < 5; i++) {
-            Player player = team2Players.get(i);
-            bindPlayerData(binding, i, "im_t2_batsman_", player);
-        }
+        // Create an instance of the BatsmanAdapter
+        adapter = new BatsmanAdapter();
+
+        // Set the adapter on the RecyclerView
+//        binding.recyclerView.setAdapter(adapter);
+
+        // Set the layout manager for the RecyclerView
+//        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        binding.imCloseIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
-    private List<Player> generateRandomPlayers() {
-        // Generate or retrieve player data here
-        // This method should return a list of players
-        // You can use random data generation as shown in your code
-        return null;
-    }
+    // Define a BatsmanItem class to represent player information (Inner class)
+    public class BatsmanItem {
+        private String batsmanName;
+        private String runs;
+        private String ballsPlayed;
+        private String fours;
+        private String sixes;
+        private String strikeRate;
 
-    private void bindPlayerData(ActivityScoreboardBinding binding, int index, String prefix, Player player) {
-        TextView nameTextView = binding.getRoot().findViewById(getResources().getIdentifier(prefix + "name", "id", getPackageName()));
-        TextView runsTextView = binding.getRoot().findViewById(getResources().getIdentifier(prefix + "runs", "id", getPackageName()));
-        TextView ballsTextView = binding.getRoot().findViewById(getResources().getIdentifier(prefix + "balls_played", "id", getPackageName()));
-        TextView foursTextView = binding.getRoot().findViewById(getResources().getIdentifier(prefix + "fours", "id", getPackageName()));
-        TextView sixesTextView = binding.getRoot().findViewById(getResources().getIdentifier(prefix + "sixes", "id", getPackageName()));
-        TextView strikeRateTextView = binding.getRoot().findViewById(getResources().getIdentifier(prefix + "StrikeRate", "id", getPackageName()));
-
-        nameTextView.setText(player.getName());
-        runsTextView.setText(String.valueOf(player.getRuns()));
-        ballsTextView.setText(String.valueOf(player.getBallsPlayed()));
-        foursTextView.setText(String.valueOf(player.getFours()));
-        sixesTextView.setText(String.valueOf(player.getSixes()));
-        strikeRateTextView.setText(String.format("%.2f", player.getStrikeRate()));
-    }
-
-    // Define a Player class to represent player information
-    private class Player {
-        private String name;
-        private int runs;
-        private int ballsPlayed;
-        private int fours;
-        private int sixes;
-        private double strikeRate;
-
-        public Player(String name, int runs, int ballsPlayed, int fours, int sixes, double strikeRate) {
-            this.name = name;
+        public BatsmanItem(String batsmanName, String runs, String ballsPlayed, String fours, String sixes, String strikeRate) {
+            this.batsmanName = batsmanName;
             this.runs = runs;
             this.ballsPlayed = ballsPlayed;
             this.fours = fours;
@@ -89,28 +76,75 @@ public class Scoreboard extends AppCompatActivity {
             this.strikeRate = strikeRate;
         }
 
-        public String getName() {
-            return name;
+        public String getBatsmanName() {
+            return batsmanName;
         }
 
-        public int getRuns() {
+        public String getRuns() {
             return runs;
         }
 
-        public int getBallsPlayed() {
+        public String getBallsPlayed() {
             return ballsPlayed;
         }
 
-        public int getFours() {
+        public String getFours() {
             return fours;
         }
 
-        public int getSixes() {
+        public String getSixes() {
             return sixes;
         }
 
-        public double getStrikeRate() {
+        public String getStrikeRate() {
             return strikeRate;
+        }
+    }
+
+    // Define BatsmanAdapter as an inner class
+    private class BatsmanAdapter extends RecyclerView.Adapter<BatsmanAdapter.ViewHolder> {
+
+        // Constructor for BatsmanAdapter
+        public BatsmanAdapter() {
+        }
+
+        @Override
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_batsman, parent, false);
+//            return new ViewHolder(view);
+            return null;
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+            BatsmanItem batsmanItem = playerList.get(position);
+
+            // Bind data to TextViews
+            holder.batsmanName.setText(batsmanItem.getBatsmanName());
+            holder.runs.setText(batsmanItem.getRuns());
+            holder.ballsPlayed.setText(batsmanItem.getBallsPlayed());
+            holder.fours.setText(batsmanItem.getFours());
+            holder.sixes.setText(batsmanItem.getSixes());
+            holder.strikeRate.setText(batsmanItem.getStrikeRate());
+        }
+
+        @Override
+        public int getItemCount() {
+            return playerList.size();
+        }
+
+        public class ViewHolder extends RecyclerView.ViewHolder {
+            public TextView batsmanName, runs, ballsPlayed, fours, sixes, strikeRate;
+
+            public ViewHolder(@NonNull View itemView) {
+                super(itemView);
+                batsmanName = itemView.findViewById(R.id.im_t1_batsman_name);
+                runs = itemView.findViewById(R.id.im_t1_batsman_runs);
+                ballsPlayed = itemView.findViewById(R.id.im_t1_batsman_balls_played);
+                fours = itemView.findViewById(R.id.im_t1_batsman_fours);
+                sixes = itemView.findViewById(R.id.im_t1_batsman_sixes);
+                strikeRate = itemView.findViewById(R.id.im_t1_batsman_StrikeRate);
+            }
         }
     }
 }

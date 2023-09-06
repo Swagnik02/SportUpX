@@ -6,6 +6,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:theme="@style/MyDarkToolbarStyle" />
+
+
+        <TextView
+            android:id="@+id/tv_HeaderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/toolbar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="48dp"
+            android:layout_toStartOf="@+id/im_CloseIcon"
+            android:gravity="center"
+            android:text="SCOREBOARD"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:visibility="visible" />
+
         <ImageView
             android:id="@+id/im_CloseIcon"
             android:layout_width="wrap_content"
@@ -18,606 +40,325 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/im_CloseIcon">
+            android:layout_below="@+id/toolbar">
 
             <!-- Your scoreboard content here -->
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scorecard"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context="activity.FragmentScoreboard">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/Team1_Maincontainer"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/Team1_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="16dp">
-
-<!--            TEAM 1-->
-            <LinearLayout
-                android:id="@+id/Team1"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scorecard"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/team_header"
-                tools:ignore="MissingConstraints">
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                tools:context="activity.FragmentScoreboard">
 
-                <TextView
-                    android:id="@+id/im_team1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:text="Team Name 1"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-<!--        inside container-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="35dp">
-
-<!--            BATTING LABEL-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-<!--                NAME TAG-->
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="Batting"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-
-<!--                SCORE TAGS-->
-                <LinearLayout
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Team1_Maincontainer"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:layout_height="200dp"
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/Team1_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteY="16dp">
+
+                        <!--            TEAM 1-->
+                        <LinearLayout
+                            android:id="@+id/Team1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/team_header"
+                            tools:ignore="MissingConstraints">
+
+                            <TextView
+                                android:id="@+id/im_team1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Team Name 1"
+                                android:textSize="18dp"
+                                android:textColor="@color/white" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <!--        inside container-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="37dp"
+                        android:orientation="vertical">
+
+                        <!--            BATTING LABEL-->
+                        <LinearLayout
+                            android:id="@+id/im_t1labelLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <!--                NAME TAG-->
+                            <LinearLayout
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:paddingTop="10dp"
+                                    android:text="Batting"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp" />
+                            </LinearLayout>
+
+                            <!--                SCORE TAGS-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="?android:attr/listDivider" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="5dp"
+                                    android:text="R"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="?android:attr/listDivider" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="5dp"
+                                    android:text="B"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="?android:attr/listDivider" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="5dp"
+                                    android:text="4s"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="?android:attr/listDivider" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="5dp"
+                                    android:text="6s"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="?android:attr/listDivider" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingLeft="5dp"
+                                    android:paddingTop="10dp"
+                                    android:paddingRight="5dp"
+                                    android:text="S/R"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!--            DIVIDER-->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <!-- TextView for Batsman Name -->
+                            <TextView
+                                android:id="@+id/im_t1_batsman_name"
+                                android:layout_width="190dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:text="Batsman"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <!-- Divider -->
+                            <View
+                                android:id="@+id/divider1"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_toRightOf="@id/im_t1_batsman_name"
+                                android:background="?android:attr/listDivider" />
+
+                            <!-- TextView for Runs -->
+                            <TextView
+                                android:id="@+id/im_t1_batsman_runs"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/divider1"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:text="R"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <!-- Divider -->
+                            <View
+                                android:id="@+id/divider2"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_toRightOf="@id/im_t1_batsman_runs"
+                                android:background="?android:attr/listDivider"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+
+                            <!-- TextView for Balls Played -->
+                            <TextView
+                                android:id="@+id/im_t1_batsman_balls_played"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/divider2"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:text="B"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <!-- Divider -->
+                            <View
+                                android:id="@+id/divider3"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_toRightOf="@id/im_t1_batsman_balls_played"
+                                android:background="?android:attr/listDivider"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+
+                            <!-- TextView for Fours -->
+                            <TextView
+                                android:id="@+id/im_t1_batsman_fours"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/divider3"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:text="4s"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <!-- Divider -->
+                            <View
+                                android:id="@+id/divider4"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_toRightOf="@id/im_t1_batsman_fours"
+                                android:background="?android:attr/listDivider"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+
+                            <!-- TextView for Sixes -->
+                            <TextView
+                                android:id="@+id/im_t1_batsman_sixes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/divider4"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:text="6s"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+
+                            <!-- Divider -->
+                            <View
+                                android:id="@+id/divider5"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_toRightOf="@id/im_t1_batsman_sixes"
+                                android:background="?android:attr/listDivider"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp" />
+
+                            <!-- TextView for Strike Rate -->
+                            <TextView
+                                android:id="@+id/im_t1_batsman_StrikeRate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toRightOf="@id/divider5"
+                                android:paddingLeft="5dp"
+                                android:paddingRight="5dp"
+                                android:text="S/R"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="15dp" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
 
                     <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
                         android:background="?android:attr/listDivider" />
+                </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:paddingTop="10dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="R"
-                        android:textColor="@color/black" />
 
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/listDivider" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:paddingTop="10dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="B"
-                        android:textColor="@color/black" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/listDivider" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:paddingTop="10dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="4s"
-                        android:textColor="@color/black" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/listDivider" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:paddingTop="10dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="6s"
-                        android:textColor="@color/black" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/listDivider" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:paddingTop="10dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="S/R"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-            </LinearLayout>
-
-<!--            DIVIDER-->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/im_t1_batsman_name"
-                    android:layout_width="190dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="Batsman"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-                <View
-                    android:id="@+id/divider1"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/im_t1_batsman_name"
-                    android:background="?android:attr/listDivider" />
-
-                <TextView
-                    android:id="@+id/im_t1_batsman_runs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider1"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="R"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-                <View
-                    android:id="@+id/divider2"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/im_t1_batsman_runs"
-                    android:background="?android:attr/listDivider"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" />
-
-                <TextView
-                    android:id="@+id/im_t1_batsman_balls_played"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider2"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="B"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-                <View
-                    android:id="@+id/divider3"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/im_t1_batsman_balls_played"
-                    android:background="?android:attr/listDivider"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" />
-
-                <TextView
-                    android:id="@+id/im_t1_batsman_fours"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider3"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="4s"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-                <View
-                    android:id="@+id/divider4"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/im_t1_batsman_fours"
-                    android:background="?android:attr/listDivider"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" />
-
-                <TextView
-                    android:id="@+id/im_t1_batsman_sixes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider4"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="6s"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-                <View
-                    android:id="@+id/divider5"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/im_t1_batsman_sixes"
-                    android:background="?android:attr/listDivider"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" />
-
-                <TextView
-                    android:id="@+id/im_t1_batsman_StrikeRate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider5"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="S/R"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
-    </androidx.cardview.widget.CardView>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/Team2_Maincontainer"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="199dp"
-        app:cardCornerRadius="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Team1_Maincontainer"
-        tools:ignore="MissingConstraints">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/Team2_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="16dp">
-
-            <!--            TEAM 2-->
-            <LinearLayout
-                android:id="@+id/Team2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/team_header"
-                tools:ignore="MissingConstraints">
-
-                <TextView
-                    android:id="@+id/im_team2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:text="Team Name 2"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-        <!--        inside container-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="35dp">
-
-            <!--            BATTING LABEL-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <!--                NAME TAG-->
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:paddingTop="10dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="Batting"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-
-                <!--                SCORE TAGS-->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/listDivider" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:paddingTop="10dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="R"
-                        android:textColor="@color/black" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/listDivider" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="B"
-                        android:textColor="@color/black" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/listDivider" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="4s"
-                        android:textColor="@color/black" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/listDivider" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="6s"
-                        android:textColor="@color/black" />
-
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="match_parent"
-                        android:background="?android:attr/listDivider" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="5dp"
-                        android:paddingRight="5dp"
-                        android:textAllCaps="true"
-                        android:textSize="12dp"
-                        android:text="S/R"
-                        android:textColor="@color/black" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <!--            DIVIDER-->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="?android:attr/listDivider" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/im_t2_batsman_name"
-                    android:layout_width="190dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:text="Batsman"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-                <View
-                    android:id="@+id/divider6"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/im_t2_batsman_name"
-                    android:background="?android:attr/listDivider" />
-
-                <TextView
-                    android:id="@+id/im_t2_batsman_runs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider6"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="R"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-                <View
-                    android:id="@+id/divider7"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/im_t2_batsman_runs"
-                    android:background="?android:attr/listDivider"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" />
-
-                <TextView
-                    android:id="@+id/im_t2_batsman_balls_played"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider7"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="B"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-                <View
-                    android:id="@+id/divider8"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/im_t2_batsman_balls_played"
-                    android:background="?android:attr/listDivider"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" />
-
-                <TextView
-                    android:id="@+id/im_t2_batsman_fours"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider8"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="4s"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-                <View
-                    android:id="@+id/divider9"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/im_t2_batsman_fours"
-                    android:background="?android:attr/listDivider"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" />
-
-                <TextView
-                    android:id="@+id/im_t2_batsman_sixes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider9"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="6s"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-                <View
-                    android:id="@+id/divider10"
-                    android:layout_width="1dp"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/im_t2_batsman_sixes"
-                    android:background="?android:attr/listDivider"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp" />
-
-                <TextView
-                    android:id="@+id/im_t2_batsman_StrikeRate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@id/divider10"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:text="S/R"
-                    android:textAllCaps="true"
-                    android:textColor="@color/black"
-                    android:textSize="12dp" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-
-    </androidx.cardview.widget.CardView>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </ScrollView>
 
     </RelativeLayout>
 </layout>
-
-
