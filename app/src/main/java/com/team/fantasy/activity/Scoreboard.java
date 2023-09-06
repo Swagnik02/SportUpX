@@ -30,8 +30,8 @@ public class Scoreboard extends AppCompatActivity {
 
         // Create a list of BatsmanItem objects
         List<BatsmanItem> playerList = new ArrayList<>();
-        playerList.add(new BatsmanItem("Player 1", "50", "30", "5", "2", "166.67"));
-        playerList.add(new BatsmanItem("Player 2", "30", "25", "2", "1", "120.0"));
+        playerList.add(new BatsmanItem("Player 1", "5000", "300", "50", "20", "166.67"));
+        playerList.add(new BatsmanItem("Player 2", "", "25", "2", "1", "120.0"));
         playerList.add(new BatsmanItem("Player 3", "20", "15", "1", "0", "133.33"));
         playerList.add(new BatsmanItem("Player 4", "40", "35", "3", "1", "114.29"));
         playerList.add(new BatsmanItem("Player 5", "60", "40", "7", "3", "150.0"));
