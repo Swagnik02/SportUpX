@@ -4,6 +4,32 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+<!--        scorecard-->
+        <LinearLayout
+            android:id="@+id/RL_ScoreCardDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/team_header"
+            android:gravity="center"
+            android:paddingTop="2dp">
+
+            <TextView
+                android:id="@+id/tv_ScoreCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:drawableTop="@drawable/team_prvw_icon"
+                android:drawablePadding="0dp"
+                android:drawableTint="@color/white"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="Scorecard"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+<!--        scorecard-->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

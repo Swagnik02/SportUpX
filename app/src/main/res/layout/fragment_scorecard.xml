@@ -64,7 +64,7 @@
                 android:orientation="horizontal">
 <!--                NAME TAG-->
                 <LinearLayout
-                    android:layout_width="220dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
@@ -179,7 +179,7 @@
 
                 <TextView
                     android:id="@+id/im_t1_batsman_name"
-                    android:layout_width="210dp"
+                    android:layout_width="190dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Batsman"
@@ -358,7 +358,7 @@
                 android:orientation="horizontal">
                 <!--                NAME TAG-->
                 <LinearLayout
-                    android:layout_width="220dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
@@ -469,7 +469,7 @@
 
                 <TextView
                     android:id="@+id/im_t2_batsman_name"
-                    android:layout_width="210dp"
+                    android:layout_width="190dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:text="Batsman"

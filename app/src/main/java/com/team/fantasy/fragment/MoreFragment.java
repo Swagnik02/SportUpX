@@ -7,9 +7,15 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.team.fantasy.APICallingPackage.Config;
 import com.team.fantasy.BuildConfig;
+import com.team.fantasy.R;
 import com.team.fantasy.activity.HomeActivity;
 import com.team.fantasy.activity.InviteFriendsActivity;
 import com.team.fantasy.activity.SupportTicketActivity;
@@ -24,6 +30,7 @@ public class MoreFragment extends Fragment {
     Context context;
 
     FragmentMoreBinding binding;
+    BottomSheetDialog scoreboardView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentMoreBinding.inflate(inflater, container, false);
@@ -122,6 +129,16 @@ public class MoreFragment extends Fragment {
                 startActivity(i);
             }
         });
+        binding.tvScoreCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                scoreboardView = new BottomSheetDialog(activity);
+                scoreboardView.setContentView(R.layout.fragment_scorecard);
+
+                scoreboardView.show();
+            }
+        });
+
         return binding.getRoot();
     }
 
