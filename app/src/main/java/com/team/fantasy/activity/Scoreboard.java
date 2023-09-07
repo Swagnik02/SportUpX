@@ -3,72 +3,29 @@ package com.team.fantasy.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.team.fantasy.Bean.BeanBatterStats;
+import com.team.fantasy.Bean.BeanBowlerStats;
 import com.team.fantasy.R;
-import com.team.fantasy.adapter.BatsmanAdapter;
+import com.team.fantasy.adapter.ScoreboardAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Scoreboard extends AppCompatActivity {
 
-    private RecyclerView BattingView,TotalScoreView;
-    private BatsmanAdapter adapter;
-    TextView totalScoreTextView,totalWicketsTextView,totalOversTextView;
+    private RecyclerView battingRecyclerView, bowlingRecyclerView;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoreboard);
-
-        // Initialize the RecyclerView
-        BattingView = findViewById(R.id.recyclerViewBatsman);
-        BattingView.setLayoutManager(new LinearLayoutManager(this));
-
-//        TotalScoreView = findViewById(R.id.recyclerViewTotalScore);
-//        TotalScoreView.setLayoutManager(new LinearLayoutManager(this));
-
-        // Create a list of BatsmanItem objects
-        List<BatsmanItem> playerList = new ArrayList<>();
-        playerList.add(new BatsmanItem("Player 1", "5000", "300", "50", "20", "166.67"));
-        playerList.add(new BatsmanItem("Player 2", "30", "25", "2", "1", "120.0"));
-        playerList.add(new BatsmanItem("Player 3", "20", "15", "1", "0", "133.33"));
-        playerList.add(new BatsmanItem("Player 4", "40", "35", "3", "1", "114.29"));
-        playerList.add(new BatsmanItem("Player 5", "60", "40", "7", "3", "150.0"));
-        playerList.add(new BatsmanItem("Player 6", "60", "40", "7", "3", "150.0"));
-        playerList.add(new BatsmanItem("Player 7", "60", "40", "7", "3", "150.0"));
-        playerList.add(new BatsmanItem("Player 8", "60", "40", "7", "3", "150.0"));
-        playerList.add(new BatsmanItem("Player 9", "60", "40", "7", "3", "150.0"));
-        playerList.add(new BatsmanItem("Player 10", "60", "40", "7", "3", "150.0"));
-        playerList.add(new BatsmanItem("Player 11", "60", "40", "7", "3", "150.0"));
-
-        // Create an adapter and set it to the RecyclerView
-        adapter = new BatsmanAdapter(playerList);
-        BattingView.setAdapter(adapter);
-
-//        // Initialize the TextViews for total score, total wickets, and total overs
-//        totalScoreTextView = findViewById(R.id.im_total_score); // Update with the new ID
-//        totalWicketsTextView = findViewById(R.id.im_wickets); // Update with the new ID
-//        totalOversTextView = findViewById(R.id.im_total_overs); // Update with the new ID
-
-
-        // ...
-
-        // Assume you have fetched the API data and parsed it
-        String totalScore = "500"; // Replace with the actual total score obtained from the API
-        String totalWickets = "5"; // Replace with the actual total wickets obtained from the API
-        String totalOvers = "50.0"; // Replace with the actual total overs obtained from the API
-
-        // Update the TextViews with API data
-//        totalScoreTextView.setText(totalScore);
-//        totalWicketsTextView.setText(totalWickets);
-//        totalOversTextView.setText("("+totalOvers+")");
 
 
         ImageView closeButton = findViewById(R.id.im_CloseIcon);
@@ -78,51 +35,54 @@ public class Scoreboard extends AppCompatActivity {
                 finish();
             }
         });
+
+
+        // Initialize batting and bowling data (replace this with your actual data)
+        List<BeanBatterStats> battingStats = getBattingStats();
+        List<BeanBowlerStats> bowlingStats = getBowlingStats();
+
+        // Initialize batting RecyclerView
+        battingRecyclerView = findViewById(R.id.recyclerViewBatsman);
+        ScoreboardAdapter battingAdapter = new ScoreboardAdapter(this, battingStats, bowlingStats);
+        battingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        battingRecyclerView.setAdapter(battingAdapter);
+
+        // Initialize bowling RecyclerView
+        bowlingRecyclerView = findViewById(R.id.recyclerViewBowlers);
+        ScoreboardAdapter bowlingAdapter = new ScoreboardAdapter(this, battingStats, bowlingStats);
+        bowlingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        bowlingRecyclerView.setAdapter(bowlingAdapter);
     }
 
-    // Define a BatsmanItem class to represent player information
-    public static class BatsmanItem {
-        private String batsmanName;
-        private String runs;
-        private String ballsPlayed;
-        private String fours;
-        private String sixes;
-        private String strikeRate;
-
-        public BatsmanItem(String batsmanName, String runs, String ballsPlayed, String fours, String sixes, String strikeRate) {
-            this.batsmanName = batsmanName;
-            this.runs = runs;
-            this.ballsPlayed = ballsPlayed;
-            this.fours = fours;
-            this.sixes = sixes;
-            this.strikeRate = strikeRate;
-        }
-
-        public String getBatsmanName() {
-            return batsmanName;
-        }
-
-        public String getRuns() {
-            return runs;
-        }
-
-        public String getBallsPlayed() {
-            return ballsPlayed;
-        }
-
-        public String getFours() {
-            return fours;
-        }
-
-        public String getSixes() {
-            return sixes;
-        }
-
-        public String getStrikeRate() {
-            return strikeRate;
-        }
+    // Replace this with your actual data retrieval method
+    private List<BeanBatterStats> getBattingStats() {
+        List<BeanBatterStats> battingStats = new ArrayList<>();
+        battingStats.add(new BeanBatterStats("Mohammad Naim", "20", "25", "4", "0", "80.0"));
+        battingStats.add(new BeanBatterStats("Mehidy Hasan", "0", "1", "0", "0", "0.0"));
+        battingStats.add(new BeanBatterStats("Litton Das", "16", "13", "4", "0", "123.1"));
+        battingStats.add(new BeanBatterStats("Shakib Al Hasan (c)", "53", "57", "7", "0", "93.0"));
+        battingStats.add(new BeanBatterStats("Towhid Hridoy", "2", "9", "0", "0", "22.2"));
+        battingStats.add(new BeanBatterStats("Mushfiqur Rahim (wk)", "64", "87", "5", "0", "73.6"));
+        battingStats.add(new BeanBatterStats("Shamim Hossain", "16", "23", "0", "1", "69.6"));
+        battingStats.add(new BeanBatterStats("Afif Hossain", "12", "11", "0", "1", "109.1"));
+        battingStats.add(new BeanBatterStats("Taskin Ahmed", "0", "1", "0", "0", "0.0"));
+        battingStats.add(new BeanBatterStats("Shoriful Islam", "1", "3", "0", "0", "33.3"));
+        battingStats.add(new BeanBatterStats("Hasan Mahmud", "1", "2", "0", "0", "50.0"));
+        return battingStats;
     }
 
+    // Replace this with your actual data retrieval method
+    private List<BeanBowlerStats> getBowlingStats() {
+        List<BeanBowlerStats> bowlingStats = new ArrayList<>();
+        bowlingStats.add(new BeanBowlerStats("Shaheen Afridi", "7.0", "1", "42", "1", "6.0"));
+        bowlingStats.add(new BeanBowlerStats("Naseem Shah", "5.4", "0", "34", "3", "6.0"));
+        bowlingStats.add(new BeanBowlerStats("Haris Rauf", "6.0", "0", "19", "4", "3.2"));
+        bowlingStats.add(new BeanBowlerStats("Faheem Ashraf", "7.0", "0", "27", "1", "3.9"));
+        bowlingStats.add(new BeanBowlerStats("Shadab Khan", "7.0", "0", "35", "0", "5.0"));
+        bowlingStats.add(new BeanBowlerStats("Agha Salman", "1.0", "0", "11", "0", "11.0"));
+        bowlingStats.add(new BeanBowlerStats("Iftikhar Ahmed", "5.0", "0", "20", "1", "4.0"));
 
+        return bowlingStats;
+    }
 
 }
