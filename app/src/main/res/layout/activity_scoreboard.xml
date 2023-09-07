@@ -52,9 +52,9 @@
                 tools:context="activity.FragmentScoreboard">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Team_Maincontainer"
+                    android:id="@+id/Team1_Maincontainer"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="1000dp"
                     app:cardCornerRadius="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
                     tools:ignore="MissingConstraints">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/Team_container"
+                        android:id="@+id/Team1_container"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:cardCornerRadius="16dp"
@@ -73,22 +73,22 @@
 
                         <!--            TEAM -->
                         <LinearLayout
-                            android:id="@+id/Team"
+                            android:id="@+id/Team1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/team_header"
                             tools:ignore="MissingConstraints">
 
                             <TextView
-                                android:id="@+id/im_teamName"
+                                android:id="@+id/im_team1Name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:paddingTop="10dp"
                                 android:paddingBottom="10dp"
                                 android:text="Team Name 1"
-                                android:textSize="18dp"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/white"
+                                android:textSize="18dp" />
 
                         </LinearLayout>
 
@@ -101,8 +101,8 @@
                         android:orientation="vertical">
 
                         <include
-                            layout="@layout/item_batting_labels"
                             android:id="@+id/batting_labels"
+                            layout="@layout/item_batting_labels"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/divider6"
@@ -116,7 +116,7 @@
 
 
                         <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerViewBatsman"
+                            android:id="@+id/recyclerViewTeam1Batsmen"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_below="@+id/batting_labels"
@@ -126,24 +126,24 @@
 
 
                         <include
+                            android:id="@+id/Team1totalScoreLayout"
                             layout="@layout/item_total_score"
-                            android:id="@+id/totalScoreLayout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_below="@+id/recyclerViewBatsman"
-                            android:layout_centerHorizontal="true" />
+                            android:layout_below="@+id/recyclerViewTeam1Batsmen"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp" />
 
 
                         <View
                             android:id="@+id/divider7"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="@color/black"/>
+                            android:background="@color/black" />
 
                         <include
+                            android:id="@+id/team1bowling_labels"
                             layout="@layout/item_bowling_labels"
-                            android:id="@+id/bowling_labels"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/divider7"
@@ -157,10 +157,132 @@
                             android:background="?android:attr/listDivider" />
 
                         <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerViewBowlers"
+                            android:id="@+id/recyclerViewTeam1Bowlers"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_below="@+id/bowling_labels"
+                            android:layout_below="@+id/team1bowling_labels"
+                            android:layout_marginLeft="10dp"
+                            android:paddingBottom="16dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+                </androidx.cardview.widget.CardView>
+
+                <!--TEAM2-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Team2_Maincontainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="1000dp"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Team1_Maincontainer"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="10dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/Team2_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="16dp"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteY="16dp">
+
+                        <!--            TEAM -->
+                        <LinearLayout
+                            android:id="@+id/Team2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/team_header"
+                            tools:ignore="MissingConstraints">
+
+                            <TextView
+                                android:id="@+id/im_team2Name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="Team Name 2"
+                                android:textColor="@color/white"
+                                android:textSize="18dp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                    <!--        inside container-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="37dp"
+                        android:orientation="vertical">
+
+                        <include
+                            android:id="@+id/team2batting_labels"
+                            layout="@layout/item_batting_labels"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true" />
+
+                        <!--            DIVIDER-->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider" />
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerViewTeam2Batsmen"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/team2batting_labels"
+                            android:layout_marginLeft="10dp"
+                            android:paddingBottom="5dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+                        <include
+                            android:id="@+id/Team2totalScoreLayout"
+                            layout="@layout/item_total_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/recyclerViewTeam2Batsmen"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp" />
+
+
+                        <View
+                            android:id="@+id/divider9"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@color/black" />
+
+                        <include
+                            android:id="@+id/team2bowling_labels"
+                            layout="@layout/item_bowling_labels"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/divider9"
+                            android:layout_centerHorizontal="true" />
+
+
+                        <View
+                            android:id="@+id/divider10"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerViewTeam2Bowlers"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/team2bowling_labels"
                             android:layout_marginLeft="10dp"
                             android:paddingBottom="16dp"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
@@ -174,6 +296,9 @@
                         android:background="?android:attr/listDivider" />
                 </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
         </ScrollView>
     </RelativeLayout>
 </layout>

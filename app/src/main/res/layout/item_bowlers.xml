@@ -20,7 +20,7 @@
     <!-- TextView for bowlers Name -->
     <TextView
         android:id="@+id/im_bowlers_name"
-        android:layout_width="160dp"
+        android:layout_width="148dp"
         android:layout_height="wrap_content"
         android:text="Bowlers"
         android:textColor="@color/black"
