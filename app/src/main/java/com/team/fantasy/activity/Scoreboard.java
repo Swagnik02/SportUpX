@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.team.fantasy.Bean.BeanBatterStats;
 import com.team.fantasy.Bean.BeanBowlerStats;
 import com.team.fantasy.R;
+import com.team.fantasy.adapter.BatsmanAdapter;
+import com.team.fantasy.adapter.BowlerAdapter;
 import com.team.fantasy.adapter.ScoreboardAdapter;
 
 import java.util.ArrayList;
@@ -43,15 +45,16 @@ public class Scoreboard extends AppCompatActivity {
 
         // Initialize batting RecyclerView
         battingRecyclerView = findViewById(R.id.recyclerViewBatsman);
-        ScoreboardAdapter battingAdapter = new ScoreboardAdapter(this, battingStats, bowlingStats);
+        BatsmanAdapter batsmanAdapter = new BatsmanAdapter(this, battingStats);
         battingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        battingRecyclerView.setAdapter(battingAdapter);
+        battingRecyclerView.setAdapter(batsmanAdapter);
 
         // Initialize bowling RecyclerView
         bowlingRecyclerView = findViewById(R.id.recyclerViewBowlers);
-        ScoreboardAdapter bowlingAdapter = new ScoreboardAdapter(this, battingStats, bowlingStats);
+        BowlerAdapter bowlerAdapter = new BowlerAdapter(this, bowlingStats);
         bowlingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        bowlingRecyclerView.setAdapter(bowlingAdapter);
+        bowlingRecyclerView.setAdapter(bowlerAdapter);
+
     }
 
     // Replace this with your actual data retrieval method
