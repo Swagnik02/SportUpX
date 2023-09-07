@@ -1,5 +1,6 @@
 package com.team.fantasy.activity;
 
+import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 import static com.team.fantasy.APICallingPackage.Config.MATCH_SCOREBOARD;
 import static com.team.fantasy.APICallingPackage.Constants.MATCH_SCOREBOARD_TYPE;
 
@@ -36,6 +37,7 @@ import org.json.JSONArray;
 public class Scoreboard extends AppCompatActivity implements ResponseManager {
     ResponseManager responseManager;
     APIRequestManager apiRequestManager;
+    Context context;
     Scoreboard activity;
     private RecyclerView team1battingRecyclerView, team1bowlingRecyclerView;
     private RecyclerView team2battingRecyclerView, team2bowlingRecyclerView;
@@ -65,8 +67,6 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
         ImageView changeTeam = findViewById(R.id.im_change);
 
-
-
         team1Container = findViewById(R.id.Team1_Maincontainer);
         team2Container = findViewById(R.id.Team2_Maincontainer);
 
@@ -82,11 +82,15 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
                     team1Container.setVisibility(View.GONE);
                     team2Container.setVisibility(View.VISIBLE);
                     currentTeamNo = 2;
+                    ShowToast(context, "TEAM "+ team2name);
+
                 }
                 else {
                     team2Container.setVisibility(View.GONE);
                     team1Container.setVisibility(View.VISIBLE);
                     currentTeamNo = 1;
+                    ShowToast(context, "TEAM "+ team1name);
+
                 }
             }
         });
@@ -125,6 +129,9 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         team2Name.setText(team2name);
     }
 
+    private void initViews(){
+
+    }
     private void callMyMatchRecord(boolean isShowLoader) {
         try {
             JSONObject jsonObject = new JSONObject();
