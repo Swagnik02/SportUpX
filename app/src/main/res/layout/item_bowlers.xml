@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp">
+
+    <!-- TextView for bowlers Name -->
+    <TextView
+        android:id="@+id/im_bowlers_name"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="Bowlers"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/im_bowlers_name"
+        android:background="?android:attr/listDivider" />
+
+    <!-- TextView for Runs -->
+    <TextView
+        android:id="@+id/im_bowlers_runs"
+        android:gravity="center"
+        android:layout_width="30.3dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/divider1"
+        android:text="O"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/im_bowlers_runs"
+        android:background="?android:attr/listDivider"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" />
+
+    <!-- TextView for Balls Played -->
+    <TextView
+        android:id="@+id/im_bowlers_balls_played"
+        android:gravity="center"
+        android:layout_width="30.4dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/divider2"
+        android:text="MO"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/im_bowlers_balls_played"
+        android:background="?android:attr/listDivider"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" />
+
+    <!-- TextView for Fours -->
+    <TextView
+        android:id="@+id/im_bowlers_fours"
+        android:layout_width="55.3dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/divider3"
+        android:gravity="center"
+        android:text="RUNS"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/im_bowlers_fours"
+        android:background="?android:attr/listDivider"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" />
+
+    <!-- TextView for Sixes -->
+    <TextView
+        android:id="@+id/im_bowlers_sixes"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/divider4"
+        android:gravity="center"
+        android:text="WKTS"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/im_bowlers_sixes"
+        android:background="?android:attr/listDivider"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" />
+
+    <!-- TextView for Strike Rate -->
+    <TextView
+        android:id="@+id/im_bowlers_StrikeRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/divider5"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="ECO"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="15dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
