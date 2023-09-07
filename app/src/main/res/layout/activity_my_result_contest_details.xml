@@ -12,10 +12,38 @@
     <include layout="@layout/layout_vs_back"
         android:id="@+id/incl_vs_bck" />
 
+    <!--        scorecard-->
+    <LinearLayout
+        android:id="@+id/RL_ScoreCardDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/team_header"
+        android:gravity="center"
+        android:paddingTop="2dp">
+
+        <TextView
+            android:id="@+id/tv_ScoreCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:drawableTop="@drawable/team_prvw_icon"
+            android:drawablePadding="0dp"
+            android:drawableTint="@color/white"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Scorecard"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <!--        scorecard-->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="452dp"
+        android:layout_above="@+id/RL_ScoreCardDrawer"
         android:layout_below="@+id/incl_vs_bck">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -32,8 +60,8 @@
                     android:id="@+id/LL_ScoreCard"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
                     android:background="@drawable/dark_rectangle_contest"
+                    android:orientation="vertical"
                     android:padding="10dp">
 
                     <TextView
@@ -57,41 +85,41 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:layout_gravity="center"
-                            android:gravity="center"
                             android:layout_marginEnd="20dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/tv_TeamOneName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:maxLength="3"
                                 android:text=""
                                 android:textAllCaps="true"
-                                android:maxLength="3"
-                                android:id="@+id/tv_TeamOneName"
-                                android:textStyle="bold"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=""
                                 android:id="@+id/tv_TeamOneScore"
-                                android:textStyle="bold"
-                                android:layout_marginStart="2dp"
-                                android:layout_marginEnd="2dp"
-                                android:textColor="@color/black" />
-
-                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text=""
-                                android:id="@+id/tv_TeamOneOver"
-                                android:textStyle="bold"
                                 android:layout_marginStart="2dp"
                                 android:layout_marginEnd="2dp"
-                                android:textColor="#4d88ea" />
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_TeamOneOver"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginEnd="2dp"
+                                android:text=""
+                                android:textColor="#4d88ea"
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                         <TextView
@@ -103,59 +131,61 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:layout_gravity="center"
-                            android:gravity="center"
                             android:layout_marginStart="20dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
                             android:orientation="horizontal">
 
                             <TextView
+                                android:id="@+id/tv_TeamTwoName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:maxLength="3"
                                 android:text=""
                                 android:textAllCaps="true"
-                                android:maxLength="3"
-                                android:id="@+id/tv_TeamTwoName"
-                                android:textStyle="bold"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
 
                             <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text=""
                                 android:id="@+id/tv_TeamTwoScore"
-                                android:textStyle="bold"
-                                android:layout_marginStart="2dp"
-                                android:layout_marginEnd="2dp"
-                                android:textColor="@color/black" />
-
-                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text=""
-                                android:id="@+id/tv_TeamTwoOver"
-                                android:textStyle="bold"
                                 android:layout_marginStart="2dp"
                                 android:layout_marginEnd="2dp"
-                                android:textColor="#4d88ea" />
+                                android:text=""
+                                android:textColor="@color/black"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_TeamTwoOver"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginEnd="2dp"
+                                android:text=""
+                                android:textColor="#4d88ea"
+                                android:textStyle="bold" />
                         </LinearLayout>
                     </LinearLayout>
+
                     <TextView
+                        android:id="@+id/tv_StatusNote"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
-                        android:id="@+id/tv_StatusNote"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
+                        android:text=""
                         android:textColor="@color/black" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/LL_ContestTop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/LL_ScoreCard"
-                    android:orientation="horizontal"
                     android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
                     android:padding="10dp"
                     android:weightSum="3">
 
@@ -189,8 +219,8 @@
                     <View
                         android:layout_width="@dimen/dimen_1dp"
                         android:layout_height="match_parent"
-                        android:backgroundTint="@color/white"
-                        android:background="@drawable/divider_dotted" />
+                        android:background="@drawable/divider_dotted"
+                        android:backgroundTint="@color/white" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -225,8 +255,8 @@
                     <View
                         android:layout_width="@dimen/dimen_1dp"
                         android:layout_height="match_parent"
-                        android:backgroundTint="@color/white"
-                        android:background="@drawable/divider_dotted" />
+                        android:background="@drawable/divider_dotted"
+                        android:backgroundTint="@color/white" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -259,9 +289,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
                     android:layout_below="@+id/LL_ContestTop"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/tv_JoinedWithTeamTop"
@@ -278,39 +308,41 @@
             </RelativeLayout>
 
             <RelativeLayout
+                android:id="@+id/RL_LeaderboardList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/team_header"
-                android:id="@+id/RL_LeaderboardList"
                 android:layout_below="@+id/RL_ResultMain"
-                android:layout_marginTop="0dp">
+                android:layout_marginTop="0dp"
+                android:background="@color/team_header">
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="10dp"
-                    android:paddingTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/white"
                     android:id="@+id/tv_TotalJoinedTeamCount"
-                    android:text="Teams"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Teams"
+                    android:textColor="@color/white" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="10dp"
-                    android:paddingTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/white"
-                    android:text="RANK"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="RANK"
+                    android:textColor="@color/white" />
 
             </RelativeLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/Rv_MyResultLeaderboard"
-                android:layout_below="@+id/RL_LeaderboardList"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_below="@+id/RL_LeaderboardList"
                 android:scrollbars="vertical" />
 
         </RelativeLayout>

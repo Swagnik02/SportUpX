@@ -44,7 +44,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
     private BatsmanAdapter team1batsmanAdapter, team2batsmanAdapter;
     private BowlerAdapter team1bowlerAdapter,team2bowlerAdapter;
 
-    String match_id="48740",team1name="AUS",team2name="ZAF";
+    String match_id="48740",team1name="AUS",team2name="ZAF",team1Fullname,team2Fullname;
     int team1score=0,team1wickts=0;
     TextView team1Name,team1total_score,team1wickets,team1OVERS;
 
@@ -67,6 +67,23 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
         ImageView changeTeam = findViewById(R.id.im_change);
 
+
+
+        //INTENTS
+//        match_id = getIntent().getStringExtra("Match_ID");
+//        team1Fullname = getIntent().getStringExtra("Team1_Name");
+//        team2Fullname = getIntent().getStringExtra("Team2_Name");
+
+//        team1name =team1Fullname.trim();
+//        team2name =team2Fullname.trim();
+
+        System.out.println(match_id);
+
+        System.out.println(team1name);
+        System.out.println(team1Fullname);
+        System.out.println(team2name);
+        System.out.println(team2Fullname);
+
         team1Container = findViewById(R.id.Team1_Maincontainer);
         team2Container = findViewById(R.id.Team2_Maincontainer);
 
@@ -82,14 +99,15 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
                     team1Container.setVisibility(View.GONE);
                     team2Container.setVisibility(View.VISIBLE);
                     currentTeamNo = 2;
-                    ShowToast(context, "TEAM "+ team2name);
+//                    ShowToast(context, "TEAM "+ team2name);
+
 
                 }
                 else {
                     team2Container.setVisibility(View.GONE);
                     team1Container.setVisibility(View.VISIBLE);
                     currentTeamNo = 1;
-                    ShowToast(context, "TEAM "+ team1name);
+//                    ShowToast(context, "TEAM "+ team1name);
 
                 }
             }

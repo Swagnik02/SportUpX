@@ -10,6 +10,7 @@ import static com.team.fantasy.APICallingPackage.Constants.WINNINGINFOLISTTYPE;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -105,6 +106,17 @@ public class MyResultContestDetailsActivity extends AppCompatActivity implements
 
                 callWinningInfoList(true);
 
+            }
+        });
+
+        binding.tvScoreCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(activity, Scoreboard.class);
+                i.putExtra("Match_ID",MyJoinedResultContestListActivity.Matchid);
+                i.putExtra("Team1_Name",MyJoinedResultContestListActivity.IntentTeamOneName);
+                i.putExtra("Team2_Name",MyJoinedResultContestListActivity.IntentTeamTwoName);
+                startActivity(i);
             }
         });
 
