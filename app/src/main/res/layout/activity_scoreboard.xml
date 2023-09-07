@@ -127,7 +127,7 @@
 
                         <include
                             android:id="@+id/Team1totalScoreLayout"
-                            layout="@layout/item_total_score"
+                            layout="@layout/item_team1_score"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/recyclerViewTeam1Batsmen"
@@ -249,7 +249,7 @@
 
                         <include
                             android:id="@+id/Team2totalScoreLayout"
-                            layout="@layout/item_total_score"
+                            layout="@layout/item_team2_score"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/recyclerViewTeam2Batsmen"

@@ -41,7 +41,13 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
     private BowlerAdapter team1bowlerAdapter,team2bowlerAdapter;
 
     String match_id="48740",team1name="AUS",team2name="ZAF";
-    TextView team1Name,team2Name;
+    int team1score=0,team1wickts=0;
+    TextView team1Name,team1total_score,team1wickets,team1OVERS;
+
+    int team2score=0,team2wickts=0;
+    float team1overs=0,team2overs=0;
+    TextView team2Name,team2total_score,team2wickets,team2OVERS;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,23 +59,34 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         ImageView closeButton = findViewById(R.id.im_CloseIcon);
         closeButton.setOnClickListener(v -> finish());
 
+        //Team 1
         team1battingRecyclerView = findViewById(R.id.recyclerViewTeam1Batsmen);
         team1bowlingRecyclerView = findViewById(R.id.recyclerViewTeam1Bowlers);
+
+        team1Name = findViewById(R.id.im_team1Name);
+        team1total_score = findViewById(R.id.im_team1_total_score);
+        team1OVERS = findViewById(R.id.im_team1_overs);
+        team1wickets = findViewById(R.id.im_team1_wickets);
 
         team1battingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         team1bowlingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
+        //TEAM 2
         team2battingRecyclerView = findViewById(R.id.recyclerViewTeam2Batsmen);
         team2bowlingRecyclerView = findViewById(R.id.recyclerViewTeam2Bowlers);
+
+        team2Name = findViewById(R.id.im_team2Name);
+        team2total_score = findViewById(R.id.im_team2_total_score);
+        team2OVERS = findViewById(R.id.im_team2_overs);
+        team2wickets = findViewById(R.id.im_team2_wickets);
 
         team2battingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         team2bowlingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+
         callMyMatchRecord(true);
 
-        team1Name = findViewById(R.id.im_team1Name);
-        team2Name = findViewById(R.id.im_team2Name);
+
 
         team1Name.setText(team1name);
         team2Name.setText(team2name);
@@ -114,11 +131,14 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
                         // Create a new batsman bean object and add it to the list
                         BeanBatterStats batsman = new BeanBatterStats(batterName, runs, ballsPlayed, fours, sixes, strikeRate);
-                        if (team1name.equals(teamName))
+                        if (team1name.equals(teamName)){
                             team1batsmenData.add(batsman);
-                        else
+                            team1score = team1score + Integer.valueOf(runs);
+                        }
+                        else {
                             team2batsmenData.add(batsman);
-
+                            team2score = team2score + Integer.valueOf(runs);
+                        }
                     } else if ("Bowler".equals(itemType)) {
                         String bowlerName = item.getString("name");
                         String overs = item.getString("overs");
@@ -130,26 +150,39 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
                         // Create a new bowler bean object and add it to the list
                         BeanBowlerStats bowler = new BeanBowlerStats(bowlerName, overs, maidenOvers, runs, wickets, economy);
 
-                        if (team1name.equals(teamName))
+                        if (team1name.equals(teamName)) {
                             team1bowlersData.add(bowler);
-                        else
+                            team1overs = team1overs+Float.valueOf(overs);
+                            team1wickts = team1wickts + Integer.valueOf(wickets);
+                        }
+                        else {
                             team2bowlersData.add(bowler);
+                            team2overs = team2overs+Float.valueOf(overs);
+                            team2wickts = team2wickts + Integer.valueOf(wickets);
+                        }
                     }
                 }
 
                 // Initialize and set RecyclerView adapters
-            team1batsmanAdapter = new BatsmanAdapter(this, team1batsmenData);
-            team1bowlerAdapter = new BowlerAdapter(this, team1bowlersData);
+                team1batsmanAdapter = new BatsmanAdapter(this, team1batsmenData);
+                team1bowlerAdapter = new BowlerAdapter(this, team1bowlersData);
 
-            team1battingRecyclerView.setAdapter(team1batsmanAdapter);
-            team1bowlingRecyclerView.setAdapter(team1bowlerAdapter);
+                team1battingRecyclerView.setAdapter(team1batsmanAdapter);
+                team1bowlingRecyclerView.setAdapter(team1bowlerAdapter);
 
-            team2batsmanAdapter = new BatsmanAdapter(this, team2batsmenData);
-            team2bowlerAdapter = new BowlerAdapter(this, team2bowlersData);
+                team2batsmanAdapter = new BatsmanAdapter(this, team2batsmenData);
+                team2bowlerAdapter = new BowlerAdapter(this, team2bowlersData);
 
-            team2battingRecyclerView.setAdapter(team2batsmanAdapter);
-            team2bowlingRecyclerView.setAdapter(team2bowlerAdapter);
+                team2battingRecyclerView.setAdapter(team2batsmanAdapter);
+                team2bowlingRecyclerView.setAdapter(team2bowlerAdapter);
 
+                team1total_score.setText(String.valueOf(team1score));
+                team1OVERS.setText(String.valueOf(team1overs));
+                team1wickets.setText(String.valueOf(team1wickts));
+
+                team2total_score.setText(String.valueOf(team2score));
+                team2OVERS.setText(String.valueOf(team2overs));
+                team2wickets.setText(String.valueOf(team2wickts));
 
         } catch (JSONException e) {
             e.printStackTrace();
