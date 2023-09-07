@@ -27,7 +27,7 @@
         <!-- Divider -->
         <View
             android:id="@+id/divider1"
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_toRightOf="@id/im_batsman_name"
             android:background="?android:attr/listDivider" />

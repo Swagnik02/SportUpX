@@ -42,7 +42,7 @@
         android:orientation="horizontal">
 
         <View
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="?android:attr/listDivider" />
 
@@ -57,7 +57,7 @@
             android:textSize="15dp" />
 
         <View
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="?android:attr/listDivider" />
 
@@ -72,7 +72,7 @@
             android:textSize="15dp" />
 
         <View
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="?android:attr/listDivider" />
 
@@ -87,7 +87,7 @@
             android:textSize="15dp" />
 
         <View
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="?android:attr/listDivider" />
 
@@ -102,8 +102,7 @@
             android:textSize="15dp" />
 
         <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"            android:layout_height="match_parent"
             android:background="?android:attr/listDivider" />
 
         <TextView

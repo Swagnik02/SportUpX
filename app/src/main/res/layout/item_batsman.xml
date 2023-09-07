@@ -4,6 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        android:paddingTop="5dp"
+        android:paddingBottom="1dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +32,7 @@
     <!-- Divider -->
     <View
         android:id="@+id/divider1"
-        android:layout_width="1dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/im_batsman_name"
         android:background="?android:attr/listDivider" />
@@ -44,7 +52,7 @@
     <!-- Divider -->
     <View
         android:id="@+id/divider2"
-        android:layout_width="1dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/im_batsman_runs"
         android:background="?android:attr/listDivider"
@@ -66,7 +74,7 @@
     <!-- Divider -->
     <View
         android:id="@+id/divider3"
-        android:layout_width="1dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/im_batsman_balls_played"
         android:background="?android:attr/listDivider"
@@ -88,7 +96,7 @@
     <!-- Divider -->
     <View
         android:id="@+id/divider4"
-        android:layout_width="1dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/im_batsman_fours"
         android:background="?android:attr/listDivider"
@@ -110,7 +118,7 @@
     <!-- Divider -->
     <View
         android:id="@+id/divider5"
-        android:layout_width="1dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/im_batsman_sixes"
         android:background="?android:attr/listDivider"
@@ -129,5 +137,15 @@
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="15dp" />
+
+
     </LinearLayout>
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="?android:attr/listDivider" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

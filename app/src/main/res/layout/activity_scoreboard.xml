@@ -121,14 +121,9 @@
                             android:layout_height="match_parent"
                             android:layout_below="@+id/batting_labels"
                             android:layout_marginLeft="10dp"
-                            android:paddingBottom="16dp"
+                            android:paddingBottom="5dp"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
-                        <View
-                            android:id="@+id/divider6"
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="?android:attr/listDivider" />
 
                         <include
                             layout="@layout/item_total_score"
@@ -136,7 +131,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:layout_below="@+id/divider6"
+                            android:layout_below="@+id/recyclerViewBatsman"
                             android:layout_centerHorizontal="true" />
 
 
@@ -148,19 +143,24 @@
 
                         <include
                             layout="@layout/item_bowling_labels"
-                            android:id="@+id/batting_labels"
+                            android:id="@+id/bowling_labels"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/divider7"
                             android:layout_centerHorizontal="true" />
 
 
+                        <View
+                            android:id="@+id/divider8"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider" />
 
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerViewBowlers"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_below="@+id/batting_labels"
+                            android:layout_below="@+id/bowling_labels"
                             android:layout_marginLeft="10dp"
                             android:paddingBottom="16dp"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
