@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:layout_marginLeft="10dp"
+        tools:ignore="MissingConstraints">
+
+        <!-- Total Score Label -->
+        <TextView
+            android:id="@+id/im_batsman_name"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Total Score"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/im_batsman_name"
+            android:background="?android:attr/listDivider" />
+
+        <!-- TextView for total_score -->
+        <TextView
+            android:id="@+id/im_total_score"
+            android:gravity="right"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/divider1"
+            android:text="score"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <!-- Divider -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/im_total_score"
+            android:gravity="center"
+            android:text="/"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <!-- TextView for wickets -->
+        <TextView
+            android:id="@+id/im_wickets"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/divider2"
+            android:gravity="left|center"
+            android:text="w"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+
+        <!-- TextView for overs -->
+        <TextView
+            android:id="@+id/im_total_overs"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/im_wickets"
+            android:gravity="center"
+            android:text="overs"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

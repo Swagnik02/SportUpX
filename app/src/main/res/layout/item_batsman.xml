@@ -14,7 +14,7 @@
 
     <!-- TextView for Batsman Name -->
     <TextView
-        android:id="@+id/im_t1_batsman_name"
+        android:id="@+id/im_batsman_name"
         android:layout_width="170dp"
         android:layout_height="wrap_content"
         android:text="Batsman"
@@ -26,12 +26,12 @@
         android:id="@+id/divider1"
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:layout_toRightOf="@id/im_t1_batsman_name"
+        android:layout_toRightOf="@id/im_batsman_name"
         android:background="?android:attr/listDivider" />
 
     <!-- TextView for Runs -->
     <TextView
-        android:id="@+id/im_t1_batsman_runs"
+        android:id="@+id/im_batsman_runs"
         android:gravity="center"
         android:layout_width="40.3dp"
         android:layout_height="wrap_content"
@@ -46,14 +46,14 @@
         android:id="@+id/divider2"
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:layout_toRightOf="@id/im_t1_batsman_runs"
+        android:layout_toRightOf="@id/im_batsman_runs"
         android:background="?android:attr/listDivider"
         android:paddingLeft="5dp"
         android:paddingRight="5dp" />
 
     <!-- TextView for Balls Played -->
     <TextView
-        android:id="@+id/im_t1_batsman_balls_played"
+        android:id="@+id/im_batsman_balls_played"
         android:gravity="center"
         android:layout_width="30.4dp"
         android:layout_height="wrap_content"
@@ -68,14 +68,14 @@
         android:id="@+id/divider3"
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:layout_toRightOf="@id/im_t1_batsman_balls_played"
+        android:layout_toRightOf="@id/im_batsman_balls_played"
         android:background="?android:attr/listDivider"
         android:paddingLeft="5dp"
         android:paddingRight="5dp" />
 
     <!-- TextView for Fours -->
     <TextView
-        android:id="@+id/im_t1_batsman_fours"
+        android:id="@+id/im_batsman_fours"
         android:layout_width="25dp"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/divider3"
@@ -90,14 +90,14 @@
         android:id="@+id/divider4"
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:layout_toRightOf="@id/im_t1_batsman_fours"
+        android:layout_toRightOf="@id/im_batsman_fours"
         android:background="?android:attr/listDivider"
         android:paddingLeft="5dp"
         android:paddingRight="5dp" />
 
     <!-- TextView for Sixes -->
     <TextView
-        android:id="@+id/im_t1_batsman_sixes"
+        android:id="@+id/im_batsman_sixes"
         android:layout_width="25dp"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/divider4"
@@ -112,14 +112,14 @@
         android:id="@+id/divider5"
         android:layout_width="1dp"
         android:layout_height="match_parent"
-        android:layout_toRightOf="@id/im_t1_batsman_sixes"
+        android:layout_toRightOf="@id/im_batsman_sixes"
         android:background="?android:attr/listDivider"
         android:paddingLeft="5dp"
         android:paddingRight="5dp" />
 
     <!-- TextView for Strike Rate -->
     <TextView
-        android:id="@+id/im_t1_batsman_StrikeRate"
+        android:id="@+id/im_batsman_StrikeRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/divider5"

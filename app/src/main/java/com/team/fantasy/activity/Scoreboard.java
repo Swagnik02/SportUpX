@@ -3,6 +3,8 @@ package com.team.fantasy.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,8 +18,9 @@ import java.util.List;
 
 public class Scoreboard extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
+    private RecyclerView BattingView,TotalScoreView;
     private BatsmanAdapter adapter;
+    TextView totalScoreTextView,totalWicketsTextView,totalOversTextView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,8 +28,11 @@ public class Scoreboard extends AppCompatActivity {
         setContentView(R.layout.activity_scoreboard);
 
         // Initialize the RecyclerView
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        BattingView = findViewById(R.id.recyclerViewBatsman);
+        BattingView.setLayoutManager(new LinearLayoutManager(this));
+
+//        TotalScoreView = findViewById(R.id.recyclerViewTotalScore);
+        TotalScoreView.setLayoutManager(new LinearLayoutManager(this));
 
         // Create a list of BatsmanItem objects
         List<BatsmanItem> playerList = new ArrayList<>();
@@ -44,7 +50,25 @@ public class Scoreboard extends AppCompatActivity {
 
         // Create an adapter and set it to the RecyclerView
         adapter = new BatsmanAdapter(playerList);
-        recyclerView.setAdapter(adapter);
+        BattingView.setAdapter(adapter);
+
+        // Initialize the TextViews for total score, total wickets, and total overs
+        totalScoreTextView = findViewById(R.id.im_t1_total_score);
+        totalWicketsTextView = findViewById(R.id.im_t1_wickets);
+        totalOversTextView = findViewById(R.id.im_t1_total_overs);
+
+        // ...
+
+        // Assume you have fetched the API data and parsed it
+        String totalScore = "500"; // Replace with the actual total score obtained from the API
+        String totalWickets = "5"; // Replace with the actual total wickets obtained from the API
+        String totalOvers = "50.0"; // Replace with the actual total overs obtained from the API
+
+        // Update the TextViews with API data
+        totalScoreTextView.setText(totalScore);
+        totalWicketsTextView.setText(totalWickets);
+        totalOversTextView.setText("("+totalOvers+")");
+
 
         ImageView closeButton = findViewById(R.id.im_CloseIcon);
         closeButton.setOnClickListener(new View.OnClickListener() {

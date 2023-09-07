@@ -51,12 +51,12 @@ public class BatsmanAdapter extends RecyclerView.Adapter<BatsmanAdapter.ViewHold
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            batsmanName = itemView.findViewById(R.id.im_t1_batsman_name);
-            runs = itemView.findViewById(R.id.im_t1_batsman_runs);
-            ballsPlayed = itemView.findViewById(R.id.im_t1_batsman_balls_played);
-            fours = itemView.findViewById(R.id.im_t1_batsman_fours);
-            sixes = itemView.findViewById(R.id.im_t1_batsman_sixes);
-            strikeRate = itemView.findViewById(R.id.im_t1_batsman_StrikeRate);
+            batsmanName = itemView.findViewById(R.id.im_batsman_name);
+            runs = itemView.findViewById(R.id.im_batsman_runs);
+            ballsPlayed = itemView.findViewById(R.id.im_batsman_balls_played);
+            fours = itemView.findViewById(R.id.im_batsman_fours);
+            sixes = itemView.findViewById(R.id.im_batsman_sixes);
+            strikeRate = itemView.findViewById(R.id.im_batsman_StrikeRate);
         }
     }
 }

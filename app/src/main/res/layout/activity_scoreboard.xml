@@ -52,7 +52,7 @@
                 tools:context="activity.FragmentScoreboard">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Team1_Maincontainer"
+                    android:id="@+id/Team_Maincontainer"
                     android:layout_width="match_parent"
                     android:layout_height="600dp"
                     app:cardCornerRadius="16dp"
@@ -62,7 +62,7 @@
                     tools:ignore="MissingConstraints">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/Team1_container"
+                        android:id="@+id/Team_container"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:cardCornerRadius="16dp"
@@ -71,16 +71,16 @@
                         tools:ignore="MissingConstraints"
                         tools:layout_editor_absoluteY="16dp">
 
-                        <!--            TEAM 1-->
+                        <!--            TEAM -->
                         <LinearLayout
-                            android:id="@+id/Team1"
+                            android:id="@+id/Team"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/team_header"
                             tools:ignore="MissingConstraints">
 
                             <TextView
-                                android:id="@+id/im_team1"
+                                android:id="@+id/im_teamName"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
@@ -100,112 +100,14 @@
                         android:layout_marginTop="37dp"
                         android:orientation="vertical">
 
-                        <!--            BATTING LABEL-->
-                        <LinearLayout
-                            android:id="@+id/im_t1labelLayout"
-                            android:layout_width="match_parent"
+                        <include
+                            layout="@layout/item_batting_labels"
+                            android:id="@+id/batting_labels"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-                            <!--                NAME TAG-->
-                            <LinearLayout
-                                android:layout_width="181dp"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:paddingTop="10dp"
-                                    android:text="Batting"
-                                    android:textAllCaps="true"
-                                    android:textColor="@color/black"
-                                    android:textSize="15dp" />
-                            </LinearLayout>
-
-                            <!--                SCORE TAGS-->
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <View
-                                    android:layout_width="1dp"
-                                    android:layout_height="match_parent"
-                                    android:background="?android:attr/listDivider" />
-
-                                <TextView
-                                    android:gravity="center"
-                                    android:layout_width="40dp"
-                                    android:layout_height="wrap_content"
-                                    android:paddingTop="10dp"
-                                    android:text="R"
-                                    android:textAllCaps="true"
-                                    android:textColor="@color/black"
-                                    android:textSize="15dp" />
-
-                                <View
-                                    android:layout_width="1dp"
-                                    android:layout_height="match_parent"
-                                    android:background="?android:attr/listDivider" />
-
-                                <TextView
-                                    android:gravity="center"
-                                    android:layout_width="30dp"
-                                    android:layout_height="wrap_content"
-                                    android:paddingTop="10dp"
-                                    android:text="B"
-                                    android:textAllCaps="true"
-                                    android:textColor="@color/black"
-                                    android:textSize="15dp" />
-
-                                <View
-                                    android:layout_width="1dp"
-                                    android:layout_height="match_parent"
-                                    android:background="?android:attr/listDivider" />
-
-                                <TextView
-                                    android:layout_width="25dp"
-                                    android:layout_height="wrap_content"
-                                    android:paddingTop="10dp"
-                                    android:gravity="center"
-                                    android:text="4s"
-                                    android:textAllCaps="true"
-                                    android:textColor="@color/black"
-                                    android:textSize="15dp" />
-
-                                <View
-                                    android:layout_width="1dp"
-                                    android:layout_height="match_parent"
-                                    android:background="?android:attr/listDivider" />
-
-                                <TextView
-                                    android:layout_width="25dp"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:paddingTop="10dp"
-                                    android:text="6s"
-                                    android:textAllCaps="true"
-                                    android:textColor="@color/black"
-                                    android:textSize="15dp" />
-
-                                <View
-                                    android:layout_width="1dp"
-                                    android:layout_height="match_parent"
-                                    android:background="?android:attr/listDivider" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:paddingLeft="5dp"
-                                    android:paddingTop="10dp"
-                                    android:paddingRight="5dp"
-                                    android:text="S/R"
-                                    android:textAllCaps="true"
-                                    android:textColor="@color/black"
-                                    android:textSize="15dp" />
-                            </LinearLayout>
-                        </LinearLayout>
+                            android:layout_marginLeft="10dp"
+                            android:layout_below="@+id/divider6"
+                            android:layout_centerHorizontal="true" />
 
                         <!--            DIVIDER-->
                         <View
@@ -214,16 +116,29 @@
                             android:background="?android:attr/listDivider" />
 
 
-
                         <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerView"
+                            android:id="@+id/recyclerViewBatsman"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_below="@+id/im_t1labelLayout"
+                            android:layout_below="@+id/batting_labels"
                             android:layout_marginLeft="10dp"
                             android:paddingBottom="16dp"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
+                        <View
+                            android:id="@+id/divider6"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="?android:attr/listDivider" />
+
+                        <include
+                            layout="@layout/item_total_score"
+                            android:id="@+id/totalScoreLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_below="@+id/divider6"
+                            android:layout_centerHorizontal="true" />
 
 
                     </LinearLayout>
@@ -233,12 +148,7 @@
                         android:layout_height="1dp"
                         android:background="?android:attr/listDivider" />
                 </androidx.cardview.widget.CardView>
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
         </ScrollView>
-
     </RelativeLayout>
 </layout>

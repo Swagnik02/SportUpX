@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+    <!--            BATTING LABEL-->
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <!--                NAME TAG-->
+    <LinearLayout
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="Batting"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <!--                SCORE TAGS-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="R"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="B"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:gravity="center"
+            android:text="4s"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="6s"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingTop="10dp"
+            android:paddingRight="5dp"
+            android:text="S/R"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+    </LinearLayout>
+    </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
