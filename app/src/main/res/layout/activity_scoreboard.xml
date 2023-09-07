@@ -12,6 +12,16 @@
             android:layout_height="43dp"
             android:theme="@style/MyDarkToolbarStyle" />
 
+        <ImageView
+            android:id="@+id/im_change"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp"
+            android:padding="10dp"
+            android:src="@drawable/ic_refresh_black_36dp"
+            android:visibility="visible"
+            app:tint="@color/black" />
 
         <TextView
             android:id="@+id/tv_HeaderName"
@@ -54,7 +64,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/Team1_Maincontainer"
                     android:layout_width="match_parent"
-                    android:layout_height="1000dp"
+                    android:layout_height="800dp"
                     app:cardCornerRadius="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -178,7 +188,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/Team2_Maincontainer"
                     android:layout_width="match_parent"
-                    android:layout_height="1000dp"
+                    android:layout_height="800dp"
                     app:cardCornerRadius="16dp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintBottom_toBottomOf="parent"

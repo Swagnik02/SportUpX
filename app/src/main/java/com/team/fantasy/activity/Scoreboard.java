@@ -5,11 +5,13 @@ import static com.team.fantasy.APICallingPackage.Constants.MATCH_SCOREBOARD_TYPE
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +50,8 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
     float team1overs=0,team2overs=0;
     TextView team2Name,team2total_score,team2wickets,team2OVERS;
 
+    int currentTeamNo=1;
+    CardView team1Container,team2Container;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,6 +62,35 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
         ImageView closeButton = findViewById(R.id.im_CloseIcon);
         closeButton.setOnClickListener(v -> finish());
+
+        ImageView changeTeam = findViewById(R.id.im_change);
+
+
+
+        team1Container = findViewById(R.id.Team1_Maincontainer);
+        team2Container = findViewById(R.id.Team2_Maincontainer);
+
+        if (currentTeamNo==1){
+            team2Container.setVisibility(View.GONE);
+        }
+        changeTeam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                if (currentTeamNo==1) {
+                    team1Container.setVisibility(View.GONE);
+                    team2Container.setVisibility(View.VISIBLE);
+                    currentTeamNo = 2;
+                }
+                else {
+                    team2Container.setVisibility(View.GONE);
+                    team1Container.setVisibility(View.VISIBLE);
+                    currentTeamNo = 1;
+                }
+            }
+        });
+
 
         //Team 1
         team1battingRecyclerView = findViewById(R.id.recyclerViewTeam1Batsmen);
