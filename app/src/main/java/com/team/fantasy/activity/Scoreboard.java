@@ -32,7 +32,7 @@ public class Scoreboard extends AppCompatActivity {
         BattingView.setLayoutManager(new LinearLayoutManager(this));
 
 //        TotalScoreView = findViewById(R.id.recyclerViewTotalScore);
-        TotalScoreView.setLayoutManager(new LinearLayoutManager(this));
+//        TotalScoreView.setLayoutManager(new LinearLayoutManager(this));
 
         // Create a list of BatsmanItem objects
         List<BatsmanItem> playerList = new ArrayList<>();
@@ -52,10 +52,11 @@ public class Scoreboard extends AppCompatActivity {
         adapter = new BatsmanAdapter(playerList);
         BattingView.setAdapter(adapter);
 
-        // Initialize the TextViews for total score, total wickets, and total overs
-        totalScoreTextView = findViewById(R.id.im_t1_total_score);
-        totalWicketsTextView = findViewById(R.id.im_t1_wickets);
-        totalOversTextView = findViewById(R.id.im_t1_total_overs);
+//        // Initialize the TextViews for total score, total wickets, and total overs
+//        totalScoreTextView = findViewById(R.id.im_total_score); // Update with the new ID
+//        totalWicketsTextView = findViewById(R.id.im_wickets); // Update with the new ID
+//        totalOversTextView = findViewById(R.id.im_total_overs); // Update with the new ID
+
 
         // ...
 
@@ -65,9 +66,9 @@ public class Scoreboard extends AppCompatActivity {
         String totalOvers = "50.0"; // Replace with the actual total overs obtained from the API
 
         // Update the TextViews with API data
-        totalScoreTextView.setText(totalScore);
-        totalWicketsTextView.setText(totalWickets);
-        totalOversTextView.setText("("+totalOvers+")");
+//        totalScoreTextView.setText(totalScore);
+//        totalWicketsTextView.setText(totalWickets);
+//        totalOversTextView.setText("("+totalOvers+")");
 
 
         ImageView closeButton = findViewById(R.id.im_CloseIcon);
