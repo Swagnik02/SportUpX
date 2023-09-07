@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:paddingTop="10dp"
+            android:textStyle="bold"
             android:text="Batting"
             android:textAllCaps="true"
             android:textColor="@color/black"
@@ -42,7 +43,7 @@
         android:orientation="horizontal">
 
         <View
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="?android:attr/listDivider" />
 
@@ -52,12 +53,13 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:text="R"
+            android:textStyle="bold"
             android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="15dp" />
 
         <View
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="?android:attr/listDivider" />
 
@@ -66,13 +68,14 @@
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
+            android:textStyle="bold"
             android:text="B"
             android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="15dp" />
 
         <View
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="?android:attr/listDivider" />
 
@@ -81,13 +84,14 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:gravity="center"
+            android:textStyle="bold"
             android:text="4s"
             android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="15dp" />
 
         <View
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="?android:attr/listDivider" />
 
@@ -97,12 +101,13 @@
             android:gravity="center"
             android:paddingTop="10dp"
             android:text="6s"
+            android:textStyle="bold"
             android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="15dp" />
 
         <View
-            android:layout_width="1dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="?android:attr/listDivider" />
 
@@ -112,6 +117,7 @@
             android:paddingLeft="5dp"
             android:paddingTop="10dp"
             android:paddingRight="5dp"
+            android:textStyle="bold"
             android:text="S/R"
             android:textAllCaps="true"
             android:textColor="@color/black"

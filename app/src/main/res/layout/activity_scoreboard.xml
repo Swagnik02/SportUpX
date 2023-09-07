@@ -139,7 +139,7 @@
                             android:id="@+id/divider7"
                             android:layout_width="match_parent"
                             android:layout_height="1dp"
-                            android:background="?android:attr/listDivider" />
+                            android:background="@color/black"/>
 
                         <include
                             layout="@layout/item_bowling_labels"
