@@ -51,7 +51,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
     int team2score=0,team2wickts=0;
     float team1overs=0,team2overs=0;
-    TextView team2Name,team2total_score,team2wickets,team2OVERS;
+    TextView team2Name,team2total_score,team2wickets,team2OVERS,team1EXTRAS,team1EXTRAS_DESC,team2EXTRAS,team2EXTRAS_DESC;
 
     int currentTeamNo=1;
     LinearLayout team1Container,team2Container;
@@ -86,6 +86,8 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         team1total_score = findViewById(R.id.im_team1_total_score);
         team1OVERS = findViewById(R.id.im_team1_overs);
         team1wickets = findViewById(R.id.im_team1_wickets);
+        team1EXTRAS = findViewById(R.id.im_team1_total_extras);
+        team1EXTRAS_DESC = findViewById(R.id.im_team1_extra_desc);
 
         team1battingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         team1bowlingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -98,6 +100,8 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         team2total_score = findViewById(R.id.im_team2_total_score);
         team2OVERS = findViewById(R.id.im_team2_overs);
         team2wickets = findViewById(R.id.im_team2_wickets);
+        team2EXTRAS = findViewById(R.id.im_team2_total_extras);
+        team2EXTRAS_DESC = findViewById(R.id.im_team2_extra_desc);
 
         team2battingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         team2bowlingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -187,6 +191,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
                     if ("Batsman".equals(itemType)) {
                         String teamName = item.getString("team_name");
+
                         String batterName = item.getString("name");
                         String runs = item.getString("score");
                         String ballsPlayed = item.getString("balls");
@@ -227,7 +232,22 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
                             team2wickts = team2wickts + Integer.valueOf(wickets);
                         }
                     } else if ("Extras".equals(itemType)){
-                            System.out.println("Wides = " + item.getString("Wides"));
+                        String teamName = item.getString("team_name");
+                        int wides = Integer.valueOf(item.getString("Wides"));
+                        int noBall = Integer.valueOf(item.getString("NB"));
+                        int legBy = Integer.valueOf(item.getString("LB"));
+                        int by = Integer.valueOf(item.getString("B"));
+
+                        int total_extras = wides + noBall +legBy + by;
+
+                        if (team1name.equals(teamName)) {
+                            team1EXTRAS.setText(total_extras);
+                            team1EXTRAS_DESC.setText("(wd " + wides +",lb " + legBy + ",nb " + noBall +",B " + by +")");
+                        }
+                        else {
+                            team2EXTRAS.setText(total_extras);
+                            team2EXTRAS_DESC.setText("(wd " + wides +",lb " + legBy + ",nb " + noBall +",B " + by +")");
+                        }
 
                     }
                 }
