@@ -188,9 +188,9 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
                 for (int i = 0; i < data.length(); i++) {
                     JSONObject item = data.getJSONObject(i);
                     String itemType = item.getString("type");
+                    String teamName = item.getString("team_name");
 
                     if ("Batsman".equals(itemType)) {
-                        String teamName = item.getString("team_name");
 
                         String batterName = item.getString("name");
                         String runs = item.getString("score");
@@ -210,7 +210,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
                             team2score = team2score + Integer.valueOf(runs);
                         }
                     } else if ("Bowler".equals(itemType)) {
-                        String teamName = item.getString("team_name");
+//                        String teamName = item.getString("team_name");
                         String bowlerName = item.getString("name");
                         String overs = item.getString("overs");
                         String maidenOvers = item.getString("maiden");
@@ -232,7 +232,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
                             team2wickts = team2wickts + Integer.valueOf(wickets);
                         }
                     } else if ("Extras".equals(itemType)){
-                        String teamName = item.getString("team_name");
+//                        String teamName = item.getString("team_name");
                         int wides = Integer.valueOf(item.getString("Wides"));
                         int noBall = Integer.valueOf(item.getString("NB"));
                         int legBy = Integer.valueOf(item.getString("LB"));
