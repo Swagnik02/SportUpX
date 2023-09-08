@@ -156,6 +156,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/recyclerViewTeam1Batsmen"
                             android:layout_centerHorizontal="true"
+                            android:layout_marginTop="15dp"
                             android:layout_marginLeft="10dp" />
 
 
@@ -236,6 +237,7 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/recyclerViewTeam2Batsmen"
                             android:layout_centerHorizontal="true"
+                            android:layout_marginTop="15dp"
                             android:layout_marginLeft="10dp" />
 
 

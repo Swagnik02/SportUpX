@@ -12,15 +12,41 @@
     <include layout="@layout/layout_vs_back"
         android:id="@+id/incl_vs_bck" />
 
+    <!--        scorecard-->
+    <LinearLayout
+        android:id="@+id/RL_ScoreCardDrawer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/team_header"
+        android:gravity="center"
+        android:paddingTop="2dp">
+
+        <TextView
+            android:id="@+id/tv_ScoreCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:drawableTop="@drawable/team_prvw_icon"
+            android:drawablePadding="0dp"
+            android:drawableTint="@color/white"
+            android:gravity="center"
+            android:padding="2dp"
+            android:text="Scorecard"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/RL_ScoreCardDrawer"
         android:layout_below="@+id/incl_vs_bck">
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             >
 
             <RelativeLayout
@@ -331,13 +357,16 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/Rv_MyLiveLeaderboard"
-                    android:layout_below="@+id/RL_LeaderboardList"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    tools:listitem="@layout/adapter_live_leaderboard_list"
-                    android:layout_margin="5dp"
+                    android:layout_below="@+id/RL_LeaderboardList"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
                     android:padding="5dp"
-                    android:scrollbars="vertical" />
+                    android:scrollbars="vertical"
+                    tools:listitem="@layout/adapter_live_leaderboard_list" />
             </RelativeLayout>
 
         </ScrollView>
