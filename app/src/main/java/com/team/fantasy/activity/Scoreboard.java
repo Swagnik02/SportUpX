@@ -8,6 +8,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -53,7 +54,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
     TextView team2Name,team2total_score,team2wickets,team2OVERS;
 
     int currentTeamNo=1;
-    CardView team1Container,team2Container;
+    LinearLayout team1Container,team2Container;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,10 +66,6 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         ImageView closeButton = findViewById(R.id.im_CloseIcon);
         closeButton.setOnClickListener(v -> finish());
 
-        ImageView changeTeam = findViewById(R.id.im_change);
-
-
-
         //INTENTS
         match_id = getIntent().getStringExtra("Match_ID");
         team1Fullname = getIntent().getStringExtra("Team1_Name");
@@ -79,34 +76,8 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         team2name =team2Fullname.substring(0,3).toUpperCase();
         System.out.println(team2name);
 
-        team1Container = findViewById(R.id.Team1_Maincontainer);
-        team2Container = findViewById(R.id.Team2_Maincontainer);
-
-        if (currentTeamNo==1){
-            team2Container.setVisibility(View.GONE);
-        }
-        changeTeam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                if (currentTeamNo==1) {
-                    team1Container.setVisibility(View.GONE);
-                    team2Container.setVisibility(View.VISIBLE);
-                    currentTeamNo = 2;
-//                    ShowToast(context, "TEAM "+ team2name);
-
-
-                }
-                else {
-                    team2Container.setVisibility(View.GONE);
-                    team1Container.setVisibility(View.VISIBLE);
-                    currentTeamNo = 1;
-//                    ShowToast(context, "TEAM "+ team1name);
-
-                }
-            }
-        });
+        team1Container = findViewById(R.id.im_Team1Layout);
+        team2Container = findViewById(R.id.im_Team2Layout);
 
 
         //Team 1
@@ -133,18 +104,37 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         team2battingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         team2bowlingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        // TEAM VIEW CHANGE
+        if (currentTeamNo==1){
+            team1Name.setEnabled(false); //team1 button disabled
+            team2Container.setVisibility(View.GONE);
+            team1Container.setVisibility(View.VISIBLE);
+        }
+        team2Name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                team1Container.setVisibility(View.GONE);
+                team2Container.setVisibility(View.VISIBLE);
+                team1Name.setEnabled(true);
+                currentTeamNo = 2;
+            }
+        });
+
+        team1Name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    team2Container.setVisibility(View.GONE);
+                    team1Container.setVisibility(View.VISIBLE);
+                    currentTeamNo = 1;
+            }
+        });
 
         callMyMatchRecord(true);
-
-
 
         team1Name.setText(team1Fullname);
         team2Name.setText(team2Fullname);
     }
 
-    private void initViews(){
-
-    }
     private void callMyMatchRecord(boolean isShowLoader) {
         try {
             JSONObject jsonObject = new JSONObject();
@@ -172,9 +162,9 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
                 for (int i = 0; i < data.length(); i++) {
                     JSONObject item = data.getJSONObject(i);
                     String itemType = item.getString("type");
-                    String teamName = item.getString("team_name");
 
                     if ("Batsman".equals(itemType)) {
+                        String teamName = item.getString("team_name");
                         String batterName = item.getString("name");
                         String runs = item.getString("score");
                         String ballsPlayed = item.getString("balls");
@@ -193,6 +183,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
                             team2score = team2score + Integer.valueOf(runs);
                         }
                     } else if ("Bowler".equals(itemType)) {
+                        String teamName = item.getString("team_name");
                         String bowlerName = item.getString("name");
                         String overs = item.getString("overs");
                         String maidenOvers = item.getString("maiden");
@@ -213,6 +204,9 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
                             team2overs = team2overs+Float.valueOf(overs);
                             team2wickts = team2wickts + Integer.valueOf(wickets);
                         }
+                    } else if ("Extras".equals(itemType)){
+                            System.out.println("Wides = " + item.getString("Wides"));
+
                     }
                 }
 

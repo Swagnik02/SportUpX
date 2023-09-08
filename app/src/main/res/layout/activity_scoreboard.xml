@@ -62,7 +62,7 @@
                 tools:context="activity.FragmentScoreboard">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/Team1_Maincontainer"
+                    android:id="@+id/Maincontainer"
                     android:layout_width="match_parent"
                     android:layout_height="800dp"
                     app:cardCornerRadius="16dp"
@@ -72,7 +72,7 @@
                     tools:ignore="MissingConstraints">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/Team1_container"
+                        android:id="@+id/container"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:cardCornerRadius="16dp"
@@ -83,28 +83,42 @@
 
                         <!--            TEAM -->
                         <LinearLayout
-                            android:id="@+id/Team1"
+                            android:id="@+id/TeamNames"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/team_header"
-                            tools:ignore="MissingConstraints">
+                            tools:ignore="MissingConstraints"
+                            android:gravity="center">
 
                             <TextView
                                 android:id="@+id/im_team1Name"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
+                                android:layout_weight="0.5"
                                 android:paddingTop="10dp"
+                                android:gravity="center"
                                 android:paddingBottom="10dp"
                                 android:text="Team Name 1"
                                 android:textColor="@color/white"
                                 android:textSize="18dp" />
 
+                            <TextView
+                                android:id="@+id/im_team2Name"
+                                android:layout_width="match_parent"
+                                android:layout_weight="0.5"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="10dp"
+                                android:gravity="center"
+                                android:paddingBottom="10dp"
+                                android:text="Team Name 2"
+                                android:textColor="@color/white"
+                                android:textSize="18dp" />
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
                     <!--        inside container-->
                     <LinearLayout
+                        android:id="@+id/im_Team1Layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="37dp"
@@ -182,55 +196,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="?android:attr/listDivider" />
-                </androidx.cardview.widget.CardView>
 
-                <!--TEAM2-->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/Team2_Maincontainer"
-                    android:layout_width="match_parent"
-                    android:layout_height="800dp"
-                    app:cardCornerRadius="16dp"
-                    android:layout_marginTop="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Team1_Maincontainer"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="10dp">
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/Team2_container"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="16dp"
-                        tools:ignore="MissingConstraints"
-                        tools:layout_editor_absoluteY="16dp">
-
-                        <!--            TEAM -->
-                        <LinearLayout
-                            android:id="@+id/Team2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@color/team_header"
-                            tools:ignore="MissingConstraints">
-
-                            <TextView
-                                android:id="@+id/im_team2Name"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="10dp"
-                                android:paddingTop="10dp"
-                                android:paddingBottom="10dp"
-                                android:text="Team Name 2"
-                                android:textColor="@color/white"
-                                android:textSize="18dp" />
-
-                        </LinearLayout>
-
-                    </androidx.cardview.widget.CardView>
-                    <!--        inside container-->
                     <LinearLayout
+                        android:id="@+id/im_Team2Layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="37dp"
+
                         android:orientation="vertical">
 
                         <include
@@ -299,12 +271,15 @@
 
 
                     </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <View
+                <!--TEAM2-->
+
+                <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="?android:attr/listDivider" />
-                </androidx.cardview.widget.CardView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
