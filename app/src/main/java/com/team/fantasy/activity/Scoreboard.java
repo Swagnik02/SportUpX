@@ -74,8 +74,10 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         team1Fullname = getIntent().getStringExtra("Team1_Name");
         team2Fullname = getIntent().getStringExtra("Team2_Name");
 
-        team1name =team1Fullname.trim();
-        team2name =team2Fullname.trim();
+        team1name =team1Fullname.substring(0,3).toUpperCase();
+        System.out.println(team1name);
+        team2name =team2Fullname.substring(0,3).toUpperCase();
+        System.out.println(team2name);
 
         team1Container = findViewById(R.id.Team1_Maincontainer);
         team2Container = findViewById(R.id.Team2_Maincontainer);
@@ -136,8 +138,8 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
 
 
-        team1Name.setText(team1name);
-        team2Name.setText(team2name);
+        team1Name.setText(team1Fullname);
+        team2Name.setText(team2Fullname);
     }
 
     private void initViews(){
