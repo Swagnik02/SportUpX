@@ -72,9 +72,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         team2Fullname = getIntent().getStringExtra("Team2_Name");
 
         team1name =team1Fullname.substring(0,3).toUpperCase();
-        System.out.println(team1name);
         team2name =team2Fullname.substring(0,3).toUpperCase();
-        System.out.println(team2name);
 
         team1Container = findViewById(R.id.im_Team1Layout);
         team2Container = findViewById(R.id.im_Team2Layout);
