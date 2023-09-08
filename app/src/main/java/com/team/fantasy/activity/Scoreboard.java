@@ -107,15 +107,31 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         // TEAM VIEW CHANGE
         if (currentTeamNo==1){
             team1Name.setEnabled(false); //team1 button disabled
+            team2Name.setEnabled(true);
+
+//            team1Name.setTextColor(getResources().getColor(R.color.deactivate_text_color));
             team2Container.setVisibility(View.GONE);
             team1Container.setVisibility(View.VISIBLE);
+
+            team2Name.setBackgroundColor(getResources().getColor(R.color.white));
+            team2Name.setTextColor(getResources().getColor(R.color.colorPrimary));
+
+            team1Name.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            team1Name.setTextColor(getResources().getColor(R.color.white));
+
         }
         team2Name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 team1Container.setVisibility(View.GONE);
                 team2Container.setVisibility(View.VISIBLE);
+                team1Name.setBackgroundColor(getResources().getColor(R.color.white));
+                team1Name.setTextColor(getResources().getColor(R.color.colorPrimary));
+
+                team2Name.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                team2Name.setTextColor(getResources().getColor(R.color.white));
                 team1Name.setEnabled(true);
+                team2Name.setEnabled(false);
                 currentTeamNo = 2;
             }
         });
@@ -125,7 +141,15 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
             public void onClick(View v) {
                     team2Container.setVisibility(View.GONE);
                     team1Container.setVisibility(View.VISIBLE);
-                    currentTeamNo = 1;
+
+                team2Name.setBackgroundColor(getResources().getColor(R.color.white));
+                team2Name.setTextColor(getResources().getColor(R.color.colorPrimary));
+
+                team1Name.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                team1Name.setTextColor(getResources().getColor(R.color.white));
+                team1Name.setEnabled(false);
+                team2Name.setEnabled(true);
+                currentTeamNo = 1;
             }
         });
 
@@ -212,13 +236,13 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
                 // Initialize and set RecyclerView adapters
                 team1batsmanAdapter = new BatsmanAdapter(this, team1batsmenData);
-                team1bowlerAdapter = new BowlerAdapter(this, team1bowlersData);
+                team1bowlerAdapter = new BowlerAdapter(this, team2bowlersData);
 
                 team1battingRecyclerView.setAdapter(team1batsmanAdapter);
                 team1bowlingRecyclerView.setAdapter(team1bowlerAdapter);
 
                 team2batsmanAdapter = new BatsmanAdapter(this, team2batsmenData);
-                team2bowlerAdapter = new BowlerAdapter(this, team2bowlersData);
+                team2bowlerAdapter = new BowlerAdapter(this, team1bowlersData);
 
                 team2battingRecyclerView.setAdapter(team2batsmanAdapter);
                 team2bowlingRecyclerView.setAdapter(team2bowlerAdapter);

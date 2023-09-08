@@ -20,7 +20,7 @@
             android:layout_marginStart="0dp"
             android:padding="10dp"
             android:src="@drawable/ic_refresh_black_36dp"
-            android:visibility="visible"
+            android:visibility="gone"
             app:tint="@color/black" />
 
         <TextView
