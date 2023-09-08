@@ -129,18 +129,6 @@ public class MoreFragment extends Fragment {
                 startActivity(i);
             }
         });
-        binding.tvScoreCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(activity, Scoreboard.class);
-                startActivity(i);
-            }
-        });
         return binding.getRoot();
     }
-
-
-
-
-
 }
