@@ -25,7 +25,6 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-permission android:name="android.permission.CAMERA" />
 
 <!--    (Optional) To opt out of the Advertising ID Permission, add a uses-permission element to the manifest after the application element:-->
