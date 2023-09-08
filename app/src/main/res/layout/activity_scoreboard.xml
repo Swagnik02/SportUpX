@@ -273,13 +273,6 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <!--TEAM2-->
-
-                <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="?android:attr/listDivider" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
