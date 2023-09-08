@@ -1,6 +1,5 @@
 package com.team.fantasy.activity;
 
-import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 import static com.team.fantasy.APICallingPackage.Config.MATCH_SCOREBOARD;
 import static com.team.fantasy.APICallingPackage.Constants.MATCH_SCOREBOARD_TYPE;
 
@@ -13,7 +12,6 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,18 +41,18 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
     private RecyclerView team1battingRecyclerView, team1bowlingRecyclerView;
     private RecyclerView team2battingRecyclerView, team2bowlingRecyclerView;
     private BatsmanAdapter team1batsmanAdapter, team2batsmanAdapter;
-    private BowlerAdapter team1bowlerAdapter,team2bowlerAdapter;
+    private BowlerAdapter team1bowlerAdapter, team2bowlerAdapter;
 
-    String match_id="",team1name="",team2name="",team1Fullname,team2Fullname;
-    int team1score=0,team1wickts=0;
-    TextView team1Name,team1total_score,team1wickets,team1OVERS;
+    String match_id = "", team1name = "", team2name = "", team1Fullname, team2Fullname;
+    int team1score = 0, team1wickts = 0;
+    TextView team1Name, team1total_score, team1wickets, team1OVERS;
 
-    int team2score=0,team2wickts=0;
-    float team1overs=0,team2overs=0;
-    TextView team2Name,team2total_score,team2wickets,team2OVERS,team1EXTRAS,team1EXTRAS_DESC,team2EXTRAS,team2EXTRAS_DESC;
+    int team2score = 0, team2wickts = 0;
+    float team1overs = 0, team2overs = 0;
+    TextView team2Name, team2total_score, team2wickets, team2OVERS, team1EXTRAS, team1EXTRAS_DESC, team2EXTRAS, team2EXTRAS_DESC;
 
-    int currentTeamNo=1;
-    LinearLayout team1Container,team2Container;
+    int currentTeamNo = 1;
+    LinearLayout team1Container, team2Container;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,8 +69,8 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         team1Fullname = getIntent().getStringExtra("Team1_Name");
         team2Fullname = getIntent().getStringExtra("Team2_Name");
 
-        team1name =team1Fullname.substring(0,3).toUpperCase();
-        team2name =team2Fullname.substring(0,3).toUpperCase();
+        team1name = team1Fullname.substring(0, 3).toUpperCase();
+        team2name = team2Fullname.substring(0, 3).toUpperCase();
 
         team1Container = findViewById(R.id.im_Team1Layout);
         team2Container = findViewById(R.id.im_Team2Layout);
@@ -107,7 +105,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         team2bowlingRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // TEAM VIEW CHANGE
-        if (currentTeamNo==1){
+        if (currentTeamNo == 1) {
             team1Name.setEnabled(false); //team1 button disabled
             team2Name.setEnabled(true);
 
@@ -141,8 +139,8 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         team1Name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    team2Container.setVisibility(View.GONE);
-                    team1Container.setVisibility(View.VISIBLE);
+                team2Container.setVisibility(View.GONE);
+                team1Container.setVisibility(View.VISIBLE);
 
                 team2Name.setBackgroundColor(getResources().getColor(R.color.white));
                 team2Name.setTextColor(getResources().getColor(R.color.colorPrimary));
@@ -176,102 +174,99 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
     public void getResult(Context mContext, String type, String message, JSONObject result) {
         try {
 
-                JSONArray data = result.getJSONArray("data");
+            JSONArray data = result.getJSONArray("data");
 
-                // Separate batsmen and bowlers data
-                List<BeanBatterStats> team1batsmenData = new ArrayList<>();
-                List<BeanBowlerStats> team1bowlersData = new ArrayList<>();
+            // Separate batsmen and bowlers data
+            List<BeanBatterStats> team1batsmenData = new ArrayList<>();
+            List<BeanBowlerStats> team1bowlersData = new ArrayList<>();
 
-                List<BeanBatterStats> team2batsmenData = new ArrayList<>();
-                List<BeanBowlerStats> team2bowlersData = new ArrayList<>();
+            List<BeanBatterStats> team2batsmenData = new ArrayList<>();
+            List<BeanBowlerStats> team2bowlersData = new ArrayList<>();
 
-                for (int i = 0; i < data.length(); i++) {
-                    JSONObject item = data.getJSONObject(i);
-                    String itemType = item.getString("type");
-                    String teamName = item.getString("team_name");
+            for (int i = 0; i < data.length(); i++) {
+                JSONObject item = data.getJSONObject(i);
+                String itemType = item.getString("type");
+                String teamName = item.getString("team_name");
 
-                    if ("Batsman".equals(itemType)) {
+                if ("Batsman".equals(itemType)) {
 
-                        String batterName = item.getString("name");
-                        String runs = item.getString("score");
-                        String ballsPlayed = item.getString("balls");
-                        String fours = item.getString("four");
-                        String sixes = item.getString("six");
-                        String strikeRate = item.getString("strike_rate");
+                    String batterName = item.getString("name");
+                    String runs = item.getString("score");
+                    String ballsPlayed = item.getString("balls");
+                    String fours = item.getString("four");
+                    String sixes = item.getString("six");
+                    String strikeRate = item.getString("strike_rate");
 
-                        // Create a new batsman bean object and add it to the list
-                        BeanBatterStats batsman = new BeanBatterStats(batterName, runs, ballsPlayed, fours, sixes, strikeRate);
-                        if (team1name.equals(teamName)){
-                            team1batsmenData.add(batsman);
-                            team1score = team1score + Integer.valueOf(runs);
-                        }
-                        else {
-                            team2batsmenData.add(batsman);
-                            team2score = team2score + Integer.valueOf(runs);
-                        }
-                    } else if ("Bowler".equals(itemType)) {
-//                        String teamName = item.getString("team_name");
-                        String bowlerName = item.getString("name");
-                        String overs = item.getString("overs");
-                        String maidenOvers = item.getString("maiden");
-                        String runs = item.getString("runs");
-                        String wickets = item.getString("wicket");
-                        String economy = item.getString("eco");
-
-                        // Create a new bowler bean object and add it to the list
-                        BeanBowlerStats bowler = new BeanBowlerStats(bowlerName, overs, maidenOvers, runs, wickets, economy);
-
-                        if (team1name.equals(teamName)) {
-                            team1bowlersData.add(bowler);
-                            team1overs = team1overs+Float.valueOf(overs);
-                            team1wickts = team1wickts + Integer.valueOf(wickets);
-                        }
-                        else {
-                            team2bowlersData.add(bowler);
-                            team2overs = team2overs+Float.valueOf(overs);
-                            team2wickts = team2wickts + Integer.valueOf(wickets);
-                        }
-                    } else if ("Extras".equals(itemType)){
-//                        String teamName = item.getString("team_name");
-                        int wides = Integer.valueOf(item.getString("Wides"));
-                        int noBall = Integer.valueOf(item.getString("NB"));
-                        int legBy = Integer.valueOf(item.getString("LB"));
-                        int by = Integer.valueOf(item.getString("B"));
-
-                        int total_extras = wides + noBall +legBy + by;
-
-                        if (team1name.equals(teamName)) {
-                            team1EXTRAS.setText(total_extras);
-                            team1EXTRAS_DESC.setText("(wd " + wides +",lb " + legBy + ",nb " + noBall +",B " + by +")");
-                        }
-                        else {
-                            team2EXTRAS.setText(total_extras);
-                            team2EXTRAS_DESC.setText("(wd " + wides +",lb " + legBy + ",nb " + noBall +",B " + by +")");
-                        }
-
+                    // Create a new batsman bean object and add it to the list
+                    BeanBatterStats batsman = new BeanBatterStats(batterName, runs, ballsPlayed, fours, sixes, strikeRate);
+                    if (team1name.equals(teamName)) {
+                        team1batsmenData.add(batsman);
+                        team1score = team1score + Integer.valueOf(runs);
+                    } else {
+                        team2batsmenData.add(batsman);
+                        team2score = team2score + Integer.valueOf(runs);
                     }
+                } else if ("Bowler".equals(itemType)) {
+//                        String teamName = item.getString("team_name");
+                    String bowlerName = item.getString("name");
+                    String overs = item.getString("overs");
+                    String maidenOvers = item.getString("maiden");
+                    String runs = item.getString("runs");
+                    String wickets = item.getString("wicket");
+                    String economy = item.getString("eco");
+
+                    // Create a new bowler bean object and add it to the list
+                    BeanBowlerStats bowler = new BeanBowlerStats(bowlerName, overs, maidenOvers, runs, wickets, economy);
+
+                    if (team1name.equals(teamName)) {
+                        team1bowlersData.add(bowler);
+                        team1overs = team1overs + Float.valueOf(overs);
+                        team1wickts = team1wickts + Integer.valueOf(wickets);
+                    } else {
+                        team2bowlersData.add(bowler);
+                        team2overs = team2overs + Float.valueOf(overs);
+                        team2wickts = team2wickts + Integer.valueOf(wickets);
+                    }
+                } else if ("Extras".equals(itemType)) {
+//                        String teamName = item.getString("team_name");
+                    int wides = Integer.valueOf(item.getString("Wides"));
+                    int noBall = Integer.valueOf(item.getString("NB"));
+                    int legBy = Integer.valueOf(item.getString("LB"));
+                    int by = Integer.valueOf(item.getString("B"));
+
+                    int total_extras = wides + noBall + legBy + by;
+
+                    if (team1name.equals(teamName)) {
+                        team1EXTRAS.setText(total_extras);
+                        team1EXTRAS_DESC.setText("(wd " + wides + ",lb " + legBy + ",nb " + noBall + ",B " + by + ")");
+                    } else {
+                        team2EXTRAS.setText(total_extras);
+                        team2EXTRAS_DESC.setText("(wd " + wides + ",lb " + legBy + ",nb " + noBall + ",B " + by + ")");
+                    }
+
                 }
+            }
 
-                // Initialize and set RecyclerView adapters
-                team1batsmanAdapter = new BatsmanAdapter(this, team1batsmenData);
-                team1bowlerAdapter = new BowlerAdapter(this, team2bowlersData);
+            // Initialize and set RecyclerView adapters
+            team1batsmanAdapter = new BatsmanAdapter(this, team1batsmenData);
+            team1bowlerAdapter = new BowlerAdapter(this, team2bowlersData);
 
-                team1battingRecyclerView.setAdapter(team1batsmanAdapter);
-                team1bowlingRecyclerView.setAdapter(team1bowlerAdapter);
+            team1battingRecyclerView.setAdapter(team1batsmanAdapter);
+            team1bowlingRecyclerView.setAdapter(team1bowlerAdapter);
 
-                team2batsmanAdapter = new BatsmanAdapter(this, team2batsmenData);
-                team2bowlerAdapter = new BowlerAdapter(this, team1bowlersData);
+            team2batsmanAdapter = new BatsmanAdapter(this, team2batsmenData);
+            team2bowlerAdapter = new BowlerAdapter(this, team1bowlersData);
 
-                team2battingRecyclerView.setAdapter(team2batsmanAdapter);
-                team2bowlingRecyclerView.setAdapter(team2bowlerAdapter);
+            team2battingRecyclerView.setAdapter(team2batsmanAdapter);
+            team2bowlingRecyclerView.setAdapter(team2bowlerAdapter);
 
-                team1total_score.setText(String.valueOf(team1score));
-                team1OVERS.setText(String.valueOf(team2overs));
-                team1wickets.setText(String.valueOf(team2wickts));
+            team1total_score.setText(String.valueOf(team1score));
+            team1OVERS.setText(String.valueOf(team2overs));
+            team1wickets.setText(String.valueOf(team2wickts));
 
-                team2total_score.setText(String.valueOf(team2score));
-                team2OVERS.setText(String.valueOf(team1overs));
-                team2wickets.setText(String.valueOf(team1wickts));
+            team2total_score.setText(String.valueOf(team2score));
+            team2OVERS.setText(String.valueOf(team1overs));
+            team2wickets.setText(String.valueOf(team1wickts));
 
         } catch (JSONException e) {
             e.printStackTrace();
