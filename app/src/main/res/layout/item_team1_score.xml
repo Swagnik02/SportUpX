@@ -5,7 +5,72 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:layout_marginLeft="10dp"
+        tools:ignore="MissingConstraints">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:layout_marginLeft="10dp"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/team1extras"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Extras"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/team1extras"
+            android:background="?android:attr/listDivider" />
+
+        <!-- TextView for total_score -->
+        <TextView
+            android:id="@+id/im_team1_total_extras"
+            android:gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_toRightOf="@id/divider3"
+            android:text="score"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
+        <!-- TextView for wickets -->
+        <TextView
+            android:id="@+id/im_team1_extra_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/divider2"
+            android:gravity="center"
+            android:text="(wd p,lb q,nb r,B s)"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+    </LinearLayout>
+        <View
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:background="?android:attr/listDivider" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -83,6 +148,6 @@
 
     </LinearLayout>
 
-
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
