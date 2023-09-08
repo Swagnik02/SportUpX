@@ -303,6 +303,11 @@ public class MyResultContestDetailsActivity extends AppCompatActivity implements
                 }
                 binding.tvStatusNote.setText(match_status_note.trim());
 
+                // disable scorecard incase of match cancelled without a single ball
+                if (match_status_note.equals("Match abandoned without a ball bowled")){
+                    binding.tvScoreCard.setVisibility(View.GONE);
+                }
+
                 JSONArray jsonArray = result.getJSONArray("leaderboard");
                 List<BeanMyFixLeaderboard> beanContestLists = new Gson().fromJson(jsonArray.toString(),
                         new TypeToken<List<BeanMyFixLeaderboard>>() {
