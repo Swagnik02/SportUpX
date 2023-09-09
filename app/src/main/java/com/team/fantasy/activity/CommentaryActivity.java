@@ -68,14 +68,14 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
         binding.recyclerViewCommentary.setLayoutManager(new LinearLayoutManager(this));
 
-        simulateApiResponse();
-//        callAdapterCommentaryList(false);
+//        simulateApiResponse();
+        callAdapterCommentaryList(false);
 
         binding.tvComRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                simulateApiResponse();
-//                callAdapterCommentaryList(false);
+//                simulateApiResponse();
+                callAdapterCommentaryList(false);
                 ShowToast(context, "Refreshed");
             }
         });
