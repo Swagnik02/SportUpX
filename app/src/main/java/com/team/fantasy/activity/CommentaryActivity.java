@@ -25,6 +25,7 @@ import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.Bean.BeanBatterStats;
 import com.team.fantasy.Bean.BeanCommentary;
 import com.team.fantasy.R;
+import com.team.fantasy.adapter.BatsmanAdapter;
 import com.team.fantasy.databinding.AcitivtyCommentaryBinding;
 import com.team.fantasy.databinding.ActivityNotificationBinding;
 import com.team.fantasy.utils.SessionManager;
@@ -43,6 +44,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     APIRequestManager apiRequestManager;
     SessionManager sessionManager;
     AdapterCommentaryList adapterCommentaryList;
+    private RecyclerView commentaryListRecyclerView;
     AcitivtyCommentaryBinding binding;
 
     @Override
@@ -56,12 +58,9 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         apiRequestManager = new APIRequestManager(activity);
         sessionManager = new SessionManager();
 
-//        binding.RVNotification.setHasFixedSize(true);
-//        binding.RVNotification.setNestedScrollingEnabled(false);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
-//        binding.RVNotification.setLayoutManager(mLayoutManager);
-//        binding.RVNotification.setItemAnimator(new DefaultItemAnimator());
 
+        binding.recyclerViewCommentary.setLayoutManager(new LinearLayoutManager(this));
 
 //        binding.swipeRefreshLayout.post(new Runnable() {
 //        @Override
@@ -76,14 +75,14 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             @Override
             public void onRefresh() {
 //                callAdapterCommentaryList(false);
-                ShowToast(context,"Refresh");
+                ShowToast(context, "Refresh");
             }
         });
 
 
     }
 
-    public void initViews(){
+    public void initViews() {
         binding.imCloseIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,7 +103,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         try {
             apiRequestManager.callAPI(NOTIFICATIONLIST,
                     createRequestJson(), context, activity, NOTIFICATIONTYPE,
-                    isShowLoader,responseManager);
+                    isShowLoader, responseManager);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -132,7 +131,6 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
             JSONArray data = result.getJSONArray("data");
 
-            // Separate batsmen and bowlers data
             List<BeanCommentary> commentaryList = new ArrayList<>();
             for (int i = 0; i < data.length(); i++) {
                 JSONObject item = data.getJSONObject(i);
@@ -155,21 +153,24 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                 } else if (runs == "2 Runs") {
                     intRuns = "2";
                 }
-                String commentary = bowler + " to" + batsman +", "+ runs +"!";
+                String commentary = bowler + " to" + batsman + ", " + runs + "!";
 
-                BeanCommentary  commentaryB = new BeanCommentary (inning, overs, batsman, bowler, intRuns, commentary);
+                BeanCommentary commentaryB = new BeanCommentary(inning, overs, batsman, bowler, intRuns, commentary);
                 commentaryList.add(commentaryB);
+
+
+                adapterCommentaryList = new AdapterCommentaryList(this, commentaryList);
+                binding.recyclerViewCommentary.setAdapter(adapterCommentaryList);
             }
 
-            } catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 //
-//        adapterAdapterCommentaryList.notifyDataSetChanged();
+//        adapterCommentaryList.notifyDataSetChanged();
 //
 
     }
-
 
 
     @Override
@@ -181,10 +182,10 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
 
     public class AdapterCommentaryList extends RecyclerView.Adapter<AdapterCommentaryList.MyViewHolder> {
-        private List<BeanCommentary> mListenerList;
+        private final List<BeanCommentary> mListenerList;
         Context mContext;
 
-        public AdapterCommentaryList(List<BeanCommentary> mListenerList, Context context) {
+        public AdapterCommentaryList(Context context, List<BeanCommentary> mListenerList) {
             mContext = context;
             this.mListenerList = mListenerList;
         }
