@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -223,6 +224,16 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             final String overs = mListenerList.get(position).getOver(); // Assuming you have a method getOvers()
             final String runs = mListenerList.get(position).getRuns(); // Assuming you have a method getRuns()
             final String commentary = mListenerList.get(position).getCommentary(); // Assuming you have a method getCommentary()
+
+            if (runs == "4" || runs == "6") {
+                holder.tvRuns.setBackgroundResource(R.drawable.circle_score_4_6);
+
+            } else if (runs == "0" || runs == "1" || runs == "2") {
+                holder.tvRuns.setBackgroundResource(R.drawable.circle_score_0_1_2);
+
+            } else if (runs == "W") {
+                holder.tvRuns.setBackgroundResource(R.drawable.circle_score_w);
+            }
 
             holder.tvOvers.setText(overs);
             holder.tvRuns.setText(runs);
