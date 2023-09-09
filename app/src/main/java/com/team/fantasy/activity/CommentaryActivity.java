@@ -156,6 +156,8 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                     intRuns = "1";
                 } else if (runs == "2 Runs") {
                     intRuns = "2";
+                } else if (runs == "Wicket") {
+                    intRuns = "W";
                 }
                 String commentary = bowler + " to" + batsman + ", " + runs + "!";
 
@@ -240,5 +242,4 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             holder.tvCommentary.setText(commentary);
         }
     }
-
 }
