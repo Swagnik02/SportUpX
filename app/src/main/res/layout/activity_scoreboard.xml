@@ -13,7 +13,7 @@
             android:theme="@style/MyDarkToolbarStyle" />
 
         <ImageView
-            android:id="@+id/im_change"
+            android:id="@+id/im_commentary"
             android:layout_width="wrap_content"
             android:layout_height="43dp"
             android:layout_alignParentStart="true"
@@ -30,7 +30,7 @@
             android:layout_alignBottom="@+id/toolbar"
             android:layout_alignParentTop="true"
             android:layout_toStartOf="@+id/im_CloseIcon"
-            android:layout_toEndOf="@+id/im_change"
+            android:layout_toEndOf="@+id/im_commentary"
             android:gravity="center"
             android:text="SCOREBOARD"
             android:textColor="@color/black"

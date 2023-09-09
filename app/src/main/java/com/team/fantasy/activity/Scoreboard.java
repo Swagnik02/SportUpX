@@ -4,6 +4,7 @@ import static com.team.fantasy.APICallingPackage.Config.MATCH_SCOREBOARD;
 import static com.team.fantasy.APICallingPackage.Constants.MATCH_SCOREBOARD_TYPE;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -61,13 +62,25 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         responseManager = this;
         apiRequestManager = new APIRequestManager(activity);
 
-        ImageView closeButton = findViewById(R.id.im_CloseIcon);
-        closeButton.setOnClickListener(v -> finish());
-
         //INTENTS
         match_id = getIntent().getStringExtra("Match_ID");
         team1Fullname = getIntent().getStringExtra("Team1_Name");
         team2Fullname = getIntent().getStringExtra("Team2_Name");
+
+        ImageView closeButton = findViewById(R.id.im_CloseIcon);
+        closeButton.setOnClickListener(v -> finish());
+
+        ImageView commentary = findViewById(R.id.im_commentary);
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(activity, CommentaryActivity.class);
+                i.putExtra("Match_ID",match_id);
+                startActivity(i);
+            }
+        });
+
+
 
         team1name = team1Fullname.substring(0, 3).toUpperCase();
         team2name = team2Fullname.substring(0, 3).toUpperCase();
