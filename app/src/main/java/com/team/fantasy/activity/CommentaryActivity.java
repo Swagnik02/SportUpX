@@ -66,21 +66,12 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
         binding.recyclerViewCommentary.setLayoutManager(new LinearLayoutManager(this));
 
-        binding.swipeRefreshLayout.post(new Runnable() {
-        @Override
-        public void run() {
-        binding.swipeRefreshLayout.setRefreshing(true);
-//        callAdapterCommentaryList(false);
-            simulateApiResponse();
-        }
-            }
-        );
-
         simulateApiResponse();
 //        callAdapterCommentaryList(false);
-        binding.swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+
+        binding.tvComRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onRefresh() {
+            public void onClick(View v) {
                 simulateApiResponse();
 //                callAdapterCommentaryList(false);
                 ShowToast(context, "Refreshed");
@@ -95,16 +86,9 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             @Override
             public void onClick(View view) {
                 finish();
+//                onBackPressed();
             }
         });
-
-        binding.imBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
-
     }
 
     private void simulateApiResponse() {
@@ -290,7 +274,6 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
     @Override
     public void getResult(Context mContext, String type, String message, JSONObject result) {
-        binding.swipeRefreshLayout.setRefreshing(false);
         try {
 
             JSONArray data = result.getJSONArray("data");

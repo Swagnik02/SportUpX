@@ -2,12 +2,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefreshLayout"
-        android:layout_width="match_parent"
-        android:layout_below="@id/head"
-        android:layout_height="wrap_content">
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -19,13 +13,13 @@
                 android:theme="@style/MyDarkToolbarStyle" />
 
             <ImageView
-                android:id="@+id/im_back"
+                android:id="@+id/tv_Com_refresh"
                 android:layout_width="wrap_content"
                 android:layout_height="43dp"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="0dp"
                 android:padding="10dp"
-                android:src="@drawable/img_back_arrow"
+                android:src="@drawable/ic_refresh_black_36dp"
                 app:tint="@color/colorPrimary" />
 
             <TextView
@@ -35,7 +29,7 @@
                 android:layout_alignBottom="@+id/toolbar"
                 android:layout_alignParentTop="true"
                 android:layout_toStartOf="@+id/im_CloseIcon"
-                android:layout_toEndOf="@+id/im_back"
+                android:layout_toEndOf="@+id/tv_Score_refresh"
                 android:gravity="center"
                 android:text="Commentary"
                 android:textAllCaps="true"
@@ -87,5 +81,4 @@
             </ScrollView>
 
         </RelativeLayout>
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </layout>
