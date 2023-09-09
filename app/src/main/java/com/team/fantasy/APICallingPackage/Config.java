@@ -155,6 +155,7 @@ public class Config {
     public static String SEND_SUPPORT_TICKET = BASEURL + "support_ticket";
 
     public static String MATCH_SCOREBOARD = BASEURL + "live_match_scoreboard";
+    public static String LIVE_MATCH_COMMENTARY = BASEURL + "live_match_commentary";
 
 
 }

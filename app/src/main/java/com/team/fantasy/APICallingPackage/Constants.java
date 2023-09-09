@@ -119,6 +119,7 @@ public class Constants {
 
     public static String SUPPORT_TICKET_TYPE = "SupportTicketType";
     public static String MATCH_SCOREBOARD_TYPE = "MatchScoreboardType";
+    public static String LIVE_MATCH_COMMENTARY_TYPE = "LiveMatchCommentaryType";
 
 
 }

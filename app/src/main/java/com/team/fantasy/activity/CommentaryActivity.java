@@ -1,7 +1,9 @@
 package com.team.fantasy.activity;
 
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
+import static com.team.fantasy.APICallingPackage.Config.LIVE_MATCH_COMMENTARY;
 import static com.team.fantasy.APICallingPackage.Config.NOTIFICATIONLIST;
+import static com.team.fantasy.APICallingPackage.Constants.LIVE_MATCH_COMMENTARY_TYPE;
 import static com.team.fantasy.APICallingPackage.Constants.NOTIFICATIONTYPE;
 
 import android.content.Context;
@@ -46,6 +48,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     AdapterCommentaryList adapterCommentaryList;
     private RecyclerView commentaryListRecyclerView;
     AcitivtyCommentaryBinding binding;
+    String match_id = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         apiRequestManager = new APIRequestManager(activity);
         sessionManager = new SessionManager();
 
+        match_id = getIntent().getStringExtra("Match_ID");
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
 
         binding.recyclerViewCommentary.setLayoutManager(new LinearLayoutManager(this));
@@ -71,11 +75,12 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 //            }
 //        );
 
+        callAdapterCommentaryList(false);
         binding.swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-//                callAdapterCommentaryList(false);
-                ShowToast(context, "Refresh");
+                callAdapterCommentaryList(false);
+                ShowToast(context, "Refreshed");
             }
         });
 
@@ -101,8 +106,10 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
     private void callAdapterCommentaryList(boolean isShowLoader) {
         try {
-            apiRequestManager.callAPI(NOTIFICATIONLIST,
-                    createRequestJson(), context, activity, NOTIFICATIONTYPE,
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("match_id", match_id);
+            apiRequestManager.callAPI(LIVE_MATCH_COMMENTARY,
+                    createRequestJson(), context, activity, LIVE_MATCH_COMMENTARY_TYPE,
                     isShowLoader, responseManager);
 
         } catch (JSONException e) {
