@@ -156,7 +156,8 @@ public class HomeActivity extends AppCompatActivity implements GoogleApiClient.O
         binding.imNotification.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(activity, NotificationActivity.class);
+//                Intent i = new Intent(activity, NotificationActivity.class);
+                Intent i = new Intent(activity, CommentaryActivity.class);
                 startActivity(i);
             }
         });

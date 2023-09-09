@@ -1,5 +1,6 @@
 package com.team.fantasy.activity;
 
+import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 import static com.team.fantasy.APICallingPackage.Config.NOTIFICATIONLIST;
 import static com.team.fantasy.APICallingPackage.Constants.NOTIFICATIONTYPE;
 
@@ -23,6 +24,7 @@ import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.Bean.BeanNotification;
 import com.team.fantasy.R;
+import com.team.fantasy.databinding.AcitivtyCommentaryBinding;
 import com.team.fantasy.databinding.ActivityNotificationBinding;
 import com.team.fantasy.utils.SessionManager;
 
@@ -39,7 +41,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     APIRequestManager apiRequestManager;
     SessionManager sessionManager;
     AdapterAdapterCommentaryList adapterAdapterCommentaryList;
-    ActivityNotificationBinding binding;
+    AcitivtyCommentaryBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,27 +54,27 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         apiRequestManager = new APIRequestManager(activity);
         sessionManager = new SessionManager();
 
-        binding.RVNotification.setHasFixedSize(true);
-        binding.RVNotification.setNestedScrollingEnabled(false);
+//        binding.RVNotification.setHasFixedSize(true);
+//        binding.RVNotification.setNestedScrollingEnabled(false);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
-        binding.RVNotification.setLayoutManager(mLayoutManager);
-        binding.RVNotification.setItemAnimator(new DefaultItemAnimator());
+//        binding.RVNotification.setLayoutManager(mLayoutManager);
+//        binding.RVNotification.setItemAnimator(new DefaultItemAnimator());
 
 
-        binding.swipeRefreshLayout.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    binding.swipeRefreshLayout.setRefreshing(true);
-                                    callAdapterCommentaryList(false);
-                                }
-                            }
-        );
+//        binding.swipeRefreshLayout.post(new Runnable() {
+//        @Override
+//        public void run() {
+//        binding.swipeRefreshLayout.setRefreshing(true);
+//        callAdapterCommentaryList(false);
+//                }
+//            }
+//        );
 
         binding.swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-
-                callAdapterCommentaryList(false);
+//                callAdapterCommentaryList(false);
+                ShowToast(context,"Refresh");
             }
         });
 
@@ -80,13 +82,16 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     }
 
     public void initViews(){
-
-
-        binding.head.tvHeaderName.setText("NOTIFICATIONS");
-        binding.head.imBack.setOnClickListener(new View.OnClickListener() {
+        binding.imCloseIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                finish();
+            }
+        });
 
+        binding.imBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 onBackPressed();
             }
         });
@@ -117,24 +122,24 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
     @Override
     public void getResult(Context mContext, String type, String message, JSONObject result) {
-        binding.tvNoDataAvailable.setVisibility(View.GONE);
-        binding.RVNotification.setVisibility(View.VISIBLE);
-        binding.swipeRefreshLayout.setRefreshing(false);
-
-        try {
-            JSONArray jsonArray = result.getJSONArray("data");
-            List<BeanNotification> beanContestLists = new Gson().fromJson(jsonArray.toString(),
-                    new TypeToken<List<BeanNotification>>() {
-                    }.getType());
-            adapterAdapterCommentaryList = new AdapterAdapterCommentaryList(beanContestLists, activity);
-            binding.RVNotification.setAdapter(adapterAdapterCommentaryList);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        adapterAdapterCommentaryList.notifyDataSetChanged();
-
+//        binding.tvNoDataAvailable.setVisibility(View.GONE);
+//        binding.RVNotification.setVisibility(View.VISIBLE);
+//        binding.swipeRefreshLayout.setRefreshing(false);
+//
+//        try {
+//            JSONArray jsonArray = result.getJSONArray("data");
+//            List<BeanNotification> beanContestLists = new Gson().fromJson(jsonArray.toString(),
+//                    new TypeToken<List<BeanNotification>>() {
+//                    }.getType());
+//            adapterAdapterCommentaryList = new AdapterAdapterCommentaryList(beanContestLists, activity);
+//            binding.RVNotification.setAdapter(adapterAdapterCommentaryList);
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        adapterAdapterCommentaryList.notifyDataSetChanged();
+//
 
     }
 
@@ -142,9 +147,9 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
     @Override
     public void onError(Context mContext, String type, String message) {
-        binding.tvNoDataAvailable.setVisibility(View.VISIBLE);
-        binding.RVNotification.setVisibility(View.GONE);
-        binding.swipeRefreshLayout.setRefreshing(false);
+//        binding.tvNoDataAvailable.setVisibility(View.VISIBLE);
+//        binding.RVNotification.setVisibility(View.GONE);
+//        binding.swipeRefreshLayout.setRefreshing(false);
     }
 
 
