@@ -42,7 +42,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     ResponseManager responseManager;
     APIRequestManager apiRequestManager;
     SessionManager sessionManager;
-    AdapterAdapterCommentaryList adapterAdapterCommentaryList;
+    AdapterCommentaryList adapterCommentaryList;
     AcitivtyCommentaryBinding binding;
 
     @Override
@@ -180,11 +180,11 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     }
 
 
-    public class AdapterAdapterCommentaryList extends RecyclerView.Adapter<AdapterAdapterCommentaryList.MyViewHolder> {
+    public class AdapterCommentaryList extends RecyclerView.Adapter<AdapterCommentaryList.MyViewHolder> {
         private List<BeanCommentary> mListenerList;
         Context mContext;
 
-        public AdapterAdapterCommentaryList(List<BeanCommentary> mListenerList, Context context) {
+        public AdapterCommentaryList(List<BeanCommentary> mListenerList, Context context) {
             mContext = context;
             this.mListenerList = mListenerList;
         }
