@@ -10,7 +10,16 @@ public class BeanCommentary implements Serializable {
 
     private String id, match_id, contest_id, title, contest_name, contest_description;
     private String message, description;
-    private String inning, over,batsman,bowler,runs;
+    private String inning, over,batsman,bowler,runs,commentary;
+
+    public BeanCommentary (String Inning, String Overs, String Batsman, String Bowler, String Runs, String Commentary){
+        this.inning = Inning;
+        this.over =Overs;
+        this.batsman = Batsman;
+        this.bowler = Bowler;
+        this.runs = Runs;
+        this.commentary = Commentary;
+    }
 
     public String getInning() {
         return inning;
@@ -50,6 +59,14 @@ public class BeanCommentary implements Serializable {
 
     public void setRuns(String runs) {
         this.runs = runs;
+    }
+
+    public String getCommentary() {
+        return commentary;
+    }
+
+    public void setCommentary(String commentary) {
+        this.commentary = commentary;
     }
 }
 

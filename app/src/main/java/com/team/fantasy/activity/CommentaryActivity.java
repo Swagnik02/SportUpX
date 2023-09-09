@@ -22,7 +22,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
-import com.team.fantasy.Bean.BeanNotification;
+import com.team.fantasy.Bean.BeanBatterStats;
+import com.team.fantasy.Bean.BeanCommentary;
 import com.team.fantasy.R;
 import com.team.fantasy.databinding.AcitivtyCommentaryBinding;
 import com.team.fantasy.databinding.ActivityNotificationBinding;
@@ -32,6 +33,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CommentaryActivity extends AppCompatActivity implements ResponseManager {
@@ -46,7 +48,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_notification);
+        binding = DataBindingUtil.setContentView(this, R.layout.acitivty_commentary);
 
         context = activity = this;
         initViews();
@@ -126,17 +128,42 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 //        binding.RVNotification.setVisibility(View.VISIBLE);
 //        binding.swipeRefreshLayout.setRefreshing(false);
 //
-//        try {
-//            JSONArray jsonArray = result.getJSONArray("data");
-//            List<BeanNotification> beanContestLists = new Gson().fromJson(jsonArray.toString(),
-//                    new TypeToken<List<BeanNotification>>() {
-//                    }.getType());
-//            adapterAdapterCommentaryList = new AdapterAdapterCommentaryList(beanContestLists, activity);
-//            binding.RVNotification.setAdapter(adapterAdapterCommentaryList);
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+
+            JSONArray data = result.getJSONArray("data");
+
+            // Separate batsmen and bowlers data
+            List<BeanCommentary> commentaryList = new ArrayList<>();
+            for (int i = 0; i < data.length(); i++) {
+                JSONObject item = data.getJSONObject(i);
+
+                String inning = item.getString("Inning");
+                String overs = item.getString("Over");
+                String batsman = item.getString("Batsman");
+                String bowler = item.getString("Bowler");
+                String runs = item.getString("Runs");
+                String intRuns = runs;
+
+                if (runs == "FOUR") {
+                    intRuns = "4";
+                } else if (runs == "SIX") {
+                    intRuns = "6";
+                } else if (runs == "No Run") {
+                    intRuns = "0";
+                } else if (runs == "1 Run") {
+                    intRuns = "1";
+                } else if (runs == "2 Runs") {
+                    intRuns = "2";
+                }
+                String commentary = bowler + " to" + batsman +", "+ runs +"!";
+
+                BeanCommentary  commentaryB = new BeanCommentary (inning, overs, batsman, bowler, intRuns, commentary);
+                commentaryList.add(commentaryB);
+            }
+
+            } catch (Exception e) {
+            e.printStackTrace();
+        }
 //
 //        adapterAdapterCommentaryList.notifyDataSetChanged();
 //
@@ -154,30 +181,26 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
 
     public class AdapterAdapterCommentaryList extends RecyclerView.Adapter<AdapterAdapterCommentaryList.MyViewHolder> {
-        private List<BeanNotification> mListenerList;
+        private List<BeanCommentary> mListenerList;
         Context mContext;
 
-
-        public AdapterAdapterCommentaryList(List<BeanNotification> mListenerList, Context context) {
+        public AdapterAdapterCommentaryList(List<BeanCommentary> mListenerList, Context context) {
             mContext = context;
             this.mListenerList = mListenerList;
-
         }
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView tv_NotificationTitle,tv_NotificationContest,tv_NotificationMessage, tv_NotificationDescription  ;
+            TextView tvOvers, tvRuns, tvCommentary;
 
             public MyViewHolder(View view) {
                 super(view);
 
-                tv_NotificationTitle = view.findViewById(R.id.tv_NotificationTitle);
-                tv_NotificationContest = view.findViewById(R.id.tv_NotificationContest);
-                tv_NotificationMessage = view.findViewById(R.id.tv_NotificationMessage);
-                tv_NotificationDescription = view.findViewById(R.id.tv_NotificationDescription);
-
+                tvOvers = view.findViewById(R.id.im_overs);
+                tvRuns = view.findViewById(R.id.im_runs);
+                tvCommentary = view.findViewById(R.id.im_com_resp);
             }
-
         }
+
         @Override
         public int getItemCount() {
             return mListenerList.size();
@@ -186,28 +209,21 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         @Override
         public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.adapter_notification_list, parent, false);
+                    .inflate(R.layout.item_commentry_response, parent, false); // Replace with your new layout XML file
 
             return new MyViewHolder(itemView);
         }
 
         @Override
         public void onBindViewHolder(final MyViewHolder holder, final int position) {
+            final String overs = mListenerList.get(position).getOver(); // Assuming you have a method getOvers()
+            final String runs = mListenerList.get(position).getRuns(); // Assuming you have a method getRuns()
+            final String commentary = mListenerList.get(position).getCommentary(); // Assuming you have a method getCommentary()
 
-
-            final String ContestName = mListenerList.get(position).getContest_name();
-            String Title= mListenerList.get(position).getTitle();
-            String Message= mListenerList.get(position).getMessage();
-            String Description= mListenerList.get(position).getDescription();
-
-            holder.tv_NotificationTitle.setText(Title);
-            holder.tv_NotificationContest.setText(ContestName);
-            holder.tv_NotificationMessage.setText(Message);
-            holder.tv_NotificationDescription.setText(Description);
-
-
-
+            holder.tvOvers.setText(overs);
+            holder.tvRuns.setText(runs);
+            holder.tvCommentary.setText(commentary);
         }
-
     }
+
 }
