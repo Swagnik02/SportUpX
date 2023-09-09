@@ -163,19 +163,14 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
                 BeanCommentary commentaryB = new BeanCommentary(inning, overs, batsman, bowler, intRuns, commentary);
                 commentaryList.add(commentaryB);
-
-
-                adapterCommentaryList = new AdapterCommentaryList(this, commentaryList);
-                binding.recyclerViewCommentary.setAdapter(adapterCommentaryList);
             }
+            adapterCommentaryList = new AdapterCommentaryList(this, commentaryList);
+            binding.recyclerViewCommentary.setAdapter(adapterCommentaryList);
+            adapterCommentaryList.notifyDataSetChanged();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-//
-//        adapterCommentaryList.notifyDataSetChanged();
-//
-
     }
 
 
