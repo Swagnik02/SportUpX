@@ -58,17 +58,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"
-                tools:context="activity.CommentaryActivity">
+                tools:context="activity.FragmentScoreboard">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerViewCommentary"
-                    android:layout_width="wrap_content"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dimen_16dp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewCommentary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimen_16dp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                </androidx.cardview.widget.CardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
-    </RelativeLayout>
-</layout>
+        </RelativeLayout>
+    </layout>

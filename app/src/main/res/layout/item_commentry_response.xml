@@ -4,14 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+
     <LinearLayout
         android:id="@+id/im_com_block"
         android:layout_width="match_parent"
@@ -28,7 +21,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="5dp">
+            android:padding="5dp"
+            android:elevation="5dp">
 
             <TextView
                 android:id="@+id/im_overs"
@@ -54,7 +48,5 @@
             android:padding="@dimen/dimen_5dp"
             android:text="M. Pathirana to N. Ahmed, SIX!" />
     </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
