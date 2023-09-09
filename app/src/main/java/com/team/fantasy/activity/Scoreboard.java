@@ -238,9 +238,11 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
                     if (team1name.equals(teamName)) {
                         team1EXTRAS.setText(total_extras);
+                        team1score = team1score + total_extras;
                         team1EXTRAS_DESC.setText("(wd " + wides + ",lb " + legBy + ",nb " + noBall + ",B " + by + ")");
                     } else {
                         team2EXTRAS.setText(total_extras);
+                        team2score = team2score + total_extras;
                         team2EXTRAS_DESC.setText("(wd " + wides + ",lb " + legBy + ",nb " + noBall + ",B " + by + ")");
                     }
 
