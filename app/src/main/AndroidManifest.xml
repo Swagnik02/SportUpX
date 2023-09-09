@@ -83,7 +83,9 @@
         <activity
             android:name=".activity.VerifyOTPActivity"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".activity.CommentaryActivity"
+            android:screenOrientation="portrait" />
         <receiver
             android:name=".utils.IncomingSms"
             android:exported="true">
