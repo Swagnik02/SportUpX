@@ -46,7 +46,6 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     APIRequestManager apiRequestManager;
     SessionManager sessionManager;
     AdapterCommentaryList adapterCommentaryList;
-    private RecyclerView commentaryListRecyclerView;
     AcitivtyCommentaryBinding binding;
     String match_id = "";
 
@@ -130,10 +129,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
     @Override
     public void getResult(Context mContext, String type, String message, JSONObject result) {
-//        binding.tvNoDataAvailable.setVisibility(View.GONE);
-//        binding.RVNotification.setVisibility(View.VISIBLE);
-//        binding.swipeRefreshLayout.setRefreshing(false);
-//
+
         try {
 
             JSONArray data = result.getJSONArray("data");
