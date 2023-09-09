@@ -146,17 +146,17 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                 String runs = item.getString("Runs");
                 String intRuns = runs;
 
-                if (runs == "FOUR") {
+                if (runs .equals("FOUR")) {
                     intRuns = "4";
-                } else if (runs == "SIX") {
+                } else if (runs .equals("SIX")) {
                     intRuns = "6";
-                } else if (runs == "No Run") {
+                } else if (runs .equals("No Run")) {
                     intRuns = "0";
-                } else if (runs == "1 Run") {
+                } else if (runs .equals("1 Run")) {
                     intRuns = "1";
-                } else if (runs == "2 Runs") {
+                } else if (runs .equals("2 Runs")) {
                     intRuns = "2";
-                } else if (runs == "Wicket") {
+                } else if (runs .equals("Wicket")) {
                     intRuns = "W";
                 }
                 String commentary = bowler + " to" + batsman + ", " + runs + "!";
@@ -227,13 +227,13 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             final String runs = mListenerList.get(position).getRuns(); // Assuming you have a method getRuns()
             final String commentary = mListenerList.get(position).getCommentary(); // Assuming you have a method getCommentary()
 
-            if (runs == "4" || runs == "6") {
+            if (runs .equals("4") || runs .equals("6")) {
                 holder.tvRuns.setBackgroundResource(R.drawable.circle_score_4_6);
 
-            } else if (runs == "0" || runs == "1" || runs == "2") {
+            } else if (runs .equals("0") || runs .equals("1") || runs .equals("2")) {
                 holder.tvRuns.setBackgroundResource(R.drawable.circle_score_0_1_2);
 
-            } else if (runs == "W") {
+            } else if (runs .equals("W")) {
                 holder.tvRuns.setBackgroundResource(R.drawable.circle_score_w);
             }
 
