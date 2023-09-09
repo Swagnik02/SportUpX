@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -49,6 +50,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     AdapterCommentaryList adapterCommentaryList;
     AcitivtyCommentaryBinding binding;
     String match_id = "";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,140 +100,140 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             String dummyJson = "{\n" +
                     "  \"data\": [\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"1.1\",\n" +
                     "      \"Batsman\": \"Player A\",\n" +
                     "      \"Bowler\": \"Player X\",\n" +
                     "      \"Runs\": \"FOUR\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"1.2\",\n" +
                     "      \"Batsman\": \"Player A\",\n" +
                     "      \"Bowler\": \"Player X\",\n" +
                     "      \"Runs\": \"1 Run\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"1.3\",\n" +
                     "      \"Batsman\": \"Player A\",\n" +
                     "      \"Bowler\": \"Player X\",\n" +
                     "      \"Runs\": \"No Run\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"1.4\",\n" +
                     "      \"Batsman\": \"Player A\",\n" +
                     "      \"Bowler\": \"Player X\",\n" +
                     "      \"Runs\": \"2 Runs\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"1.5\",\n" +
                     "      \"Batsman\": \"Player A\",\n" +
                     "      \"Bowler\": \"Player X\",\n" +
                     "      \"Runs\": \"Wicket\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"1.6\",\n" +
                     "      \"Batsman\": \"Player B\",\n" +
                     "      \"Bowler\": \"Player Y\",\n" +
                     "      \"Runs\": \"SIX\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"2.1\",\n" +
                     "      \"Batsman\": \"Player B\",\n" +
                     "      \"Bowler\": \"Player Y\",\n" +
                     "      \"Runs\": \"1 Run\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"2\",\n" +
                     "      \"Over\": \"2.2\",\n" +
                     "      \"Batsman\": \"Player B\",\n" +
                     "      \"Bowler\": \"Player Y\",\n" +
                     "      \"Runs\": \"0\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"2\",\n" +
                     "      \"Over\": \"2.3\",\n" +
                     "      \"Batsman\": \"Player B\",\n" +
                     "      \"Bowler\": \"Player Y\",\n" +
                     "      \"Runs\": \"4\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"2\",\n" +
                     "      \"Over\": \"2.4\",\n" +
                     "      \"Batsman\": \"Player B\",\n" +
                     "      \"Bowler\": \"Player Y\",\n" +
                     "      \"Runs\": \"Wicket\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"2\",\n" +
                     "      \"Over\": \"2.5\",\n" +
                     "      \"Batsman\": \"Player C\",\n" +
                     "      \"Bowler\": \"Player Z\",\n" +
                     "      \"Runs\": \"SIX\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"2\",\n" +
                     "      \"Over\": \"2.6\",\n" +
                     "      \"Batsman\": \"Player C\",\n" +
                     "      \"Bowler\": \"Player Z\",\n" +
                     "      \"Runs\": \"1 Run\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"3.1\",\n" +
                     "      \"Batsman\": \"Player C\",\n" +
                     "      \"Bowler\": \"Player Z\",\n" +
                     "      \"Runs\": \"4\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"3.2\",\n" +
                     "      \"Batsman\": \"Player C\",\n" +
                     "      \"Bowler\": \"Player Z\",\n" +
                     "      \"Runs\": \"1 Run\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"3.3\",\n" +
                     "      \"Batsman\": \"Player C\",\n" +
                     "      \"Bowler\": \"Player Z\",\n" +
                     "      \"Runs\": \"2 Runs\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"3.4\",\n" +
                     "      \"Batsman\": \"Player C\",\n" +
                     "      \"Bowler\": \"Player Z\",\n" +
                     "      \"Runs\": \"SIX\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"3.5\",\n" +
                     "      \"Batsman\": \"Player D\",\n" +
                     "      \"Bowler\": \"Player A\",\n" +
                     "      \"Runs\": \"1 Run\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"1\",\n" +
                     "      \"Over\": \"3.6\",\n" +
                     "      \"Batsman\": \"Player D\",\n" +
                     "      \"Bowler\": \"Player A\",\n" +
                     "      \"Runs\": \"4\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"2\",\n" +
                     "      \"Over\": \"4.1\",\n" +
                     "      \"Batsman\": \"Player D\",\n" +
                     "      \"Bowler\": \"Player A\",\n" +
                     "      \"Runs\": \"0\"\n" +
                     "    },\n" +
                     "    {\n" +
-                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Inning\": \"2\",\n" +
                     "      \"Over\": \"4.2\",\n" +
                     "      \"Batsman\": \"Player D\",\n" +
                     "      \"Bowler\": \"Player A\",\n" +
@@ -289,17 +291,17 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                 String runs = item.getString("Runs");
                 String intRuns = runs;
 
-                if (runs .equals("FOUR")) {
+                if (runs.equals("FOUR")) {
                     intRuns = "4";
-                } else if (runs .equals("SIX")) {
+                } else if (runs.equals("SIX")) {
                     intRuns = "6";
-                } else if (runs .equals("No Run")) {
+                } else if (runs.equals("No Run")) {
                     intRuns = "0";
-                } else if (runs .equals("1 Run")) {
+                } else if (runs.equals("1 Run")) {
                     intRuns = "1";
-                } else if (runs .equals("2 Runs")) {
+                } else if (runs.equals("2 Runs")) {
                     intRuns = "2";
-                } else if (runs .equals("Wicket")) {
+                } else if (runs.equals("Wicket")) {
                     intRuns = "W";
                 }
                 String commentary = bowler + " to" + batsman + ", " + runs + "!";
@@ -328,6 +330,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     public class AdapterCommentaryList extends RecyclerView.Adapter<AdapterCommentaryList.MyViewHolder> {
         private final List<BeanCommentary> mListenerList;
         Context mContext;
+        int currentInning = 1;
 
         public AdapterCommentaryList(Context context, List<BeanCommentary> mListenerList) {
             mContext = context;
@@ -335,7 +338,8 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         }
 
         public class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView tvOvers, tvRuns, tvCommentary;
+            TextView tvOvers, tvRuns, tvCommentary, tvInning;
+            CardView comHead;
 
             public MyViewHolder(View view) {
                 super(view);
@@ -343,6 +347,8 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                 tvOvers = view.findViewById(R.id.im_overs);
                 tvRuns = view.findViewById(R.id.im_runs);
                 tvCommentary = view.findViewById(R.id.im_com_resp);
+                tvInning = view.findViewById(R.id.im_inning);
+                comHead=view.findViewById(R.id.im_com_head);
             }
         }
 
@@ -364,15 +370,32 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             final String overs = mListenerList.get(position).getOver(); // Assuming you have a method getOvers()
             final String runs = mListenerList.get(position).getRuns(); // Assuming you have a method getRuns()
             final String commentary = mListenerList.get(position).getCommentary(); // Assuming you have a method getCommentary()
+            final String inning = mListenerList.get(position).getInning();
 
-            if (runs .equals("4") || runs .equals("6")) {
+            if (runs.equals("4") || runs.equals("6")) {
                 holder.tvRuns.setBackgroundResource(R.drawable.circle_score_4_6);
 
-            } else if (runs .equals("0") || runs .equals("1") || runs .equals("2")) {
+            } else if (runs.equals("0") || runs.equals("1") || runs.equals("2")) {
                 holder.tvRuns.setBackgroundResource(R.drawable.circle_score_0_1_2);
 
-            } else if (runs .equals("W")) {
+            } else if (runs.equals("W")) {
                 holder.tvRuns.setBackgroundResource(R.drawable.circle_score_w);
+            }
+
+            if (currentInning == Integer.valueOf(inning) && currentInning == 1){
+                holder.tvInning.setText(inning+ "st Innings");
+                currentInning = 2;
+//                System.out.println("IF 1");
+
+            } else if (currentInning == Integer.valueOf(inning) && currentInning == 2) {
+                holder.tvInning.setText(inning + "nd Innings");
+                currentInning = 1;
+//                System.out.println("IF 2");
+
+            } else {
+                holder.tvInning.setVisibility(View.GONE);
+                holder.comHead.setVisibility(View.GONE);
+//                System.out.println("IF 3");
             }
 
             holder.tvOvers.setText(overs);
