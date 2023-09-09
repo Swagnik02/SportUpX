@@ -35,10 +35,10 @@
                 android:id="@+id/im_runs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/circle_score_4_6"
                 android:gravity="center"
                 android:text="6"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:background="@drawable/circle_score_4_6"/>
         </LinearLayout>
 
         <TextView
