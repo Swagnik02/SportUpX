@@ -70,16 +70,19 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         @Override
         public void run() {
         binding.swipeRefreshLayout.setRefreshing(true);
-        callAdapterCommentaryList(false);
+//        callAdapterCommentaryList(false);
+            simulateApiResponse();
         }
             }
         );
 
-        callAdapterCommentaryList(false);
+        simulateApiResponse();
+//        callAdapterCommentaryList(false);
         binding.swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                callAdapterCommentaryList(false);
+                simulateApiResponse();
+//                callAdapterCommentaryList(false);
                 ShowToast(context, "Refreshed");
             }
         });
@@ -102,6 +105,163 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             }
         });
 
+    }
+
+    private void simulateApiResponse() {
+        ShowToast(context, "simulateApiCalled");
+
+        try {
+            String dummyJson = "{\n" +
+                    "  \"data\": [\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"1.1\",\n" +
+                    "      \"Batsman\": \"Player A\",\n" +
+                    "      \"Bowler\": \"Player X\",\n" +
+                    "      \"Runs\": \"FOUR\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"1.2\",\n" +
+                    "      \"Batsman\": \"Player A\",\n" +
+                    "      \"Bowler\": \"Player X\",\n" +
+                    "      \"Runs\": \"1 Run\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"1.3\",\n" +
+                    "      \"Batsman\": \"Player A\",\n" +
+                    "      \"Bowler\": \"Player X\",\n" +
+                    "      \"Runs\": \"No Run\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"1.4\",\n" +
+                    "      \"Batsman\": \"Player A\",\n" +
+                    "      \"Bowler\": \"Player X\",\n" +
+                    "      \"Runs\": \"2 Runs\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"1.5\",\n" +
+                    "      \"Batsman\": \"Player A\",\n" +
+                    "      \"Bowler\": \"Player X\",\n" +
+                    "      \"Runs\": \"Wicket\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"1.6\",\n" +
+                    "      \"Batsman\": \"Player B\",\n" +
+                    "      \"Bowler\": \"Player Y\",\n" +
+                    "      \"Runs\": \"SIX\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"2.1\",\n" +
+                    "      \"Batsman\": \"Player B\",\n" +
+                    "      \"Bowler\": \"Player Y\",\n" +
+                    "      \"Runs\": \"1 Run\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"2.2\",\n" +
+                    "      \"Batsman\": \"Player B\",\n" +
+                    "      \"Bowler\": \"Player Y\",\n" +
+                    "      \"Runs\": \"0\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"2.3\",\n" +
+                    "      \"Batsman\": \"Player B\",\n" +
+                    "      \"Bowler\": \"Player Y\",\n" +
+                    "      \"Runs\": \"4\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"2.4\",\n" +
+                    "      \"Batsman\": \"Player B\",\n" +
+                    "      \"Bowler\": \"Player Y\",\n" +
+                    "      \"Runs\": \"Wicket\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"2.5\",\n" +
+                    "      \"Batsman\": \"Player C\",\n" +
+                    "      \"Bowler\": \"Player Z\",\n" +
+                    "      \"Runs\": \"SIX\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"2.6\",\n" +
+                    "      \"Batsman\": \"Player C\",\n" +
+                    "      \"Bowler\": \"Player Z\",\n" +
+                    "      \"Runs\": \"1 Run\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"3.1\",\n" +
+                    "      \"Batsman\": \"Player C\",\n" +
+                    "      \"Bowler\": \"Player Z\",\n" +
+                    "      \"Runs\": \"4\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"3.2\",\n" +
+                    "      \"Batsman\": \"Player C\",\n" +
+                    "      \"Bowler\": \"Player Z\",\n" +
+                    "      \"Runs\": \"1 Run\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"3.3\",\n" +
+                    "      \"Batsman\": \"Player C\",\n" +
+                    "      \"Bowler\": \"Player Z\",\n" +
+                    "      \"Runs\": \"2 Runs\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"3.4\",\n" +
+                    "      \"Batsman\": \"Player C\",\n" +
+                    "      \"Bowler\": \"Player Z\",\n" +
+                    "      \"Runs\": \"SIX\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"3.5\",\n" +
+                    "      \"Batsman\": \"Player D\",\n" +
+                    "      \"Bowler\": \"Player A\",\n" +
+                    "      \"Runs\": \"1 Run\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"3.6\",\n" +
+                    "      \"Batsman\": \"Player D\",\n" +
+                    "      \"Bowler\": \"Player A\",\n" +
+                    "      \"Runs\": \"4\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"4.1\",\n" +
+                    "      \"Batsman\": \"Player D\",\n" +
+                    "      \"Bowler\": \"Player A\",\n" +
+                    "      \"Runs\": \"0\"\n" +
+                    "    },\n" +
+                    "    {\n" +
+                    "      \"Inning\": \"1st\",\n" +
+                    "      \"Over\": \"4.2\",\n" +
+                    "      \"Batsman\": \"Player D\",\n" +
+                    "      \"Bowler\": \"Player A\",\n" +
+                    "      \"Runs\": \"1 Run\"\n" +
+                    "    }\n" +
+                    "  ]\n" +
+                    "}\n";
+            JSONObject result = new JSONObject(dummyJson);
+
+            // Call your getResult method with the dummy data
+            getResult(context, LIVE_MATCH_COMMENTARY_TYPE, "Success", result);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     private void callAdapterCommentaryList(boolean isShowLoader) {
