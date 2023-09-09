@@ -46,24 +46,12 @@
                 android:src="@drawable/cross_icon"
                 app:tint="@color/colorPrimary" />
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/toolbar"
-                android:layout_alignParentBottom="true">
-
-                <!-- Your scoreboard content here -->
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:padding="10dp"
-                    tools:context="activity.FragmentScoreboard">
-
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         app:cardCornerRadius="16dp"
+                        android:layout_margin="5dp"
+                        android:layout_below="@+id/toolbar"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -76,9 +64,6 @@
                             android:layout_margin="@dimen/dimen_16dp"
                             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
                     </androidx.cardview.widget.CardView>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </ScrollView>
 
         </RelativeLayout>
 </layout>
