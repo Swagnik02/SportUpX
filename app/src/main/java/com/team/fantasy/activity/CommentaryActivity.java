@@ -66,14 +66,14 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
         binding.recyclerViewCommentary.setLayoutManager(new LinearLayoutManager(this));
 
-//        binding.swipeRefreshLayout.post(new Runnable() {
-//        @Override
-//        public void run() {
-//        binding.swipeRefreshLayout.setRefreshing(true);
-//        callAdapterCommentaryList(false);
-//                }
-//            }
-//        );
+        binding.swipeRefreshLayout.post(new Runnable() {
+        @Override
+        public void run() {
+        binding.swipeRefreshLayout.setRefreshing(true);
+        callAdapterCommentaryList(false);
+        }
+            }
+        );
 
         callAdapterCommentaryList(false);
         binding.swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -130,7 +130,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
     @Override
     public void getResult(Context mContext, String type, String message, JSONObject result) {
-
+        binding.swipeRefreshLayout.setRefreshing(false);
         try {
 
             JSONArray data = result.getJSONArray("data");
