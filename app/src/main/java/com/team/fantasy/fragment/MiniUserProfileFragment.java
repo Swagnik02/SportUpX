@@ -59,7 +59,6 @@ public class MiniUserProfileFragment extends BottomSheetDialogFragment {
         if (!TextUtils.isEmpty(imageUrl)) {
             Glide.with(context)
                     .load(imageUrl)
-                    .placeholder(R.drawable.user_icon1) // Placeholder image
                     .error(R.drawable.user_icon1) // Error image if the URL is invalid
                     .into(profileImageView);
         } else {
