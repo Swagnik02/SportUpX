@@ -1,46 +1,26 @@
 package com.team.fantasy.activity;
 
-import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
-import static com.team.fantasy.APICallingPackage.Config.ADDAMOUNT;
-import static com.team.fantasy.APICallingPackage.Constants.ADDAMOUNTTYPE;
-
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.paytm.pgsdk.PaytmOrder;
-import com.paytm.pgsdk.PaytmPGService;
-import com.paytm.pgsdk.PaytmPaymentTransactionCallback;
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
-import com.team.fantasy.APICallingPackage.Config;
-import com.team.fantasy.APICallingPackage.Constants;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.R;
-import com.team.fantasy.utils.CheckSumServiceHelper;
-import com.team.fantasy.utils.PaytmConstants;
 import com.team.fantasy.utils.SessionManager;
 
-import org.json.JSONException;
+import com.weipl.checkout.WLCheckoutActivity;
+
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Set;
-import java.util.TreeMap;
-
-
-//public class PaytmActivity extends AppCompatActivity implements PaytmPaymentTransactionCallback, ResponseManager {
-public class WorldLineActivity extends AppCompatActivity {
+public class WorldLineActivity extends AppCompatActivity implements WLCheckoutActivity.PaymentResponseListener {
     Button buttonBuy;
 
     private String orderID = "";
@@ -56,7 +36,6 @@ public class WorldLineActivity extends AppCompatActivity {
 
     ResponseManager responseManager;
     APIRequestManager apiRequestManager;
-    JSONObject PaytmResponse;
 
     String AfterPaymentOrderId, AfterPaymentTxId,AfterPaymentAmount,FinalMessage,AfterPaymentStatus;
 
@@ -100,10 +79,22 @@ public class WorldLineActivity extends AppCompatActivity {
             }
         });
 
+        // Set the payment response listener
+        WLCheckoutActivity.setPaymentResponseListener(this);
 
-        // Fetch Paytm credentials before generating the checksum and initializing payment
-//        fetchPaytmCredentials(false);
+        // Call the preloadData() method to preload SDK dependency files
+        WLCheckoutActivity.preloadData(context);
+
     }
 
+    @Override
+    public void wlCheckoutPaymentResponse(JSONObject response) {
+        // Handle a successful payment response here
+    }
+
+    @Override
+    public void wlCheckoutPaymentError(@NonNull JSONObject jsonObject) {
+
+    }
 }
 

@@ -72,5 +72,10 @@ dependencies {
     implementation 'com.github.GrenderG:Toasty:1.5.2'
     implementation 'com.hbb20:ccp:2.7.0'
 
+//    implementation "androidx.appcompat:appcompat:1.4.2"
+//    implementation "androidx.constraintlayout:constraintlayout:2.1.2"
+//    implementation "com.android.volley:volley:1.2.1"
+    implementation files("libs/weipl_checkout.aar")
+
 }
 apply plugin: 'com.google.gms.google-services'
