@@ -3,6 +3,7 @@ package com.team.fantasy.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -88,30 +89,30 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
             // Create JSON for features
             JSONObject jsonFeatures = new JSONObject();
-            jsonFeatures.put("enableExpressPay", true);
-            jsonFeatures.put("enableInstrumentDeRegistration", true);
-            jsonFeatures.put("enableAbortResponse", true);
-            jsonFeatures.put("enableMerTxnDetails", true);
+            jsonFeatures.put("enableExpressPay", WLConstants.ENABLE_EXPRESS_PAY);
+            jsonFeatures.put("enableInstrumentDeRegistration", WLConstants.ENABLE_INSTRUMENT_DEREGISTRATION);
+            jsonFeatures.put("enableAbortResponse", WLConstants.ENABLE_ABORT_RESPONSE);
+            jsonFeatures.put("enableMerTxnDetails", WLConstants.ENABLE_MER_TXN_DETAILS);
             reqJson.put("features", jsonFeatures);
 
             // Create JSON for consumer data
             JSONObject jsonConsumerData = new JSONObject();
-            jsonConsumerData.put("deviceId", "AndroidSH2");
-            jsonConsumerData.put("token", "0b125f92d967e06135a7179d2d0a3a12e246dc0ae2b00ff018ebabbe747a4b5e47b5eb7583ec29ca0bb668348e1e2cd065d60f323943b9130138efba0cf109a9");
-            jsonConsumerData.put("paymentMode", "all");
-            jsonConsumerData.put("merchantLogoUrl", "https://www.paynimo.com/CompanyDocs/company-logo-vertical.png");
-            jsonConsumerData.put("merchantId", "L3348");
-            jsonConsumerData.put("currency", "INR");
-            jsonConsumerData.put("consumerId", "c964634");
-            jsonConsumerData.put("consumerMobileNo", "9876543210");
-            jsonConsumerData.put("consumerEmailId", "test@test.com");
-            jsonConsumerData.put("txnId", "1667804027874");
+            jsonConsumerData.put("deviceId", WLConstants.DEVICE_ID);
+            jsonConsumerData.put("token", WLConstants.TOKEN);
+            jsonConsumerData.put("paymentMode", WLConstants.PAYMENT_MODE);
+            jsonConsumerData.put("merchantLogoUrl", WLConstants.MERCHANT_LOGO_URL);
+            jsonConsumerData.put("merchantId", WLConstants.MERCHANT_ID);
+            jsonConsumerData.put("currency", WLConstants.CURRENCY);
+            jsonConsumerData.put("consumerId", WLConstants.CONSUMER_ID);
+            jsonConsumerData.put("consumerMobileNo", WLConstants.CONSUMER_MOBILE_NO);
+            jsonConsumerData.put("consumerEmailId", WLConstants.CONSUMER_EMAIL_ID);
+            jsonConsumerData.put("txnId", WLConstants.TXN_ID);
 
             // Create JSON for items
             JSONArray jArrayItems = new JSONArray();
             JSONObject jsonItem1 = new JSONObject();
             jsonItem1.put("itemId", "first");
-            jsonItem1.put("amount", PayAmount);
+            jsonItem1.put("amount", PayAmount); // Use PayAmount from your activity
             jsonItem1.put("comAmt", "0");
             jArrayItems.put(jsonItem1);
             jsonConsumerData.put("items", jArrayItems);
@@ -137,12 +138,66 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
     @Override
     public void wlCheckoutPaymentResponse(JSONObject response) {
-        // Handle a successful payment response here
+
+            try {
+                String msg = response.optString("msg");
+                String[] msgParts = msg.split("\\|");
+
+                // Extract individual components from the response
+                String txnStatus = msgParts[0];
+                String txnMsg = msgParts[1];
+                String txnErrMsg = msgParts[2];
+                String clntTxnRef = msgParts[3];
+                String tpslBankCd = msgParts[4];
+                String tpslTxnId = msgParts[5];
+                String txnAmt = msgParts[6];
+                String clntRqstMeta = msgParts[7];
+                String tpslTxnTime = msgParts[8];
+                String balAmt = msgParts[9];
+                String cardId = msgParts[10];
+                String aliasName = msgParts[11];
+                String bankTransactionId = msgParts[12];
+                String mandateRegNo = msgParts[13];
+                String token = msgParts[14];
+                String hash = msgParts[15];
+
+            // Check the transaction status and take appropriate actions
+            if ("0300".equals(txnStatus)) {
+                // Payment was successful
+                // Update your UI and database accordingly
+            } else if ("0399".equals(txnStatus)) {
+                // Payment failed
+                // Display an error message to the user
+            } else if ("0398".equals(txnStatus)) {
+                // Payment initiated, waiting for confirmation
+                // Update your UI to indicate the payment is being processed
+            } else if ("0396".equals(txnStatus)) {
+                // Payment awaited, waiting for further action
+                // Update your UI to indicate the payment is being awaited
+            } else if ("0392".equals(txnStatus)) {
+                // Payment aborted
+                // Display a message to the user indicating the payment was aborted
+            } else {
+                // Handle other status codes as needed
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle any exceptions that may occur while processing the response
+        }
     }
 
     @Override
-    public void wlCheckoutPaymentError(@NonNull JSONObject jsonObject) {
+    public void wlCheckoutPaymentError(JSONObject response) {
+        try {
+            String errorCode = response.optString("error_code");
+            String errorDesc = response.optString("error_desc");
 
+            // Display the error code and description to the user
+            // You can also log this information for debugging
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle any exceptions that may occur while processing the error response
+        }
     }
 
     @Override
@@ -154,5 +209,25 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
     public void onError(Context mContext, String type, String message) {
 
     }
+    private class WLConstants {
+        public static final boolean ENABLE_EXPRESS_PAY = true;
+        public static final boolean ENABLE_INSTRUMENT_DEREGISTRATION = true;
+        public static final boolean ENABLE_ABORT_RESPONSE = true;
+        public static final boolean ENABLE_MER_TXN_DETAILS = true;
+
+        public static final String DEVICE_ID = "AndroidSH2";
+        public static final String TOKEN = "0b125f92d967e06135a7179d2d0a3a12e246dc0ae2b00ff018ebabbe747a4b5e47b5eb7583ec29ca0bb668348e1e2cd065d60f323943b9130138efba0cf109a9";
+        public static final String PAYMENT_MODE = "all";
+        public static final String MERCHANT_LOGO_URL = "https://www.paynimo.com/CompanyDocs/company-logo-vertical.png";
+        public static final String MERCHANT_ID = "L3348";
+        public static final String CURRENCY = "INR";
+        public static final String CONSUMER_ID = "c964634";
+        public static final String CONSUMER_MOBILE_NO = "9876543210";
+        public static final String CONSUMER_EMAIL_ID = "test@test.com";
+        public static final String TXN_ID = "1667804027874";
+
+        // Define other constants as needed
+    }
+
 }
 
