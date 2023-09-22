@@ -25,6 +25,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class WorldLineActivity extends AppCompatActivity implements WLCheckoutActivity.PaymentResponseListener,ResponseManager {
     Button buttonBuy;
 
@@ -89,13 +93,60 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 //        initializeWorldLinePayment();
 
     }
+//
+//    private String generateToken() {
+//        try {
+//            // Trim and concatenate all the required data fields with a pipe character "|"
+//            String dataToHash = String.format("%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|",
+//                    WLConstants.MERCHANT_ID.trim(),
+//                    WLConstants.TXN_ID.trim(),
+//                    PayAmount.trim(),
+//                    WLConstants.ACCOUNT_NO.trim(),
+//                    WLConstants.CONSUMER_ID.trim(),
+//                    WLConstants.CONSUMER_MOBILE_NO.trim(),
+//                    WLConstants.CONSUMER_EMAIL_ID.trim(),
+//                    WLConstants.DEBIT_START_DATE.trim(),
+//                    WLConstants.DEBIT_END_DATE.trim(),
+//                    WLConstants.MAX_AMOUNT.trim(),
+//                    WLConstants.AMOUNT_TYPE.trim(),
+//                    WLConstants.FREQUENCY.trim(),
+//                    WLConstants.CARD_NUMBER.trim(),
+//                    WLConstants.EXP_MONTH.trim(),
+//                    WLConstants.EXP_YEAR.trim(),
+//                    WLConstants.CVV_CODE.trim());
+//
+//            // Trim and append the salt provided by Worldline
+//            String salt = "YourSalt".trim(); // Replace with the actual salt provided by Worldline
+//            dataToHash += salt;
+//
+//            // Choose SHA-512 as the hashing algorithm
+//            String hashingAlgorithm = "SHA-512";
+//
+//            // Hash the data using the selected algorithm
+//            MessageDigest digest = MessageDigest.getInstance(hashingAlgorithm);
+//            byte[] encodedHash = digest.digest(dataToHash.getBytes(StandardCharsets.UTF_8));
+//
+//            // Convert the byte array to a hexadecimal string
+//            StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
+//            for (byte b : encodedHash) {
+//                String hex = String.format("%02x", b);
+//                hexString.append(hex);
+//            }
+//
+//            System.out.println(hexString.toString());
+//            return hexString.toString();
+//        } catch (NoSuchAlgorithmException e) {
+//            // Handle the NoSuchAlgorithmException appropriately
+//            e.printStackTrace();
+//            return null;
+//        }
+//    }
+
 
     private void initializeWorldLinePayment() {
         try {
-            // Create the JSON configuration for initialization
             JSONObject reqJson = new JSONObject();
 
-            // Create JSON for features
             JSONObject jsonFeatures = new JSONObject();
             jsonFeatures.put("enableExpressPay", WLConstants.ENABLE_EXPRESS_PAY);
             jsonFeatures.put("enableInstrumentDeRegistration", WLConstants.ENABLE_INSTRUMENT_DEREGISTRATION);
@@ -103,7 +154,6 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             jsonFeatures.put("enableMerTxnDetails", WLConstants.ENABLE_MER_TXN_DETAILS);
             reqJson.put("features", jsonFeatures);
 
-            // Create JSON for consumer data
             JSONObject jsonConsumerData = new JSONObject();
             jsonConsumerData.put("deviceId", WLConstants.DEVICE_ID);
             jsonConsumerData.put("token", WLConstants.TOKEN);
@@ -116,29 +166,14 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             jsonConsumerData.put("consumerEmailId", WLConstants.CONSUMER_EMAIL_ID);
             jsonConsumerData.put("txnId", WLConstants.TXN_ID);
 
-            // Add additional fields
-            jsonConsumerData.put("totalamount", WLConstants.TOTAL_AMOUNT);
-            jsonConsumerData.put("accountNo", WLConstants.ACCOUNT_NO);
-            jsonConsumerData.put("debitStartDate", WLConstants.DEBIT_START_DATE);
-            jsonConsumerData.put("debitEndDate", WLConstants.DEBIT_END_DATE);
-            jsonConsumerData.put("maxAmount", WLConstants.MAX_AMOUNT);
-            jsonConsumerData.put("amountType", WLConstants.AMOUNT_TYPE);
-            jsonConsumerData.put("frequency", WLConstants.FREQUENCY);
-            jsonConsumerData.put("cardNumber", WLConstants.CARD_NUMBER);
-            jsonConsumerData.put("expMonth", WLConstants.EXP_MONTH);
-            jsonConsumerData.put("expYear", WLConstants.EXP_YEAR);
-            jsonConsumerData.put("cvvCode", WLConstants.CVV_CODE);
-
-            // Create JSON for items
             JSONArray jArrayItems = new JSONArray();
             JSONObject jsonItem1 = new JSONObject();
             jsonItem1.put("itemId", "first");
-            jsonItem1.put("amount", PayAmount); // Use PayAmount from your activity
+            jsonItem1.put("amount", "10");
             jsonItem1.put("comAmt", "0");
             jArrayItems.put(jsonItem1);
             jsonConsumerData.put("items", jArrayItems);
 
-            // Create JSON for custom styles
             JSONObject jsonCustomStyle = new JSONObject();
             jsonCustomStyle.put("PRIMARY_COLOR_CODE", "#45beaa");
             jsonCustomStyle.put("SECONDARY_COLOR_CODE", "#ffffff");
@@ -148,8 +183,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
             reqJson.put("consumerData", jsonConsumerData);
 
-            // Initialize the checkout
-            WLCheckoutActivity.open(WorldLineActivity.this, reqJson);
+            WLCheckoutActivity.open(context, reqJson);
         } catch (JSONException e) {
             // Handle the JSON exception here, for example, by logging an error message
             e.printStackTrace();
