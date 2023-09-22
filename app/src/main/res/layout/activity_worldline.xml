@@ -22,33 +22,14 @@
             android:layout_gravity="center"
             android:padding="16dp">
 
-            <!-- Add your UI elements here -->
-            <TextView
-                android:id="@+id/wl_tx_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Transaction Details"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="16dp"/>
-
-            <!-- Add more UI elements as needed -->
-
             <Button
                 android:id="@+id/wl_buyButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Buy"
+                android:text="PROCEED"
                 android:padding="12dp"
                 android:textColor="#FFFFFF"
                 android:background="#45beaa"
-                android:textSize="16sp"
-                android:layout_marginTop="16dp"/>
-            <TextView
-                android:id="@+id/wl_tv_Proceed"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Proceed"
                 android:textSize="16sp"
                 android:layout_marginTop="16dp"/>
 

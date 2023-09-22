@@ -49,23 +49,13 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         sessionManager = new SessionManager();
 
 
-        tv_TxDetails = findViewById(R.id.wl_tx_details);
-        tv_Proceed = findViewById(R.id.wl_tv_Proceed);
-        tv_Proceed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(activity, MyAccountActivity.class);
-                startActivity(i);
-            }
-        });
-
-
 //        responseManager = this;
         apiRequestManager = new APIRequestManager(activity);
 
         im_back = findViewById(R.id.im_back);
         tv_HeaderName = findViewById(R.id.tv_HeaderName);
         tv_HeaderName.setText("PAYMENT OPTION");
+        buttonBuy = findViewById(R.id.wl_buyButton);
 
         im_back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,20 +64,11 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             }
         });
 
-
         PayAmount = getIntent().getStringExtra("FinalAmount");
         customerID = sessionManager.getUser(context).getUser_id();
         orderID = "OrderID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
-//        generateCheckSum();
+        // generateCheckSum();
 
-        tv_Proceed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(activity, MyAccountActivity.class);
-                startActivity(i);
-            }
-        });
-        buttonBuy = findViewById(R.id.wl_buyButton);
 
         // Call preloadData() method and set the listener
         WLCheckoutActivity.setPaymentResponseListener(this);
@@ -131,7 +112,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             JSONArray jArrayItems = new JSONArray();
             JSONObject jsonItem1 = new JSONObject();
             jsonItem1.put("itemId", "first");
-            jsonItem1.put("amount", "10");
+            jsonItem1.put("amount", PayAmount);
             jsonItem1.put("comAmt", "0");
             jArrayItems.put(jsonItem1);
             jsonConsumerData.put("items", jArrayItems);
