@@ -162,6 +162,7 @@
         <activity android:name=".activity.PaymentOptionActivity" />
         <activity android:name=".activity.MyAccountActivity" />
         <activity android:name=".activity.PaytmActivity" />
+        <activity android:name=".activity.WorldLineActivity" />
         <activity
             android:name="com.paytm.pgsdk.PaytmPGActivity"
             android:configChanges="keyboardHidden|orientation|keyboard"

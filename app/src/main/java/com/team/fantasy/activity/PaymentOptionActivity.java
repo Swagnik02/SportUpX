@@ -123,6 +123,19 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
 
             }
         });
+        binding.RLWorldLinePayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (IntentFinalAmount.equals("")) {
+                    ShowToast(context, "Please Select Correct Amount");
+                } else {
+                    Intent i = new Intent(activity, WorldLineActivity.class);
+                    i.putExtra("FinalAmount", IntentFinalAmount);
+                    startActivity(i);
+                }
+
+            }
+        });
     }
 
     public void initViews() {
