@@ -18,6 +18,8 @@ import com.team.fantasy.utils.SessionManager;
 
 import com.weipl.checkout.WLCheckoutActivity;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 public class WorldLineActivity extends AppCompatActivity implements WLCheckoutActivity.PaymentResponseListener {
@@ -47,7 +49,6 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         sessionManager = new SessionManager();
 
 
-
         tv_TxDetails = findViewById(R.id.tv_TxDetails);
         tv_Proceed = findViewById(R.id.tv_Proceed);
 
@@ -68,7 +69,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
         PayAmount = getIntent().getStringExtra("FinalAmount");
         customerID = sessionManager.getUser(context).getUser_id();
-        orderID = "OrderID" + System.currentTimeMillis()+"-"+customerID+"-"+PayAmount;
+        orderID = "OrderID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
 //        generateCheckSum();
 
         tv_Proceed.setOnClickListener(new View.OnClickListener() {
@@ -85,9 +86,64 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         // Call the preloadData() method to preload SDK dependency files
         WLCheckoutActivity.preloadData(context);
 
-    }
+        buttonBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    // Create the JSON configuration for initialization
+                    JSONObject reqJson = new JSONObject();
 
-    @Override
+                    // Create JSON for features
+                    JSONObject jsonFeatures = new JSONObject();
+                    jsonFeatures.put("enableExpressPay", true);
+                    jsonFeatures.put("enableInstrumentDeRegistration", true);
+                    jsonFeatures.put("enableAbortResponse", true);
+                    jsonFeatures.put("enableMerTxnDetails", true);
+                    reqJson.put("features", jsonFeatures);
+
+                    // Create JSON for consumer data
+                    JSONObject jsonConsumerData = new JSONObject();
+                    jsonConsumerData.put("deviceId", "AndroidSH2");
+                    jsonConsumerData.put("token", "0b125f92d967e06135a7179d2d0a3a12e246dc0ae2b00ff018ebabbe747a4b5e47b5eb7583ec29ca0bb668348e1e2cd065d60f323943b9130138efba0cf109a9");
+                    jsonConsumerData.put("paymentMode", "all");
+                    jsonConsumerData.put("merchantLogoUrl", "https://www.paynimo.com/CompanyDocs/company-logo-vertical.png");
+                    jsonConsumerData.put("merchantId", "L3348");
+                    jsonConsumerData.put("currency", "INR");
+                    jsonConsumerData.put("consumerId", "c964634");
+                    jsonConsumerData.put("consumerMobileNo", "9876543210");
+                    jsonConsumerData.put("consumerEmailId", "test@test.com");
+                    jsonConsumerData.put("txnId", "1667804027874");
+
+                    // Create JSON for items
+                    JSONArray jArrayItems = new JSONArray();
+                    JSONObject jsonItem1 = new JSONObject();
+                    jsonItem1.put("itemId", "first");
+                    jsonItem1.put("amount", "10");
+                    jsonItem1.put("comAmt", "0");
+                    jArrayItems.put(jsonItem1);
+                    jsonConsumerData.put("items", jArrayItems);
+
+                    // Create JSON for custom styles
+                    JSONObject jsonCustomStyle = new JSONObject();
+                    jsonCustomStyle.put("PRIMARY_COLOR_CODE", "#45beaa");
+                    jsonCustomStyle.put("SECONDARY_COLOR_CODE", "#ffffff");
+                    jsonCustomStyle.put("BUTTON_COLOR_CODE_1", "#2d8c8c");
+                    jsonCustomStyle.put("BUTTON_COLOR_CODE_2", "#ffffff");
+                    jsonConsumerData.put("customStyle", jsonCustomStyle);
+
+                    reqJson.put("consumerData", jsonConsumerData);
+
+                    // Initialize the checkout
+                    WLCheckoutActivity.open(WorldLineActivity.this, reqJson);
+                } catch (JSONException e) {
+                    // Handle the JSON exception here, for example, by logging an error message
+                    e.printStackTrace();
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+    }
+        @Override
     public void wlCheckoutPaymentResponse(JSONObject response) {
         // Handle a successful payment response here
     }
