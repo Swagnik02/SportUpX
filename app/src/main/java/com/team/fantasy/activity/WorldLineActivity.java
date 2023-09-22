@@ -22,7 +22,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class WorldLineActivity extends AppCompatActivity implements WLCheckoutActivity.PaymentResponseListener {
+public class WorldLineActivity extends AppCompatActivity implements WLCheckoutActivity.PaymentResponseListener,ResponseManager {
     Button buttonBuy;
 
     private String orderID = "";
@@ -45,11 +45,10 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_worldline);
+
         context = activity = this;
         sessionManager = new SessionManager();
-
-
-//        responseManager = this;
+        responseManager = this;
         apiRequestManager = new APIRequestManager(activity);
 
         im_back = findViewById(R.id.im_back);
@@ -143,6 +142,16 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
     @Override
     public void wlCheckoutPaymentError(@NonNull JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void getResult(Context mContext, String type, String message, JSONObject result) {
+
+    }
+
+    @Override
+    public void onError(Context mContext, String type, String message) {
 
     }
 }
