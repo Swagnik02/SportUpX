@@ -55,16 +55,16 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
 
         binding.tvPaymentFinalAmount.setText("₹ " + IntentFinalAmount);
 
-
-        JSONObject paymentData = new JSONObject();
-                try {
-                    paymentData.put("user_id", sessionManager.getUser(context).getUser_id());
-                    paymentData.put("amount", IntentFinalAmount);
-                } catch (JSONException e) {
-                    throw new RuntimeException(e);
-                }
-
-                callSendPaymentDataApi(paymentData);
+//
+//        JSONObject paymentData = new JSONObject();
+//                try {
+//                    paymentData.put("user_id", sessionManager.getUser(context).getUser_id());
+//                    paymentData.put("amount", IntentFinalAmount);
+//                } catch (JSONException e) {
+//                    throw new RuntimeException(e);
+//                }
+//
+//                callSendPaymentDataApi(paymentData);
 
         binding.RLPaytmPayment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,26 +125,18 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
             @Override
             public void onClick(View view) {
 
-//                JSONObject paymentData = new JSONObject();
-//                try {
-//                    paymentData.put("user_id", sessionManager.getUser(context).getUser_id());
-//                    paymentData.put("amount", IntentFinalAmount);
-//                } catch (JSONException e) {
-//                    throw new RuntimeException(e);
-//                }
-//
-//                callSendPaymentDataApi(paymentData);
+                JSONObject paymentData = new JSONObject();
+                try {
+                    paymentData.put("user_id", sessionManager.getUser(context).getUser_id());
+                    paymentData.put("amount", IntentFinalAmount);
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
 
                 if (IntentFinalAmount.equals("")) {
                     ShowToast(context, "Please Select Correct Amount");
                 } else {
-                    Intent i = new Intent(activity, PaymentWebviewAcitivity.class);
-                    i.putExtra("Heading","PhonePe");
-                    i.putExtra("URL", paymentResponseUrl);
-                    i.putExtra("SuccessURL", "https://sportupx.com/paymentsuccess");
-                    i.putExtra("headerColor", R.color.colorPhonePe);
-                    i.putExtra("headerTextColor", R.color.white);
-                    startActivity(i);
+                    callSendPaymentDataApi(paymentData);
                 }
 
             }
@@ -163,6 +155,7 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
             }
         });
     }
+
     private void callSendPaymentDataApi(JSONObject paymentData) {
         try {
             apiRequestManager.callAPI(SEND_PAYMENT_DATA_PHONEPE,
@@ -177,12 +170,14 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
                                 if (url != null && !url.isEmpty()) {
                                     paymentResponseUrl = url;
 
-                                    System.out.println("URL" + paymentResponseUrl);
-//                                    Intent i = new Intent(activity, PaymentOptionActivity.class);
-//                                    i.putExtra("FinalUrl", paymentResponseUrl);
-//                                    i.putExtra("FinalAmount", IntentFinalAmount);
-//
-//                                    startActivity(i);
+                                    Intent i = new Intent(activity, PaymentWebviewAcitivity.class);
+                                    i.putExtra("Heading", "PhonePe");
+                                    i.putExtra("URL", paymentResponseUrl);
+                                    i.putExtra("SuccessURL", "https://sportupx.com/paymentsuccess");
+                                    i.putExtra("headerColor", R.color.colorPhonePe);
+                                    i.putExtra("headerTextColor", R.color.white);
+                                    startActivity(i);
+
                                 } else {
                                     System.out.println("Empty or missing 'url' key in response");
                                 }
@@ -224,7 +219,6 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
 
 
     }
-
 
 
     @Override
