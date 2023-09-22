@@ -15,8 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.R;
+import com.team.fantasy.utils.PaytmConstants;
 import com.team.fantasy.utils.SessionManager;
 
+import com.team.fantasy.utils.WLConstants;
 import com.weipl.checkout.WLCheckoutActivity;
 
 import org.json.JSONArray;
@@ -67,7 +69,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         PayAmount = getIntent().getStringExtra("FinalAmount");
         customerID = sessionManager.getUser(context).getUser_id();
         orderID = "OrderID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
-        // generateCheckSum();
+        generateCheckSum();
 
 
         // Call preloadData() method and set the listener
@@ -80,6 +82,12 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
                 initializeWorldLinePayment();
             }
         });
+    }
+
+    private void generateCheckSum() {
+        String checkSum = "";
+//        initializeWorldLinePayment();
+
     }
 
     private void initializeWorldLinePayment() {
@@ -209,25 +217,5 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
     public void onError(Context mContext, String type, String message) {
 
     }
-    private class WLConstants {
-        public static final boolean ENABLE_EXPRESS_PAY = true;
-        public static final boolean ENABLE_INSTRUMENT_DEREGISTRATION = true;
-        public static final boolean ENABLE_ABORT_RESPONSE = true;
-        public static final boolean ENABLE_MER_TXN_DETAILS = true;
-
-        public static final String DEVICE_ID = "AndroidSH2";
-        public static final String TOKEN = "0b125f92d967e06135a7179d2d0a3a12e246dc0ae2b00ff018ebabbe747a4b5e47b5eb7583ec29ca0bb668348e1e2cd065d60f323943b9130138efba0cf109a9";
-        public static final String PAYMENT_MODE = "all";
-        public static final String MERCHANT_LOGO_URL = "https://www.paynimo.com/CompanyDocs/company-logo-vertical.png";
-        public static final String MERCHANT_ID = "L3348";
-        public static final String CURRENCY = "INR";
-        public static final String CONSUMER_ID = "c964634";
-        public static final String CONSUMER_MOBILE_NO = "9876543210";
-        public static final String CONSUMER_EMAIL_ID = "test@test.com";
-        public static final String TXN_ID = "1667804027874";
-
-        // Define other constants as needed
-    }
-
 }
 
