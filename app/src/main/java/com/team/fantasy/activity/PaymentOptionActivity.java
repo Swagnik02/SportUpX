@@ -28,7 +28,6 @@ import java.sql.SQLOutput;
 
 
 public class PaymentOptionActivity extends AppCompatActivity implements ResponseManager {
-    private String IntentPaymentUrl;
     PaymentOptionActivity activity;
     Context context;
     ResponseManager responseManager;
@@ -36,8 +35,7 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
     SessionManager sessionManager;
     String IntentFinalAmount;
     ActivityPaymentOptionBinding binding;
-    String paymentResponseUrl;
-    JSONObject paymentData;
+    String IntentPaymentUrl, paymentResponseUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,21 +48,9 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
         apiRequestManager = new APIRequestManager(activity);
 
         IntentPaymentUrl = getIntent().getStringExtra("FinalUrl");
-//        System.out.println("Final Url: "+ IntentPaymentUrl);
         IntentFinalAmount = getIntent().getStringExtra("FinalAmount");
 
         binding.tvPaymentFinalAmount.setText("₹ " + IntentFinalAmount);
-
-//
-//        JSONObject paymentData = new JSONObject();
-//                try {
-//                    paymentData.put("user_id", sessionManager.getUser(context).getUser_id());
-//                    paymentData.put("amount", IntentFinalAmount);
-//                } catch (JSONException e) {
-//                    throw new RuntimeException(e);
-//                }
-//
-//                callSendPaymentDataApi(paymentData);
 
         binding.RLPaytmPayment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,7 +122,7 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
                 if (IntentFinalAmount.equals("")) {
                     ShowToast(context, "Please Select Correct Amount");
                 } else {
-                    callSendPaymentDataApi(paymentData);
+                    fetchPhonePeUrl(paymentData);
                 }
 
             }
@@ -156,7 +142,33 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
         });
     }
 
-    private void callSendPaymentDataApi(JSONObject paymentData) {
+    public void initViews() {
+        binding.head.tvHeaderName.setText(getResources().getString(R.string.pymnt_opt));
+        binding.head.imBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
+
+    }
+
+
+    @Override
+    public void getResult(Context mContext, String type, String message, JSONObject result) {
+
+    }
+
+
+    @Override
+    public void onError(Context mContext, String type, String message) {
+
+    }
+
+
+    // PhonePe URL FETCH
+    private void fetchPhonePeUrl(JSONObject paymentData) {
         try {
             apiRequestManager.callAPI(SEND_PAYMENT_DATA_PHONEPE,
                     createSendPaymentDataJson(paymentData), context, activity,
@@ -206,30 +218,6 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
             e.printStackTrace();
         }
         return jsonObject;
-    }
-
-    public void initViews() {
-        binding.head.tvHeaderName.setText(getResources().getString(R.string.pymnt_opt));
-        binding.head.imBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
-
-
-    }
-
-
-    @Override
-    public void getResult(Context mContext, String type, String message, JSONObject result) {
-
-    }
-
-
-    @Override
-    public void onError(Context mContext, String type, String message) {
-
     }
 
 }
