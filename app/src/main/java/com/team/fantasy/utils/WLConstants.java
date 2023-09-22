@@ -17,5 +17,18 @@ public class WLConstants {
     public static final String CONSUMER_EMAIL_ID = "test@test.com";
     public static final String TXN_ID = "1667804027874";
 
+    // Additional constants
+    public static final String TOTAL_AMOUNT = "YourTotalAmount";
+    public static final String ACCOUNT_NO = "YourAccountNumber";
+    public static final String DEBIT_START_DATE = "YourDebitStartDate";
+    public static final String DEBIT_END_DATE = "YourDebitEndDate";
+    public static final String MAX_AMOUNT = "YourMaxAmount";
+    public static final String AMOUNT_TYPE = "YourAmountType";
+    public static final String FREQUENCY = "YourFrequency";
+    public static final String CARD_NUMBER = "YourCardNumber";
+    public static final String EXP_MONTH = "YourExpiryMonth";
+    public static final String EXP_YEAR = "YourExpiryYear";
+    public static final String CVV_CODE = "YourCVVCode";
+
     // Define other constants as needed
 }

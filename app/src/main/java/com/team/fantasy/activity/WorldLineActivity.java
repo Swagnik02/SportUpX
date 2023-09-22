@@ -116,6 +116,19 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             jsonConsumerData.put("consumerEmailId", WLConstants.CONSUMER_EMAIL_ID);
             jsonConsumerData.put("txnId", WLConstants.TXN_ID);
 
+            // Add additional fields
+            jsonConsumerData.put("totalamount", WLConstants.TOTAL_AMOUNT);
+            jsonConsumerData.put("accountNo", WLConstants.ACCOUNT_NO);
+            jsonConsumerData.put("debitStartDate", WLConstants.DEBIT_START_DATE);
+            jsonConsumerData.put("debitEndDate", WLConstants.DEBIT_END_DATE);
+            jsonConsumerData.put("maxAmount", WLConstants.MAX_AMOUNT);
+            jsonConsumerData.put("amountType", WLConstants.AMOUNT_TYPE);
+            jsonConsumerData.put("frequency", WLConstants.FREQUENCY);
+            jsonConsumerData.put("cardNumber", WLConstants.CARD_NUMBER);
+            jsonConsumerData.put("expMonth", WLConstants.EXP_MONTH);
+            jsonConsumerData.put("expYear", WLConstants.EXP_YEAR);
+            jsonConsumerData.put("cvvCode", WLConstants.CVV_CODE);
+
             // Create JSON for items
             JSONArray jArrayItems = new JSONArray();
             JSONObject jsonItem1 = new JSONObject();
