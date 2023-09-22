@@ -124,12 +124,13 @@ public class AddCashActivity extends AppCompatActivity implements ResponseManage
                     }
 
                     // Call the method to send payment data to the server
-                    callSendPaymentDataApi(paymentData);
+//                    callSendPaymentDataApi(paymentData);
 
 //                    // Start the PaymentOptionActivity with the provided amount
-//                    Intent i = new Intent(activity, PaymentOptionActivity.class);
-//                    i.putExtra("FinalAmount", FinalAmountToAdd);
-//                    startActivity(i);
+                    Intent i = new Intent(activity, PaymentOptionActivity.class);
+                    i.putExtra("FinalAmount", FinalAmountToAdd);
+
+                    startActivity(i);
                 }
             }
         });
