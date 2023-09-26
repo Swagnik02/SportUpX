@@ -50,7 +50,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     AdapterCommentaryList adapterCommentaryList;
     AcitivtyCommentaryBinding binding;
     String match_id = "";
-
+    Boolean IsInning1HeaderPrinted, IsInning2HeaderPrinted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,8 +64,9 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         sessionManager = new SessionManager();
 
         match_id = getIntent().getStringExtra("Match_ID");
-
-        ShowToast(context,match_id);
+        IsInning1HeaderPrinted = false;
+        IsInning2HeaderPrinted = false;
+        ShowToast(context, match_id);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
 
@@ -80,6 +81,8 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 //                simulateApiResponse();
                 callAdapterCommentaryList(false);
                 ShowToast(context, "Refreshed");
+                IsInning1HeaderPrinted = false;
+                IsInning2HeaderPrinted = false;
             }
         });
 
@@ -304,7 +307,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                     intRuns = "2";
                 } else if (runs.equals("Wicket")) {
                     intRuns = "W";
-                } else{
+                } else {
 
                 }
                 String commentary = bowler + " to " + batsman + ", " + runs + "!";
@@ -351,7 +354,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                 tvRuns = view.findViewById(R.id.im_runs);
                 tvCommentary = view.findViewById(R.id.im_com_resp);
                 tvInning = view.findViewById(R.id.im_inning);
-                comHead=view.findViewById(R.id.im_com_head);
+                comHead = view.findViewById(R.id.im_com_head);
             }
         }
 
@@ -375,7 +378,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             final String commentary = mListenerList.get(position).getCommentary(); // Assuming you have a method getCommentary()
             final String inning = mListenerList.get(position).getInning();
 
-            System.out.println(inning);
+//            System.out.println(inning);
 
             if (runs.equals("4") || runs.equals("6")) {
                 holder.tvRuns.setBackgroundResource(R.drawable.circle_score_4_6);
@@ -387,21 +390,34 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                 holder.tvRuns.setBackgroundResource(R.drawable.circle_score_w);
             }
 
-            if (currentInning == Integer.valueOf(inning) && currentInning == 1){
-                holder.tvInning.setText(inning+ "st Innings");
-                currentInning = 2;
-//                System.out.println("IF 1");
+
+            if (currentInning == Integer.valueOf(inning) && currentInning == 1) {
+                if (!IsInning1HeaderPrinted) {
+
+                    holder.tvInning.setVisibility(View.VISIBLE);
+                    holder.comHead.setVisibility(View.VISIBLE);
+                    holder.tvInning.setText(inning + "st Innings");
+                    currentInning = 2;
+                    IsInning1HeaderPrinted = true;
+                    System.out.println("IF 1");
+                }
 
             } else if (currentInning == Integer.valueOf(inning) && currentInning == 2) {
-                holder.tvInning.setText(inning + "nd Innings");
-                currentInning = 1;
-//                System.out.println("IF 2");
+                if (!IsInning2HeaderPrinted) {
 
-            } else {
-                holder.tvInning.setVisibility(View.GONE);
-                holder.comHead.setVisibility(View.GONE);
-//                System.out.println("IF 3");
+                    holder.tvInning.setVisibility(View.VISIBLE);
+                    holder.comHead.setVisibility(View.VISIBLE);
+                    holder.tvInning.setText(inning + "nd Innings");
+                    currentInning = 1;
+                    IsInning2HeaderPrinted = true;
+                    System.out.println("IF 2");
+                }
             }
+//            else {
+//                holder.tvInning.setVisibility(View.GONE);
+//                holder.comHead.setVisibility(View.GONE);
+////                System.out.println("IF 3");
+//            }
 
             holder.tvOvers.setText(overs);
             holder.tvRuns.setText(runs);
