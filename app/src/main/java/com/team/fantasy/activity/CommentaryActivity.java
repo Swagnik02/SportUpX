@@ -78,8 +78,8 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             @Override
             public void onClick(View v) {
 //                simulateApiResponse();
-//                callAdapterCommentaryList(false);
-//                ShowToast(context, "Refreshed");
+                callAdapterCommentaryList(false);
+                ShowToast(context, "Refreshed");
             }
         });
 
@@ -333,7 +333,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     public class AdapterCommentaryList extends RecyclerView.Adapter<AdapterCommentaryList.MyViewHolder> {
         private final List<BeanCommentary> mListenerList;
         Context mContext;
-        int currentInning = 1;
+        int currentInning = 2;
 
         public AdapterCommentaryList(Context context, List<BeanCommentary> mListenerList) {
             mContext = context;
