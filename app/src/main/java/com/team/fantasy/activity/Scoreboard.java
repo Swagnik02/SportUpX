@@ -71,12 +71,20 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         closeButton.setOnClickListener(v -> finish());
 
         ImageView commentary = findViewById(R.id.im_commentary);
-        closeButton.setOnClickListener(new View.OnClickListener() {
+
+        commentary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(activity, CommentaryActivity.class);
+                Intent i = new Intent(Scoreboard.this, CommentaryActivity.class);
                 i.putExtra("Match_ID",match_id);
                 startActivity(i);
+            }
+        });
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
 

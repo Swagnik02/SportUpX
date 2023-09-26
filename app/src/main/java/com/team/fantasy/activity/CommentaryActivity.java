@@ -64,6 +64,9 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         sessionManager = new SessionManager();
 
         match_id = getIntent().getStringExtra("Match_ID");
+
+        ShowToast(context,match_id);
+
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
 
         binding.recyclerViewCommentary.setLayoutManager(new LinearLayoutManager(this));
@@ -75,8 +78,8 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             @Override
             public void onClick(View v) {
 //                simulateApiResponse();
-                callAdapterCommentaryList(false);
-                ShowToast(context, "Refreshed");
+//                callAdapterCommentaryList(false);
+//                ShowToast(context, "Refreshed");
             }
         });
 
@@ -253,7 +256,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     private void callAdapterCommentaryList(boolean isShowLoader) {
         try {
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("match_id", match_id);
+//            jsonObject.put("match_id", "36");
             apiRequestManager.callAPI(LIVE_MATCH_COMMENTARY,
                     createRequestJson(), context, activity, LIVE_MATCH_COMMENTARY_TYPE,
                     isShowLoader, responseManager);
@@ -266,7 +269,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     JSONObject createRequestJson() {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("user_id", sessionManager.getUser(context).getUser_id());
+            jsonObject.put("match_id", "36");
 
         } catch (JSONException e) {
             e.printStackTrace();
