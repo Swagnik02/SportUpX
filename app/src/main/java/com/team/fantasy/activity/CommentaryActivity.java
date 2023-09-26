@@ -255,8 +255,6 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
     private void callAdapterCommentaryList(boolean isShowLoader) {
         try {
-            JSONObject jsonObject = new JSONObject();
-//            jsonObject.put("match_id", "36");
             apiRequestManager.callAPI(LIVE_MATCH_COMMENTARY,
                     createRequestJson(), context, activity, LIVE_MATCH_COMMENTARY_TYPE,
                     isShowLoader, responseManager);
@@ -306,8 +304,10 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                     intRuns = "2";
                 } else if (runs.equals("Wicket")) {
                     intRuns = "W";
+                } else{
+
                 }
-                String commentary = bowler + " to" + batsman + ", " + runs + "!";
+                String commentary = bowler + " to " + batsman + ", " + runs + "!";
 
                 BeanCommentary commentaryB = new BeanCommentary(inning, overs, batsman, bowler, intRuns, commentary);
                 commentaryList.add(commentaryB);
@@ -374,6 +374,8 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             final String runs = mListenerList.get(position).getRuns(); // Assuming you have a method getRuns()
             final String commentary = mListenerList.get(position).getCommentary(); // Assuming you have a method getCommentary()
             final String inning = mListenerList.get(position).getInning();
+
+            System.out.println(inning);
 
             if (runs.equals("4") || runs.equals("6")) {
                 holder.tvRuns.setBackgroundResource(R.drawable.circle_score_4_6);
