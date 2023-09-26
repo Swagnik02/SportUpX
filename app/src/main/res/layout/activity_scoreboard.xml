@@ -52,8 +52,9 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/toolbar">
+            android:layout_height="742dp"
+            android:layout_below="@+id/toolbar"
+            android:layout_alignParentBottom="true">
 
             <!-- Your scoreboard content here -->
 
@@ -67,7 +68,7 @@
                 <androidx.cardview.widget.CardView
                     android:id="@+id/Maincontainer"
                     android:layout_width="match_parent"
-                    android:layout_height="800dp"
+                    android:layout_height="wrap_content"
                     app:cardCornerRadius="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -90,16 +91,16 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@color/team_header"
-                            tools:ignore="MissingConstraints"
-                            android:gravity="center">
+                            android:gravity="center"
+                            tools:ignore="MissingConstraints">
 
                             <TextView
                                 android:id="@+id/im_team1Name"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="0.5"
-                                android:paddingTop="10dp"
                                 android:gravity="center"
+                                android:paddingTop="10dp"
                                 android:paddingBottom="10dp"
                                 android:text="Team Name 1"
                                 android:textColor="@color/white"
@@ -108,10 +109,10 @@
                             <TextView
                                 android:id="@+id/im_team2Name"
                                 android:layout_width="match_parent"
-                                android:layout_weight="0.5"
                                 android:layout_height="wrap_content"
-                                android:paddingTop="10dp"
+                                android:layout_weight="0.5"
                                 android:gravity="center"
+                                android:paddingTop="10dp"
                                 android:paddingBottom="10dp"
                                 android:text="Team Name 2"
                                 android:textColor="@color/white"
@@ -159,8 +160,8 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/recyclerViewTeam1Batsmen"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="10dp" />
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp" />
 
 
                         <View
@@ -187,7 +188,7 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerViewTeam1Bowlers"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_below="@+id/team1bowling_labels"
                             android:layout_marginLeft="10dp"
                             android:paddingBottom="16dp"
@@ -226,7 +227,7 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerViewTeam2Batsmen"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_below="@+id/team2batting_labels"
                             android:layout_marginLeft="10dp"
                             android:paddingBottom="5dp"
@@ -240,8 +241,8 @@
                             android:layout_height="wrap_content"
                             android:layout_below="@+id/recyclerViewTeam2Batsmen"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="15dp"
-                            android:layout_marginLeft="10dp" />
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15dp" />
 
 
                         <View
@@ -268,7 +269,7 @@
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/recyclerViewTeam2Bowlers"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_below="@+id/team2bowling_labels"
                             android:layout_marginLeft="10dp"
                             android:paddingBottom="16dp"
@@ -279,7 +280,6 @@
                 </androidx.cardview.widget.CardView>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
         </ScrollView>
