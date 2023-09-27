@@ -1,5 +1,6 @@
 package com.team.fantasy.activity;
 
+import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
 import static com.team.fantasy.APICallingPackage.Config.MATCH_SCOREBOARD;
 import static com.team.fantasy.APICallingPackage.Constants.MATCH_SCOREBOARD_TYPE;
 
@@ -45,14 +46,14 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
     private BowlerAdapter team1bowlerAdapter, team2bowlerAdapter;
 
     String match_id = "", team1name = "", team2name = "", team1Fullname, team2Fullname;
-    int team1score = 0, team1wickts = 0;
     TextView team1Name, team1total_score, team1wickets, team1OVERS;
+    int team1score = 0, team1wickts = 0;
 
     int team2score = 0, team2wickts = 0;
     float team1overs = 0, team2overs = 0;
-    TextView team2Name, team2total_score, team2wickets, team2OVERS, team1EXTRAS, team1EXTRAS_DESC, team2EXTRAS, team2EXTRAS_DESC;
 
     int currentTeamNo = 1;
+    TextView team2Name, team2total_score, team2wickets, team2OVERS, team1EXTRAS, team1EXTRAS_DESC, team2EXTRAS, team2EXTRAS_DESC;
     LinearLayout team1Container, team2Container;
 
     @Override
@@ -61,6 +62,11 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         setContentView(R.layout.activity_scoreboard);
         responseManager = this;
         apiRequestManager = new APIRequestManager(activity);
+
+        // int
+        team1score = team1wickts = team2score = team2wickts = 0;
+        //float
+        team1overs = team2overs = 0;
 
         //INTENTS
         match_id = getIntent().getStringExtra("Match_ID");
@@ -77,7 +83,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Scoreboard.this, CommentaryActivity.class);
-                i.putExtra("Match_ID",match_id);
+                i.putExtra("Match_ID", match_id);
                 startActivity(i);
             }
         });
@@ -90,11 +96,9 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         });
 
 
-
-
         if (team1Fullname != null && team2Fullname != null) {
-        team1name = team1Fullname.substring(0, 3).toUpperCase();
-        team2name = team2Fullname.substring(0, 3).toUpperCase();
+            team1name = team1Fullname.substring(0, 3).toUpperCase();
+            team2name = team2Fullname.substring(0, 3).toUpperCase();
 //            team1name = team1Fullname.substring(0, Math.min(team1Fullname.length(), 3)).toUpperCase();
 //            team2name = team2Fullname.substring(0, Math.min(team2Fullname.length(), 3)).toUpperCase();
         }
@@ -136,7 +140,6 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
             team1Name.setEnabled(false); //team1 button disabled
             team2Name.setEnabled(true);
 
-//            team1Name.setTextColor(getResources().getColor(R.color.deactivate_text_color));
             team2Container.setVisibility(View.GONE);
             team1Container.setVisibility(View.VISIBLE);
 
@@ -184,6 +187,19 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
         team1Name.setText(team1Fullname);
         team2Name.setText(team2Fullname);
+
+        findViewById(R.id.tv_Scorecard_refresh).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                callMyMatchRecord(true);
+//                ShowToast(context, "Scorecard Refreshed !");
+                // int
+                team1score = team1wickts = team2score = team2wickts = 0;
+                //float
+                team1overs = team2overs = 0;
+
+            }
+        });
     }
 
     private void callMyMatchRecord(boolean isShowLoader) {
