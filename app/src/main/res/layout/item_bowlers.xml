@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingTop="3dp"
         tools:ignore="MissingConstraints">
     <LinearLayout
         android:layout_width="match_parent"
@@ -131,10 +132,11 @@
     </LinearLayout>
 
         <View
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
             android:background="?android:attr/listDivider" />
     </LinearLayout>
 

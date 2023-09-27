@@ -20,7 +20,7 @@
         android:orientation="horizontal">
     <!--                NAME TAG-->
     <LinearLayout
-        android:layout_width="181dp"
+        android:layout_width="189dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
