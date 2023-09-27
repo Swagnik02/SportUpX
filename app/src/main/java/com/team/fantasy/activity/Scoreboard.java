@@ -70,7 +70,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
         //INTENTS
         match_id = getIntent().getStringExtra("Match_ID");
-        System.out.println(match_id);
+//        System.out.println(match_id);
         team1Fullname = getIntent().getStringExtra("Team1_Name");
         team2Fullname = getIntent().getStringExtra("Team2_Name");
 
