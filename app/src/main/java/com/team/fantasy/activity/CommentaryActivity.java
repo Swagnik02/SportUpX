@@ -65,22 +65,29 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         sessionManager = new SessionManager();
 
         match_id = getIntent().getStringExtra("Match_ID");
+
+        boolean Live_Status = getIntent().getBooleanExtra("Live_Status", false);
+
+        if (Live_Status){
+            findViewById(R.id.com_live_status).setVisibility(View.VISIBLE);
+        }
+
+
         isInning1LastBallKeyBinded = false;
         isInning2LastBallKeyBinded = false;
-        ShowToast(context, match_id);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
 
         binding.recyclerViewCommentary.setLayoutManager(new LinearLayoutManager(this));
 
 //        simulateApiResponse();
-        callAdapterCommentaryList(false);
+        callAdapterCommentaryList(true);
 
         binding.tvComRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                simulateApiResponse();
-                callAdapterCommentaryList(false);
+                callAdapterCommentaryList(true);
                 ShowToast(context, "Refreshed");
                 isInning1LastBallKeyBinded = false;
                 isInning2LastBallKeyBinded = false;
@@ -271,7 +278,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     JSONObject createRequestJson() {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("match_id", "36");
+            jsonObject.put("match_id", match_id);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -306,7 +313,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                     intRuns = "1";
                 } else if (runs.equals("2 Runs")) {
                     intRuns = "2";
-                } else if (runs.equals("Wicket")) {
+                } else if (runs.equals("Wicket") || runs.equals("LBW OUT") || runs.equals("Catch Out") || runs.equals("Stump Out") || runs.equals("Clean Bowled") || (runs.startsWith("Run Out")) || runs.equalsIgnoreCase("Hit Wicket") || (runs.startsWith("Hit")) ) {
                     intRuns = "W";
                 }
                 String commentary = bowler + " to " + batsman + ", " + runs + "!";
@@ -425,7 +432,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             }
 
             holder.tvOvers.setText(overs);
-            holder.tvRuns.setText(runs);
+            holder.tvRuns.setText(String.valueOf(runs.charAt(0)));
             holder.tvCommentary.setText(commentary);
         }
     }

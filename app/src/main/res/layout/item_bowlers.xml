@@ -8,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:paddingTop="3dp"
         tools:ignore="MissingConstraints">
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,8 +24,7 @@
         android:layout_width="148dp"
         android:layout_height="wrap_content"
         android:text="Bowlers"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
 
     <!-- Divider -->
     <View
@@ -43,8 +43,7 @@
         android:layout_toRightOf="@id/divider1"
         android:text="O"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
 
     <!-- Divider -->
     <View
@@ -65,8 +64,7 @@
         android:layout_toRightOf="@id/divider2"
         android:text="MO"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
 
     <!-- Divider -->
     <View
@@ -87,8 +85,7 @@
         android:gravity="center"
         android:text="RUNS"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
 
     <!-- Divider -->
     <View
@@ -109,8 +106,7 @@
         android:gravity="center"
         android:text="WKTS"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
 
     <!-- Divider -->
     <View
@@ -132,15 +128,15 @@
         android:paddingRight="5dp"
         android:text="ECO"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
     </LinearLayout>
 
         <View
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
             android:background="?android:attr/listDivider" />
     </LinearLayout>
 

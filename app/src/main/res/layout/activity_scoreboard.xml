@@ -10,15 +10,24 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="43dp"
+            android:layout_alignParentTop="true"
             android:theme="@style/MyDarkToolbarStyle" />
 
         <ImageView
-            android:id="@+id/im_commentary"
-            android:layout_width="wrap_content"
+            android:id="@+id/tv_Scorecard_refresh"
+            android:layout_width="43dp"
             android:layout_height="43dp"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="0dp"
             android:padding="10dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_refresh_black_36dp"
+            app:tint="@color/colorPrimary" />
+
+        <ImageView
+            android:id="@+id/im_commentary"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:padding="10dp"
+            android:layout_toRightOf="@id/tv_Scorecard_refresh"
             android:shadowColor="@color/colorPrimary"
             android:src="@drawable/commentary"
             app:tint="@color/colorPrimary" />
@@ -29,26 +38,31 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/toolbar"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="-1dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="1dp"
-            android:layout_toStartOf="@+id/im_CloseIcon"
+            android:layout_toStartOf="@id/scorecard_live_status"
             android:layout_toEndOf="@+id/im_commentary"
             android:gravity="center"
             android:text="SCOREBOARD"
-            android:textColor="@color/black"
+            android:textColor="@color/colorPrimary"
             android:textSize="18dp"
             android:visibility="visible" />
 
         <ImageView
             android:id="@+id/im_CloseIcon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
             android:layout_alignParentRight="true"
             android:padding="15dp"
             android:src="@drawable/cross_icon"
             app:tint="@color/colorPrimary" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/scorecard_live_status"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_toLeftOf="@id/im_CloseIcon"
+            android:padding="2dp"
+            android:src="@drawable/live_match_text"
+            android:visibility="invisible" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -161,7 +175,7 @@
                             android:layout_below="@+id/recyclerViewTeam1Batsmen"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp" />
+                            android:layout_marginTop="5dp" />
 
 
                         <View
@@ -242,7 +256,7 @@
                             android:layout_below="@+id/recyclerViewTeam2Batsmen"
                             android:layout_centerHorizontal="true"
                             android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp" />
+                            android:layout_marginTop="5dp" />
 
 
                         <View

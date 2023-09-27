@@ -11,6 +11,7 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
         android:paddingTop="5dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
         android:paddingBottom="1dp">
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,11 +24,10 @@
     <!-- TextView for Batsman Name -->
     <TextView
         android:id="@+id/im_batsman_name"
-        android:layout_width="170dp"
+        android:layout_width="179dp"
         android:layout_height="wrap_content"
         android:text="Batsman"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
 
     <!-- Divider -->
     <View
@@ -46,8 +46,7 @@
         android:layout_toRightOf="@id/divider1"
         android:text="R"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
 
     <!-- Divider -->
     <View
@@ -68,8 +67,7 @@
         android:layout_toRightOf="@id/divider2"
         android:text="B"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
 
     <!-- Divider -->
     <View
@@ -90,8 +88,7 @@
         android:gravity="center"
         android:text="4s"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
 
     <!-- Divider -->
     <View
@@ -112,8 +109,7 @@
         android:gravity="center"
         android:text="6s"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
 
     <!-- Divider -->
     <View
@@ -134,9 +130,9 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:text="S/R"
+        android:textAlignment="center"
         android:textAllCaps="true"
-        android:textColor="@color/black"
-        android:textSize="15dp" />
+        android:textColor="@color/black" />
 
 
     </LinearLayout>
@@ -144,7 +140,7 @@
         android:layout_width="350dp"
         android:layout_height="1dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="?android:attr/listDivider" />
     </LinearLayout>
 
