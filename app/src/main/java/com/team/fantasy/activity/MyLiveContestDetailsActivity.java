@@ -134,9 +134,9 @@ public class MyLiveContestDetailsActivity extends AppCompatActivity implements R
             public void onClick(View view) {
                 Intent i = new Intent(activity, Scoreboard.class);
                 i.putExtra("Match_ID",MyJoinedLiveContestListActivity.IntentMatchId);
-
                 i.putExtra("Team1_Name",MyJoinedLiveContestListActivity.IntentTeamOneFullName);
                 i.putExtra("Team2_Name",MyJoinedLiveContestListActivity.IntentTeamTwoFullName);
+                i.putExtra("Live_Status",true);
                 startActivity(i);
             }
         });
