@@ -42,7 +42,7 @@
             android:layout_toEndOf="@+id/im_commentary"
             android:gravity="center"
             android:text="SCOREBOARD"
-            android:textColor="@color/black"
+            android:textColor="@color/colorPrimary"
             android:textSize="18dp"
             android:visibility="visible" />
 

@@ -32,8 +32,7 @@
             android:text="Bowlers"
             android:textStyle="bold"
             android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textColor="@color/black"/>
     </LinearLayout>
 
     <!--                SCORE TAGS-->
@@ -55,8 +54,7 @@
             android:textStyle="bold"
             android:text="O"
             android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textColor="@color/black"/>
 
         <View
             android:layout_width="0dp"
@@ -71,8 +69,7 @@
             android:textStyle="bold"
             android:text="MO"
             android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textColor="@color/black"/>
 
         <View
             android:layout_width="0dp"
@@ -87,8 +84,7 @@
             android:textStyle="bold"
             android:text="RUNS"
             android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textColor="@color/black"/>
 
         <View
             android:layout_width="0dp"
@@ -103,11 +99,11 @@
             android:textStyle="bold"
             android:text="WKTS"
             android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textColor="@color/black"/>
 
         <View
-            android:layout_width="0dp"            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:background="?android:attr/listDivider" />
 
         <TextView
@@ -119,8 +115,7 @@
             android:textStyle="bold"
             android:text="ECO"
             android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="15dp" />
+            android:textColor="@color/black"/>
     </LinearLayout>
     </LinearLayout>
 
