@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/toolbar"
             android:layout_alignParentTop="true"
-            android:layout_toStartOf="@id/blank"
+            android:layout_toStartOf="@id/scorecard_live_status"
             android:layout_toEndOf="@+id/im_commentary"
             android:gravity="center"
             android:text="SCOREBOARD"
@@ -55,14 +55,14 @@
             android:src="@drawable/cross_icon"
             app:tint="@color/colorPrimary" />
 
-        <ImageView
-            android:id="@+id/blank"
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/scorecard_live_status"
             android:layout_width="43dp"
             android:layout_height="43dp"
+            android:padding="2dp"
             android:layout_toLeftOf="@id/im_CloseIcon"
-            android:padding="15dp"
-            android:src="@drawable/cross_icon"
-            app:tint="@android:color/white"/>
+            android:src="@drawable/live_match_text"/>
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="742dp"
