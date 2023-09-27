@@ -133,9 +133,10 @@ public class MyLiveContestDetailsActivity extends AppCompatActivity implements R
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(activity, Scoreboard.class);
-                i.putExtra("Match_ID",MyJoinedResultContestListActivity.Matchid);
-                i.putExtra("Team1_Name",MyJoinedResultContestListActivity.IntentTeamOneName);
-                i.putExtra("Team2_Name",MyJoinedResultContestListActivity.IntentTeamTwoName);
+                i.putExtra("Match_ID",MyJoinedLiveContestListActivity.IntentMatchId);
+
+                i.putExtra("Team1_Name",MyJoinedLiveContestListActivity.IntentTeamOneFullName);
+                i.putExtra("Team2_Name",MyJoinedLiveContestListActivity.IntentTeamTwoFullName);
                 startActivity(i);
             }
         });

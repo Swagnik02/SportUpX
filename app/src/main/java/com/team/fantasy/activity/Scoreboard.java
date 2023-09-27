@@ -64,6 +64,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
         //INTENTS
         match_id = getIntent().getStringExtra("Match_ID");
+        System.out.println(match_id);
         team1Fullname = getIntent().getStringExtra("Team1_Name");
         team2Fullname = getIntent().getStringExtra("Team2_Name");
 
@@ -90,8 +91,13 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 
 
 
+
+        if (team1Fullname != null && team2Fullname != null) {
         team1name = team1Fullname.substring(0, 3).toUpperCase();
         team2name = team2Fullname.substring(0, 3).toUpperCase();
+//            team1name = team1Fullname.substring(0, Math.min(team1Fullname.length(), 3)).toUpperCase();
+//            team2name = team2Fullname.substring(0, Math.min(team2Fullname.length(), 3)).toUpperCase();
+        }
 
         team1Container = findViewById(R.id.im_Team1Layout);
         team2Container = findViewById(R.id.im_Team2Layout);

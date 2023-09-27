@@ -45,7 +45,7 @@ public class MyJoinedLiveContestListActivity extends AppCompatActivity implement
 
     ResponseManager responseManager;
     APIRequestManager apiRequestManager;
-    public static String IntentMatchId, IntentTime, IntenTeamsName, IntentTeamOneName, IntentTeamTwoName
+    public static String IntentMatchId, IntentTime, IntenTeamsName, IntentTeamOneName, IntentTeamTwoName, IntentTeamOneFullName, IntentTeamTwoFullName
             ,IntentT1Image,IntentT2Image;
 
     public static String ContestId, Matchid;
@@ -69,6 +69,10 @@ public class MyJoinedLiveContestListActivity extends AppCompatActivity implement
         IntenTeamsName = getIntent().getStringExtra("TeamsName");
         IntentTeamOneName = getIntent().getStringExtra("TeamsOneName");
         IntentTeamTwoName = getIntent().getStringExtra("TeamsTwoName");
+
+        IntentTeamOneFullName = getIntent().getStringExtra("TeamsOneFullName");
+        IntentTeamTwoFullName = getIntent().getStringExtra("TeamsTwoFullName");
+
         IntentT1Image = getIntent().getStringExtra("T1Image");
         IntentT2Image = getIntent().getStringExtra("T2Image");
 

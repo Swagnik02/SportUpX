@@ -266,6 +266,8 @@ public class FragmentMyLive extends Fragment implements ResponseManager {
                     k.putExtra("TeamsName", holder.tv_TeamsName.getText().toString());
                     k.putExtra("TeamsOneName", team_short_name1);
                     k.putExtra("TeamsTwoName", team_short_name2);
+                    k.putExtra("TeamsOneFullName", team_name1);
+                    k.putExtra("TeamsTwoFullName", team_name2);
                     k.putExtra("T1Image", team_image1);
                     k.putExtra("T2Image", team_image2);
                     startActivity(k);
