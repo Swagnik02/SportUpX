@@ -271,7 +271,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     JSONObject createRequestJson() {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("match_id", "36");
+            jsonObject.put("match_id", 37);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -306,7 +306,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                     intRuns = "1";
                 } else if (runs.equals("2 Runs")) {
                     intRuns = "2";
-                } else if (runs.equals("Wicket")) {
+                } else if (runs.equals("Wicket") || runs.equals("LBW OUT") || runs.equals("Catch Out") || runs.equals("Stump Out") || runs.equals("Clean Bowled") || (runs.startsWith("Run Out")) || runs.equalsIgnoreCase("Hit Wicket") || (runs.startsWith("Hit")) ) {
                     intRuns = "W";
                 }
                 String commentary = bowler + " to " + batsman + ", " + runs + "!";
@@ -425,7 +425,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             }
 
             holder.tvOvers.setText(overs);
-            holder.tvRuns.setText(runs);
+            holder.tvRuns.setText(String.valueOf(runs.charAt(0)));
             holder.tvCommentary.setText(commentary);
         }
     }
