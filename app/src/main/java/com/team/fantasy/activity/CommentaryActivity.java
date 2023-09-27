@@ -67,7 +67,6 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         match_id = getIntent().getStringExtra("Match_ID");
         isInning1LastBallKeyBinded = false;
         isInning2LastBallKeyBinded = false;
-        ShowToast(context, match_id);
 
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
 
@@ -271,7 +270,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     JSONObject createRequestJson() {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("match_id", 37);
+            jsonObject.put("match_id", match_id);
 
         } catch (JSONException e) {
             e.printStackTrace();
