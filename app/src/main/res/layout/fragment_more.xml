@@ -557,19 +557,22 @@
                     android:id="@+id/textBuildVersion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Version"/>
+                    android:text="Version"
+                    tools:visibility="@bool/show_debug_views"/>
 
                 <View
                     android:id="@+id/divider"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="?android:attr/listDivider" />
+                    android:background="?android:attr/listDivider"
+                    tools:visibility="@bool/show_debug_views"/>
 
                 <TextView
                     android:id="@+id/textBuildDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BuildDate:"  />
+                    android:text="BuildDate:"
+                    tools:visibility="@bool/show_debug_views"/>
             </LinearLayout>
         </ScrollView>
 
