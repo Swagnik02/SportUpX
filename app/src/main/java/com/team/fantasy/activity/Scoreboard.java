@@ -55,7 +55,6 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
     int currentTeamNo = 1;
     TextView team2Name, team2total_score, team2wickets, team2OVERS, team1EXTRAS, team1EXTRAS_DESC, team2EXTRAS, team2EXTRAS_DESC;
     LinearLayout team1Container, team2Container;
-    Boolean Live_Status = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -74,7 +73,8 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
 //        System.out.println(match_id);
         team1Fullname = getIntent().getStringExtra("Team1_Name");
         team2Fullname = getIntent().getStringExtra("Team2_Name");
-        Live_Status = getIntent().getBooleanExtra("Live_Status", false);
+
+        boolean Live_Status = getIntent().getBooleanExtra("Live_Status", false);
 
         if (Live_Status){
             findViewById(R.id.scorecard_live_status).setVisibility(View.VISIBLE);
@@ -90,6 +90,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
             public void onClick(View v) {
                 Intent i = new Intent(Scoreboard.this, CommentaryActivity.class);
                 i.putExtra("Match_ID", match_id);
+                i.putExtra("Live_Status",false);
                 startActivity(i);
             }
         });

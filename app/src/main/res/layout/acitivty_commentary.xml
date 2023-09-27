@@ -22,6 +22,14 @@
             android:src="@drawable/ic_refresh_black_36dp"
             app:tint="@color/colorPrimary" />
 
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/com_live_status"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            android:layout_toLeftOf="@id/im_CloseIcon"
+            android:padding="2dp"
+            android:src="@drawable/live_match_text" />
+
         <TextView
             android:id="@+id/tv_HeaderName"
             android:layout_width="wrap_content"
@@ -37,6 +45,7 @@
             android:textSize="18dp"
             android:visibility="visible" />
 
+
         <ImageView
             android:id="@+id/im_CloseIcon"
             android:layout_width="wrap_content"
@@ -45,6 +54,8 @@
             android:padding="15dp"
             android:src="@drawable/cross_icon"
             app:tint="@color/colorPrimary" />
+
+
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

@@ -65,6 +65,14 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         sessionManager = new SessionManager();
 
         match_id = getIntent().getStringExtra("Match_ID");
+
+        boolean Live_Status = getIntent().getBooleanExtra("Live_Status", false);
+
+        if (Live_Status){
+            findViewById(R.id.com_live_status).setVisibility(View.VISIBLE);
+        }
+
+
         isInning1LastBallKeyBinded = false;
         isInning2LastBallKeyBinded = false;
 

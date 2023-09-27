@@ -116,7 +116,7 @@ public class MyResultContestDetailsActivity extends AppCompatActivity implements
                 i.putExtra("Match_ID",MyJoinedResultContestListActivity.Matchid);
                 i.putExtra("Team1_Name",MyJoinedResultContestListActivity.IntentTeamOneName);
                 i.putExtra("Team2_Name",MyJoinedResultContestListActivity.IntentTeamTwoName);
-                i.putExtra("Live_Status",false);
+                i.putExtra("Live_Status",true);
                 startActivity(i);
             }
         });
