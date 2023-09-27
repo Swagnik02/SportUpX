@@ -59,9 +59,10 @@
             android:id="@+id/scorecard_live_status"
             android:layout_width="43dp"
             android:layout_height="43dp"
-            android:padding="2dp"
             android:layout_toLeftOf="@id/im_CloseIcon"
-            android:src="@drawable/live_match_text"/>
+            android:padding="2dp"
+            android:src="@drawable/live_match_text"
+            android:visibility="invisible" />
 
         <ScrollView
             android:layout_width="match_parent"
