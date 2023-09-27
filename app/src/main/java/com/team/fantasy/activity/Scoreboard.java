@@ -71,12 +71,20 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
         closeButton.setOnClickListener(v -> finish());
 
         ImageView commentary = findViewById(R.id.im_commentary);
-        closeButton.setOnClickListener(new View.OnClickListener() {
+
+        commentary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(activity, CommentaryActivity.class);
+                Intent i = new Intent(Scoreboard.this, CommentaryActivity.class);
                 i.putExtra("Match_ID",match_id);
                 startActivity(i);
+            }
+        });
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
 
@@ -248,13 +256,13 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
                     int by = Integer.valueOf(item.getString("B"));
 
                     int total_extras = wides + noBall + legBy + by;
-
+                    String total_extras_string = total_extras + "";
                     if (team1name.equals(teamName)) {
-                        team1EXTRAS.setText(total_extras);
+                        team1EXTRAS.setText(total_extras_string);
                         team1score = team1score + total_extras;
                         team1EXTRAS_DESC.setText("(wd " + wides + ",lb " + legBy + ",nb " + noBall + ",B " + by + ")");
                     } else {
-                        team2EXTRAS.setText(total_extras);
+                        team2EXTRAS.setText(total_extras_string);
                         team2score = team2score + total_extras;
                         team2EXTRAS_DESC.setText("(wd " + wides + ",lb " + legBy + ",nb " + noBall + ",B " + by + ")");
                     }

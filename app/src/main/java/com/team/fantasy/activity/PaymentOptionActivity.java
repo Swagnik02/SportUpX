@@ -17,15 +17,17 @@ import com.team.fantasy.R;
 import com.team.fantasy.utils.SessionManager;
 import com.team.fantasy.databinding.ActivityPaymentOptionBinding;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import static com.team.fantasy.APICallingPackage.Class.Validations.ShowToast;
+import static com.team.fantasy.APICallingPackage.Config.SEND_PAYMENT_DATA_PHONEPE;
+import static com.team.fantasy.APICallingPackage.Constants.SEND_PAYMENT_DATA_PHONEPE_TYPE;
 
 import java.sql.SQLOutput;
 
 
 public class PaymentOptionActivity extends AppCompatActivity implements ResponseManager {
-    private String IntentPaymentUrl;
     PaymentOptionActivity activity;
     Context context;
     ResponseManager responseManager;
@@ -33,6 +35,7 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
     SessionManager sessionManager;
     String IntentFinalAmount;
     ActivityPaymentOptionBinding binding;
+    String IntentPaymentUrl, paymentResponseUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +48,9 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
         apiRequestManager = new APIRequestManager(activity);
 
         IntentPaymentUrl = getIntent().getStringExtra("FinalUrl");
-//        System.out.println("Final Url: "+ IntentPaymentUrl);
         IntentFinalAmount = getIntent().getStringExtra("FinalAmount");
 
         binding.tvPaymentFinalAmount.setText("₹ " + IntentFinalAmount);
-
 
         binding.RLPaytmPayment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,15 +110,31 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
         binding.RLPhonePePayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                JSONObject paymentData = new JSONObject();
+                try {
+                    paymentData.put("user_id", sessionManager.getUser(context).getUser_id());
+                    paymentData.put("amount", IntentFinalAmount);
+                } catch (JSONException e) {
+                    throw new RuntimeException(e);
+                }
+
                 if (IntentFinalAmount.equals("")) {
                     ShowToast(context, "Please Select Correct Amount");
                 } else {
-                    Intent i = new Intent(activity, PaymentWebviewAcitivity.class);
-                    i.putExtra("Heading","PhonePe");
-                    i.putExtra("URL", IntentPaymentUrl);
-                    i.putExtra("SuccessURL", "https://sportupx.com/paymentsuccess");
-                    i.putExtra("headerColor", R.color.colorPhonePe);
-                    i.putExtra("headerTextColor", R.color.white);
+                    fetchPhonePeUrl(paymentData);
+                }
+
+            }
+        });
+        binding.RLWorldLinePayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (IntentFinalAmount.equals("")) {
+                    ShowToast(context, "Please Select Correct Amount");
+                } else {
+                    Intent i = new Intent(activity, WorldLineActivity.class);
+                    i.putExtra("FinalAmount", IntentFinalAmount);
                     startActivity(i);
                 }
 
@@ -137,6 +154,7 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
 
     }
 
+
     @Override
     public void getResult(Context mContext, String type, String message, JSONObject result) {
 
@@ -146,6 +164,60 @@ public class PaymentOptionActivity extends AppCompatActivity implements Response
     @Override
     public void onError(Context mContext, String type, String message) {
 
+    }
+
+
+    // PhonePe URL FETCH
+    private void fetchPhonePeUrl(JSONObject paymentData) {
+        try {
+            apiRequestManager.callAPI(SEND_PAYMENT_DATA_PHONEPE,
+                    createSendPaymentDataJson(paymentData), context, activity,
+                    SEND_PAYMENT_DATA_PHONEPE_TYPE, true, new ResponseManager() {
+
+                        @Override
+                        public void getResult(Context mContext, String type, String message, JSONObject result) {
+                            try {
+                                String url = result.getString("url");
+
+                                if (url != null && !url.isEmpty()) {
+                                    paymentResponseUrl = url;
+
+                                    Intent i = new Intent(activity, PaymentWebviewAcitivity.class);
+                                    i.putExtra("Heading", "PhonePe");
+                                    i.putExtra("URL", paymentResponseUrl);
+                                    i.putExtra("SuccessURL", "https://sportupx.com/paymentsuccess");
+                                    i.putExtra("headerColor", R.color.colorPhonePe);
+                                    i.putExtra("headerTextColor", R.color.white);
+                                    startActivity(i);
+
+                                } else {
+                                    System.out.println("Empty or missing 'url' key in response");
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        @Override
+                        public void onError(Context mContext, String type, String message) {
+                            // Handle error if needed
+                        }
+                    });
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private JSONObject createSendPaymentDataJson(JSONObject paymentData) {
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("user_id", paymentData.getString("user_id"));
+            jsonObject.put("amount", paymentData.getString("amount"));
+            // You can add other parameters specific to the payment API
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return jsonObject;
     }
 
 }

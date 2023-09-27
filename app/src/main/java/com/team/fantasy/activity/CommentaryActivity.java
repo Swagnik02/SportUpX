@@ -50,7 +50,8 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     AdapterCommentaryList adapterCommentaryList;
     AcitivtyCommentaryBinding binding;
     String match_id = "";
-
+    Boolean isInning1LastBallKeyBinded, isInning2LastBallKeyBinded;
+    String inning1_LastBallKey, inning2_LastBallKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,10 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
         sessionManager = new SessionManager();
 
         match_id = getIntent().getStringExtra("Match_ID");
+        isInning1LastBallKeyBinded = false;
+        isInning2LastBallKeyBinded = false;
+        ShowToast(context, match_id);
+
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(activity);
 
         binding.recyclerViewCommentary.setLayoutManager(new LinearLayoutManager(this));
@@ -77,6 +82,8 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 //                simulateApiResponse();
                 callAdapterCommentaryList(false);
                 ShowToast(context, "Refreshed");
+                isInning1LastBallKeyBinded = false;
+                isInning2LastBallKeyBinded = false;
             }
         });
 
@@ -252,8 +259,6 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
 
     private void callAdapterCommentaryList(boolean isShowLoader) {
         try {
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("match_id", match_id);
             apiRequestManager.callAPI(LIVE_MATCH_COMMENTARY,
                     createRequestJson(), context, activity, LIVE_MATCH_COMMENTARY_TYPE,
                     isShowLoader, responseManager);
@@ -266,7 +271,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     JSONObject createRequestJson() {
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("user_id", sessionManager.getUser(context).getUser_id());
+            jsonObject.put("match_id", "36");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -304,10 +309,23 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                 } else if (runs.equals("Wicket")) {
                     intRuns = "W";
                 }
-                String commentary = bowler + " to" + batsman + ", " + runs + "!";
+                String commentary = bowler + " to " + batsman + ", " + runs + "!";
 
+
+                if (inning.equals("2") && !isInning2LastBallKeyBinded) {
+                    isInning2LastBallKeyBinded = true;
+                    inning2_LastBallKey = overs + intRuns + inning;
+                    System.out.println(inning2_LastBallKey);
+                }
+                else if (inning.equals("1") && !isInning1LastBallKeyBinded) {
+                    isInning1LastBallKeyBinded = true;
+                    inning1_LastBallKey = overs + intRuns + inning;
+                    System.out.println(inning1_LastBallKey);
+                }
                 BeanCommentary commentaryB = new BeanCommentary(inning, overs, batsman, bowler, intRuns, commentary);
                 commentaryList.add(commentaryB);
+
+
             }
             adapterCommentaryList = new AdapterCommentaryList(this, commentaryList);
             binding.recyclerViewCommentary.setAdapter(adapterCommentaryList);
@@ -330,7 +348,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
     public class AdapterCommentaryList extends RecyclerView.Adapter<AdapterCommentaryList.MyViewHolder> {
         private final List<BeanCommentary> mListenerList;
         Context mContext;
-        int currentInning = 1;
+        int currentInning = 2;
 
         public AdapterCommentaryList(Context context, List<BeanCommentary> mListenerList) {
             mContext = context;
@@ -348,7 +366,7 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                 tvRuns = view.findViewById(R.id.im_runs);
                 tvCommentary = view.findViewById(R.id.im_com_resp);
                 tvInning = view.findViewById(R.id.im_inning);
-                comHead=view.findViewById(R.id.im_com_head);
+                comHead = view.findViewById(R.id.im_com_head);
             }
         }
 
@@ -372,6 +390,8 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
             final String commentary = mListenerList.get(position).getCommentary(); // Assuming you have a method getCommentary()
             final String inning = mListenerList.get(position).getInning();
 
+            String lastBallKey = overs + runs + inning;
+
             if (runs.equals("4") || runs.equals("6")) {
                 holder.tvRuns.setBackgroundResource(R.drawable.circle_score_4_6);
 
@@ -382,20 +402,26 @@ public class CommentaryActivity extends AppCompatActivity implements ResponseMan
                 holder.tvRuns.setBackgroundResource(R.drawable.circle_score_w);
             }
 
-            if (currentInning == Integer.valueOf(inning) && currentInning == 1){
-                holder.tvInning.setText(inning+ "st Innings");
-                currentInning = 2;
-//                System.out.println("IF 1");
+            holder.tvInning.setVisibility(View.GONE);
+            holder.comHead.setVisibility(View.GONE);
 
-            } else if (currentInning == Integer.valueOf(inning) && currentInning == 2) {
+            if (lastBallKey.equals(inning2_LastBallKey)) {
+
+                holder.tvInning.setVisibility(View.VISIBLE);
+                holder.comHead.setVisibility(View.VISIBLE);
                 holder.tvInning.setText(inning + "nd Innings");
-                currentInning = 1;
-//                System.out.println("IF 2");
 
-            } else {
-                holder.tvInning.setVisibility(View.GONE);
-                holder.comHead.setVisibility(View.GONE);
-//                System.out.println("IF 3");
+                System.out.println("2nd Innings");
+
+
+            } else if (lastBallKey.equals(inning1_LastBallKey)) {
+
+                holder.tvInning.setVisibility(View.VISIBLE);
+                holder.comHead.setVisibility(View.VISIBLE);
+                holder.tvInning.setText(inning + "st Innings");
+
+                System.out.println("1st Innings");
+
             }
 
             holder.tvOvers.setText(overs);
