@@ -192,7 +192,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
             @Override
             public void onClick(View v) {
                 callMyMatchRecord(true);
-//                ShowToast(context, "Scorecard Refreshed !");
+                ShowToast(Scoreboard.this, "Scoreboard Refreshed !");
                 // int
                 team1score = team1wickts = team2score = team2wickts = 0;
                 //float
