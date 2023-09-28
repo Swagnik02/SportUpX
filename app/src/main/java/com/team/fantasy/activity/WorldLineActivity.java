@@ -73,7 +73,8 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         PayAmount = getIntent().getStringExtra("FinalAmount");
         customerID = sessionManager.getUser(context).getUser_id();
         orderID = "OrderID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
-        generateCheckSum();
+//        generateCheckSum();
+        System.out.println(generateToken());
 
 
         // Call preloadData() method and set the listener
@@ -86,6 +87,8 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
                 initializeWorldLinePayment();
             }
         });
+
+
     }
 
     private void generateCheckSum() {
@@ -93,54 +96,48 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 //        initializeWorldLinePayment();
 
     }
-//
-//    private String generateToken() {
-//        try {
-//            // Trim and concatenate all the required data fields with a pipe character "|"
-//            String dataToHash = String.format("%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|",
-//                    WLConstants.MERCHANT_ID.trim(),
-//                    WLConstants.TXN_ID.trim(),
-//                    PayAmount.trim(),
-//                    WLConstants.ACCOUNT_NO.trim(),
-//                    WLConstants.CONSUMER_ID.trim(),
-//                    WLConstants.CONSUMER_MOBILE_NO.trim(),
-//                    WLConstants.CONSUMER_EMAIL_ID.trim(),
-//                    WLConstants.DEBIT_START_DATE.trim(),
-//                    WLConstants.DEBIT_END_DATE.trim(),
-//                    WLConstants.MAX_AMOUNT.trim(),
-//                    WLConstants.AMOUNT_TYPE.trim(),
-//                    WLConstants.FREQUENCY.trim(),
-//                    WLConstants.CARD_NUMBER.trim(),
-//                    WLConstants.EXP_MONTH.trim(),
-//                    WLConstants.EXP_YEAR.trim(),
-//                    WLConstants.CVV_CODE.trim());
-//
-//            // Trim and append the salt provided by Worldline
-//            String salt = "YourSalt".trim(); // Replace with the actual salt provided by Worldline
-//            dataToHash += salt;
-//
-//            // Choose SHA-512 as the hashing algorithm
-//            String hashingAlgorithm = "SHA-512";
-//
-//            // Hash the data using the selected algorithm
-//            MessageDigest digest = MessageDigest.getInstance(hashingAlgorithm);
-//            byte[] encodedHash = digest.digest(dataToHash.getBytes(StandardCharsets.UTF_8));
-//
-//            // Convert the byte array to a hexadecimal string
-//            StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
-//            for (byte b : encodedHash) {
-//                String hex = String.format("%02x", b);
-//                hexString.append(hex);
-//            }
-//
-//            System.out.println(hexString.toString());
-//            return hexString.toString();
-//        } catch (NoSuchAlgorithmException e) {
-//            // Handle the NoSuchAlgorithmException appropriately
-//            e.printStackTrace();
-//            return null;
-//        }
-//    }
+    private static String generateToken() {
+        try {
+            // Replace these values with your actual data
+            String merchantId = "L3348";
+            String txnId = "1695896030940";
+            String totalAmount = "10";
+            String consumerId = "c964634";
+            String consumerMobileNo = "9876543210";
+            String consumerEmailId = "test@test.com";
+            String salt = "YourSalt";
+
+            // Trim and concatenate all the required data fields with a pipe character "|"
+            String dataToHash = String.format("%s|%s|%s|%s|%s|%s|%s",
+                    merchantId.trim(),
+                    txnId.trim(),
+                    totalAmount.trim(),
+                    consumerId.trim(),
+                    consumerMobileNo.trim(),
+                    consumerEmailId.trim(),
+                    salt);
+
+            // Choose SHA-512 as the hashing algorithm
+            String hashingAlgorithm = "SHA-512";
+
+            // Hash the data using the selected algorithm
+            MessageDigest digest = MessageDigest.getInstance(hashingAlgorithm);
+            byte[] encodedHash = digest.digest(dataToHash.getBytes(StandardCharsets.UTF_8));
+
+            // Convert the byte array to a hexadecimal string
+            StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
+            for (byte b : encodedHash) {
+                String hex = String.format("%02x", b);
+                hexString.append(hex);
+            }
+
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            // Handle the NoSuchAlgorithmException appropriately
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 
     private void initializeWorldLinePayment() {
@@ -152,19 +149,26 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             jsonFeatures.put("enableInstrumentDeRegistration", WLConstants.ENABLE_INSTRUMENT_DEREGISTRATION);
             jsonFeatures.put("enableAbortResponse", WLConstants.ENABLE_ABORT_RESPONSE);
             jsonFeatures.put("enableMerTxnDetails", WLConstants.ENABLE_MER_TXN_DETAILS);
+            jsonFeatures.put("enableNewWindowFlow", true);
+
             reqJson.put("features", jsonFeatures);
 
             JSONObject jsonConsumerData = new JSONObject();
-            jsonConsumerData.put("deviceId", WLConstants.DEVICE_ID);
-            jsonConsumerData.put("token", WLConstants.TOKEN);
-            jsonConsumerData.put("paymentMode", WLConstants.PAYMENT_MODE);
-            jsonConsumerData.put("merchantLogoUrl", WLConstants.MERCHANT_LOGO_URL);
-            jsonConsumerData.put("merchantId", WLConstants.MERCHANT_ID);
-            jsonConsumerData.put("currency", WLConstants.CURRENCY);
-            jsonConsumerData.put("consumerId", WLConstants.CONSUMER_ID);
-            jsonConsumerData.put("consumerMobileNo", WLConstants.CONSUMER_MOBILE_NO);
-            jsonConsumerData.put("consumerEmailId", WLConstants.CONSUMER_EMAIL_ID);
-            jsonConsumerData.put("txnId", WLConstants.TXN_ID);
+            jsonConsumerData.put("deviceId", "AndroidSH2");
+            jsonConsumerData.put("token", "3352c02fe30bdc014f44a64a9ef579287a0ae3a75bd19545b5a52f011e30c424f5b06a8be100008230ac40c36269b39f021b1c92b56a42b0007e9ab4fb49fe1d");
+//            jsonConsumerData.put("token", generateToken());
+            jsonConsumerData.put("returnUrl", "https://www.tekprocess.co.in/MerchantIntegrationClient/MerchantResponsePage.jsp");    //merchant response page URL
+            jsonConsumerData.put("responseHandler", "handleResponse");
+            jsonConsumerData.put("paymentMode", "all");
+            jsonConsumerData.put("merchantLogoUrl", "https://www.paynimo.com/CompanyDocs/company-logo-vertical.png");  //provided merchant logo will be displayed
+            jsonConsumerData.put("merchantId", "L3348");
+            jsonConsumerData.put("currency", "INR");
+            jsonConsumerData.put("consumerId", "c964634");
+            jsonConsumerData.put("consumerMobileNo", "9876543210");
+            jsonConsumerData.put("consumerEmailId", "test@test.com");
+            jsonConsumerData.put("txnId", "1695896030940");
+
+
 
             JSONArray jArrayItems = new JSONArray();
             JSONObject jsonItem1 = new JSONObject();
