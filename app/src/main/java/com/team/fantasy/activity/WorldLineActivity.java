@@ -37,10 +37,10 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
     public static String transactionID = "";
     public String customerID = "";
+    public String token = "3352c02fe30bdc014f44a64a9ef579287a0ae3a75bd19545b5a52f011e30c424f5b06a8be100008230ac40c36269b39f021b1c92b56a42b0007e9ab4fb49fe1d";
     public static String PayAmount = "0.0";
-
-    public static WorldLineActivity activity;
-    public static Context context;
+    WorldLineActivity activity;
+    Context context;
     ImageView im_back;
     TextView tv_HeaderName;
     SessionManager sessionManager;
@@ -98,10 +98,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 //        PayAmount = "10";
         transactionID = "1695896030940";
 
-//        System.out.println(WLConstants.TOKEN);
-//        WLConstants.TOKEN = generateToken();
-//        System.out.println(WLConstants.TOKEN);
-        //        generateCheckSum();
+        //generateCheckSum();
 
         viewTxnId.setText(transactionID);
         viewAmnt.setText(String.format("₹ %s", PayAmount));
@@ -116,9 +113,9 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
     }
 
     private void generateCheckSum() {
-        String checkSum = "";
-//        initializeWorldLinePayment();
-
+        System.out.println(token);
+        token = generateToken();
+        System.out.println(token);
     }
 
     private static String generateToken() {
@@ -169,7 +166,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
             JSONObject jsonConsumerData = new JSONObject();
             jsonConsumerData.put("deviceId", WLConstants.DEVICE_ID);
-            jsonConsumerData.put("token", WLConstants.TOKEN);
+            jsonConsumerData.put("token", token);
 //            jsonConsumerData.put("returnUrl", WLConstants.RETURN_URL);
 //            jsonConsumerData.put("responseHandler", WLConstants.RESPONSE_HANDLER);
             jsonConsumerData.put("paymentMode", WLConstants.PAYMENT_MODE);
