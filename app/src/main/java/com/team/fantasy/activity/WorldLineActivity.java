@@ -98,7 +98,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         WLConstants.TOTAL_AMOUNT = PayAmount;
 //        WLConstants.TXN_ID = transactionID;
 
-        System.out.println(WLConstants.TOKEN);
+//        System.out.println(WLConstants.TOKEN);
 //        WLConstants.TOKEN = generateToken();
 //        System.out.println(WLConstants.TOKEN);
         //        generateCheckSum();
