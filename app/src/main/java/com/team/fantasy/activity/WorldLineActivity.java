@@ -138,15 +138,15 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             jsonFeatures.put("enableInstrumentDeRegistration", WLConstants.ENABLE_INSTRUMENT_DEREGISTRATION);
             jsonFeatures.put("enableAbortResponse", WLConstants.ENABLE_ABORT_RESPONSE);
             jsonFeatures.put("enableMerTxnDetails", WLConstants.ENABLE_MER_TXN_DETAILS);
-            jsonFeatures.put("enableNewWindowFlow", WLConstants.ENABLE_NEW_WINDOW_FLOW);
+//            jsonFeatures.put("enableNewWindowFlow", WLConstants.ENABLE_NEW_WINDOW_FLOW);
 
             reqJson.put("features", jsonFeatures);
 
             JSONObject jsonConsumerData = new JSONObject();
             jsonConsumerData.put("deviceId", WLConstants.DEVICE_ID);
             jsonConsumerData.put("token", WLConstants.TOKEN);
-            jsonConsumerData.put("returnUrl", WLConstants.RETURN_URL);
-            jsonConsumerData.put("responseHandler", WLConstants.RESPONSE_HANDLER);
+//            jsonConsumerData.put("returnUrl", WLConstants.RETURN_URL);
+//            jsonConsumerData.put("responseHandler", WLConstants.RESPONSE_HANDLER);
             jsonConsumerData.put("paymentMode", WLConstants.PAYMENT_MODE);
             jsonConsumerData.put("merchantLogoUrl", WLConstants.MERCHANT_LOGO_URL);
             jsonConsumerData.put("merchantId", WLConstants.MERCHANT_ID);
@@ -180,7 +180,6 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             throw new RuntimeException(e);
         }
     }
-
 
     @Override
     public void wlCheckoutPaymentResponse(JSONObject response) {
