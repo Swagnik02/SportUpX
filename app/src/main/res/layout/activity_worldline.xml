@@ -10,29 +10,83 @@
         layout="@layout/activity_mainheader"
         android:id="@+id/head" />
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/head">
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_below="@id/head"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/dimen_16dp"
+            android:layout_height="192dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/worldline_logo_banner" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:padding="16dp">
+            android:orientation="horizontal"
+            android:gravity="center">
 
-            <Button
-                android:id="@+id/wl_buyButton"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PROCEED"
-                android:padding="12dp"
-                android:textColor="#FFFFFF"
-                android:background="#45beaa"
-                android:textSize="16sp"
-                android:layout_marginTop="16dp"/>
+                android:text="TransactionID:"
+                android:padding="@dimen/dimen_5dp"
+                android:textSize="@dimen/dimen_16dp"
+                android:textStyle="bold"
+                />
 
+            <TextView
+                android:id="@+id/wl_txnId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TransactionID"
+                android:padding="@dimen/dimen_5dp"
+                android:textSize="@dimen/dimen_14sp"
+                />
         </LinearLayout>
-    </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount: "
+                android:padding="@dimen/dimen_5dp"
+                android:textSize="@dimen/dimen_16dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/wl_amnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount"
+                android:padding="@dimen/dimen_5dp"
+                android:textSize="@dimen/dimen_14sp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/wl_proceed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_16dp"
+            android:text="PROCEED"
+            android:textColor="#FFFFFF"
+            android:background="#45beaa"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
 </RelativeLayout>

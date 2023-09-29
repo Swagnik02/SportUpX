@@ -32,7 +32,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class WorldLineActivity extends AppCompatActivity implements WLCheckoutActivity.PaymentResponseListener,ResponseManager {
+public class WorldLineActivity extends AppCompatActivity implements WLCheckoutActivity.PaymentResponseListener, ResponseManager {
     Button buttonBuy;
 
     public static String transactionID = "";
@@ -44,12 +44,11 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
     ImageView im_back;
     TextView tv_HeaderName;
     SessionManager sessionManager;
-    TextView tv_TxDetails,tv_Proceed;
 
     ResponseManager responseManager;
     APIRequestManager apiRequestManager;
 
-    String AfterPaymentOrderId, AfterPaymentTxId,AfterPaymentAmount,FinalMessage,AfterPaymentStatus;
+    String AfterPaymentOrderId, AfterPaymentTxId, AfterPaymentAmount, FinalMessage, AfterPaymentStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +59,10 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         sessionManager = new SessionManager();
         responseManager = this;
         apiRequestManager = new APIRequestManager(activity);
+
         initViews();
 
-        PayAmount = getIntent().getStringExtra("FinalAmount");
+        System.out.println(WLConstants.TOTAL_AMOUNT);
 
         // Call preloadData() method and set the listener
         WLCheckoutActivity.setPaymentResponseListener(this);
@@ -80,17 +80,28 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
 
     public void initViews() {
-        im_back = findViewById(R.id.im_back);
-        im_back.setColorFilter(getResources().getColor(R.color.white));
 
+        im_back = findViewById(R.id.im_back);
         tv_HeaderName = findViewById(R.id.tv_HeaderName);
+        TextView viewAmnt = findViewById(R.id.wl_amnt);
+        TextView viewTxnId = findViewById(R.id.wl_txnId);
+
+        im_back.setColorFilter(getResources().getColor(R.color.white));
         tv_HeaderName.setText("WolrdLine Payments");
         tv_HeaderName.setTextColor(getResources().getColor(R.color.white));
+
         findViewById(R.id.head).setBackgroundColor(Color.parseColor(WLConstants.PRIMARY_COLOR_CODE));
-        buttonBuy = findViewById(R.id.wl_buyButton);
+        buttonBuy = findViewById(R.id.wl_proceed);
 
         customerID = sessionManager.getUser(context).getUser_id();
+        PayAmount = getIntent().getStringExtra("FinalAmount");
         transactionID = "TxnID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
+
+        WLConstants.TOTAL_AMOUNT = PayAmount;
+        WLConstants.TXN_ID = transactionID;
+
+        viewAmnt.setText(String.format("₹ %s", WLConstants.TOTAL_AMOUNT));
+        viewTxnId.setText(WLConstants.TXN_ID);
 
         //        generateCheckSum();
         System.out.println(generateToken());
@@ -102,11 +113,13 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             }
         });
     }
+
     private void generateCheckSum() {
         String checkSum = "";
 //        initializeWorldLinePayment();
 
     }
+
     private static String generateToken() {
         try {
             String dataToHash = String.format("%s|%s|%s|%s|%s|%s|%s",
@@ -195,27 +208,27 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
     @Override
     public void wlCheckoutPaymentResponse(JSONObject response) {
 
-            try {
-                String msg = response.optString("msg");
-                String[] msgParts = msg.split("\\|");
+        try {
+            String msg = response.optString("msg");
+            String[] msgParts = msg.split("\\|");
 
-                // Extract individual components from the response
-                String txnStatus = msgParts[0];
-                String txnMsg = msgParts[1];
-                String txnErrMsg = msgParts[2];
-                String clntTxnRef = msgParts[3];
-                String tpslBankCd = msgParts[4];
-                String tpslTxnId = msgParts[5];
-                String txnAmt = msgParts[6];
-                String clntRqstMeta = msgParts[7];
-                String tpslTxnTime = msgParts[8];
-                String balAmt = msgParts[9];
-                String cardId = msgParts[10];
-                String aliasName = msgParts[11];
-                String bankTransactionId = msgParts[12];
-                String mandateRegNo = msgParts[13];
-                String token = msgParts[14];
-                String hash = msgParts[15];
+            // Extract individual components from the response
+            String txnStatus = msgParts[0];
+            String txnMsg = msgParts[1];
+            String txnErrMsg = msgParts[2];
+            String clntTxnRef = msgParts[3];
+            String tpslBankCd = msgParts[4];
+            String tpslTxnId = msgParts[5];
+            String txnAmt = msgParts[6];
+            String clntRqstMeta = msgParts[7];
+            String tpslTxnTime = msgParts[8];
+            String balAmt = msgParts[9];
+            String cardId = msgParts[10];
+            String aliasName = msgParts[11];
+            String bankTransactionId = msgParts[12];
+            String mandateRegNo = msgParts[13];
+            String token = msgParts[14];
+            String hash = msgParts[15];
 
             // Check the transaction status and take appropriate actions
             if ("0300".equals(txnStatus)) {
