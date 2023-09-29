@@ -32,12 +32,12 @@ import java.security.NoSuchAlgorithmException;
 public class WorldLineActivity extends AppCompatActivity implements WLCheckoutActivity.PaymentResponseListener,ResponseManager {
     Button buttonBuy;
 
-    private String orderID = "";
-    private String customerID = "";
+    public static String transactionID = "";
+    public String customerID = "";
     public static String PayAmount = "0.0";
 
-    WorldLineActivity activity;
-    Context context;
+    public static WorldLineActivity activity;
+    public static Context context;
     ImageView im_back;
     TextView tv_HeaderName;
     SessionManager sessionManager;
@@ -57,25 +57,9 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         sessionManager = new SessionManager();
         responseManager = this;
         apiRequestManager = new APIRequestManager(activity);
-
-        im_back = findViewById(R.id.im_back);
-        tv_HeaderName = findViewById(R.id.tv_HeaderName);
-        tv_HeaderName.setText("PAYMENT OPTION");
-        buttonBuy = findViewById(R.id.wl_buyButton);
-
-        im_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        initViews();
 
         PayAmount = getIntent().getStringExtra("FinalAmount");
-        customerID = sessionManager.getUser(context).getUser_id();
-        orderID = "OrderID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
-//        generateCheckSum();
-        System.out.println(generateToken());
-
 
         // Call preloadData() method and set the listener
         WLCheckoutActivity.setPaymentResponseListener(this);
@@ -87,10 +71,30 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
                 initializeWorldLinePayment();
             }
         });
-
+//                initializeWorldLinePayment();
 
     }
 
+
+    public void initViews() {
+        im_back = findViewById(R.id.im_back);
+        tv_HeaderName = findViewById(R.id.tv_HeaderName);
+        tv_HeaderName.setText("WolrdLine Payments");
+        buttonBuy = findViewById(R.id.wl_buyButton);
+
+        customerID = sessionManager.getUser(context).getUser_id();
+        transactionID = "TxnID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
+
+        //        generateCheckSum();
+        System.out.println(generateToken());
+
+        im_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+    }
     private void generateCheckSum() {
         String checkSum = "";
 //        initializeWorldLinePayment();

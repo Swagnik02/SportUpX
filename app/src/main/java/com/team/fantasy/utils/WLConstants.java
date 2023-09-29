@@ -23,8 +23,8 @@ public class WLConstants {
     public static final String SECONDARY_COLOR_CODE = "#ffffff";
     public static final String BUTTON_COLOR_CODE_1 = "#2d8c8c";
     public static final String BUTTON_COLOR_CODE_2 = "#ffffff";
-
-    // TOKEN constants
+//
+    // TEST TOKEN constants
     public static final String MERCHANT_ID = "L3348";
     public static final String TXN_ID = "1695896030940";
     public static final String TOTAL_AMOUNT = WorldLineActivity.PayAmount;
@@ -32,4 +32,13 @@ public class WLConstants {
     public static final String CONSUMER_MOBILE_NO = "9876543210";
     public static final String CONSUMER_EMAIL_ID = "test@test.com";
     public static final String SALT = "YourSalt";
+
+    // actual TOKEN constants
+//    public static final String MERCHANT_ID = "T955991";
+//    public static final String TXN_ID = WorldLineActivity.transactionID;
+//    public static final String TOTAL_AMOUNT = WorldLineActivity.PayAmount;
+//    public static final String CONSUMER_ID = "c964634";
+//    public static final String CONSUMER_MOBILE_NO = "9876543210";
+//    public static final String CONSUMER_EMAIL_ID = "test@test.com";
+//    public static final String SALT = "4507777315EQCMGX";
 }
