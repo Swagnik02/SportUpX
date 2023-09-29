@@ -34,7 +34,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
     private String orderID = "";
     private String customerID = "";
-    private String PayAmount = "0.0";
+    public static String PayAmount = "0.0";
 
     WorldLineActivity activity;
     Context context;
@@ -98,24 +98,14 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
     }
     private static String generateToken() {
         try {
-            // Replace these values with your actual data
-            String merchantId = "L3348";
-            String txnId = "1695896030940";
-            String totalAmount = "10";
-            String consumerId = "c964634";
-            String consumerMobileNo = "9876543210";
-            String consumerEmailId = "test@test.com";
-            String salt = "YourSalt";
-
-            // Trim and concatenate all the required data fields with a pipe character "|"
             String dataToHash = String.format("%s|%s|%s|%s|%s|%s|%s",
-                    merchantId.trim(),
-                    txnId.trim(),
-                    totalAmount.trim(),
-                    consumerId.trim(),
-                    consumerMobileNo.trim(),
-                    consumerEmailId.trim(),
-                    salt);
+                    WLConstants.MERCHANT_ID,
+                    WLConstants.TXN_ID,
+                    WLConstants.TOTAL_AMOUNT,
+                    WLConstants.CONSUMER_ID,
+                    WLConstants.CONSUMER_MOBILE_NO,
+                    WLConstants.CONSUMER_EMAIL_ID,
+                    WLConstants.SALT);
 
             // Choose SHA-512 as the hashing algorithm
             String hashingAlgorithm = "SHA-512";
@@ -139,7 +129,6 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         }
     }
 
-
     private void initializeWorldLinePayment() {
         try {
             JSONObject reqJson = new JSONObject();
@@ -149,40 +138,37 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             jsonFeatures.put("enableInstrumentDeRegistration", WLConstants.ENABLE_INSTRUMENT_DEREGISTRATION);
             jsonFeatures.put("enableAbortResponse", WLConstants.ENABLE_ABORT_RESPONSE);
             jsonFeatures.put("enableMerTxnDetails", WLConstants.ENABLE_MER_TXN_DETAILS);
-            jsonFeatures.put("enableNewWindowFlow", true);
+            jsonFeatures.put("enableNewWindowFlow", WLConstants.ENABLE_NEW_WINDOW_FLOW);
 
             reqJson.put("features", jsonFeatures);
 
             JSONObject jsonConsumerData = new JSONObject();
-            jsonConsumerData.put("deviceId", "AndroidSH2");
-            jsonConsumerData.put("token", "3352c02fe30bdc014f44a64a9ef579287a0ae3a75bd19545b5a52f011e30c424f5b06a8be100008230ac40c36269b39f021b1c92b56a42b0007e9ab4fb49fe1d");
-//            jsonConsumerData.put("token", generateToken());
-            jsonConsumerData.put("returnUrl", "https://www.tekprocess.co.in/MerchantIntegrationClient/MerchantResponsePage.jsp");    //merchant response page URL
-            jsonConsumerData.put("responseHandler", "handleResponse");
-            jsonConsumerData.put("paymentMode", "all");
-            jsonConsumerData.put("merchantLogoUrl", "https://www.paynimo.com/CompanyDocs/company-logo-vertical.png");  //provided merchant logo will be displayed
-            jsonConsumerData.put("merchantId", "L3348");
-            jsonConsumerData.put("currency", "INR");
-            jsonConsumerData.put("consumerId", "c964634");
-            jsonConsumerData.put("consumerMobileNo", "9876543210");
-            jsonConsumerData.put("consumerEmailId", "test@test.com");
-            jsonConsumerData.put("txnId", "1695896030940");
-
-
+            jsonConsumerData.put("deviceId", WLConstants.DEVICE_ID);
+            jsonConsumerData.put("token", WLConstants.TOKEN);
+            jsonConsumerData.put("returnUrl", WLConstants.RETURN_URL);
+            jsonConsumerData.put("responseHandler", WLConstants.RESPONSE_HANDLER);
+            jsonConsumerData.put("paymentMode", WLConstants.PAYMENT_MODE);
+            jsonConsumerData.put("merchantLogoUrl", WLConstants.MERCHANT_LOGO_URL);
+            jsonConsumerData.put("merchantId", WLConstants.MERCHANT_ID);
+            jsonConsumerData.put("currency", WLConstants.CURRENCY);
+            jsonConsumerData.put("consumerId", WLConstants.CONSUMER_ID);
+            jsonConsumerData.put("consumerMobileNo", WLConstants.CONSUMER_MOBILE_NO);
+            jsonConsumerData.put("consumerEmailId", WLConstants.CONSUMER_EMAIL_ID);
+            jsonConsumerData.put("txnId", WLConstants.TXN_ID);
 
             JSONArray jArrayItems = new JSONArray();
             JSONObject jsonItem1 = new JSONObject();
-            jsonItem1.put("itemId", "first");
-            jsonItem1.put("amount", "10");
-            jsonItem1.put("comAmt", "0");
+            jsonItem1.put("itemId", WLConstants.ITEM_ID);
+            jsonItem1.put("amount", WLConstants.TOTAL_AMOUNT);
+            jsonItem1.put("comAmt", WLConstants.ITEM_COM_AMT);
             jArrayItems.put(jsonItem1);
             jsonConsumerData.put("items", jArrayItems);
 
             JSONObject jsonCustomStyle = new JSONObject();
-            jsonCustomStyle.put("PRIMARY_COLOR_CODE", "#45beaa");
-            jsonCustomStyle.put("SECONDARY_COLOR_CODE", "#ffffff");
-            jsonCustomStyle.put("BUTTON_COLOR_CODE_1", "#2d8c8c");
-            jsonCustomStyle.put("BUTTON_COLOR_CODE_2", "#ffffff");
+            jsonCustomStyle.put("PRIMARY_COLOR_CODE", WLConstants.PRIMARY_COLOR_CODE);
+            jsonCustomStyle.put("SECONDARY_COLOR_CODE", WLConstants.SECONDARY_COLOR_CODE);
+            jsonCustomStyle.put("BUTTON_COLOR_CODE_1", WLConstants.BUTTON_COLOR_CODE_1);
+            jsonCustomStyle.put("BUTTON_COLOR_CODE_2", WLConstants.BUTTON_COLOR_CODE_2);
             jsonConsumerData.put("customStyle", jsonCustomStyle);
 
             reqJson.put("consumerData", jsonConsumerData);
@@ -194,6 +180,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             throw new RuntimeException(e);
         }
     }
+
 
     @Override
     public void wlCheckoutPaymentResponse(JSONObject response) {
