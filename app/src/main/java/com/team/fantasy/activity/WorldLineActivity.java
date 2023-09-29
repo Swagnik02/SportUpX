@@ -2,7 +2,9 @@ package com.team.fantasy.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.load.engine.Resource;
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.R;
@@ -78,8 +81,12 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
     public void initViews() {
         im_back = findViewById(R.id.im_back);
+        im_back.setColorFilter(getResources().getColor(R.color.white));
+
         tv_HeaderName = findViewById(R.id.tv_HeaderName);
         tv_HeaderName.setText("WolrdLine Payments");
+        tv_HeaderName.setTextColor(getResources().getColor(R.color.white));
+        findViewById(R.id.head).setBackgroundColor(Color.parseColor(WLConstants.PRIMARY_COLOR_CODE));
         buttonBuy = findViewById(R.id.wl_buyButton);
 
         customerID = sessionManager.getUser(context).getUser_id();
