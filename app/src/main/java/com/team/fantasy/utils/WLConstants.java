@@ -27,7 +27,7 @@ public class WLConstants {
     // TEST TOKEN constants
     public static final String MERCHANT_ID = "L3348";
     public static String TXN_ID = "1695896030940";
-    public static String TOTAL_AMOUNT = "10";
+    public static String TOTAL_AMOUNT = "0";
     public static final String CONSUMER_ID = "c964634";
     public static final String CONSUMER_MOBILE_NO = "9876543210";
     public static final String CONSUMER_EMAIL_ID = "test@test.com";
