@@ -3,6 +3,7 @@ package com.team.fantasy.utils;
 import com.team.fantasy.activity.WorldLineActivity;
 
 public class WLConstants {
+    public static final String PAGE_TITLE = "WolrdLine Payments";
     public static final boolean ENABLE_EXPRESS_PAY = true;
     public static final boolean ENABLE_INSTRUMENT_DEREGISTRATION = true;
     public static final boolean ENABLE_ABORT_RESPONSE = true;
@@ -26,8 +27,8 @@ public class WLConstants {
 //
     // TEST TOKEN constants
     public static final String MERCHANT_ID = "L3348";
-    public static String TXN_ID = "1695896030940";
-    public static String TOTAL_AMOUNT = "0";
+//    public static String TXN_ID = "1695896030940";
+//    public static String TOTAL_AMOUNT = "0";
     public static final String CONSUMER_ID = "c964634";
     public static final String CONSUMER_MOBILE_NO = "9876543210";
     public static final String CONSUMER_EMAIL_ID = "test@test.com";
@@ -35,8 +36,6 @@ public class WLConstants {
 
     // actual TOKEN constants
 //    public static final String MERCHANT_ID = "T955991";
-//    public static final String TXN_ID = WorldLineActivity.transactionID;
-//    public static final String TOTAL_AMOUNT = WorldLineActivity.PayAmount;
 //    public static final String CONSUMER_ID = "c964634";
 //    public static final String CONSUMER_MOBILE_NO = "9876543210";
 //    public static final String CONSUMER_EMAIL_ID = "test@test.com";

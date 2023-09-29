@@ -85,7 +85,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         TextView viewTxnId = findViewById(R.id.wl_txnId);
 
         im_back.setColorFilter(getResources().getColor(R.color.white));
-        tv_HeaderName.setText("WolrdLine Payments");
+        tv_HeaderName.setText(WLConstants.PAGE_TITLE);
         tv_HeaderName.setTextColor(getResources().getColor(R.color.white));
 
         findViewById(R.id.head).setBackgroundColor(Color.parseColor(WLConstants.PRIMARY_COLOR_CODE));
@@ -93,18 +93,18 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
         customerID = sessionManager.getUser(context).getUser_id();
         PayAmount = getIntent().getStringExtra("FinalAmount");
-        transactionID = "TxnID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
+//        transactionID = "TxnID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
 
-        WLConstants.TOTAL_AMOUNT = PayAmount;
-//        WLConstants.TXN_ID = transactionID;
+//        PayAmount = "10";
+        transactionID = "1695896030940";
 
 //        System.out.println(WLConstants.TOKEN);
 //        WLConstants.TOKEN = generateToken();
 //        System.out.println(WLConstants.TOKEN);
         //        generateCheckSum();
 
-        viewTxnId.setText(WLConstants.TXN_ID);
-        viewAmnt.setText(String.format("₹ %s", WLConstants.TOTAL_AMOUNT));
+        viewTxnId.setText(transactionID);
+        viewAmnt.setText(String.format("₹ %s", PayAmount));
 
 
         im_back.setOnClickListener(new View.OnClickListener() {
@@ -125,8 +125,8 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         try {
             String dataToHash = String.format("%s|%s|%s|%s|%s|%s|%s",
                     WLConstants.MERCHANT_ID,
-                    WLConstants.TXN_ID,
-                    WLConstants.TOTAL_AMOUNT,
+                    transactionID,
+                    PayAmount,
                     WLConstants.CONSUMER_ID,
                     WLConstants.CONSUMER_MOBILE_NO,
                     WLConstants.CONSUMER_EMAIL_ID,
@@ -179,12 +179,12 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             jsonConsumerData.put("consumerId", WLConstants.CONSUMER_ID);
             jsonConsumerData.put("consumerMobileNo", WLConstants.CONSUMER_MOBILE_NO);
             jsonConsumerData.put("consumerEmailId", WLConstants.CONSUMER_EMAIL_ID);
-            jsonConsumerData.put("txnId", WLConstants.TXN_ID);
+            jsonConsumerData.put("txnId", transactionID);
 
             JSONArray jArrayItems = new JSONArray();
             JSONObject jsonItem1 = new JSONObject();
             jsonItem1.put("itemId", WLConstants.ITEM_ID);
-            jsonItem1.put("amount", WLConstants.TOTAL_AMOUNT);
+            jsonItem1.put("amount", PayAmount);
             jsonItem1.put("comAmt", WLConstants.ITEM_COM_AMT);
             jArrayItems.put(jsonItem1);
             jsonConsumerData.put("items", jArrayItems);
