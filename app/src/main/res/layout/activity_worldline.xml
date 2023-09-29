@@ -76,17 +76,21 @@
                 android:textSize="@dimen/dimen_14sp"/>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/wl_proceed"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen_16dp"
-            android:text="PROCEED"
-            android:textColor="#FFFFFF"
-            android:background="#45beaa"
-            android:textSize="16sp"
-            android:layout_marginTop="16dp" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/wl_proceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        android:layout_marginBottom="@dimen/dimen_25dp"
+        android:background="#45beaa"
+        android:text="PROCEED"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
 
 </RelativeLayout>

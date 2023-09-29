@@ -11,7 +11,7 @@ public class WLConstants {
 
     // Existing constants
     public static final String DEVICE_ID = "AndroidSH2";
-    public static final String TOKEN = "3352c02fe30bdc014f44a64a9ef579287a0ae3a75bd19545b5a52f011e30c424f5b06a8be100008230ac40c36269b39f021b1c92b56a42b0007e9ab4fb49fe1d";
+    public static String TOKEN = "3352c02fe30bdc014f44a64a9ef579287a0ae3a75bd19545b5a52f011e30c424f5b06a8be100008230ac40c36269b39f021b1c92b56a42b0007e9ab4fb49fe1d";
     public static final String RETURN_URL = "https://www.tekprocess.co.in/MerchantIntegrationClient/MerchantResponsePage.jsp";
     public static final String RESPONSE_HANDLER = "handleResponse";
     public static final String PAYMENT_MODE = "all";

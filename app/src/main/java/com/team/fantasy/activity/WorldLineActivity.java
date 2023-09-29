@@ -62,8 +62,6 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 
         initViews();
 
-        System.out.println(WLConstants.TOTAL_AMOUNT);
-
         // Call preloadData() method and set the listener
         WLCheckoutActivity.setPaymentResponseListener(this);
         WLCheckoutActivity.preloadData(context);
@@ -98,13 +96,16 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         transactionID = "TxnID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
 
         WLConstants.TOTAL_AMOUNT = PayAmount;
-        WLConstants.TXN_ID = transactionID;
+//        WLConstants.TXN_ID = transactionID;
 
-        viewAmnt.setText(String.format("₹ %s", WLConstants.TOTAL_AMOUNT));
-        viewTxnId.setText(WLConstants.TXN_ID);
-
+        System.out.println(WLConstants.TOKEN);
+//        WLConstants.TOKEN = generateToken();
+//        System.out.println(WLConstants.TOKEN);
         //        generateCheckSum();
-        System.out.println(generateToken());
+
+        viewTxnId.setText(WLConstants.TXN_ID);
+        viewAmnt.setText(String.format("₹ %s", WLConstants.TOTAL_AMOUNT));
+
 
         im_back.setOnClickListener(new View.OnClickListener() {
             @Override
