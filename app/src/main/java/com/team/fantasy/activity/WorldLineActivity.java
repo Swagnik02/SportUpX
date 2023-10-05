@@ -2,7 +2,9 @@ package com.team.fantasy.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.load.engine.Resource;
 import com.team.fantasy.APICallingPackage.Class.APIRequestManager;
 import com.team.fantasy.APICallingPackage.Interface.ResponseManager;
 import com.team.fantasy.R;
@@ -29,24 +32,23 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class WorldLineActivity extends AppCompatActivity implements WLCheckoutActivity.PaymentResponseListener,ResponseManager {
+public class WorldLineActivity extends AppCompatActivity implements WLCheckoutActivity.PaymentResponseListener, ResponseManager {
     Button buttonBuy;
 
-    private String orderID = "";
-    private String customerID = "";
-    private String PayAmount = "0.0";
-
+    public static String transactionID = "";
+    public String customerID = "";
+    public String token = "3352c02fe30bdc014f44a64a9ef579287a0ae3a75bd19545b5a52f011e30c424f5b06a8be100008230ac40c36269b39f021b1c92b56a42b0007e9ab4fb49fe1d";
+    public static String PayAmount = "0.0";
     WorldLineActivity activity;
     Context context;
     ImageView im_back;
     TextView tv_HeaderName;
     SessionManager sessionManager;
-    TextView tv_TxDetails,tv_Proceed;
 
     ResponseManager responseManager;
     APIRequestManager apiRequestManager;
 
-    String AfterPaymentOrderId, AfterPaymentTxId,AfterPaymentAmount,FinalMessage,AfterPaymentStatus;
+    String AfterPaymentOrderId, AfterPaymentTxId, AfterPaymentAmount, FinalMessage, AfterPaymentStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,23 +60,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
         responseManager = this;
         apiRequestManager = new APIRequestManager(activity);
 
-        im_back = findViewById(R.id.im_back);
-        tv_HeaderName = findViewById(R.id.tv_HeaderName);
-        tv_HeaderName.setText("PAYMENT OPTION");
-        buttonBuy = findViewById(R.id.wl_buyButton);
-
-        im_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
-
-        PayAmount = getIntent().getStringExtra("FinalAmount");
-        customerID = sessionManager.getUser(context).getUser_id();
-        orderID = "OrderID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
-        generateCheckSum();
-
+        initViews();
 
         // Call preloadData() method and set the listener
         WLCheckoutActivity.setPaymentResponseListener(this);
@@ -86,62 +72,84 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
                 initializeWorldLinePayment();
             }
         });
+//                initializeWorldLinePayment();
+
+    }
+
+
+    public void initViews() {
+
+        im_back = findViewById(R.id.im_back);
+        tv_HeaderName = findViewById(R.id.tv_HeaderName);
+        TextView viewAmnt = findViewById(R.id.wl_amnt);
+        TextView viewTxnId = findViewById(R.id.wl_txnId);
+
+        im_back.setColorFilter(getResources().getColor(R.color.white));
+        tv_HeaderName.setText(WLConstants.PAGE_TITLE);
+        tv_HeaderName.setTextColor(getResources().getColor(R.color.white));
+
+        findViewById(R.id.head).setBackgroundColor(Color.parseColor(WLConstants.PRIMARY_COLOR_CODE));
+        buttonBuy = findViewById(R.id.wl_proceed);
+
+        customerID = sessionManager.getUser(context).getUser_id();
+        PayAmount = getIntent().getStringExtra("FinalAmount");
+//        transactionID = "TxnID" + System.currentTimeMillis() + "-" + customerID + "-" + PayAmount;
+
+//        PayAmount = "10";
+        transactionID = "1695896030940";
+
+        generateCheckSum();
+
+        viewTxnId.setText(transactionID);
+        viewAmnt.setText(String.format("₹ %s", PayAmount));
+
+
+        im_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
     }
 
     private void generateCheckSum() {
-        String checkSum = "";
-//        initializeWorldLinePayment();
-
+        System.out.println(token);
+        token = generateToken();
+        System.out.println(token);
     }
-//
-//    private String generateToken() {
-//        try {
-//            // Trim and concatenate all the required data fields with a pipe character "|"
-//            String dataToHash = String.format("%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|%s|",
-//                    WLConstants.MERCHANT_ID.trim(),
-//                    WLConstants.TXN_ID.trim(),
-//                    PayAmount.trim(),
-//                    WLConstants.ACCOUNT_NO.trim(),
-//                    WLConstants.CONSUMER_ID.trim(),
-//                    WLConstants.CONSUMER_MOBILE_NO.trim(),
-//                    WLConstants.CONSUMER_EMAIL_ID.trim(),
-//                    WLConstants.DEBIT_START_DATE.trim(),
-//                    WLConstants.DEBIT_END_DATE.trim(),
-//                    WLConstants.MAX_AMOUNT.trim(),
-//                    WLConstants.AMOUNT_TYPE.trim(),
-//                    WLConstants.FREQUENCY.trim(),
-//                    WLConstants.CARD_NUMBER.trim(),
-//                    WLConstants.EXP_MONTH.trim(),
-//                    WLConstants.EXP_YEAR.trim(),
-//                    WLConstants.CVV_CODE.trim());
-//
-//            // Trim and append the salt provided by Worldline
-//            String salt = "YourSalt".trim(); // Replace with the actual salt provided by Worldline
-//            dataToHash += salt;
-//
-//            // Choose SHA-512 as the hashing algorithm
-//            String hashingAlgorithm = "SHA-512";
-//
-//            // Hash the data using the selected algorithm
-//            MessageDigest digest = MessageDigest.getInstance(hashingAlgorithm);
-//            byte[] encodedHash = digest.digest(dataToHash.getBytes(StandardCharsets.UTF_8));
-//
-//            // Convert the byte array to a hexadecimal string
-//            StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
-//            for (byte b : encodedHash) {
-//                String hex = String.format("%02x", b);
-//                hexString.append(hex);
-//            }
-//
-//            System.out.println(hexString.toString());
-//            return hexString.toString();
-//        } catch (NoSuchAlgorithmException e) {
-//            // Handle the NoSuchAlgorithmException appropriately
-//            e.printStackTrace();
-//            return null;
-//        }
-//    }
 
+    private static String generateToken() {
+        try {
+            String dataToHash = String.format("%s|%s|%s|%s|%s|%s|%s",
+                    WLConstants.MERCHANT_ID,
+                    transactionID,
+                    PayAmount,
+                    WLConstants.CONSUMER_ID,
+                    WLConstants.CONSUMER_MOBILE_NO,
+                    WLConstants.CONSUMER_EMAIL_ID,
+                    WLConstants.SALT);
+
+            // Choose SHA-512 as the hashing algorithm
+            String hashingAlgorithm = "SHA-512";
+
+            // Hash the data using the selected algorithm
+            MessageDigest digest = MessageDigest.getInstance(hashingAlgorithm);
+            byte[] encodedHash = digest.digest(dataToHash.getBytes(StandardCharsets.UTF_8));
+
+            // Convert the byte array to a hexadecimal string
+            StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
+            for (byte b : encodedHash) {
+                String hex = String.format("%02x", b);
+                hexString.append(hex);
+            }
+
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            // Handle the NoSuchAlgorithmException appropriately
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     private void initializeWorldLinePayment() {
         try {
@@ -152,11 +160,15 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             jsonFeatures.put("enableInstrumentDeRegistration", WLConstants.ENABLE_INSTRUMENT_DEREGISTRATION);
             jsonFeatures.put("enableAbortResponse", WLConstants.ENABLE_ABORT_RESPONSE);
             jsonFeatures.put("enableMerTxnDetails", WLConstants.ENABLE_MER_TXN_DETAILS);
+//            jsonFeatures.put("enableNewWindowFlow", WLConstants.ENABLE_NEW_WINDOW_FLOW);
+
             reqJson.put("features", jsonFeatures);
 
             JSONObject jsonConsumerData = new JSONObject();
             jsonConsumerData.put("deviceId", WLConstants.DEVICE_ID);
-            jsonConsumerData.put("token", WLConstants.TOKEN);
+            jsonConsumerData.put("token", token);
+//            jsonConsumerData.put("returnUrl", WLConstants.RETURN_URL);
+//            jsonConsumerData.put("responseHandler", WLConstants.RESPONSE_HANDLER);
             jsonConsumerData.put("paymentMode", WLConstants.PAYMENT_MODE);
             jsonConsumerData.put("merchantLogoUrl", WLConstants.MERCHANT_LOGO_URL);
             jsonConsumerData.put("merchantId", WLConstants.MERCHANT_ID);
@@ -164,21 +176,21 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
             jsonConsumerData.put("consumerId", WLConstants.CONSUMER_ID);
             jsonConsumerData.put("consumerMobileNo", WLConstants.CONSUMER_MOBILE_NO);
             jsonConsumerData.put("consumerEmailId", WLConstants.CONSUMER_EMAIL_ID);
-            jsonConsumerData.put("txnId", WLConstants.TXN_ID);
+            jsonConsumerData.put("txnId", transactionID);
 
             JSONArray jArrayItems = new JSONArray();
             JSONObject jsonItem1 = new JSONObject();
-            jsonItem1.put("itemId", "first");
-            jsonItem1.put("amount", "10");
-            jsonItem1.put("comAmt", "0");
+            jsonItem1.put("itemId", WLConstants.ITEM_ID);
+            jsonItem1.put("amount", PayAmount);
+            jsonItem1.put("comAmt", WLConstants.ITEM_COM_AMT);
             jArrayItems.put(jsonItem1);
             jsonConsumerData.put("items", jArrayItems);
 
             JSONObject jsonCustomStyle = new JSONObject();
-            jsonCustomStyle.put("PRIMARY_COLOR_CODE", "#45beaa");
-            jsonCustomStyle.put("SECONDARY_COLOR_CODE", "#ffffff");
-            jsonCustomStyle.put("BUTTON_COLOR_CODE_1", "#2d8c8c");
-            jsonCustomStyle.put("BUTTON_COLOR_CODE_2", "#ffffff");
+            jsonCustomStyle.put("PRIMARY_COLOR_CODE", WLConstants.PRIMARY_COLOR_CODE);
+            jsonCustomStyle.put("SECONDARY_COLOR_CODE", WLConstants.SECONDARY_COLOR_CODE);
+            jsonCustomStyle.put("BUTTON_COLOR_CODE_1", WLConstants.BUTTON_COLOR_CODE_1);
+            jsonCustomStyle.put("BUTTON_COLOR_CODE_2", WLConstants.BUTTON_COLOR_CODE_2);
             jsonConsumerData.put("customStyle", jsonCustomStyle);
 
             reqJson.put("consumerData", jsonConsumerData);
@@ -194,27 +206,27 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
     @Override
     public void wlCheckoutPaymentResponse(JSONObject response) {
 
-            try {
-                String msg = response.optString("msg");
-                String[] msgParts = msg.split("\\|");
+        try {
+            String msg = response.optString("msg");
+            String[] msgParts = msg.split("\\|");
 
-                // Extract individual components from the response
-                String txnStatus = msgParts[0];
-                String txnMsg = msgParts[1];
-                String txnErrMsg = msgParts[2];
-                String clntTxnRef = msgParts[3];
-                String tpslBankCd = msgParts[4];
-                String tpslTxnId = msgParts[5];
-                String txnAmt = msgParts[6];
-                String clntRqstMeta = msgParts[7];
-                String tpslTxnTime = msgParts[8];
-                String balAmt = msgParts[9];
-                String cardId = msgParts[10];
-                String aliasName = msgParts[11];
-                String bankTransactionId = msgParts[12];
-                String mandateRegNo = msgParts[13];
-                String token = msgParts[14];
-                String hash = msgParts[15];
+            // Extract individual components from the response
+            String txnStatus = msgParts[0];
+            String txnMsg = msgParts[1];
+            String txnErrMsg = msgParts[2];
+            String clntTxnRef = msgParts[3];
+            String tpslBankCd = msgParts[4];
+            String tpslTxnId = msgParts[5];
+            String txnAmt = msgParts[6];
+            String clntRqstMeta = msgParts[7];
+            String tpslTxnTime = msgParts[8];
+            String balAmt = msgParts[9];
+            String cardId = msgParts[10];
+            String aliasName = msgParts[11];
+            String bankTransactionId = msgParts[12];
+            String mandateRegNo = msgParts[13];
+            String token = msgParts[14];
+            String hash = msgParts[15];
 
             // Check the transaction status and take appropriate actions
             if ("0300".equals(txnStatus)) {

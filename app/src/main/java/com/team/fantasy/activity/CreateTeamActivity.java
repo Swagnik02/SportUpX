@@ -157,7 +157,7 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
         tv_AR.setTextColor(getResources().getColor(R.color.create_team_unselected_color));
         tv_BOWL.setTextColor(getResources().getColor(R.color.create_team_unselected_color));
 
-        ShowToast(CreateTeamActivity.this, "Wicket Keeper Should be 1");
+//        ShowToast(CreateTeamActivity.this, "Wicket Keeper Should be 1");
 
 
         im_WKIcon.setOnClickListener(new View.OnClickListener() {
@@ -174,7 +174,7 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                 tv_AR.setTextColor(getResources().getColor(R.color.create_team_unselected_color));
                 tv_BOWL.setTextColor(getResources().getColor(R.color.create_team_unselected_color));
 
-                ShowToast(CreateTeamActivity.this, "Wicket Keeper Should be 1");
+//                ShowToast(CreateTeamActivity.this, "Wicket Keeper Should be 1");
             }
         });
 
@@ -191,7 +191,7 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                 tv_BAT.setTextColor(getResources().getColor(R.color.create_team_selected_color));
                 tv_AR.setTextColor(getResources().getColor(R.color.create_team_unselected_color));
                 tv_BOWL.setTextColor(getResources().getColor(R.color.create_team_unselected_color));
-                ShowToast(CreateTeamActivity.this, "Batsman Should be 3-5");
+//                ShowToast(CreateTeamActivity.this, "Batsman Should be 3-5");
             }
         });
 
@@ -208,7 +208,7 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                 tv_BAT.setTextColor(getResources().getColor(R.color.create_team_unselected_color));
                 tv_AR.setTextColor(getResources().getColor(R.color.create_team_selected_color));
                 tv_BOWL.setTextColor(getResources().getColor(R.color.create_team_unselected_color));
-                ShowToast(CreateTeamActivity.this, "All Rounder Should be 1-3");
+//                ShowToast(CreateTeamActivity.this, "All Rounder Should be 1-3");
             }
         });
 
@@ -226,7 +226,7 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                 tv_AR.setTextColor(getResources().getColor(R.color.create_team_unselected_color));
                 tv_BOWL.setTextColor(getResources().getColor(R.color.create_team_selected_color));
 
-                ShowToast(CreateTeamActivity.this, "Bowler Should be 3-5");
+//                ShowToast(CreateTeamActivity.this, "Bowler Should be 3-5");
             }
         });
 
@@ -384,16 +384,18 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
 
                 if (TotalCount < 11) {
                     ShowToast(CreateTeamActivity.this, "Please Select 11 Player");
-                } else if (WkCount < 1) {
-                    ShowToast(CreateTeamActivity.this, "Wicket Keeper Should be 1");
-                } else if (BatCount < 3) {
-                    ShowToast(CreateTeamActivity.this, "Batsman Should be 3-5");
-                } else if (ArCount < 1) {
-                    ShowToast(CreateTeamActivity.this, "All Rounder Should be 1-3");
-                } else if (BowlCount < 3) {
-                    ShowToast(CreateTeamActivity.this, "Bowler Should be 3-5");
-
-                } else if (TeamOneCount > 7) {
+                }
+//                else if (WkCount < 1) {
+//                    ShowToast(CreateTeamActivity.this, "Wicket Keeper Should be 1");
+//                } else if (BatCount < 3) {
+//                    ShowToast(CreateTeamActivity.this, "Batsman Should be 3-5");
+//                } else if (ArCount < 1) {
+//                    ShowToast(CreateTeamActivity.this, "All Rounder Should be 1-3");
+//                } else if (BowlCount < 3) {
+//                    ShowToast(CreateTeamActivity.this, "Bowler Should be 3-5");
+//
+//                }
+                else if (TeamOneCount > 7) {
                     ShowToast(CreateTeamActivity.this, "You can only select 7 Player from one team");
 
                 } else if (TeamTwoCount > 7) {
@@ -402,7 +404,7 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                     Intent i = new Intent(activity, ChooseCandVCActivity.class);
                     i.putExtra("Activity", ActivityValue);
                     startActivity(i);
-                    ShowToast(context, "Please Select 11 Player");
+//                    ShowToast(context, "Please Select 11 Player");
                 }
 
             }
@@ -870,7 +872,7 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                                                 ShowToast(context, "You can only select 7 player from one team.");
                                             } else {
                                                 if (Role.equals("WK")) {
-                                                    if (WkCount < 4) {
+//                                                    if (WkCount < 4) {
                                                         WkCount = WkCount + 1;
                                                         TotalCount = TotalCount + 1;
                                                         TeamoneTwoIncreasecount(teamnumber);
@@ -889,13 +891,13 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                                                         holder.im_AddPlayer.setImageResource(R.drawable.minus_icon);
                                                         TotalCredit = TotalCredit - PlayerCredit;
                                                         tv_TotalCredit.setText(TotalCredit + "/100");
-                                                    } else {
-                                                        ShowToast(context, "Wicket Keeper Should be 1-4");
-                                                    }
+//                                                    } else {
+//                                                        ShowToast(context, "Wicket Keeper Should be 1-4");
+//                                                    }
 
 
                                                 } else if (Role.equals("BAT")) {
-                                                    if (BatCount < 6) {
+//                                                    if (BatCount < 6) {
                                                         BatCount = BatCount + 1;
                                                         TotalCount = TotalCount + 1;
                                                         TeamoneTwoIncreasecount(teamnumber);
@@ -913,11 +915,11 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                                                         holder.im_AddPlayer.setImageResource(R.drawable.minus_icon);
                                                         TotalCredit = TotalCredit - PlayerCredit;
                                                         tv_TotalCredit.setText(TotalCredit + "/100");
-                                                    } else {
-                                                        ShowToast(context, "Batsman Should be 3-6");
-                                                    }
+//                                                    } else {
+//                                                        ShowToast(context, "Batsman Should be 3-6");
+//                                                    }
                                                 } else if (Role.equals("AR")) {
-                                                    if (ArCount < 4) {
+//                                                    if (ArCount < 4) {
                                                         ArCount = ArCount + 1;
                                                         TotalCount = TotalCount + 1;
                                                         TeamoneTwoIncreasecount(teamnumber);
@@ -935,13 +937,13 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                                                         TotalCredit = TotalCredit - PlayerCredit;
                                                         tv_TotalCredit.setText(TotalCredit + "/100");
 
-                                                    } else {
-                                                        ShowToast(context, "All Rounder Should be 1-4");
-                                                    }
+//                                                    } else {
+//                                                        ShowToast(context, "All Rounder Should be 1-4");
+//                                                    }
 
 
                                                 } else if (Role.equals("BOWL")) {
-                                                    if (BowlCount < 6) {
+//                                                    if (BowlCount < 6) {
                                                         BowlCount = BowlCount + 1;
                                                         TotalCount = TotalCount + 1;
                                                         TeamoneTwoIncreasecount(teamnumber);
@@ -960,9 +962,9 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
                                                         holder.im_AddPlayer.setImageResource(R.drawable.minus_icon);
                                                         TotalCredit = TotalCredit - PlayerCredit;
                                                         tv_TotalCredit.setText(TotalCredit + "/100");
-                                                    } else {
-                                                        ShowToast(context, "Bowler Should be 3-6");
-                                                    }
+//                                                    } else {
+//                                                        ShowToast(context, "Bowler Should be 3-6");
+//                                                    }
                                                 }
                                             }
                                             //MaxLimit
@@ -1107,102 +1109,128 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
 
 
     }
+//
+//    public boolean MaxLimitValidation(String Role, int TotalCount) {
+//        if (Role.equals("BAT")) {
+//            if ((BatCount + BowlCount) == 9) {
+//                if (WkCount < 1) {
+//                    ShowToast(context, "Wicket Keeper Should be 1-4");
+//                    return false;
+//                } else if (ArCount < 1) {
+//                    ShowToast(context, "All Rounder Should be 1-4");
+//                    return false;
+//                } else {
+//                    return true;
+//                }
+//            } /*else if ((WkCount + ArCount) == 5) {
+//                ShowToast(context, "Bowler Should be 3-6");
+//                return false;
+//            }*/ else if ((BatCount + ArCount) == 7) {
+//                ShowToast(context, "Bowler Should be 3-6");
+//                return false;
+//            }else if ((BatCount + WkCount) == 7) {
+//                ShowToast(context, "Bowler Should be 3-6");
+//                return false;
+//            } else if ((WkCount + ArCount + BatCount) == 8) {
+//                ShowToast(context, "Bowler Should be 3-6");
+//                return false;
+//            } else {
+//                return true;
+//            }
+//        } else if (Role.equals("BOWL")) {
+//            if ((BatCount + BowlCount) == 9) {
+//                if (WkCount < 1) {
+//                    ShowToast(context, "Wicket Keeper Should be 1-4");
+//                    return false;
+//                } else if (ArCount < 1) {
+//                    ShowToast(context, "All Rounder Should be 1-4");
+//                    return false;
+//                } else {
+//                    return true;
+//                }
+//            } /*else if ((WkCount + ArCount) == 5) {
+//                ShowToast(context, "Batsman Should be 3-6");
+//                return false;
+//            }*/ else if ((BowlCount + ArCount) == 7) {
+//                ShowToast(context, "Batsman Should be 3-6");
+//                return false;
+//            }else if ((BowlCount + WkCount) == 7) {
+//                ShowToast(context, "Batsman Should be 3-6");
+//                return false;
+//            } else if ((WkCount + ArCount + BowlCount) == 8) {
+//                ShowToast(context, "Batsman Should be 3-6");
+//                return false;
+//            } else {
+//                return true;
+//            }
+//        } else if (Role.equals("AR")) {
+//            if ((BowlCount + ArCount) == 7) {
+//                ShowToast(context, "Batsman Should be 3-6");
+//                return false;
+//            } else if ((BatCount + ArCount) == 7) {
+//                ShowToast(context, "Bowler Should be 3-6");
+//                return false;
+//            } else if ((WkCount + ArCount) == 5) {
+//                ShowToast(context, "Batsman and Bowler Should be 3-6");
+//                return false;
+//            } else if ((WkCount + ArCount + BatCount) == 8) {
+//                ShowToast(context, "Bowler Should be 3-6");
+//                return false;
+//            } else if ((WkCount + ArCount + BowlCount) == 8) {
+//                ShowToast(context, "Batsman Should be 3-6");
+//                return false;
+//            }else {
+//                return true;
+//            }
+//        } else if (Role.equals("WK")) {
+//            if ((BowlCount + WkCount) == 7) {
+//                ShowToast(context, "Batsman Should be 3-6");
+//                return false;
+//            } else if ((BatCount + WkCount) == 7) {
+//                ShowToast(context, "Bowler Should be 3-6");
+//                return false;
+//            }else if ((WkCount + ArCount) == 5) {
+//                ShowToast(context, "Batsman and Bowler Should be 3-6");
+//                return false;
+//            }else if ((WkCount + ArCount + BatCount) == 8) {
+//                ShowToast(context, "Bowler Should be 3-6");
+//                return false;
+//            }else if ((WkCount + ArCount + BowlCount) == 8) {
+//                ShowToast(context, "Batsman Should be 3-6");
+//                return false;
+//            } else {
+//                return true;
+//            }
+//        } else {
+//            return true;
+//        }
+//    }
 
-    public boolean MaxLimitValidation(String Role, int TotalCount) {
-        if (Role.equals("BAT")) {
-            if ((BatCount + BowlCount) == 9) {
-                if (WkCount < 1) {
-                    ShowToast(context, "Wicket Keeper Should be 1-4");
-                    return false;
-                } else if (ArCount < 1) {
-                    ShowToast(context, "All Rounder Should be 1-4");
-                    return false;
-                } else {
-                    return true;
-                }
-            } /*else if ((WkCount + ArCount) == 5) {
-                ShowToast(context, "Bowler Should be 3-6");
-                return false;
-            }*/ else if ((BatCount + ArCount) == 7) {
-                ShowToast(context, "Bowler Should be 3-6");
-                return false;
-            }else if ((BatCount + WkCount) == 7) {
-                ShowToast(context, "Bowler Should be 3-6");
-                return false;
-            } else if ((WkCount + ArCount + BatCount) == 8) {
-                ShowToast(context, "Bowler Should be 3-6");
-                return false;
-            } else {
-                return true;
-            }
-        } else if (Role.equals("BOWL")) {
-            if ((BatCount + BowlCount) == 9) {
-                if (WkCount < 1) {
-                    ShowToast(context, "Wicket Keeper Should be 1-4");
-                    return false;
-                } else if (ArCount < 1) {
-                    ShowToast(context, "All Rounder Should be 1-4");
-                    return false;
-                } else {
-                    return true;
-                }
-            } /*else if ((WkCount + ArCount) == 5) {
-                ShowToast(context, "Batsman Should be 3-6");
-                return false;
-            }*/ else if ((BowlCount + ArCount) == 7) {
-                ShowToast(context, "Batsman Should be 3-6");
-                return false;
-            }else if ((BowlCount + WkCount) == 7) {
-                ShowToast(context, "Batsman Should be 3-6");
-                return false;
-            } else if ((WkCount + ArCount + BowlCount) == 8) {
-                ShowToast(context, "Batsman Should be 3-6");
-                return false;
-            } else {
-                return true;
-            }
-        } else if (Role.equals("AR")) {
-            if ((BowlCount + ArCount) == 7) {
-                ShowToast(context, "Batsman Should be 3-6");
-                return false;
-            } else if ((BatCount + ArCount) == 7) {
-                ShowToast(context, "Bowler Should be 3-6");
-                return false;
-            } else if ((WkCount + ArCount) == 5) {
-                ShowToast(context, "Batsman and Bowler Should be 3-6");
-                return false;
-            } else if ((WkCount + ArCount + BatCount) == 8) {
-                ShowToast(context, "Bowler Should be 3-6");
-                return false;
-            } else if ((WkCount + ArCount + BowlCount) == 8) {
-                ShowToast(context, "Batsman Should be 3-6");
-                return false;
-            }else {
-                return true;
-            }
-        } else if (Role.equals("WK")) {
-            if ((BowlCount + WkCount) == 7) {
-                ShowToast(context, "Batsman Should be 3-6");
-                return false;
-            } else if ((BatCount + WkCount) == 7) {
-                ShowToast(context, "Bowler Should be 3-6");
-                return false;
-            }else if ((WkCount + ArCount) == 5) {
-                ShowToast(context, "Batsman and Bowler Should be 3-6");
-                return false;
-            }else if ((WkCount + ArCount + BatCount) == 8) {
-                ShowToast(context, "Bowler Should be 3-6");
-                return false;
-            }else if ((WkCount + ArCount + BowlCount) == 8) {
-                ShowToast(context, "Batsman Should be 3-6");
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            return true;
-        }
+//    removing all restrictions
+public boolean MaxLimitValidation(String Role, int TotalCount) {
+    if (Role.equals("BAT")) {
+        return true;
+
+
+    } else if (Role.equals("BOWL")) {
+        return true;
+
+
+
+    } else if (Role.equals("AR")) {
+
+        return true;
+
+
+    } else if (Role.equals("WK")) {
+
+
+        return true;
+
+    } else {
+        return true;
     }
+}
 
     /*public boolean MaxLimitValidation(String Role, int TotalCount) {
         if (Role.equals("BAT")) {
@@ -1265,40 +1293,48 @@ public class CreateTeamActivity extends AppCompatActivity implements ResponseMan
     }*/
 
 
-    public boolean ValidCount10(String Role, int TotalCount) {
-        if (TotalCount == 10) {
-            if (WkCount < 1) {
-                if (Role.equals("WK")) {
-                    return true;
-                }
-                ShowToast(context, "Wicket Keeper Should be 1-4");
-                return false;
-            } else if (BatCount < 3) {
-                if (Role.equals("BAT")) {
-                    return true;
-                }
-                ShowToast(context, "Batsman Should be 3-6");
-                return false;
-            } else if (ArCount < 1) {
-                if (Role.equals("AR")) {
-                    return true;
-                }
-                ShowToast(context, "All Rounder Should be 1-4");
-                return false;
-            } else if (BowlCount < 3) {
-                if (Role.equals("BOWL")) {
-                    return true;
-                }
-                ShowToast(context, "Bowler Should be 3-6");
-                return false;
-            } else {
-                return true;
-            }
+//    public boolean ValidCount10(String Role, int TotalCount) {
+//        if (TotalCount == 10) {
+//            if (WkCount < 1) {
+//                if (Role.equals("WK")) {
+//                    return true;
+//                }
+//                ShowToast(context, "Wicket Keeper Should be 1-4");
+//                return false;
+//            } else if (BatCount < 3) {
+//                if (Role.equals("BAT")) {
+//                    return true;
+//                }
+//                ShowToast(context, "Batsman Should be 3-6");
+//                return false;
+//            } else if (ArCount < 1) {
+//                if (Role.equals("AR")) {
+//                    return true;
+//                }
+//                ShowToast(context, "All Rounder Should be 1-4");
+//                return false;
+//            } else if (BowlCount < 3) {
+//                if (Role.equals("BOWL")) {
+//                    return true;
+//                }
+//                ShowToast(context, "Bowler Should be 3-6");
+//                return false;
+//            } else {
+//                return true;
+//            }
+//
+//        } else {
+//            return true;
+//        }
+//    }
 
-        } else {
+    public boolean ValidCount10(String Role, int TotalCount) {
+
             return true;
-        }
+
     }
+
+
     /*public boolean ValidCount10(String Role, int TotalCount){
         if (TotalCount==10) {
             if (Role.equals("WK")) {

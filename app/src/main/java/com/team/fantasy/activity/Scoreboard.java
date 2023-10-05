@@ -90,7 +90,7 @@ public class Scoreboard extends AppCompatActivity implements ResponseManager {
             public void onClick(View v) {
                 Intent i = new Intent(Scoreboard.this, CommentaryActivity.class);
                 i.putExtra("Match_ID", match_id);
-                i.putExtra("Live_Status",false);
+                i.putExtra("Live_Status",Live_Status);
                 startActivity(i);
             }
         });
