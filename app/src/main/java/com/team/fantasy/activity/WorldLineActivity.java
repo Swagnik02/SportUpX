@@ -98,7 +98,7 @@ public class WorldLineActivity extends AppCompatActivity implements WLCheckoutAc
 //        PayAmount = "10";
         transactionID = "1695896030940";
 
-        //generateCheckSum();
+        generateCheckSum();
 
         viewTxnId.setText(transactionID);
         viewAmnt.setText(String.format("₹ %s", PayAmount));
